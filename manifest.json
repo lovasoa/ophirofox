@@ -1,48 +1,48 @@
 {
-    "manifest_version": 2,
-    "name": "Ophirofox",
-    "version": "1.2",
-    "description": "Lire les articles du monde grâce à sa connexion europresse",
-    "icons": {
-        "48": "icons/48.png"
+  "manifest_version": 2,
+  "name": "Ophirofox",
+  "version": "1.2",
+  "description": "Lire les articles du monde grâce à sa connexion europresse",
+  "icons": {
+    "48": "icons/48.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.lemonde.fr/*"
+      ],
+      "js": [
+        "content_scripts/lemonde.js"
+      ]
     },
-    "content_scripts": [
-        {
-            "matches": [
-                "https://www.lemonde.fr/*"
-            ],
-            "js": [
-                "content_scripts/lemonde.js"
-            ]
-        },
-        {
-            "matches": [
-                "https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/Reading*"
-            ],
-            "js": [
-                "content_scripts/europresse_search.js"
-            ]
-        },
-        {
-            "matches": [
-                "https://nouveau-europresse-com.proxy.rubens.ens.fr/Login*"
-            ],
-            "js": [
-                "content_scripts/europresse_login.js"
-            ]
-        },
-        {
-            "matches": [
-                "https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/ResultMobile*"
-            ],
-            "css": [
-                "content_scripts/europresse_article.css"
-            ]
-        }
-    ],
-    "browser_specific_settings": {
-        "gecko": {
-            "id": "{cfd3c5c2-31ec-4c1b-a28e-df38357d02d9}"
-        }
+    {
+      "matches": [
+        "https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/Reading*"
+      ],
+      "js": [
+        "content_scripts/europresse_search.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://nouveau-europresse-com.proxy.rubens.ens.fr/Login*"
+      ],
+      "js": [
+        "content_scripts/europresse_login.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/ResultMobile*"
+      ],
+      "css": [
+        "content_scripts/europresse_article.css"
+      ]
     }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{cfd3c5c2-31ec-4c1b-a28e-df38357d02d9}"
+    }
+  }
 }
