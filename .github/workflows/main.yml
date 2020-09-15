@@ -9,12 +9,13 @@ jobs:
     name: Build and publish the extension
     runs-on: ubuntu-latest
     steps:
-      - name: Pull and checkout source
-        uses: actions/checkout@master
-
-      - name: Sign the web-ext
-        uses: saphareas/sign-web-extension-action@master
-        with:
-          web-ext-id: "{cfd3c5c2-31ec-4c1b-a28e-df38357d02d9}"
-          amo-api-key: ${{ secrets.AMO_JWT_ISSUER }}
-          amo-api-secret: ${{ secrets.AMO_JWT_SECRET }}
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: npm install --global web-ext
+      - run: web-ext lint
+      - run: web-ext build
+      - run: web-ext sign -channel=unlisted
+        env:
+          WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
+          WEB_EXT_API_SECRET: ${{ secrets.AMO_JWT_SECRET }}
+      - run: ls -lah
