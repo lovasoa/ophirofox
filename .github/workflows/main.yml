@@ -1,8 +1,8 @@
 name: Builds, signs and publishes the WebExtension
 on:
-  push:
-    branches:
-      - master
+  create:
+    tags:
+      - v*
 
 jobs:
   publish-to-amo:
