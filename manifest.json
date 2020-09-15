@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Ophirofox",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Lire les articles du monde grâce à sa connexion europresse",
     "icons": {
         "48": "icons/48.png"
