@@ -11,10 +11,12 @@ Une extension pour navigateurs qui permet de lire les articles du monde.fr sur s
 
 ### Pour firefox
 
-Ouvrez `about:debugging#/runtime/this-firefox`, et cliquez sur *load temporary addon*
+Ouvrez `about:debugging#/runtime/this-firefox`, et cliquez sur *load temporary addon*.
+
+<img width="624" alt="image" src="https://user-images.githubusercontent.com/552629/93187035-9b604780-f73f-11ea-81d3-98a155025a3f.png">
 
 ### Pour chrome
 
-Ouvrez l'adresse `chrome://extensions/`, et cliquez sur *load unpacked* :
+Ouvrez l'adresse `chrome://extensions/`, activez le *developer mode*, et cliquez sur *load unpacked*.
 
 <img width="624" alt="image" src="https://user-images.githubusercontent.com/552629/93186361-d8780a00-f73e-11ea-89c9-f63efd4a02fc.png">
