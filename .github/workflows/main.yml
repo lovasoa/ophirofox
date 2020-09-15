@@ -3,6 +3,10 @@ on:
   push: 
     branches: master
 
+defaults:
+  run:
+    working-directory: ./ophirofox
+
 jobs:
   publish-to-amo:
     name: Build and publish the extension
@@ -24,7 +28,7 @@ jobs:
           WEB_EXT_API_SECRET: ${{ secrets.AMO_JWT_SECRET }}
       - run: ls -lah ./web-ext-artifacts
       - id: filename
-        run: echo ::set-output name=filename::$(echo ./web-ext-artifacts/*xpi)
+        run: echo ::set-output name=filename::$(echo $PWD/web-ext-artifacts/*xpi)
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
