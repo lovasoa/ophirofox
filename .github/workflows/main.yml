@@ -18,7 +18,7 @@ jobs:
           VERSION: ${{ steps.version.outputs.version }}
       - run: web-ext lint
       - run: web-ext build
-      - run: web-ext sign --channel=unlisted --no-input
+      - run: web-ext sign --channel=unlisted
         env:
           WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
           WEB_EXT_API_SECRET: ${{ secrets.AMO_JWT_SECRET }}
