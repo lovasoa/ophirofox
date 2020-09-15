@@ -2,6 +2,7 @@ name: Sign webextension
 on:
   push: 
     branches: master
+    paths: [ "ophirofox/**" ]
 
 defaults:
   run:
