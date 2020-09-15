@@ -1,0 +1,15 @@
+mark {
+    animation-duration: 3s;
+    animation-name: background-fadeout;
+    background-color: transparent;
+  }
+  
+  @keyframes background-fadeout {
+    from {
+      background-color: #fbf592;
+    }
+  
+    to {
+      background-color: transparent;
+    }
+  }
