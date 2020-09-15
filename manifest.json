@@ -39,5 +39,10 @@
                 "content_scripts/europresse_article.css"
             ]
         }
-    ]
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{cfd3c5c2-31ec-4c1b-a28e-df38357d02d9}"
+        }
+    }
 }
