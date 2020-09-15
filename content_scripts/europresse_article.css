@@ -1,6 +1,7 @@
 mark {
     animation-duration: 3s;
     animation-name: background-fadeout;
+    animation-fill-mode: forwards;
     background-color: transparent;
   }
   
