@@ -1,8 +1,7 @@
-name: Builds, signs and publishes the WebExtension
+name: Sign webextension
 on:
-  create:
-    tags:
-      - v*
+  push: 
+    branches: master
 
 jobs:
   publish-to-amo:
@@ -12,6 +11,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       - run: npm install --global web-ext
+      - run: jq ".version |= . + \"-$(date)\"" < manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
       - run: web-ext lint
       - run: web-ext build
       - run: web-ext sign -channel=unlisted
