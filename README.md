@@ -7,15 +7,13 @@ Une extension pour navigateurs qui permet de lire les articles du monde.fr sur s
 
 # Tester la dernière version
 
-[Téléchargez le code depuis github](https://github.com/lovasoa/ophirofox/archive/master.zip), puis :
-
 ### Pour firefox
 
-Ouvrez `about:debugging#/runtime/this-firefox`, et cliquez sur *load temporary addon*.
-
-<img width="624" alt="image" src="https://user-images.githubusercontent.com/552629/93187035-9b604780-f73f-11ea-81d3-98a155025a3f.png">
+ - Téléchargez [la dernière version d'Ophirofox](https://github.com/lovasoa/ophirofox/releases/latest) et ouvrez le fichier `.xpi` avec firefox.
 
 ### Pour chrome
+
+[Téléchargez le code depuis github](https://github.com/lovasoa/ophirofox/archive/master.zip), puis :
 
 Ouvrez l'adresse `chrome://extensions/`, activez le *developer mode*, et cliquez sur *load unpacked*.
 
