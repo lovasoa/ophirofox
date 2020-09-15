@@ -23,8 +23,8 @@ jobs:
           WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
           WEB_EXT_API_SECRET: ${{ secrets.AMO_JWT_SECRET }}
       - run: ls -lah ./web-ext-artifacts
-      - name: Build project 
-        run: zip ophirofox-firefox ./web-ext-artifacts/*
+      - id: filename
+        run: echo ::set-output name=filename::$(echo ./web-ext-artifacts/*xpi)
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -42,6 +42,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./ophirofox-firefox.zip
-          asset_name: ophirofox-firefox.zip
+          asset_path: ${{ steps.filename.outputs.filename }}
+          asset_name: ophirofox.xpi
           asset_content_type: application/zip
