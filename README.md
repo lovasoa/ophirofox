@@ -4,8 +4,11 @@ Une extension pour navigateurs qui permet de lire les articles du monde.fr sur s
 [![Mozilla Firefox: download on mozilla addons](https://user-images.githubusercontent.com/552629/82738693-f4900f80-9d39-11ea-816c-1bddb73b6967.png)](https://github.com/lovasoa/ophirofox/releases/latest/download/ophirofox.xpi)
 [![Google Chrome: download on the chrome web store](https://developer.chrome.com/webstore/images/ChromeWebStore_BadgeWBorder_v2_206x58.png)](https://chrome.google.com/webstore/detail/ophirofox/mmmjkgckgcpankonbgbianpnfenbhodf)
 
+L'extension ajoute un bouton *Lire sur Europresse* sur les articles réservés aux abonnés du [monde.fr](https://www.lemonde.fr/).
+Ce bouton vous permet de vous connecter avec votre compte sur [sso.ens.fr](https://sso.ens.fr), et une fois authentifié,
+d'être redirigé automatiquement vers une page de recherche europresse qui contient l'article du Monde original.
 
-![file](https://user-images.githubusercontent.com/552629/93182919-98168d00-f73a-11ea-9518-175847fdc677.gif)
+![Capture d'écran animée de démonstration de l'extension](https://user-images.githubusercontent.com/552629/93182919-98168d00-f73a-11ea-9518-175847fdc677.gif)
 
 
 
