@@ -19,6 +19,6 @@ Une extension pour navigateurs qui permet de lire les articles du monde.fr sur s
 
 [Téléchargez le code depuis github](https://github.com/lovasoa/ophirofox/archive/master.zip), puis :
 
-Ouvrez l'adresse `chrome://extensions/`, activez le *developer mode*, et cliquez sur *load unpacked*.
+Ouvrez l'adresse `chrome://extensions/`, activez le *developer mode*, et cliquez sur *load unpacked*, puis choisissez le dossier *ophirofox* à l'intérieur du code téléchargé.
 
 <img width="624" alt="image" src="https://user-images.githubusercontent.com/552629/93186361-d8780a00-f73e-11ea-89c9-f63efd4a02fc.png">
