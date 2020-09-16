@@ -20,6 +20,7 @@
     },
     {
       "matches": [
+        "https://nouveau.europresse.com/Search/Reading*",
         "https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/Reading*"
       ],
       "js": [
@@ -28,6 +29,7 @@
     },
     {
       "matches": [
+        "https://nouveau.europresse.com/Login*",
         "https://nouveau-europresse-com.proxy.rubens.ens.fr/Login*"
       ],
       "js": [
@@ -36,6 +38,7 @@
     },
     {
       "matches": [
+        "https://nouveau.europresse.com/Search/ResultMobile*",
         "https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/ResultMobile*"
       ],
       "css": [

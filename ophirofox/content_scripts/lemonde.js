@@ -1,9 +1,7 @@
-const BASE = 'https://nouveau-europresse-com.proxy.rubens.ens.fr'
-
 function makeEuropresseUrl(lemondeUrl) {
     const m = lemondeUrl.pathname.match(/(\d{4})\/(\d{2})\/(\d{2})\/.*?(\d+_\d+).html/);
     if (!m) throw new Error("Format d'URL lemonde inconnu");
-    const target_url = new URL("https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/Reading");
+    const target_url = new URL("https://nouveau.europresse.com/Search/Reading");
     //target_url.searchParams.set("docKey", `news·${m[1]}${m[2]}${m[3]}·LMF·${m[4]}`);
     target_url.searchParams.set("ophirofox_source", window.location);
     //target_url.hash = "docText";
