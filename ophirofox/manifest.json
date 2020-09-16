@@ -13,6 +13,9 @@
       ],
       "js": [
         "content_scripts/lemonde.js"
+      ],
+      "css": [
+        "content_scripts/lemonde.css"
       ]
     },
     {

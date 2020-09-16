@@ -15,9 +15,7 @@ function createLink() {
     const a = document.createElement("a");
     a.href = makeEuropresseUrl(new URL(window.location));
     a.textContent = "Lire sur Europresse";
-    a.className = "btn btn--premium";
-    a.style.color = "black";
-    a.style.marginLeft = "5px";
+    a.className = "btn btn--premium ophirofox-europresse";
     return a;
 }
 
