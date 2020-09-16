@@ -25,3 +25,16 @@ d'être redirigé automatiquement vers une page de recherche europresse qui cont
 Ouvrez l'adresse `chrome://extensions/`, activez le *developer mode*, et cliquez sur *load unpacked*, puis choisissez le dossier *ophirofox* à l'intérieur du code téléchargé.
 
 <img width="624" alt="image" src="https://user-images.githubusercontent.com/552629/93186361-d8780a00-f73e-11ea-89c9-f63efd4a02fc.png">
+
+# Comment cela fonctionne
+
+L'extension injecte un script dans toutes les pages du monde.fr pour détecter les articles payants.
+Lorsqu'un article est détecté, l'extension lui ajoute un lien intitulé *Lire sur Europresse* qui pointe vers
+[`http://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/Search/Reading?ophirofox_source=`](http://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/Search/Reading?ophirofox_source=),
+suivi de l'adresse de la page du monde originale.
+
+Lorsque l'utilisateur se retrouve sur [la page de connexion à europresse](https://nouveau-europresse-com.proxy.rubens.ens.fr/Login/), dont l'utilisateur n'a pas les identifiants,
+l'extension modifie la page pour simplement afficher les mots *Authentification*, et charge en arrière plan la page [`https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1`](https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1) qui permet de s'identifier sans mot de passe, puis recharge la page.
+
+Quand l'utilisateur se retrouve enfin sur la page d'accueil d'Europresse, l'extension utilise la variable `ophirofox_source` définie initialement pour extraire les mots du titre de l'article,
+et lancer une recherche europresse.
