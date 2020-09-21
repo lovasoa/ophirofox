@@ -31,6 +31,17 @@
     },
     {
       "matches": [
+        "https://www.lefigaro.fr/*"
+      ],
+      "js": [
+        "content_scripts/lefigaro.js"
+      ],
+      "css": [
+        "content_scripts/lefigaro.css"
+      ]
+    },
+    {
+      "matches": [
         "https://nouveau.europresse.com/Search/Reading*",
         "https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/Reading*"
       ],
