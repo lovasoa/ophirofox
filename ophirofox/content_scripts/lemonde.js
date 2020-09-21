@@ -11,21 +11,19 @@ function makeEuropresseUrl(lemondeUrl) {
 }
 
 function extractKeywords() {
-    const stopwords = new Set(['d', 'l', 'et'])
-    const keywords = extractKeywordsFromTitle() || extractKeywordsFromUrl(window.location);
-    return keywords.filter(w => !stopwords.has(w)).join(' ');
+    return extractKeywordsFromTitle() || extractKeywordsFromUrl(window.location);
 }
 
 function extractKeywordsFromTitle() {
     const titleElem = document.querySelector("h1.article__title");
-    return titleElem && titleElem.textContent.split(/[^\w]+/);
+    return titleElem && titleElem.textContent;
 }
 
 function extractKeywordsFromUrl(url) {
     const source_url = new URL(url);
     const lemonde_match = source_url.pathname.match(/([^/.]+)(_\d*_\d*\.html)?$/);
     if (!lemonde_match) throw new Error("Could not find keywords in lemonde url");
-    return lemonde_match[1].split('-');
+    return lemonde_match[1];
 }
 
 function createLink() {

@@ -10,9 +10,7 @@ function extractKeywordsFromUrl(url) {
     const source_url = new URL(url);
     const keywords_in_url = source_url.pathname.match(/([^/.]+)_\d*$/);
     if (!keywords_in_url) throw new Error("Could not find keywords in url");
-    const stopwords = new Set(['d', 'l', 'et'])
-    const search_terms = keywords_in_url[1].split('-').filter(w => !stopwords.has(w));
-    return search_terms.join(" ");
+    return keywords_in_url[1];
 }
 
 function createLink() {

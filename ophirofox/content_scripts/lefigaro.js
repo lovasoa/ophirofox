@@ -7,7 +7,7 @@ function makeEuropresseUrl(lemondeUrl) {
 }
 
 function extractKeywords() {
-    return document.querySelector("h1").textContent.split(/[^\w]+/).join(" ");
+    return document.querySelector("h1").textContent;
 }
 
 function createLink() {
@@ -22,7 +22,7 @@ function createLink() {
 function findPremiumBanner() {
     const title = document.querySelector("h1");
     if (!title) return null;
-    const divs = title.parentElement.querySelectorAll("div");
+    const divs = title.parentElement.querySelectorAll("div>div");
     return [...divs].find(d => d.textContent.includes("Réservé aux abonnés"))
 }
 

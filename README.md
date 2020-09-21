@@ -13,6 +13,7 @@ d'être redirigé automatiquement vers une page de recherche europresse qui cont
 
 ## Sites supportés
   - [Le Monde](https://www.lemonde.fr/)
+  - [Le Figaro](https://www.lefigaro.fr/)
   - [Libération](https://www.liberation.fr/)
 
 Vous pouvez proposer d'autres sites en ouvrant une [demande sur github](https://github.com/lovasoa/ophirofox/issues)
