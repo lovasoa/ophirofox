@@ -1,4 +1,4 @@
-# ophirofox
+# ophirofox ![icône Ophirofox](https://raw.githubusercontent.com/lovasoa/ophirofox/master/ophirofox/icons/48.png) 
 Une extension pour navigateurs qui permet de lire les articles du monde.fr sur son compte [Europresse ENS](http://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1).
 
 [![Mozilla Firefox: download on mozilla addons](https://user-images.githubusercontent.com/552629/82738693-f4900f80-9d39-11ea-816c-1bddb73b6967.png)](https://github.com/lovasoa/ophirofox/releases/latest/download/ophirofox.xpi)
