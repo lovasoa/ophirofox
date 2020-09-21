@@ -20,6 +20,17 @@
     },
     {
       "matches": [
+        "https://www.liberation.fr/*"
+      ],
+      "js": [
+        "content_scripts/liberation.js"
+      ],
+      "css": [
+        "content_scripts/liberation.css"
+      ]
+    },
+    {
+      "matches": [
         "https://nouveau.europresse.com/Search/Reading*",
         "https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/Reading*"
       ],

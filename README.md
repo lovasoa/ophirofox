@@ -11,6 +11,11 @@ d'être redirigé automatiquement vers une page de recherche europresse qui cont
 ![Capture d'écran animée de démonstration de l'extension](https://user-images.githubusercontent.com/552629/93182919-98168d00-f73a-11ea-9518-175847fdc677.gif)
 
 
+## Sites supportés
+  - [Le Monde](https://www.lemonde.fr/)
+  - [Libération](https://www.liberation.fr/)
+
+Vous pouvez proposer d'autres sites en ouvrant une [demande sur github](https://github.com/lovasoa/ophirofox/issues)
 
 # Tester la dernière version
 
@@ -38,3 +43,8 @@ l'extension modifie la page pour simplement afficher les mots *Authentification*
 
 Quand l'utilisateur se retrouve enfin sur la page d'accueil d'Europresse, l'extension utilise la variable `ophirofox_source` définie initialement pour extraire les mots du titre de l'article,
 et lancer une recherche europresse.
+
+# License
+
+Cette extension est un logiciel libre sous license [MPL](https://github.com/lovasoa/ophirofox/blob/master/LICENSE).
+Vous pouvez y contribuer [sur github](https://github.com/lovasoa/ophirofox).
