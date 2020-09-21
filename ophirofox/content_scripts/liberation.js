@@ -1,12 +1,12 @@
 function makeEuropresseUrl(lemondeUrl) {
     const target_url = new URL("https://nouveau.europresse.com/Search/Reading");
     target_url.searchParams.set("ophirofox_source", window.location);
-    target_url.searchParams.set("ophirofox_keywords", extractKeywords(window.location));
+    target_url.searchParams.set("ophirofox_keywords", extractKeywordsFromUrl(window.location));
     const url = new URL("http://proxy.rubens.ens.fr/login?url=" + target_url);
     return url;
 }
 
-function extractKeywords(url) {
+function extractKeywordsFromUrl(url) {
     const source_url = new URL(url);
     const keywords_in_url = source_url.pathname.match(/([^/.]+)_\d*$/);
     if (!keywords_in_url) throw new Error("Could not find keywords in url");
