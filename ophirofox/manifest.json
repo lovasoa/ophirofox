@@ -71,7 +71,8 @@
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "{cfd3c5c2-31ec-4c1b-a28e-df38357d02d9}"
+      "id": "{cfd3c5c2-31ec-4c1b-a28e-df38357d02d9}",
+      "update_url": "https://github.com/lovasoa/ophirofox/releases/latest/download/update_manifest.json"
     }
   }
 }
