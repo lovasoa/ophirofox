@@ -3,10 +3,13 @@
 import json
 import sys
 import urllib.request
+from pathlib import Path
+
+BASE = Path(__file__).parent
 
 
 def get_extension_manifest():
-    with open("./ophirofox/manifest.json") as f:
+    with (BASE / "ophirofox" / "manifest.json").open('r') as f:
         return json.load(f)
 
 
