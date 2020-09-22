@@ -49,7 +49,7 @@ jobs:
           asset_path: ${{ steps.filename.outputs.filename }}
           asset_name: ophirofox.xpi
           asset_content_type: application/zip
-      - run: ./update-manifest.py | tee /tmp/update_manifest.json
+      - run: ../update-manifest.py | tee /tmp/update_manifest.json
       - name: Upload the extension's update manifest
         uses: actions/upload-release-asset@v1
         env:
