@@ -2,7 +2,7 @@ name: Sign webextension
 on:
   push: 
     branches: master
-    paths: [ "ophirofox/**" ]
+    paths: [ "ophirofox/**", ".github/workflows/main.yml" ]
 
 defaults:
   run:
