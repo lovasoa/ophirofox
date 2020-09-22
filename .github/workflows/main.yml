@@ -40,8 +40,7 @@ jobs:
           release_name: Release ${{ steps.version.outputs.version }}
           draft: false
           prerelease: false
-      - name: Upload Release Asset
-        id: upload-release-asset 
+      - name: Upload the xpi file as a release asset
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -50,3 +49,13 @@ jobs:
           asset_path: ${{ steps.filename.outputs.filename }}
           asset_name: ophirofox.xpi
           asset_content_type: application/zip
+      - run: ./update-manifest.py | tee /tmp/update_manifest.json
+      - name: Upload the extension's update manifest
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: /tmp/update_manifest.json
+          asset_name: update_manifest.json
+          asset_content_type: application/json
