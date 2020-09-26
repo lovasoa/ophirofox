@@ -26,11 +26,13 @@ Vous pouvez proposer d'autres sites en ouvrant une [demande sur github](https://
 
 ### Pour chrome
 
-[Téléchargez le code depuis github](https://github.com/lovasoa/ophirofox/archive/master.zip), puis :
+ophirofox est [présent sur le Chrome Webstore](https://chrome.google.com/webstore/detail/ophirofox/mmmjkgckgcpankonbgbianpnfenbhodf), mais google prend parfois du temps à approuver une nouvelle version de l'extension. On peut suivre les instructions suivantes pour installer la dernière version sans passer par Google:
+
+[Téléchargez le code depuis github](https://github.com/lovasoa/ophirofox/archive/master.zip), décompressez-le, puis :
 
 Ouvrez l'adresse `chrome://extensions/`, activez le *developer mode*, et cliquez sur *load unpacked*, puis choisissez le dossier *ophirofox* à l'intérieur du code téléchargé.
 
-<img width="624" alt="image" src="https://user-images.githubusercontent.com/552629/93186361-d8780a00-f73e-11ea-89c9-f63efd4a02fc.png">
+<img width="624" alt="image" src="https://user-images.githubusercontent.com/552629/94343918-dbff7100-001b-11eb-86e4-df66e15bc6f6.png">
 
 # Comment cela fonctionne
 
