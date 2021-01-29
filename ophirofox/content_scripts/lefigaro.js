@@ -3,7 +3,7 @@ function makeEuropresseUrl(lemondeUrl) {
     target_url.searchParams.set("ophirofox_source", window.location);
     target_url.searchParams.set("ophirofox_keywords", extractKeywords());
     //const url = new URL("http://proxy.rubens.ens.fr/login?url=" + target_url);
-    const url = new URL("https://auth.ensam.eu/cas/login?url=" + target_url);
+    const url = new URL("http://rp1.ensam.eu/login?url=" + target_url);
     return url;
 }
 
