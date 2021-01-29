@@ -11,7 +11,7 @@ async function createLink() {
     const a = document.createElement("a");
     a.href = await makeEuropresseUrl(new URL(window.location));
     a.textContent = "Lire sur Europresse";
-    a.className = "ophirofox-europresse";
+    a.className = "fig-premium-mark-article__text ophirofox-europresse";
     return a;
 }
 
@@ -19,8 +19,8 @@ async function createLink() {
 function findPremiumBanner() {
     const title = document.querySelector("h1");
     if (!title) return null;
-    const divs = title.parentElement.querySelectorAll("div>div");
-    return [...divs].find(d => d.textContent.includes("Réservé aux abonnés"))
+    const elems = title.parentElement.querySelectorAll("span");
+    return [...elems].find(d => d.textContent.includes("Réservé aux abonnés"))
 }
 
 async function onLoad() {
