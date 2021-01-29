@@ -2,7 +2,8 @@ function makeEuropresseUrl(lemondeUrl) {
     const target_url = new URL("https://nouveau.europresse.com/Search/Reading");
     target_url.searchParams.set("ophirofox_source", window.location);
     target_url.searchParams.set("ophirofox_keywords", extractKeywordsFromUrl(window.location));
-    const url = new URL("http://proxy.rubens.ens.fr/login?url=" + target_url);
+    //const url = new URL("http://proxy.rubens.ens.fr/login?url=" + target_url);
+    const url = new URL("http://rp1.ensam.eu/login?url=" + target_url);
     return url;
 }
 
