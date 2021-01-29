@@ -21,7 +21,8 @@
     },
     {
       "matches": [
-        "https://www.liberation.fr/*"
+        "https://www.liberation.fr/*",
+        "https://next.liberation.fr/*"
       ],
       "js": [
         "content_scripts/liberation.js"
