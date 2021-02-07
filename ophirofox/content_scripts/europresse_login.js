@@ -3,10 +3,11 @@ if (!window.location.hash.includes("ophirofox_reloaded")) {
     document.body.innerHTML = "Authentification...";
     const ifr = document.createElement("iframe");
     ifr.width = ifr.height = 5;
-    //ifr.src = "https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1";
-    ifr.src = "https://rp1.ensam.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=AML";
-    ifr.onload = _ => {
+    ifr.onload = (_) => {
         window.location.reload();
-    }
-    document.body.appendChild(ifr);
+    };
+    ophirofox_config.then((conf) => {
+        ifr.src = conf.AUTH_URL;
+        document.body.appendChild(ifr);
+    });
 }

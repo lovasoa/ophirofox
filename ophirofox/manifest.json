@@ -7,12 +7,16 @@
     "48": "icons/48.png",
     "128": "icons/128.png"
   },
+  "permissions": [
+    "storage"
+  ],
   "content_scripts": [
     {
       "matches": [
         "https://www.lemonde.fr/*"
       ],
       "js": [
+        "content_scripts/config.js",
         "content_scripts/lemonde.js"
       ],
       "css": [
@@ -25,6 +29,7 @@
         "https://next.liberation.fr/*"
       ],
       "js": [
+        "content_scripts/config.js",
         "content_scripts/liberation.js"
       ],
       "css": [
@@ -36,6 +41,7 @@
         "https://www.lefigaro.fr/*"
       ],
       "js": [
+        "content_scripts/config.js",
         "content_scripts/lefigaro.js"
       ],
       "css": [
@@ -59,6 +65,7 @@
         "https://nouveau-europresse-com.rp1.ensam.eu/Login*"
       ],
       "js": [
+        "content_scripts/config.js",
         "content_scripts/europresse_login.js"
       ]
     },

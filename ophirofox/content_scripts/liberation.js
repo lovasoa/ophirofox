@@ -1,10 +1,6 @@
-function makeEuropresseUrl(lemondeUrl) {
-    const target_url = new URL("https://nouveau.europresse.com/Search/Reading");
-    target_url.searchParams.set("ophirofox_source", window.location);
-    target_url.searchParams.set("ophirofox_keywords", extractKeywordsFromUrl(window.location));
-    //const url = new URL("http://proxy.rubens.ens.fr/login?url=" + target_url);
-    const url = new URL("http://rp1.ensam.eu/login?url=" + target_url);
-    return url;
+async function makeEuropresseUrl() {
+    const keywords = extractKeywordsFromUrl(window.location);
+    return await makeOphirofoxReadingLink(keywords);
 }
 
 function extractKeywordsFromUrl(url) {
@@ -14,18 +10,18 @@ function extractKeywordsFromUrl(url) {
     return keywords_in_url[1];
 }
 
-function createLink() {
+async function createLink() {
     const a = document.createElement("a");
-    a.href = makeEuropresseUrl(new URL(window.location));
+    a.href = await makeEuropresseUrl(new URL(window.location));
     a.textContent = "Lire sur Europresse";
     a.className = "ribbon-premium ophirofox-europresse";
     return a;
 }
 
-function onLoad() {
+async function onLoad() {
     const statusElem = document.querySelector(".article-header .ribbon-premium");
     if (!statusElem) return;
-    statusElem.after(createLink());
+    statusElem.after(await createLink());
 }
 
 onLoad();
