@@ -2,10 +2,13 @@
   "manifest_version": 2,
   "name": "Ophirofox",
   "version": "1.6",
-  "description": "Lire les articles du monde grâce à sa connexion europresse",
+  "description": "Lire les articles du monde, du figaro, et d'autres journaux grâce à sa connexion europresse",
   "icons": {
     "48": "icons/48.png",
     "128": "icons/128.png"
+  },
+  "options_ui": {
+    "page": "settings/options_ui.html"
   },
   "permissions": [
     "storage"
