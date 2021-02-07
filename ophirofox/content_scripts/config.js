@@ -103,10 +103,12 @@ async function makeOphirofoxReadingLink(keywords) {
   return new URL(`${config.LOGIN_URL}?url=${target_url}`);
 }
 
-export {
-  ophirofox_config_list,
-  ophirofox_config,
-  makeOphirofoxReadingLink,
-  getSettings,
-  setSettings,
-};
+if (window.location.protocol.includes("extension")) {
+  window.ophirofox_config_exports = {
+    ophirofox_config_list,
+    ophirofox_config,
+    makeOphirofoxReadingLink,
+    getSettings,
+    setSettings,
+  };
+}

@@ -1,8 +1,8 @@
-import {
+const {
   ophirofox_config_list,
   getSettings,
   setSettings,
-} from "../content_scripts/config.js";
+} = window.ophirofox_config_exports;
 
 const choicelist = document.getElementById("partner_choices");
 const template = document.getElementById("partner_template");
@@ -17,7 +17,7 @@ ophirofox_config_list.forEach(({ name }) => {
   choicelist.appendChild(clone);
   settings_promise.then((settings) => {
     input.checked = settings.partner_name === name;
-    input.onchange = (evt) => {
+    input.onchange = () => {
       if (input.checked) setSettings({ ...settings, partner_name: name });
     };
   });
