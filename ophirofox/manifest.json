@@ -13,6 +13,9 @@
   "permissions": [
     "storage"
   ],
+  "background": {
+    "scripts": ["background.js"]
+  },
   "content_scripts": [
     {
       "matches": [
