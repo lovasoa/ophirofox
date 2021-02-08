@@ -1,13 +1,12 @@
 async function makeEuropresseUrl() {
-    const keywords = extractKeywordsFromUrl(window.location);
+    const keywords = extractKeywords(window.location);
     return await makeOphirofoxReadingLink(keywords);
 }
 
-function extractKeywordsFromUrl(url) {
-    const source_url = new URL(url);
-    const keywords_in_url = source_url.pathname.match(/([^/.]+)_\d*$/);
-    if (!keywords_in_url) throw new Error("Could not find keywords in url");
-    return keywords_in_url[1];
+function extractKeywords() {
+    return document
+      .querySelector("meta[property='og:title']")
+      .getAttribute("content");
 }
 
 async function createLink() {
@@ -19,9 +18,14 @@ async function createLink() {
 }
 
 async function onLoad() {
-    const statusElem = document.querySelector(".article-header .ribbon-premium");
-    if (!statusElem) return;
-    statusElem.after(await createLink());
+    const reserve = document.evaluate(
+      "//*[contains(text(), 'réservé aux abonnés')]",
+      document.body,
+      null,
+      XPathResult.UNORDERED_NODE_ITERATOR_TYPE
+    ).iterateNext();
+    if (!reserve) return;
+    reserve.appendChild(await createLink());
 }
 
 onLoad();
