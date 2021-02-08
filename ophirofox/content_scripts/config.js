@@ -1,17 +1,18 @@
 const ophirofox_config_list = [
-  class OphirofoxConfigULM {
-    static name = "ULM";
-    static domains = ["ens.fr"];
-    static LOGIN_URL = "http://proxy.rubens.ens.fr/login";
-    static AUTH_URL = // URL à charger pour pouvoir se logger sans mot de passe
-      "https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1";
+  {
+    name: "ULM",
+    domains: ["ens.fr"],
+    LOGIN_URL: "http://proxy.rubens.ens.fr/login",
+    // URL à charger pour pouvoir se logger sans mot de passe
+    AUTH_URL:
+      "https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1",
   },
-  class OphirofoxConfigENSAM {
-    static name = "ENSAM";
-    static domains = ["ensam.eu"];
-    static LOGIN_URL = "http://rp1.ensam.eu/login";
-    static AUTH_URL =
-      "https://rp1.ensam.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=AML";
+  {
+    name: "ENSAM",
+    domains: ["ensam.eu"],
+    LOGIN_URL: "http://rp1.ensam.eu/login",
+    AUTH_URL:
+      "https://rp1.ensam.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=AML",
   },
 ];
 

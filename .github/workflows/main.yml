@@ -21,7 +21,7 @@ jobs:
       - run: jq ".version |= \"$VERSION\"" < manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
         env:
           VERSION: ${{ steps.version.outputs.version }}
-      - run: web-ext lint --self-hosted
+      - run: web-ext lint --self-hosted --warnings-as-errors
       - run: web-ext build
       - run: web-ext sign --channel=unlisted
         env:
