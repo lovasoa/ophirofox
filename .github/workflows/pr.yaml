@@ -1,0 +1,17 @@
+name: Sign webextension
+on: [pull_request]
+
+defaults:
+  run:
+    working-directory: ./ophirofox
+
+jobs:
+  check:
+    name: web-ext lint and build
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: npm install --global web-ext
+      - run: web-ext lint --self-hosted
+      - run: web-ext build
