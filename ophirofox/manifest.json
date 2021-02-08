@@ -2,10 +2,19 @@
   "manifest_version": 2,
   "name": "Ophirofox",
   "version": "1.6",
-  "description": "Lire les articles du monde grâce à sa connexion europresse",
+  "description": "Lire les articles du monde, du figaro, et d'autres journaux grâce à sa connexion europresse",
   "icons": {
     "48": "icons/48.png",
     "128": "icons/128.png"
+  },
+  "options_ui": {
+    "page": "settings/options_ui.html"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "background": {
+    "scripts": ["background.js"]
   },
   "content_scripts": [
     {
@@ -13,6 +22,7 @@
         "https://www.lemonde.fr/*"
       ],
       "js": [
+        "content_scripts/config.js",
         "content_scripts/lemonde.js"
       ],
       "css": [
@@ -21,9 +31,11 @@
     },
     {
       "matches": [
-        "https://www.liberation.fr/*"
+        "https://www.liberation.fr/*",
+        "https://next.liberation.fr/*"
       ],
       "js": [
+        "content_scripts/config.js",
         "content_scripts/liberation.js"
       ],
       "css": [
@@ -35,6 +47,7 @@
         "https://www.lefigaro.fr/*"
       ],
       "js": [
+        "content_scripts/config.js",
         "content_scripts/lefigaro.js"
       ],
       "css": [
@@ -44,7 +57,8 @@
     {
       "matches": [
         "https://nouveau.europresse.com/Search/Reading*",
-        "https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/Reading*"
+        "https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/Reading*",
+        "https://nouveau-europresse-com.rp1.ensam.eu/Search/Reading*"
       ],
       "js": [
         "content_scripts/europresse_search.js"
@@ -53,16 +67,19 @@
     {
       "matches": [
         "https://nouveau.europresse.com/Login*",
-        "https://nouveau-europresse-com.proxy.rubens.ens.fr/Login*"
+        "https://nouveau-europresse-com.proxy.rubens.ens.fr/Login*",
+        "https://nouveau-europresse-com.rp1.ensam.eu/Login*"
       ],
       "js": [
+        "content_scripts/config.js",
         "content_scripts/europresse_login.js"
       ]
     },
     {
       "matches": [
         "https://nouveau.europresse.com/Search/ResultMobile*",
-        "https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/ResultMobile*"
+        "https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/ResultMobile*",
+        "https://nouveau-europresse-com.rp1.ensam.eu/Search/ResultMobile*"
       ],
       "css": [
         "content_scripts/europresse_article.css"

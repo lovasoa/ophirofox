@@ -1,15 +1,22 @@
 # ophirofox ![icône Ophirofox](https://raw.githubusercontent.com/lovasoa/ophirofox/master/ophirofox/icons/48.png) 
-Une extension pour navigateurs qui permet de lire les articles du **Monde**, du **Figaro**, et de **Libération** sur son compte [**Europresse ENS**](http://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1).
+
+Une extension pour navigateurs qui permet de lire les articles du **Monde**, du **Figaro**, et de **Libération** sur son compte **Europresse**.
 
 [![Mozilla Firefox: download on mozilla addons](https://user-images.githubusercontent.com/552629/82738693-f4900f80-9d39-11ea-816c-1bddb73b6967.png)](https://github.com/lovasoa/ophirofox/releases/latest/download/ophirofox.xpi)
 [![Google Chrome: download on the chrome web store](https://user-images.githubusercontent.com/552629/104166652-661ceb00-53fb-11eb-91c1-2db0718db66f.png)](https://chrome.google.com/webstore/detail/ophirofox/mmmjkgckgcpankonbgbianpnfenbhodf)
 
 L'extension ajoute un bouton *Lire sur Europresse* sur les articles réservés aux abonnés du [monde.fr](https://www.lemonde.fr/) et d'autres sites d'information.
-Ce bouton vous permet de vous connecter avec votre compte sur [sso.ens.fr](https://sso.ens.fr/cas/login), et une fois authentifié,
+Ce bouton vous permet de vous connecter avec votre compte sur europresse via le site de votre université, et une fois authentifié,
 d'être redirigé automatiquement vers une page de recherche europresse qui contient l'article du Monde original.
 
 ![Capture d'écran animée de démonstration de l'extension](https://user-images.githubusercontent.com/552629/93182919-98168d00-f73a-11ea-9518-175847fdc677.gif)
 
+
+## Partenaires Europresse supportés
+
+L'extension fonctionne avec les portails universitaires suivants :
+ - [**Europresse ENS Ulm PSL**](http://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1),
+ - [**Europresse ENSAM (Arts et Métiers)**](http://rp1.ensam.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=AML).
 
 ## Sites supportés
   - [Le Monde](https://www.lemonde.fr/)
@@ -54,3 +61,8 @@ et lancer une recherche europresse.
 
 Cette extension est un logiciel libre sous license [MPL](https://github.com/lovasoa/ophirofox/blob/master/LICENSE).
 Vous pouvez y contribuer [sur github](https://github.com/lovasoa/ophirofox).
+
+Si vous avez accès à un portail europresse via votre université mais qu'il n'est pas supporté par cette extension,
+il devrait être relativement facile à ajouter.
+N'hésitez pas à [ouvrir une demande sur Github](https://github.com/lovasoa/ophirofox/issues/new),
+ou à ajouter vous-même le support pour votre université en modifiant [`config.js`](./ophirofox/content_scripts/config.js) 
