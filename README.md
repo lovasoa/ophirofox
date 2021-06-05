@@ -17,6 +17,7 @@ d'être redirigé automatiquement vers une page de recherche europresse qui cont
 L'extension fonctionne avec les portails universitaires suivants :
  - [**Europresse ENS Ulm PSL**](http://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1),
  - [**Europresse ENSAM (Arts et Métiers)**](http://rp1.ensam.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=AML).
+ Ou directement via le site Europresse.
 
 ## Sites supportés
   - [Le Monde](https://www.lemonde.fr/)
