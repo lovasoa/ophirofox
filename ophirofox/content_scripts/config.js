@@ -14,6 +14,13 @@ const ophirofox_config_list = [
     AUTH_URL:
       "https://rp1.ensam.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=AML",
   },
+  {
+    name: "Pas d'intermédiaire",
+    domains: ["europresse.com"],
+    LOGIN_URL: "https://nouveau.europress.com/login",
+    AUTH_URL:
+      "https://nouveau.europresse.com/",
+  },
 ];
 
 /**
