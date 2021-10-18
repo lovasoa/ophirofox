@@ -17,9 +17,8 @@ const ophirofox_config_list = [
   {
     name: "Pas d'intermédiaire",
     domains: ["europresse.com"],
-    LOGIN_URL: "",
-    AUTH_URL:
-      "https://nouveau.europresse.com/Login",
+    LOGIN_URL: null,
+    AUTH_URL: "https://nouveau.europresse.com/Login",
   },
 ];
 
@@ -109,9 +108,9 @@ async function makeOphirofoxReadingLink(keywords) {
   target_url.searchParams.set("ophirofox_keywords", keywords);
   const config = await ophirofox_config;
   if (config.LOGIN_URL) {
-	return new URL(`${config.LOGIN_URL}?url=${target_url}`);
+    return new URL(`${config.LOGIN_URL}?url=${target_url}`);
   } else {
-        return new URL(`${target_url}`);
+    return target_url;
   }
 }
 
