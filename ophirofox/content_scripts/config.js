@@ -14,6 +14,12 @@ const ophirofox_config_list = [
     AUTH_URL:
       "https://rp1.ensam.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=AML",
   },
+  {
+    name: "Pas d'intermédiaire",
+    domains: ["europresse.com"],
+    LOGIN_URL: null,
+    AUTH_URL: "https://nouveau.europresse.com/Login",
+  },
 ];
 
 /**
@@ -101,7 +107,11 @@ async function makeOphirofoxReadingLink(keywords) {
   target_url.searchParams.set("ophirofox_source", window.location);
   target_url.searchParams.set("ophirofox_keywords", keywords);
   const config = await ophirofox_config;
-  return new URL(`${config.LOGIN_URL}?url=${target_url}`);
+  if (config.LOGIN_URL) {
+    return new URL(`${config.LOGIN_URL}?url=${target_url}`);
+  } else {
+    return target_url;
+  }
 }
 
 if (window.location.protocol.includes("extension")) {
