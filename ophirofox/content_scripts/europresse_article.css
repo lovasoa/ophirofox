@@ -1,16 +1,17 @@
-mark {
-    animation-duration: 3s;
-    animation-name: background-fadeout;
-    animation-fill-mode: forwards;
+mark,
+span.mark {
+  animation-duration: 3s;
+  animation-name: background-fadeout;
+  animation-fill-mode: forwards;
+  background-color: transparent;
+}
+
+@keyframes background-fadeout {
+  from {
+    background-color: #fbf592;
+  }
+
+  to {
     background-color: transparent;
   }
-  
-  @keyframes background-fadeout {
-    from {
-      background-color: #fbf592;
-    }
-  
-    to {
-      background-color: transparent;
-    }
-  }
+}
