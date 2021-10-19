@@ -6,6 +6,11 @@ function removeMarkElements() {
         Array.from(mark.childNodes).forEach(repl.appendChild.bind(repl));
         mark.parentNode.replaceChild(repl, mark);
     });
-
 }
-setTimeout(removeMarkElements, 3 * 1000);
+
+// Remove <mark> elements each time the page is updated 
+let nextOp = null;
+new MutationObserver(() => {
+    if (nextOp) clearTimeout(nextOp);
+    nextOp = setTimeout(removeMarkElements, 500);
+}).observe(document.body, { subtree: true, childList: true });
