@@ -15,7 +15,7 @@ const ophirofox_config_list = [
       "https://rp1.ensam.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=AML",
   },
   {
-    name: "UPSaclay",
+    name: "Université Paris-Saclay",
     domains: ["universite-paris-saclay.fr"],
     LOGIN_URL: "https://proxy.scd.u-psud.fr/login",
     AUTH_URL:
