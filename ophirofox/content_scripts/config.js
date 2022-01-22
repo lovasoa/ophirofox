@@ -15,6 +15,14 @@ const ophirofox_config_list = [
       "https://rp1.ensam.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=AML",
   },
   {
+    name: "Université Paris-Saclay",
+    domains: ["universite-paris-saclay.fr"],
+    LOGIN_URL: "https://proxy.scd.u-psud.fr/login",
+    AUTH_URL:
+      "https://proxy.scd.u-psud.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_9",
+  },
+
+  {
     name: "Pas d'intermédiaire",
     domains: ["europresse.com"],
     LOGIN_URL: null,
