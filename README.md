@@ -1,9 +1,6 @@
-# ophirofox ![icône Ophirofox](https://raw.githubusercontent.com/lovasoa/ophirofox/master/ophirofox/icons/48.png) 
+# ophirofox ![icône Ophirofox](https://raw.githubusercontent.com/lovasoa/ophirofox/master/ophirofox/icons/48.png)
 
-Une extension pour navigateurs qui permet de lire les articles du **Monde**, du **Figaro**, et de **Libération** sur son compte **Europresse**.
-
-[![Mozilla Firefox: download on mozilla addons](https://user-images.githubusercontent.com/552629/82738693-f4900f80-9d39-11ea-816c-1bddb73b6967.png)](https://github.com/lovasoa/ophirofox/releases/latest/download/ophirofox.xpi)
-[![Google Chrome: download on the chrome web store](https://user-images.githubusercontent.com/552629/104166652-661ceb00-53fb-11eb-91c1-2db0718db66f.png)](https://chrome.google.com/webstore/detail/ophirofox/mmmjkgckgcpankonbgbianpnfenbhodf)
+Une extension pour navigateurs qui permet de lire les articles du **Monde**, du **Figaro**, de **Libération** et du **Monde Diplomatique** sur son compte **Europresse**.
 
 L'extension ajoute un bouton *Lire sur Europresse* sur les articles réservés aux abonnés du [monde.fr](https://www.lemonde.fr/) et d'autres sites d'information.
 Ce bouton vous permet de vous connecter avec votre compte sur europresse via le site de votre université, et une fois authentifié,
@@ -17,13 +14,16 @@ d'être redirigé automatiquement vers une page de recherche europresse qui cont
 L'extension fonctionne avec les portails universitaires suivants :
  - [**Europresse ENS Ulm PSL**](http://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1),
  - [**Europresse ENSAM (Arts et Métiers)**](http://rp1.ensam.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=AML),
- - [**Europresse Université Paris-Saclay**](https://proxy.scd.u-psud.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_9).
+ - [**Europresse Université Paris-Saclay**](https://proxy.scd.u-psud.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_9),
+ - [**Europresse INSA Lyon**](https://docelec.insa-lyon.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=INSAT_3)
+
  Ou directement via le site Europresse.
 
 ## Sites supportés
   - [Le Monde](https://www.lemonde.fr/)
   - [Le Figaro](https://www.lefigaro.fr/)
   - [Libération](https://www.liberation.fr/)
+  - [Le Monde Diplomatique](https://www.www.monde-diplomatique.fr)
 
 Vous pouvez proposer d'autres sites en ouvrant une [demande sur github](https://github.com/lovasoa/ophirofox/issues)
 
