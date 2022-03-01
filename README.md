@@ -2,6 +2,10 @@
 
 Une extension pour navigateurs qui permet de lire les articles du **Monde**, du **Figaro**, de **Libération** et du **Monde Diplomatique** sur son compte **Europresse**.
 
+[![Mozilla Firefox: download on mozilla addons](https://user-images.githubusercontent.com/552629/82738693-f4900f80-9d39-11ea-816c-1bddb73b6967.png)](https://github.com/lovasoa/ophirofox/releases/latest/download/ophirofox.xpi)
+[![Google Chrome: download on the chrome web store](https://user-images.githubusercontent.com/552629/104166652-661ceb00-53fb-11eb-91c1-2db0718db66f.png)](https://chrome.google.com/webstore/detail/ophirofox/mmmjkgckgcpankonbgbianpnfenbhodf)
+
+
 L'extension ajoute un bouton *Lire sur Europresse* sur les articles réservés aux abonnés du [monde.fr](https://www.lemonde.fr/) et d'autres sites d'information.
 Ce bouton vous permet de vous connecter avec votre compte sur europresse via le site de votre université, et une fois authentifié,
 d'être redirigé automatiquement vers une page de recherche europresse qui contient l'article du Monde original.
