@@ -1,5 +1,10 @@
 # ophirofox ![icône Ophirofox](https://raw.githubusercontent.com/lovasoa/ophirofox/master/ophirofox/icons/48.png)
 
+Une extension pour navigateurs qui permet de lire les articles du **Monde**, du **Figaro**, et de **Libération** sur son compte **Europresse**.
+
+[![Mozilla Firefox: download on mozilla addons](https://user-images.githubusercontent.com/552629/82738693-f4900f80-9d39-11ea-816c-1bddb73b6967.png)](https://github.com/lovasoa/ophirofox/releases/latest/download/ophirofox.xpi)
+[![Google Chrome: download on the chrome web store](https://user-images.githubusercontent.com/552629/104166652-661ceb00-53fb-11eb-91c1-2db0718db66f.png)](https://chrome.google.com/webstore/detail/ophirofox/mmmjkgckgcpankonbgbianpnfenbhodf)
+
 Une extension pour navigateurs qui permet de lire les articles du **Monde**, du **Figaro**, de **Libération** et du **Monde Diplomatique** sur son compte **Europresse**.
 
 [![Mozilla Firefox: download on mozilla addons](https://user-images.githubusercontent.com/552629/82738693-f4900f80-9d39-11ea-816c-1bddb73b6967.png)](https://github.com/lovasoa/ophirofox/releases/latest/download/ophirofox.xpi)
