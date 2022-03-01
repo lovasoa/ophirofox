@@ -31,9 +31,6 @@ async function createLink() {
 }
 
 async function onLoad() {
-    //remove pay banner
-    document.getElementById('js-message-register').remove();
-    
     const statusElem = document.querySelector(".article__status");
     if (!statusElem) return;
     statusElem.appendChild(await createLink());
