@@ -21,13 +21,19 @@ const ophirofox_config_list = [
     AUTH_URL:
       "https://proxy.scd.u-psud.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_9",
   },
-
+  {
+    name: "INSA Lyon",
+    domains: ["insa-lyon.fr"],
+    LOGIN_URL: "https://docelec.insa-lyon.fr/login",
+    AUTH_URL:
+      "https://docelec.insa-lyon.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=INSAT_3",
+  },
   {
     name: "Pas d'intermédiaire",
     domains: ["europresse.com"],
     LOGIN_URL: null,
     AUTH_URL: "https://nouveau.europresse.com/Login",
-  },
+  }
 ];
 
 /**

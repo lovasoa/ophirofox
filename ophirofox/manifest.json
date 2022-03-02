@@ -58,10 +58,20 @@
     },
     {
       "matches": [
+        "https://www.monde-diplomatique.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/monde-diplo.js"
+      ]
+    },
+    {
+      "matches": [
         "https://nouveau.europresse.com/Search/Reading*",
         "https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/Reading*",
         "https://nouveau-europresse-com.rp1.ensam.eu/Search/Reading*",
-        "https://nouveau-europresse-com.proxy.scd.u-psud.fr/Search/Reading*"
+        "https://nouveau-europresse-com.proxy.scd.u-psud.fr/Search/Reading*",
+        "https://nouveau-europresse-com.docelec.insa-lyon.fr/Search/Reading*"
       ],
       "js": [
         "content_scripts/europresse_search.js"
@@ -72,7 +82,8 @@
         "https://nouveau.europresse.com/Login*",
         "https://nouveau-europresse-com.proxy.rubens.ens.fr/Login*",
         "https://nouveau-europresse-com.rp1.ensam.eu/Login*",
-        "https://nouveau-europresse-com.proxy.scd.u-psud.fr/Login*"
+        "https://nouveau-europresse-com.proxy.scd.u-psud.fr/Login*",
+        "https://nouveau-europresse-com.docelec.insa-lyon.fr/Login*"
       ],
       "js": [
         "content_scripts/config.js",
@@ -84,7 +95,8 @@
         "https://nouveau.europresse.com/Search/ResultMobile*",
         "https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/ResultMobile*",
         "https://nouveau-europresse-com.rp1.ensam.eu/Search/ResultMobile*",
-        "https://nouveau-europresse-com.proxy.scd.u-psud.fr/Search/ResultMobile*"
+        "https://nouveau-europresse-com.proxy.scd.u-psud.fr/Search/ResultMobile*",
+        "https://nouveau-europresse-com.docelec.insa-lyon.fr/Search/ResultMobile*"
       ],
       "css": [
         "content_scripts/europresse_article.css"
