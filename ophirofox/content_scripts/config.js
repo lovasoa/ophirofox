@@ -29,6 +29,13 @@ const ophirofox_config_list = [
       "https://docelec.insa-lyon.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=INSAT_3",
   },
   {
+    name: "BNF",
+    domains: ["bnf.fr"],
+    LOGIN_URL: "https://bnf.idm.oclc.org/login",
+    AUTH_URL:
+      "https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=bnf",
+  },
+  {
     name: "Pas d'intermédiaire",
     domains: ["europresse.com"],
     LOGIN_URL: null,
