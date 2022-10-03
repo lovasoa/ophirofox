@@ -36,6 +36,13 @@ const ophirofox_config_list = [
       "https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=bnf",
   },
   {
+    name: "Université Grenoble-Alpes",
+    domains: ["grenet.fr"],
+    LOGIN_URL: "https://sid2nomade-2.grenet.fr/login",
+    AUTH_URL:
+      "https://sid2nomade-2.grenet.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=grenobleT_1",
+  },
+  {
     name: "Pas d'intermédiaire",
     domains: ["europresse.com"],
     LOGIN_URL: null,
