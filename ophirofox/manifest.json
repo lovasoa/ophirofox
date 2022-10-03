@@ -73,7 +73,8 @@
         "https://nouveau-europresse-com.proxy.scd.u-psud.fr/Search/Reading*",
         "https://nouveau-europresse-com.docelec.insa-lyon.fr/Search/Reading*",
         "https://nouveau-europresse-com.bnf.idm.oclc.org/Search/Reading*",
-        "https://nouveau-europresse-com.sid2nomade-2.grenet.fr/Search/Reading*"
+        "https://nouveau-europresse-com.sid2nomade-2.grenet.fr/Search/Reading*",
+        "https://nouveau-europresse-com.ezpum.scdi-montpellier.fr/Search/Reading*"
       ],
       "js": [
         "content_scripts/europresse_search.js"
@@ -87,7 +88,8 @@
         "https://nouveau-europresse-com.proxy.scd.u-psud.fr/Login*",
         "https://nouveau-europresse-com.docelec.insa-lyon.fr/Login*",
         "https://nouveau-europresse-com.bnf.idm.oclc.org/Login*",
-        "https://nouveau-europresse-com.sid2nomade-2.grenet.fr/Login*"
+        "https://nouveau-europresse-com.sid2nomade-2.grenet.fr/Login*",
+        "https://nouveau-europresse-com.ezpum.scdi-montpellier.fr/Login*"
       ],
       "js": [
         "content_scripts/config.js",
@@ -102,7 +104,8 @@
         "https://nouveau-europresse-com.proxy.scd.u-psud.fr/Search/ResultMobile*",
         "https://nouveau-europresse-com.docelec.insa-lyon.fr/Search/ResultMobile*",
         "https://nouveau-europresse-com.bnf.idm.oclc.org/Search/ResultMobile*",
-        "https://nouveau-europresse-com.sid2nomade-2.grenet.fr/Search/ResultMobile*"
+        "https://nouveau-europresse-com.sid2nomade-2.grenet.fr/Search/ResultMobile*",
+        "https://nouveau-europresse-com.ezpum.scdi-montpellier.fr/Search/ResultMobile*"
       ],
       "css": [
         "content_scripts/europresse_article.css"
