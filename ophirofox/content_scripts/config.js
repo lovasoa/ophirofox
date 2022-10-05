@@ -50,6 +50,20 @@ const ophirofox_config_list = [
       "https://ezpum.scdi-montpellier.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MontpellierT_1",
   },
   {
+    name: "Université Bordeaux Montaigne",
+    domains: ["u-bordeaux-montaigne.fr"],
+    LOGIN_URL: "https://www.ezproxy.u-bordeaux-montaigne.fr/login",
+    AUTH_URL:
+      "https://www.ezproxy.u-bordeaux-montaigne.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVMONTAIGNET_1",
+  },
+  {
+    name: "Université de Bordeaux",
+    domains: ["u-bordeaux.fr"],
+    LOGIN_URL: "https://docelec.u-bordeaux.fr/login",
+    AUTH_URL:
+      "https://docelec.u-bordeaux.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVBORDEAUXT_1",
+  },
+  {
     name: "Pas d'intermédiaire",
     domains: ["europresse.com"],
     LOGIN_URL: null,
