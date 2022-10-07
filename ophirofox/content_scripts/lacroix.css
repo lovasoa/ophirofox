@@ -1,0 +1,21 @@
+.ophirofox-europresse {
+    -webkit-font-smoothing: antialiased;
+    align-items: center;
+    background-color: #ef7c03;
+    color: #fff;
+    display: inline-flex;
+    font-family: Public Sans,sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    height: 15px;
+    hyphens: none;
+    justify-content: center;
+    letter-spacing: 0;
+    line-height: 1.35;
+    margin: 0 5px;
+    position: relative;
+    text-align: center;
+    top: 50%;
+    vertical-align: middle;
+    width: 120px;
+}
