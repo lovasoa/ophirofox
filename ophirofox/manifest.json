@@ -21,6 +21,18 @@
   "content_scripts": [
     {
       "matches": [
+        "https://www.lesechos.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/lesechos.js"
+      ],
+      "css": [
+        "content_scripts/lesechos.css"
+      ]
+    },
+    {
+      "matches": [
         "https://www.lemonde.fr/*"
       ],
       "js": [
