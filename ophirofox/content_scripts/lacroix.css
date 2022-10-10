@@ -2,7 +2,7 @@
     -webkit-font-smoothing: antialiased;
     align-items: center;
     background-color: #ef7c03;
-    color: #fff;
+    color: #fff !important;
     display: inline-flex;
     font-family: Public Sans,sans-serif;
     font-size: 12px;
