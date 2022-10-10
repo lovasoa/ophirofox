@@ -33,6 +33,7 @@ L'extension fonctionne avec les portails universitaires suivants :
   - [Le Figaro](https://www.lefigaro.fr/)
   - [Libération](https://www.liberation.fr/)
   - [Le Monde Diplomatique](https://www.www.monde-diplomatique.fr)
+  - [La Croix](https://www.la-croix.com)
 
 Vous pouvez proposer d'autres sites en ouvrant une [demande sur github](https://github.com/lovasoa/ophirofox/issues)
 
