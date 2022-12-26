@@ -79,6 +79,18 @@
     },
     {
       "matches": [
+        "https://www.courrierinternational.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/courrier-international.js"
+      ],
+      "css": [
+        "content_scripts/courrier-international.css"
+      ]
+    },
+    {
+      "matches": [
         "https://nouveau.europresse.com/Search/Reading*",
         "https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/Reading*",
         "https://nouveau-europresse-com.rp1.ensam.eu/Search/Reading*",
