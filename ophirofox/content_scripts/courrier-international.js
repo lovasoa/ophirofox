@@ -21,6 +21,4 @@ async function onLoad() {
     statusElem[0].after(await createLink());
 }
 
-console.log("extension loaded")
-
 onLoad().catch(console.error);
