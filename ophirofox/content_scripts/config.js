@@ -33,7 +33,7 @@ const ophirofox_config_list = [
     domains: ["bnf.fr"],
     LOGIN_URL: "https://bnf.idm.oclc.org/login",
     AUTH_URL:
-      "https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=bnf",
+      "https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032999T_1",
   },
   {
     name: "Université Grenoble-Alpes",
