@@ -8,22 +8,22 @@ function extractKeywords() {
 }
 
 async function createLink() {
-	const span = document.createElement("span");
+    const span = document.createElement("span");
     span.textContent = "Lire sur Europresse";
     span.className = "premium-message ophirofox-europresse";
-	
+
     const a = document.createElement("a");
     a.href = await makeEuropresseUrl(new URL(window.location));
-	
-	a.appendChild(span);
-	
+
+    a.appendChild(span);
+
     return a;
 }
 
 async function onLoad() {
-	const reserve = document.querySelector(".premium-message");
+    const reserve = document.querySelector(".premium-message");
     if (!reserve) return;
-	
+
     reserve.parentElement.appendChild(await createLink());
 }
 

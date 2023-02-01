@@ -12,16 +12,16 @@ async function createLink() {
     a.href = await makeEuropresseUrl(new URL(window.location));
     a.textContent = "Lire sur Europresse";
 	
-	const div = document.createElement("div");
+    const div = document.createElement("div");
     div.className = "field-name-field-news-auteur ophirofox-europresse";
-	
-	div.appendChild(a);
+
+    div.appendChild(a);
 	
     return div;
 }
 
 async function onLoad() {
-	const reserve = document.querySelector(".qiota_reserve");
+    const reserve = document.querySelector(".qiota_reserve");
     if (!reserve) return;
 	
     const auteurElem = document.querySelector(".group-ft-auteur-date-media");
