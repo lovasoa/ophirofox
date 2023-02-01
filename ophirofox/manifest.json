@@ -89,6 +89,18 @@
         "content_scripts/courrier-international.css"
       ]
     },
+	{
+      "matches": [
+        "https://www.lamontagne.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/la-montagne.js"
+      ],
+      "css": [
+        "content_scripts/la-montagne.css"
+      ]
+    },
     {
       "matches": [
         "https://nouveau.europresse.com/Search/Reading*",
