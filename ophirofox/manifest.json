@@ -89,7 +89,7 @@
         "content_scripts/courrier-international.css"
       ]
     },
-	{
+    {
       "matches": [
         "https://www.lamontagne.fr/*"
       ],
