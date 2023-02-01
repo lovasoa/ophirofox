@@ -8,23 +8,26 @@ function extractKeywords() {
 }
 
 async function createLink() {
-	const span = document.createElement("span");
-    span.textContent = "Lire sur Europresse";
-    span.className = "premium-message ophirofox-europresse";
-	
     const a = document.createElement("a");
     a.href = await makeEuropresseUrl(new URL(window.location));
+    a.textContent = "Lire sur Europresse";
 	
-	a.appendChild(span);
+	const div = document.createElement("div");
+    div.className = "field-name-field-news-auteur ophirofox-europresse";
 	
-    return a;
+	div.appendChild(a);
+	
+    return div;
 }
 
 async function onLoad() {
-	const reserve = document.querySelector(".premium-message");
+	const reserve = document.querySelector(".qiota_reserve");
     if (!reserve) return;
 	
-    reserve.parentElement.appendChild(await createLink());
+    const auteurElem = document.querySelector(".group-ft-auteur-date-media");
+    if (!auteurElem) return;
+	
+    auteurElem.appendChild(await createLink());
 }
 
 onLoad().catch(console.error);
