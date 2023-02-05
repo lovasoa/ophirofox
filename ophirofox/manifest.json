@@ -91,6 +91,39 @@
     },
     {
       "matches": [
+        "https://www.lamontagne.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/la-montagne.js"
+      ],
+      "css": [
+        "content_scripts/la-montagne.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.humanite.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/humanite.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.lepoint.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/le-point.js"
+      ],
+      "css": [
+        "content_scripts/le-point.css"
+      ]
+    },
+    {
+      "matches": [
         "https://nouveau.europresse.com/Search/Reading*",
         "https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/Reading*",
         "https://nouveau-europresse-com.rp1.ensam.eu/Search/Reading*",
