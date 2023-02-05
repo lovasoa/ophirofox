@@ -19,7 +19,7 @@ jobs:
           node-version: '14'
       - run: npm install --global web-ext
       - id: version
-        run: echo ::set-output name=version::$(jq -r ".version + \".$(($(date +%s)/100000)).$(($(date +%s)%65535))\"" < manifest.json)
+        run: echo version=$(jq -r ".version + \".$(($(date +%s)/100000)).$(($(date +%s)%65535))\"" < manifest.json) >> $GITHUB_OUTPUT
       - run: jq ".version |= \"$VERSION\"" < manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
         env:
           VERSION: ${{ steps.version.outputs.version }}
@@ -31,7 +31,7 @@ jobs:
           WEB_EXT_API_SECRET: ${{ secrets.AMO_JWT_SECRET }}
       - run: ls -lah ./web-ext-artifacts
       - id: filename
-        run: echo ::set-output name=filename::$(echo $PWD/web-ext-artifacts/*xpi)
+        run: echo filename=$(echo $PWD/web-ext-artifacts/*xpi) >> $GITHUB_OUTPUT
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
