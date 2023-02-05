@@ -35,6 +35,9 @@ L'extension fonctionne avec les portails universitaires suivants :
   - [Le Monde Diplomatique](https://www.www.monde-diplomatique.fr)
   - [La Croix](https://www.la-croix.com)
   - [Courrier international](https://www.courrierinternational.com)
+  - [L'Humanité](https://www.humanite.fr)
+  - [La Montagne](https://www.lamontagne.fr)
+  - [Le Point](https://www.lepoint.fr)
 
 Vous pouvez proposer d'autres sites en ouvrant une [demande sur github](https://github.com/lovasoa/ophirofox/issues)
 
