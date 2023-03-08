@@ -46,7 +46,8 @@
     },
     {
       "matches": [
-        "https://www.lefigaro.fr/*"
+        "https://www.lefigaro.fr/*",
+        "https://leparticulier.lefigaro.fr/*"
       ],
       "js": [
         "content_scripts/config.js",
