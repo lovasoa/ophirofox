@@ -21,6 +21,18 @@
   "content_scripts": [
     {
       "matches": [
+        "https://www.leparisien.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/leparisien.js"
+      ],
+      "css": [
+        "content_scripts/leparisien.css"
+      ]
+    },
+    {
+      "matches": [
         "https://www.lemonde.fr/*"
       ],
       "js": [
