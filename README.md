@@ -36,6 +36,7 @@ L'extension fonctionne avec les portails universitaires suivants :
   - [La Croix](https://www.la-croix.com)
   - [Courrier international](https://www.courrierinternational.com)
   - [L'Humanité](https://www.humanite.fr)
+  - [Le Parisien](https://www.leparisien.fr)
   - [La Montagne](https://www.lamontagne.fr)
   - [Le Point](https://www.lepoint.fr)
 
