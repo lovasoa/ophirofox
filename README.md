@@ -33,7 +33,7 @@ L'extension fonctionne avec les portails universitaires suivants :
   - [Le Monde](https://www.lemonde.fr/)
   - [Le Figaro](https://www.lefigaro.fr/)
   - [Libération](https://www.liberation.fr/)
-  - [Le Monde Diplomatique](https://www.www.monde-diplomatique.fr)
+  - [Le Monde Diplomatique](https://www.monde-diplomatique.fr)
   - [La Croix](https://www.la-croix.com)
   - [Courrier international](https://www.courrierinternational.com)
   - [L'Humanité](https://www.humanite.fr)
