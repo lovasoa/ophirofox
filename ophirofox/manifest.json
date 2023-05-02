@@ -134,7 +134,8 @@
         "https://nouveau-europresse-com.sid2nomade-2.grenet.fr/Search/Reading*",
         "https://nouveau-europresse-com.ezpum.scdi-montpellier.fr/Search/Reading*",
         "https://nouveau-europresse-com.ezproxy.u-bordeaux-montaigne.fr/Search/Reading*",
-        "https://nouveau-europresse-com.docelec.u-bordeaux.fr/Search/Reading*"
+        "https://nouveau-europresse-com.docelec.u-bordeaux.fr/Search/Reading*",
+        "https://nouveau-europresse-com.portail.psl.eu/Search/Reading*"
       ],
       "js": [
         "content_scripts/europresse_search.js"
@@ -151,7 +152,8 @@
         "https://nouveau-europresse-com.sid2nomade-2.grenet.fr/Login*",
         "https://nouveau-europresse-com.ezpum.scdi-montpellier.fr/Login*",
         "https://nouveau-europresse-com.ezproxy.u-bordeaux-montaigne.fr/Login*",
-        "https://nouveau-europresse-com.docelec.u-bordeaux.fr/Login*"
+        "https://nouveau-europresse-com.docelec.u-bordeaux.fr/Login*",
+        "https://nouveau-europresse-com.portail.psl.eu/Login*"
       ],
       "js": [
         "content_scripts/config.js",
@@ -169,7 +171,8 @@
         "https://nouveau-europresse-com.sid2nomade-2.grenet.fr/Search/ResultMobile*",
         "https://nouveau-europresse-com.ezpum.scdi-montpellier.fr/Search/ResultMobile*",
         "https://nouveau-europresse-com.ezproxy.u-bordeaux-montaigne.fr/Search/ResultMobile*",
-        "https://nouveau-europresse-com.docelec.u-bordeaux.fr/Search/ResultMobile*"
+        "https://nouveau-europresse-com.docelec.u-bordeaux.fr/Search/ResultMobile*",
+        "https://nouveau-europresse-com.portail.psl.eu/Search/ResultMobile*"
       ],
       "css": [
         "content_scripts/europresse_article.css"

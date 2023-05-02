@@ -25,6 +25,7 @@ L'extension fonctionne avec les portails universitaires suivants :
  - [**Europresse Université de Bordeaux**](https://docelec.u-bordeaux.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVBORDEAUXT_1)
  - [**Europresse Université de Montpellier**](https://ezpum.scdi-montpellier.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MontpellierT_1)
  - [**Europresse Université de Grenoble**](https://sid2nomade-2.grenet.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=grenobleT_1)
+ - [**Europresse Université PSL**](https://portail.psl.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1)
 
  Ou directement via le site Europresse.
 
