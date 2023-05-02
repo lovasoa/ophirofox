@@ -64,7 +64,7 @@ const ophirofox_config_list = [
       "https://docelec.u-bordeaux.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVBORDEAUXT_1",
   },
   {
-    name: "PSL",
+    name: "Université PSL",
     domains: ["psl.eu"],
     LOGIN_URL: "https://portail.psl.eu/login",
     AUTH_URL: "https://portail.psl.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1"
