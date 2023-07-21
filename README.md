@@ -19,12 +19,13 @@ L'extension fonctionne avec les portails universitaires suivants :
  - [**Europresse ENS Ulm PSL**](http://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1),
  - [**Europresse ENSAM (Arts et Métiers)**](http://rp1.ensam.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=AML),
  - [**Europresse Université Paris-Saclay**](https://proxy.scd.u-psud.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_9),
- - [**Europresse INSA Lyon**](https://docelec.insa-lyon.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=INSAT_3)
- - [**Europresse Bibliothèque nationale de France**](https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=bnf)
- - [**Europresse Université de Bordeaux Montaigne**](https://www.ezproxy.u-bordeaux-montaigne.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVMONTAIGNET_1)
- - [**Europresse Université de Bordeaux**](https://docelec.u-bordeaux.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVBORDEAUXT_1)
- - [**Europresse Université de Montpellier**](https://ezpum.scdi-montpellier.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MontpellierT_1)
- - [**Europresse Université de Grenoble**](https://sid2nomade-2.grenet.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=grenobleT_1)
+ - [**Europresse INSA Lyon**](https://docelec.insa-lyon.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=INSAT_3),
+ - [**Europresse Bibliothèque nationale de France**](https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=bnf),
+ - [**Europresse Université de Bordeaux Montaigne**](https://www.ezproxy.u-bordeaux-montaigne.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVMONTAIGNET_1),
+ - [**Europresse Université de Bordeaux**](https://docelec.u-bordeaux.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVBORDEAUXT_1),
+ - [**Europresse Université de Montpellier**](https://ezpum.scdi-montpellier.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MontpellierT_1),
+ - [**Europresse Université de Grenoble**](https://sid2nomade-2.grenet.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=grenobleT_1),
+ - [**Europresse Université Claude Bernard Lyon 1**](http://docelec.univ-lyon1.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U033081T_1)
 
  Ou directement via le site Europresse.
 
