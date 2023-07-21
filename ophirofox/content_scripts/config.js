@@ -8,6 +8,13 @@ const ophirofox_config_list = [
       "https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1",
   },
   {
+    name: "Université Claude Bernard Lyon 1",
+    domains: ["univ-lyon1.fr"],
+    LOGIN_URL: "https://cas.univ-lyon1.fr/cas/login",
+    AUTH_URL:
+      "http://docelec.univ-lyon1.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U033081T_1",
+  },
+  {
     name: "ENSAM",
     domains: ["ensam.eu"],
     LOGIN_URL: "http://rp1.ensam.eu/login",
