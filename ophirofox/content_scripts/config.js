@@ -26,7 +26,7 @@ const ophirofox_config_list = [
     domains: ["univ-paris1.fr"],
     LOGIN_URL: "http://ezpaarse.univ-paris1.fr/login",
     AUTH_URL:
-      "http://ezpaarse.univ-paris1.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=SORBONNET_1",
+      "https://ezpaarse.univ-paris1.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=SORBONNET_1",
   },
   {
     name: "INSA Lyon",
