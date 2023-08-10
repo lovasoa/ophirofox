@@ -71,6 +71,13 @@ const ophirofox_config_list = [
       "https://acces.bibliotheque-diderot.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ENSLYONT_1",
   },
   {
+    name: "Université de Haute-Alsace",
+    domains: ["uha.fr"],
+    LOGIN_URL: "https://scd-proxy.uha.fr/login",
+    AUTH_URL:
+      "https://scd-proxy.uha.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=ALSACET_1",
+  },
+  {
     name: "Pas d'intermédiaire",
     domains: ["europresse.com"],
     LOGIN_URL: null,
