@@ -20,6 +20,7 @@ L'extension fonctionne avec les portails universitaires suivants :
  - [**Europresse ENS Lyon**](https://acces.bibliotheque-diderot.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ENSLYONT_1),
  - [**Europresse ENSAM (Arts et Métiers)**](http://rp1.ensam.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=AML),
  - [**Europresse Université Paris-Saclay**](https://proxy.scd.u-psud.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_9),
+ - [**Europresse Université Paris 1 Panthéon-Sorbonne**](http://ezpaarse.univ-paris1.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=SORBONNET_1),
  - [**Europresse INSA Lyon**](https://docelec.insa-lyon.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=INSAT_3)
  - [**Europresse Bibliothèque nationale de France**](https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=bnf)
  - [**Europresse Université de Bordeaux Montaigne**](https://www.ezproxy.u-bordeaux-montaigne.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVMONTAIGNET_1)

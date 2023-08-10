@@ -22,6 +22,13 @@ const ophirofox_config_list = [
       "https://proxy.scd.u-psud.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_9",
   },
   {
+    name: "Université Paris 1 Panthéon-Sorbonne",
+    domains: ["univ-paris1.fr"],
+    LOGIN_URL: "https://ezpaarse.univ-paris1.fr/login",
+    AUTH_URL:
+      "https://ezpaarse.univ-paris1.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=SORBONNET_1",
+  },
+  {
     name: "INSA Lyon",
     domains: ["insa-lyon.fr"],
     LOGIN_URL: "https://docelec.insa-lyon.fr/login",
