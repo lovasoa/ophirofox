@@ -64,6 +64,13 @@ const ophirofox_config_list = [
       "https://docelec.u-bordeaux.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVBORDEAUXT_1",
   },
   {
+    name: "ENS de Lyon",
+    domains: ["ens-lyon.fr"],
+    LOGIN_URL: "https://acces.bibliotheque-diderot.fr/login",
+    AUTH_URL:
+      "https://acces.bibliotheque-diderot.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ENSLYONT_1",
+  },
+  {
     name: "Pas d'intermédiaire",
     domains: ["europresse.com"],
     LOGIN_URL: null,
