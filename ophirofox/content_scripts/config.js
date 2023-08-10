@@ -24,7 +24,7 @@ const ophirofox_config_list = [
   {
     name: "Université Paris 1 Panthéon-Sorbonne",
     domains: ["univ-paris1.fr"],
-    LOGIN_URL: "http://ezpaarse.univ-paris1.fr/login",
+    LOGIN_URL: "https://ezpaarse.univ-paris1.fr/login",
     AUTH_URL:
       "https://ezpaarse.univ-paris1.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=SORBONNET_1",
   },
