@@ -17,9 +17,9 @@ const ophirofox_config_list = [
   {
     name: "Université Paris-Saclay",
     domains: ["universite-paris-saclay.fr"],
-    LOGIN_URL: "https://proxy.scd.u-psud.fr/login",
+    LOGIN_URL: "https://ezproxy.universite-paris-saclay.fr",
     AUTH_URL:
-      "https://proxy.scd.u-psud.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_9",
+      "https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_9",
   },
   {
     name: "Université Paris 1 Panthéon-Sorbonne",
