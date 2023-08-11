@@ -85,6 +85,13 @@ const ophirofox_config_list = [
       "https://scd-proxy.uha.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=ALSACET_1",
   },
   {
+    name: "Université de Franche-Comté",
+    domains: ["univ-fcomte.fr"],
+    LOGIN_URL: "http://scd1.univ-fcomte.fr/login",
+    AUTH_URL:
+      "http://scd1.univ-fcomte.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=FCOMTET_1",
+  },
+  {
     name: "Pas d'intermédiaire",
     domains: ["europresse.com"],
     LOGIN_URL: null,
