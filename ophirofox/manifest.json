@@ -138,7 +138,8 @@
         "https://nouveau-europresse-com.docelec.u-bordeaux.fr/Search/Reading*",
         "https://nouveau-europresse-com.acces.bibliotheque-diderot.fr/Search/Reading*",
         "https://nouveau-europresse-com.scd-proxy.uha.fr/Search/Reading*",
-        "https://nouveau-europresse-com.ezproxy.u-paris.fr/Search/Reading*"
+        "https://nouveau-europresse-com.ezproxy.u-paris.fr/Search/Reading*",
+        "https://nouveau-europresse-com.scd1.univ-fcomte.fr/Search/Reading*"
       ],
       "js": [
         "content_scripts/europresse_search.js"
@@ -159,7 +160,8 @@
         "https://nouveau-europresse-com.docelec.u-bordeaux.fr/Login*",
         "https://nouveau-europresse-com.acces.bibliotheque-diderot.fr/Login*",
         "https://nouveau-europresse-com.scd-proxy.uha.fr/Login*",
-        "https://nouveau-europresse-com.ezproxy.u-paris.fr/Login*"        
+        "https://nouveau-europresse-com.ezproxy.u-paris.fr/Login*",    
+        "https://nouveau-europresse-com.scd1.univ-fcomte.fr/Login*"
       ],
       "js": [
         "content_scripts/config.js",
@@ -181,7 +183,8 @@
         "https://nouveau-europresse-com.docelec.u-bordeaux.fr/Search/ResultMobile*",
         "https://nouveau-europresse-com.acces.bibliotheque-diderot.fr/Search/ResultMobile*",
         "https://nouveau-europresse-com.scd-proxy.uha.fr/Search/ResultMobile*",
-        "https://nouveau-europresse-com.ezproxy.u-paris.fr/Search/ResultMobile*"
+        "https://nouveau-europresse-com.ezproxy.u-paris.fr/Search/ResultMobile*",
+        "https://nouveau-europresse-com.scd1.univ-fcomte.fr/Search/ResultMobile*"
       ],
       "css": [
         "content_scripts/europresse_article.css"

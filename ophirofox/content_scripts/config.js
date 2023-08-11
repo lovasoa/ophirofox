@@ -92,6 +92,13 @@ const ophirofox_config_list = [
       "https://ezproxy.u-paris.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVPARIS",
   },
   {
+    name: "Université de Franche-Comté",
+    domains: ["univ-fcomte.fr"],
+    LOGIN_URL: "http://scd1.univ-fcomte.fr/login",
+    AUTH_URL:
+      "http://scd1.univ-fcomte.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=FCOMTET_1",
+  },
+  {
     name: "Pas d'intermédiaire",
     domains: ["europresse.com"],
     LOGIN_URL: null,
