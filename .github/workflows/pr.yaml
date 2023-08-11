@@ -7,8 +7,6 @@ defaults:
 
 jobs:
   check:
-    permissions:
-      pull-requests: write
     name: web-ext lint and build
     runs-on: ubuntu-22.04
     steps:
@@ -25,12 +23,4 @@ jobs:
           name: ophirofox.zip
           path: ophirofox/web-ext-artifacts/*.zip
           if-no-files-found: error
-      - name: Create or update comment
-        uses: peter-evans/create-or-update-comment@v3
-        with:
-          comment-id: ${{ steps.fc.outputs.comment-id }}
-          issue-number: ${{ github.event.pull_request.number }}
-          body: |
-            Voilà l'extension à télécharger pour tester: https://github.com/lovasoa/ophirofox/pull/${{ github.event.pull_request.number }}/checks
-            Cliquez sur "Construction de l'extension" puis sur `ophirofox.zip` 
-            
+
