@@ -1,0 +1,206 @@
+{
+  "manifest_version": 2,
+  "name": "Ophirofox",
+  "version": "1.9",
+  "description": "Lire les articles du monde, du figaro, et d'autres journaux grâce à sa connexion europresse",
+  "icons": {
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "options_ui": {
+    "page": "settings/options_ui.html"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.lemonde.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/lemonde.js"
+      ],
+      "css": [
+        "content_scripts/lemonde.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.liberation.fr/*",
+        "https://next.liberation.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/liberation.js"
+      ],
+      "css": [
+        "content_scripts/liberation.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.lefigaro.fr/*",
+        "https://leparticulier.lefigaro.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/lefigaro.js"
+      ],
+      "css": [
+        "content_scripts/lefigaro.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.monde-diplomatique.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/monde-diplo.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.la-croix.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/lacroix.js"
+      ],
+      "css": [
+        "content_scripts/lacroix.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.courrierinternational.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/courrier-international.js"
+      ],
+      "css": [
+        "content_scripts/courrier-international.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.lamontagne.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/la-montagne.js"
+      ],
+      "css": [
+        "content_scripts/la-montagne.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.humanite.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/humanite.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.lepoint.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/le-point.js"
+      ],
+      "css": [
+        "content_scripts/le-point.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://nouveau.europresse.com/Search/Reading*",
+        "https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/Reading*",
+        "https://nouveau-europresse-com.rp1.ensam.eu/Search/Reading*",
+        "https://nouveau-europresse-com.ezproxy.universite-paris-saclay.fr/Search/Reading*",
+        "https://nouveau-europresse-com.ezpaarse.univ-paris1.fr/Search/Reading*",
+        "https://nouveau-europresse-com.docelec.insa-lyon.fr/Search/Reading*",
+        "https://nouveau-europresse-com.bnf.idm.oclc.org/Search/Reading*",
+        "https://nouveau-europresse-com.sid2nomade-2.grenet.fr/Search/Reading*",
+        "https://nouveau-europresse-com.ezpum.scdi-montpellier.fr/Search/Reading*",
+        "https://nouveau-europresse-com.ezproxy.u-bordeaux-montaigne.fr/Search/Reading*",
+        "https://nouveau-europresse-com.docelec.u-bordeaux.fr/Search/Reading*",
+        "https://nouveau-europresse-com.acces.bibliotheque-diderot.fr/Search/Reading*",
+        "https://nouveau-europresse-com.scd-proxy.uha.fr/Search/Reading*",
+        "https://nouveau-europresse-com.ezproxy.u-paris.fr/Search/Reading*",
+        "https://nouveau-europresse-com.scd1.univ-fcomte.fr/Search/Reading*",
+        "https://nouveau-europresse-com.rproxy.univ-pau.fr/Search/Reading"
+      ],
+      "js": [
+        "content_scripts/europresse_search.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://nouveau.europresse.com/Login*",
+        "https://nouveau-europresse-com.proxy.rubens.ens.fr/Login*",
+        "https://nouveau-europresse-com.rp1.ensam.eu/Login*",
+        "https://nouveau-europresse-com.ezproxy.universite-paris-saclay.fr/Login*",
+        "https://nouveau-europresse-com.ezpaarse.univ-paris1.fr/Login*",
+        "https://nouveau-europresse-com.docelec.insa-lyon.fr/Login*",
+        "https://nouveau-europresse-com.bnf.idm.oclc.org/Login*",
+        "https://nouveau-europresse-com.sid2nomade-2.grenet.fr/Login*",
+        "https://nouveau-europresse-com.ezpum.scdi-montpellier.fr/Login*",
+        "https://nouveau-europresse-com.ezproxy.u-bordeaux-montaigne.fr/Login*",
+        "https://nouveau-europresse-com.docelec.u-bordeaux.fr/Login*",
+        "https://nouveau-europresse-com.acces.bibliotheque-diderot.fr/Login*",
+        "https://nouveau-europresse-com.scd-proxy.uha.fr/Login*",
+        "https://nouveau-europresse-com.ezproxy.u-paris.fr/Login*",    
+        "https://nouveau-europresse-com.scd1.univ-fcomte.fr/Login*",
+        "https://nouveau-europresse-com.rproxy.univ-pau.fr/Login*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/europresse_login.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://nouveau.europresse.com/Search/ResultMobile*",
+        "https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/ResultMobile*",
+        "https://nouveau-europresse-com.rp1.ensam.eu/Search/ResultMobile*",
+        "https://nouveau-europresse-com.ezproxy.universite-paris-saclay.fr/Search/ResultMobile*",
+        "https://nouveau-europresse-com.ezpaarse.univ-paris1.fr/Search/ResultMobile*",
+        "https://nouveau-europresse-com.docelec.insa-lyon.fr/Search/ResultMobile*",
+        "https://nouveau-europresse-com.bnf.idm.oclc.org/Search/ResultMobile*",
+        "https://nouveau-europresse-com.sid2nomade-2.grenet.fr/Search/ResultMobile*",
+        "https://nouveau-europresse-com.ezpum.scdi-montpellier.fr/Search/ResultMobile*",
+        "https://nouveau-europresse-com.ezproxy.u-bordeaux-montaigne.fr/Search/ResultMobile*",
+        "https://nouveau-europresse-com.docelec.u-bordeaux.fr/Search/ResultMobile*",
+        "https://nouveau-europresse-com.acces.bibliotheque-diderot.fr/Search/ResultMobile*",
+        "https://nouveau-europresse-com.scd-proxy.uha.fr/Search/ResultMobile*",
+        "https://nouveau-europresse-com.ezproxy.u-paris.fr/Search/ResultMobile*",
+        "https://nouveau-europresse-com.scd1.univ-fcomte.fr/Search/ResultMobile*",
+        "https://nouveau-europresse-com.rproxy.univ-pau.fr/Search/ResultMobile*"
+      ],
+      "css": [
+        "content_scripts/europresse_article.css"
+      ],
+      "js": [
+        "content_scripts/europresse_article.js"
+      ]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{cfd3c5c2-31ec-4c1b-a28e-df38357d02d9}",
+      "update_url": "https://github.com/lovasoa/ophirofox/releases/latest/download/update_manifest.json"
+    }
+  }
+}
