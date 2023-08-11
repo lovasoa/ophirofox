@@ -99,6 +99,13 @@ const ophirofox_config_list = [
       "http://scd1.univ-fcomte.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=FCOMTET_1",
   },
   {
+    name: "Université de Pau et des Pays de l'Adour",
+    domains: ["univ-pau.fr"],
+    LOGIN_URL: "https://rproxy.univ-pau.fr/login",
+    AUTH_URL:
+      "https://rproxy.univ-pau.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=uppaT_2",
+  },
+  {
     name: "Pas d'intermédiaire",
     domains: ["europresse.com"],
     LOGIN_URL: null,
