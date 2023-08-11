@@ -30,7 +30,7 @@ jobs:
           WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
           WEB_EXT_API_SECRET: ${{ secrets.AMO_JWT_SECRET }}
       - run: ls -lah ./web-ext-artifacts
-      - run: cp $PWD/web-ext-artifacts/*xpi ophirofox.xpi
+      - run: cp $PWD/web-ext-artifacts/*xpi ../ophirofox.xpi
       - run: ../update-manifest.py | tee /tmp/update_manifest.json
       - name: Create Release
         uses: softprops/action-gh-release@v1
