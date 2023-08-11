@@ -13,10 +13,10 @@ jobs:
     name: Build and publish the extension
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '20'
       - run: npm install --global web-ext
       - id: version
         run: echo version=$(jq -r ".version + \".$(($(date +%s)/100000)).$(($(date +%s)%65535))\"" < manifest.json) >> $GITHUB_OUTPUT
@@ -30,34 +30,17 @@ jobs:
           WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
           WEB_EXT_API_SECRET: ${{ secrets.AMO_JWT_SECRET }}
       - run: ls -lah ./web-ext-artifacts
-      - id: filename
-        run: echo filename=$(echo $PWD/web-ext-artifacts/*xpi) >> $GITHUB_OUTPUT
+      - run: cp $PWD/web-ext-artifacts/*xpi ../ophirofox.xpi
+      - run: ../update-manifest.py | tee /tmp/update_manifest.json
       - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v1
         with:
           tag_name: v${{ steps.version.outputs.version }}
-          release_name: Release ${{ steps.version.outputs.version }}
+          name: Release ${{ steps.version.outputs.version }}
           draft: false
           prerelease: false
-      - name: Upload the xpi file as a release asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ steps.filename.outputs.filename }}
-          asset_name: ophirofox.xpi
-          asset_content_type: application/zip
-      - run: ../update-manifest.py | tee /tmp/update_manifest.json
-      - name: Upload the extension's update manifest
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: /tmp/update_manifest.json
-          asset_name: update_manifest.json
-          asset_content_type: application/json
+          files: |
+            ophirofox.xpi
+            /tmp/update_manifest.json
+
+
