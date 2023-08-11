@@ -103,7 +103,7 @@ const ophirofox_config_list = [
     domains: ["univ-pau.fr"],
     LOGIN_URL: "https://sso.univ-pau.fr/cas/login",
     AUTH_URL:
-      "https://nouveau-europresse-com.rproxy.univ-pau.fr/access/ip/default.aspx?un=uppaT_2",
+      "https://rproxy.univ-pau.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=uppaT_2",
   },
   {
     name: "Pas d'intermédiaire",
