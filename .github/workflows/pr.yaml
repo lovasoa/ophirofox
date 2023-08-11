@@ -21,7 +21,7 @@ jobs:
         id: upload
         with:
           name: ophirofox.zip
-          path: web-ext-artifacts/*.zip
+          path: ophirofox/web-ext-artifacts/*.zip
           if-no-files-found: error
       - name: Create or update comment
         uses: peter-evans/create-or-update-comment@v3
