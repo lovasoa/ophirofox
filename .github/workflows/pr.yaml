@@ -17,7 +17,7 @@ jobs:
       - run: npm install --global web-ext
       - run: web-ext lint --self-hosted --warnings-as-errors
       - run: web-ext build
-      - run: cp web-ext-artifacts/*xpi ophirofox.xpi
+      - run: cp web-ext-artifacts/*zip ophirofox.xpi
       - uses: actions/upload-artifact@v3
         id: upload
         with:
