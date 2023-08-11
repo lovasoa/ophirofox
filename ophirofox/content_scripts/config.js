@@ -85,6 +85,13 @@ const ophirofox_config_list = [
       "https://scd-proxy.uha.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=ALSACET_1",
   },
   {
+    name: "Université Paris Cité",
+    domains:["u-paris.fr"],
+    LOGIN_URL: "https://ezproxy.u-paris.fr/login",
+    AUTH_URL: 
+      "https://ezproxy.u-paris.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVPARIS",
+  },
+  {
     name: "Pas d'intermédiaire",
     domains: ["europresse.com"],
     LOGIN_URL: null,
