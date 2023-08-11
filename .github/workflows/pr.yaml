@@ -7,6 +7,8 @@ defaults:
 
 jobs:
   check:
+    permissions:
+      pull-requests: write
     name: web-ext lint and build
     runs-on: ubuntu-22.04
     steps:
