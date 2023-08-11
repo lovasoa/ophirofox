@@ -1,4 +1,4 @@
-name: Sign webextension
+name: "Construction de l'extension"
 on: [pull_request]
 
 defaults:
@@ -10,10 +10,25 @@ jobs:
     name: web-ext lint and build
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '20'
       - run: npm install --global web-ext
       - run: web-ext lint --self-hosted --warnings-as-errors
       - run: web-ext build
+      - run: cp web-ext-artifacts/*xpi ophirofox.xpi
+      - uses: actions/upload-artifact@v3
+        id: upload
+        with:
+          name: ophirofox.xpi
+          path: ophirofox.xpi
+      - name: Create or update comment
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            Voilà l'extension à télécharger pour tester: https://github.com/lovasoa/ophirofox/pull/${{ github.event.pull_request.number }}/checks
+            Cliquez sur "Construction de l'extension" puis sur `ophirofox.xpi` 
+            
