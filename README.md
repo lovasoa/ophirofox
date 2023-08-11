@@ -28,6 +28,7 @@ L'extension fonctionne avec les portails universitaires suivants :
  - [**Europresse Université de Montpellier**](https://ezpum.scdi-montpellier.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MontpellierT_1)
  - [**Europresse Université de Grenoble**](https://sid2nomade-2.grenet.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=grenobleT_1)
  - [**Europresse Université de Haute-Alsace**](https://scd-proxy.uha.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=ALSACET_1)
+ - [**Europresse Université Paris Cité**](https://ezproxy.u-paris.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVPARIS)
 
  Ou directement via le site Europresse.
 
