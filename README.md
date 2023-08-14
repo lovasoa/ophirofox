@@ -31,6 +31,7 @@ L'extension fonctionne avec les portails universitaires suivants :
  - [**Europresse Université Paris Cité**](https://ezproxy.u-paris.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVPARIS)
  - [**Europresse Université de Franche-Comté**](http://scd1.univ-fcomte.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=FCOMTET_1)
  - [**Europresse Université de Pau et des pays de l'Adour**](https://nouveau-europresse-com.rproxy.univ-pau.fr/access/ip/default.aspx?un=uppaT_2)
+ - [**Europresse Université d'Artois**] (http://ezproxy.univ-artois.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=littoralT_1)
    
  Ou directement via le site Europresse.
 
