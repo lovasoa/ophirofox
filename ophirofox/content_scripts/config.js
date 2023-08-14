@@ -106,6 +106,13 @@ const ophirofox_config_list = [
       "https://rproxy.univ-pau.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=uppaT_2",
   },
   {
+    name: "Université d'Artois",
+    domains: ["univ-arrtois.fr"],
+    LOGIN_URL: "http://ezproxy.univ-artois.fr/login",
+    AUTH_URL:
+      "http://ezproxy.univ-artois.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=littoralT_1",
+  },
+  {
     name: "Pas d'intermédiaire",
     domains: ["europresse.com"],
     LOGIN_URL: null,
