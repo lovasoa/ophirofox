@@ -32,6 +32,8 @@ jobs:
       - run: ls -lah ./web-ext-artifacts
       - run: cp $PWD/web-ext-artifacts/*xpi ../ophirofox.xpi
       - run: ../update-manifest.py | tee /tmp/update_manifest.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
