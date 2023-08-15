@@ -4,17 +4,57 @@
     <meta charset="utf-8" />
     <title>Ophirofox configuration</title>
     <style>
+      body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        font-size: 15px;
+      }
       fieldset {
         margin: 10px;
+        padding: 10px;
+        border: 1px solid #e6e6e6;
       }
       label {
         display: block;
+        padding: 0.8rem 0.3rem;
+        border: 1px solid #e6e6e6;
+        border-radius: 5px;
+        margin-bottom: .5rem;
+        transition: .1s;
+      }
+      label:hover {
+        background-color: #eee;
+      }
+      /* Label of selected radio button */
+      label:active {
+        background-color: #ddd;
+      }
+
+      /* Dark theme */
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #23222b;
+          color: #eee;
+        }
+        fieldset {
+          border-color: #6e6e6e;
+        }
+        label {
+          border-color: #6e6e6e;
+        }
+        label:hover {
+          background-color: #444;
+        }
+        label:active {
+          background-color: #333;
+        }
       }
     </style>
   </head>
 
   <body>
-    <h1>Configuration d'Ophirofox</h1>
     <form id="configuration">
       <fieldset>
         <legend>Partenaire Europresse</legend>
@@ -33,6 +73,6 @@
       </label>
     </template>
     <script src="../content_scripts/config.js"></script>
-    <script type="module" src="options_ui.js"></script>
+    <script src="options_ui.js"></script>
   </body>
 </html>

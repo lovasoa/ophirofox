@@ -1,9 +1,3 @@
-const {
-  ophirofox_config_list,
-  getSettings,
-  setSettings,
-} = window.ophirofox_config_exports;
-
 const choicelist = document.getElementById("partner_choices");
 const template = document.getElementById("partner_template");
 const settings_promise = getSettings();
