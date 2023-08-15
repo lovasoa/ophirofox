@@ -32,7 +32,7 @@ function getOphirofoxConfigByName(search_name) {
 }
 
 const DEFAULT_SETTINGS = {
-  partner_name: "ULM",
+  partner_name: "BNF",
 };
 
 const OPHIROFOX_SETTINGS_KEY = "ophirofox_settings";
