@@ -4,7 +4,7 @@ async function makeEuropresseUrl(lemondeUrl) {
 }
 
 function extractKeywords() {
-    return document.querySelector("title").textContent;
+    return document.querySelector("h1").textContent;
 }
 
 async function createLink() {
