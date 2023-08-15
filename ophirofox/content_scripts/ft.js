@@ -1,32 +1,38 @@
-async function makeEuropresseUrl() {
+async function makeEuropresseUrl(lemondeUrl) {
     const keywords = extractKeywords();
     return await makeOphirofoxReadingLink(keywords);
 }
 
 function extractKeywords() {
-    return document.querySelector("title").textContent;
+    return extractKeywordsFromTitle();
+}
+
+function extractArticleNumber(){
+    let url = window.location.pathname;
+    let parameters = url.split('/');
+    return parameters[parameters.length - 1];
+}
+
+function extractKeywordsFromTitle() {
+    const titleElem = document.getElementsByClassName("crayon article-titre-" + extractArticleNumber() + " h1")[0].innerHTML;
+    return titleElem;
 }
 
 async function createLink() {
     const a = document.createElement("a");
-    a.href = await makeEuropresseUrl(new URL(window.location));
     a.textContent = "Lire sur Europresse";
-    a.className = "ft-premium-mark-article__text ophirofox-europresse";
+    a.className = "btn btn--premium ophirofox-europresse";
+    a.href = await makeEuropresseUrl(new URL(window.location));
     return a;
 }
 
-
-function findPremiumBanner() {
-    const title = document.querySelector("title");
-    if (!title) return null;
-    const elems = title.parentElement.querySelectorAll("span");
-    return [...elems].find(d => d.textContent.includes("unlock this article"))
-}
-
 async function onLoad() {
-    const premiumBanner = findPremiumBanner();
-    if (!premiumBanner) return;
-    premiumBanner.after(await createLink());
+    const payArticle = document.querySelector('.promo_dispo_article');
+    if (!payArticle) return;
+
+    const actionElem = document.querySelector(".actions-article");
+    if (!actionElem) return;
+    actionElem.appendChild(await createLink());
 }
 
 onLoad().catch(console.error);
