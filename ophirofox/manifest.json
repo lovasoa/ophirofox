@@ -140,6 +140,30 @@
     },
     {
       "matches": [
+        "https://www.letemps.ch/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/letemps.js"
+      ],
+      "css": [
+        "content_scripts/letemps.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.lalibre.be/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/lalibre.js"
+      ],
+      "css": [
+        "content_scripts/lalibre.css"
+      ]
+    },
+    {
+      "matches": [
         "https://nouveau.europresse.com/*",
         "https://nouveau-europresse-com.proxy.rubens.ens.fr/*",
         "https://nouveau-europresse-com.rp1.ensam.eu/*",
