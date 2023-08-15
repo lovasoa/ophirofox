@@ -68,7 +68,7 @@ ophirofox est [présent sur le Chrome Webstore](https://chrome.google.com/websto
 
 <img width="624" alt="image" src="https://user-images.githubusercontent.com/552629/94343918-dbff7100-001b-11eb-86e4-df66e15bc6f6.png">
 
-# Comment ajouter un nouveau partenaires Europresse
+# Comment ajouter un nouveau partenaire Europresse
 
 Si votre établissement a un portail Europresse, vous pouvez facilement ajouter son support à cette extension.
 
