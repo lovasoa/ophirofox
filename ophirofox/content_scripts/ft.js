@@ -18,10 +18,7 @@ async function createLink() {
 async function onLoad() {
     const payArticle = document.querySelector('.opt unlock_banner');
     if (!payArticle) return;
-
-    const actionElem = document.querySelector(".actions-article");
-    if (!actionElem) return;
-    actionElem.appendChild(await createLink());
+    payArticle.after(await createLink());
 }
 
 onLoad().catch(console.error);
