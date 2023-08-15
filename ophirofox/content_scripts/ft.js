@@ -20,7 +20,7 @@ function findPremiumBanner() {
     const title = document.querySelector("h1");
     if (!title) return null;
     const elems = title.parentElement.querySelectorAll("span");
-    return [...elems].find(d => d.textContent.includes("unlock this article"))
+    return [...elems].find(d => d.textContent.includes("Keep reading"))
 }
 
 async function onLoad() {
