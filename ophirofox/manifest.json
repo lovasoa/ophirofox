@@ -1,12 +1,13 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "Ophirofox",
-  "version": "2.0",
+  "version": "1.9",
   "description": "Lire les articles du monde, du figaro, et d'autres journaux grâce à sa connexion europresse",
   "icons": {
     "48": "icons/48.png",
     "128": "icons/128.png"
   },
+  "homepage_url": "https://ophirofox.ophir.dev/",
   "options_ui": {
     "page": "settings/options_ui.html"
   },
@@ -16,7 +17,9 @@
   "background": {
     "scripts": [
       "background.js"
-    ]
+    ],
+    "persistent": false,
+    "type": "module"
   },
   "content_scripts": [
     {
@@ -183,7 +186,7 @@
         "https://nouveau-europresse-com.docelec.u-bordeaux.fr/Login*",
         "https://nouveau-europresse-com.acces.bibliotheque-diderot.fr/Login*",
         "https://nouveau-europresse-com.scd-proxy.uha.fr/Login*",
-        "https://nouveau-europresse-com.ezproxy.u-paris.fr/Login*",    
+        "https://nouveau-europresse-com.ezproxy.u-paris.fr/Login*",
         "https://nouveau-europresse-com.scd1.univ-fcomte.fr/Login*",
         "https://nouveau-europresse-com.rproxy.univ-pau.fr/Login*",
         "https://nouveau-europresse-com.ezproxy.univ-artois.fr/Login*"
