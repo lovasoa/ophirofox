@@ -69,18 +69,36 @@ ophirofox est [présent sur le Chrome Webstore](https://chrome.google.com/websto
 
 <img width="624" alt="image" src="https://user-images.githubusercontent.com/552629/94343918-dbff7100-001b-11eb-86e4-df66e15bc6f6.png">
 
+# Comment ajouter un nouveau partenaires Europresse
+
+Si votre établissement a un portail Europresse, vous pouvez facilement ajouter son support à cette extension.
+
+1. Créez un compte sur [github](https://github.com).
+2. Sur github, ouvrez [le fichier `manifest.json` de l'extension](https://github.com/lovasoa/ophirofox/blob/master/ophirofox/manifest.json).
+3. Cliquez sur le crayon pour éditer le fichier.
+4. Ajoutez votre université à la liste des partenaires Europresse supportés, en suivant le modèle des autres universités.
+  - Dans la section qui contient toutes les URLs au format `https://nouveau-europresse-com.proxy.universite.fr/Search/Reading*`, ajoutez une ligne avec l'URL du proxy europresse de votre université.
+  - Dans la section qui contient tous les objets au format 
+    ```json
+    {
+      "name": "Université XYZ",
+      "AUTH_URL": "https://rproxy.univ-xyz.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CODE_UNIVERSITE"
+    }
+    ```
+    , ajoutez un objet avec le nom de votre université et l'URL de son lien de connexion europresse. Vous pouvez trouver l'URL de connexion en vous connectant à votre portail d'université, puis en faisant un clic droit sur le lien de connexion à Europresse et en choisissant *Copier l'adresse du lien*. Conservez l'ordre alphabétique des universités.
+5. Cliquez sur *Propose file change*.
+6. Indiquez le nom de votre université dans le champ *Propose file change*.
+7. Cliquez sur *Create pull request*.
+
 # Comment cela fonctionne
 
-L'extension injecte un script dans toutes les pages du monde.fr pour détecter les articles payants.
+1. L'extension injecte un script dans toutes les pages des journaux supportés pour détecter les articles payants.
 Lorsqu'un article est détecté, l'extension lui ajoute un lien intitulé *Lire sur Europresse* qui pointe vers
-[`http://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/Search/Reading?ophirofox_source=`](http://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/Search/Reading?ophirofox_source=),
-suivi de l'adresse de la page du monde originale.
-
-Lorsque l'utilisateur se retrouve sur [la page de connexion à europresse](https://nouveau-europresse-com.proxy.rubens.ens.fr/Login/), dont l'utilisateur n'a pas les identifiants,
-l'extension modifie la page pour simplement afficher les mots *Authentification*, et charge en arrière plan la page [`https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1`](https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1) qui permet de s'identifier sans mot de passe, puis recharge la page.
-
-Quand l'utilisateur se retrouve enfin sur la page d'accueil d'Europresse, l'extension utilise la variable `ophirofox_source` définie initialement pour extraire les mots du titre de l'article,
-et lancer une recherche europresse.
+la page de connexion europresse de l'université sélectionnée par l'utilisateur.
+Lorsque l'utilisateur clique sur le lien, le titre de l'article est extrait de la page actuelle,
+et conservée dans l'espace de stockage local de l'extension pour être réutilisé ensuite.
+2. Quand l'utilisateur se retrouve sur la page d'accueil d'Europresse, après s'être connecté, l'extension utilise le titre stocké à l'étape précédente pour lancer une recherche europresse. Le titre est ensuite tout de suite supprimé de l'espace de stockage local.
+3. Lorsque l'utilisateur ouvre l'article, l'extension supprime l'horrible surlignage jaune qui est ajouté par défaut par Europresse.
 
 # License
 
