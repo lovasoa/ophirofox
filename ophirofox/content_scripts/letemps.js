@@ -8,6 +8,7 @@ async function createLink() {
     return a;
 }
 
+
 function findPremiumBanner() {
     const title = document.querySelector("article");
     if (!title) return null;
