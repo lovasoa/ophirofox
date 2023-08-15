@@ -27,6 +27,7 @@ async function createLink() {
     a.textContent = "Lire sur Europresse";
     a.className = "btn btn--premium ophirofox-europresse";
     a.href = await makeEuropresseUrl(new URL(window.location));
+    a.onclick = () => alert("Vous allez être redirigé vers Europresse");
     return a;
 }
 

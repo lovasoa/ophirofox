@@ -1,4 +1,4 @@
-export const ophirofox_config_list = [
+const ophirofox_config_list = [
   {
     name: "ULM",
     domains: ["ens.fr"],
@@ -115,7 +115,7 @@ export const ophirofox_config_list = [
   {
     name: "Pas d'intermédiaire",
     domains: ["europresse.com"],
-    LOGIN_URL: null,
+    LOGIN_URL: "",
     AUTH_URL: "https://nouveau.europresse.com/Login",
   }
 ];
@@ -145,7 +145,7 @@ const OPHIROFOX_SETTINGS_KEY = "ophirofox_settings";
 /**
  * @returns {Promise<typeof DEFAULT_SETTINGS>}
  */
-export async function getSettings() {
+async function getSettings() {
   const key = OPHIROFOX_SETTINGS_KEY;
   return new Promise((accept) => {
     chrome.storage.local.get([key], function (result) {
@@ -165,7 +165,7 @@ export async function getSettings() {
 /**
  * @param {typeof DEFAULT_SETTINGS} settings
  */
-export async function setSettings(settings) {
+async function setSettings(settings) {
   return new Promise((accept) => {
     chrome.storage.local.set(
       { [OPHIROFOX_SETTINGS_KEY]: JSON.stringify(settings) },
@@ -210,14 +210,4 @@ async function makeOphirofoxReadingLink(keywords) {
   } else {
     return target_url;
   }
-}
-
-if (window.location.protocol.includes("extension")) {
-  window.ophirofox_config_exports = {
-    ophirofox_config_list,
-    ophirofox_config,
-    makeOphirofoxReadingLink,
-    getSettings,
-    setSettings,
-  };
 }

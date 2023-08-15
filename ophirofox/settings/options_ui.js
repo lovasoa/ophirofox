@@ -1,9 +1,3 @@
-import {
-  ophirofox_config_list,
-  getSettings,
-  setSettings,
-} from "../content_scripts/config.js";
-
 const choicelist = document.getElementById("partner_choices");
 const template = document.getElementById("partner_template");
 const settings_promise = getSettings();
