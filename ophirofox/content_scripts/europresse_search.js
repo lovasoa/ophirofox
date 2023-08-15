@@ -9,6 +9,7 @@ async function consumeSearchTerms() {
 }
 
 async function onLoad() {
+    if (!window.location.pathname.startsWith("/Search/Reading")) return;
     const search_terms = await consumeSearchTerms();
     if (!search_terms) return;
     const stopwords = new Set(['d', 'l', 'et']);
