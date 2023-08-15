@@ -1,6 +1,15 @@
-function onLoad() {
-    const url = new URL(window.location);
-    const search_terms = url.searchParams.get("ophirofox_keywords");
+async function consumeSearchTerms() {
+    return new Promise((accept, reject) => {
+        chrome.storage.local.get("ophirofox_keywords",
+            (r) => {
+                accept(r.ophirofox_keywords);
+                chrome.storage.local.remove("ophirofox_keywords");
+            });
+    })
+}
+
+async function onLoad() {
+    const search_terms = await consumeSearchTerms();
     if (!search_terms) return;
     const stopwords = new Set(['d', 'l', 'et']);
     const keywords = search_terms
@@ -9,7 +18,7 @@ function onLoad() {
         .filter(w => !stopwords.has(w))
         .join(' ');
     const keyword_field = document.getElementById("Keywords");
-    keyword_field.value = keywords;
+    keyword_field.value = 'TIT_HEAD=' + keywords;
     keyword_field.form.submit();
 }
 
