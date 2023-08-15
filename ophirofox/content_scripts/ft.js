@@ -1,4 +1,4 @@
-async function makeEuropresseUrl(lemondeUrl) {
+async function makeEuropresseUrl() {
     const keywords = extractKeywords();
     return await makeOphirofoxReadingLink(keywords);
 }
@@ -16,7 +16,7 @@ async function createLink() {
 }
 
 async function onLoad() {
-    const payArticle = document.querySelector('.opt unlock_banner');
+    const payArticle = document.querySelector('.barrier-banner__container');
     if (!payArticle) return;
     payArticle.after(await createLink());
 }
