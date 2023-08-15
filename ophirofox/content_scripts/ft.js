@@ -4,18 +4,7 @@ async function makeEuropresseUrl(lemondeUrl) {
 }
 
 function extractKeywords() {
-    return extractKeywordsFromTitle();
-}
-
-function extractArticleNumber(){
-    let url = window.location.pathname;
-    let parameters = url.split('/');
-    return parameters[parameters.length - 1];
-}
-
-function extractKeywordsFromTitle() {
-    const titleElem = document.getElementsByClassName("crayon article-titre-" + extractArticleNumber() + " h1")[0].innerHTML;
-    return titleElem;
+    return document.querySelector("title").textContent;
 }
 
 async function createLink() {
@@ -27,7 +16,7 @@ async function createLink() {
 }
 
 async function onLoad() {
-    const payArticle = document.querySelector('.promo_dispo_article');
+    const payArticle = document.querySelector('.opt unlock_banner');
     if (!payArticle) return;
 
     const actionElem = document.querySelector(".actions-article");
