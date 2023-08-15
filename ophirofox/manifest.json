@@ -130,6 +130,9 @@
       "js": [
         "content_scripts/config.js",
         "content_scripts/lesoir.js"
+      ],
+      "css": [
+        "content_scripts/lesoir.css"
       ]
     },
     {
