@@ -31,7 +31,7 @@ L'extension fonctionne avec les portails universitaires suivants :
  - [**Europresse Université Paris Cité**](https://ezproxy.u-paris.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVPARIS)
  - [**Europresse Université de Franche-Comté**](http://scd1.univ-fcomte.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=FCOMTET_1)
  - [**Europresse Université de Pau et des pays de l'Adour**](https://nouveau-europresse-com.rproxy.univ-pau.fr/access/ip/default.aspx?un=uppaT_2)
- - [**Europresse Université d'Artois**] (http://ezproxy.univ-artois.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=littoralT_1)
+ - [**Europresse Université d'Artois**](http://ezproxy.univ-artois.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=littoralT_1)
    
  Ou directement via le site Europresse.
 
@@ -45,6 +45,8 @@ L'extension fonctionne avec les portails universitaires suivants :
   - [L'Humanité](https://www.humanite.fr)
   - [La Montagne](https://www.lamontagne.fr)
   - [Le Point](https://www.lepoint.fr)
+  - [Le Soir](https://www.lesoir.be)
+  - [Financial Times](https://www.ft.com/)
 
 Vous pouvez proposer d'autres sites en ouvrant une [demande sur github](https://github.com/lovasoa/ophirofox/issues)
 
