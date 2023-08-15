@@ -1,4 +1,4 @@
-const ophirofox_config_list = [
+export const ophirofox_config_list = [
   {
     name: "ULM",
     domains: ["ens.fr"],
@@ -145,7 +145,7 @@ const OPHIROFOX_SETTINGS_KEY = "ophirofox_settings";
 /**
  * @returns {Promise<typeof DEFAULT_SETTINGS>}
  */
-async function getSettings() {
+export async function getSettings() {
   const key = OPHIROFOX_SETTINGS_KEY;
   return new Promise((accept) => {
     chrome.storage.local.get([key], function (result) {
@@ -165,7 +165,7 @@ async function getSettings() {
 /**
  * @param {typeof DEFAULT_SETTINGS} settings
  */
-async function setSettings(settings) {
+export async function setSettings(settings) {
   return new Promise((accept) => {
     chrome.storage.local.set(
       { [OPHIROFOX_SETTINGS_KEY]: JSON.stringify(settings) },

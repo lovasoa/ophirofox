@@ -1,8 +1,8 @@
-const {
+import {
   ophirofox_config_list,
   getSettings,
   setSettings,
-} = window.ophirofox_config_exports;
+} from "../content_scripts/config.js";
 
 const choicelist = document.getElementById("partner_choices");
 const template = document.getElementById("partner_template");
