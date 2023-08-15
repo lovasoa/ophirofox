@@ -194,6 +194,78 @@
     "gecko": {
       "id": "{cfd3c5c2-31ec-4c1b-a28e-df38357d02d9}",
       "update_url": "https://github.com/lovasoa/ophirofox/releases/latest/download/update_manifest.json"
+    },
+    "ophirofox_metadata": {
+      "partners": [
+        {
+          "name": "Pas d'intermédiaire",
+          "AUTH_URL": "https://nouveau.europresse.com/Login"
+        },
+        {
+          "name": "BNF",
+          "AUTH_URL": "https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032999T_1"
+        },
+        {
+          "name": "ENS de Lyon",
+          "AUTH_URL": "https://acces.bibliotheque-diderot.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ENSLYONT_1"
+        },
+        {
+          "name": "ENSAM",
+          "AUTH_URL": "https://rp1.ensam.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=AML"
+        },
+        {
+          "name": "INSA Lyon",
+          "AUTH_URL": "https://docelec.insa-lyon.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=INSAT_3"
+        },
+        {
+          "name": "ULM",
+          "AUTH_URL": "https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1"
+        },
+        {
+          "name": "Université Bordeaux Montaigne",
+          "AUTH_URL": "https://www.ezproxy.u-bordeaux-montaigne.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVMONTAIGNET_1"
+        },
+        {
+          "name": "Université Grenoble-Alpes",
+          "AUTH_URL": "https://sid2nomade-2.grenet.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=grenobleT_1"
+        },
+        {
+          "name": "Université Paris 1 Panthéon-Sorbonne",
+          "AUTH_URL": "https://ezpaarse.univ-paris1.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=SORBONNET_1"
+        },
+        {
+          "name": "Université Paris Cité",
+          "AUTH_URL": "https://ezproxy.u-paris.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVPARIS"
+        },
+        {
+          "name": "Université Paris-Saclay",
+          "AUTH_URL": "https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_9"
+        },
+        {
+          "name": "Université d'Artois",
+          "AUTH_URL": "http://ezproxy.univ-artois.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=littoralT_1"
+        },
+        {
+          "name": "Université de Bordeaux",
+          "AUTH_URL": "https://docelec.u-bordeaux.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVBORDEAUXT_1"
+        },
+        {
+          "name": "Université de Franche-Comté",
+          "AUTH_URL": "http://scd1.univ-fcomte.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=FCOMTET_1"
+        },
+        {
+          "name": "Université de Haute-Alsace",
+          "AUTH_URL": "https://scd-proxy.uha.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=ALSACET_1"
+        },
+        {
+          "name": "Université de Montpellier",
+          "AUTH_URL": "https://ezpum.scdi-montpellier.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MontpellierT_1"
+        },
+        {
+          "name": "Université de Pau et des Pays de l'Adour",
+          "AUTH_URL": "https://rproxy.univ-pau.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=uppaT_2"
+        }
+      ]
     }
   }
 }
