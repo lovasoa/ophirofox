@@ -79,12 +79,7 @@ Si votre établissement a un portail Europresse, vous pouvez facilement ajouter 
 4. Ajoutez votre université à la liste des partenaires Europresse supportés, en suivant le modèle des autres universités.
   - Dans la section qui contient toutes les URLs au format `https://nouveau-europresse-com.proxy.universite.fr/Search/Reading*`, ajoutez une ligne avec l'URL du proxy europresse de votre université.
   - Dans la section qui contient tous les objets au format 
-    ```json
-    {
-      "name": "Université XYZ",
-      "AUTH_URL": "https://rproxy.univ-xyz.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CODE_UNIVERSITE"
-    }
-    ```
+    `{ "name": "Université XYZ", "AUTH_URL": "https://rproxy.univ-xyz.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CODE_UNIVERSITE" }`
     , ajoutez un objet avec le nom de votre université et l'URL de son lien de connexion europresse. Vous pouvez trouver l'URL de connexion en vous connectant à votre portail d'université, puis en faisant un clic droit sur le lien de connexion à Europresse et en choisissant *Copier l'adresse du lien*. Conservez l'ordre alphabétique des universités.
 5. Cliquez sur *Propose file change*.
 6. Indiquez le nom de votre université dans le champ *Propose file change*.
