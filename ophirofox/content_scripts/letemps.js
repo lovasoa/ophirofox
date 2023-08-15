@@ -4,7 +4,7 @@ function extractKeywords() {
 
 async function createLink() {
     const a = await ophirofoxEuropresseLink(extractKeywords());
-    a.classList.add("post-premium is-long");
+    a.classList.add("post-premium is-long ophirofox-europresse");
     return a;
 }
 
