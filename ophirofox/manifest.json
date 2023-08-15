@@ -137,6 +137,15 @@
     },
     {
       "matches": [
+        "https://www.ft.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/ft.js"
+      ]
+    },
+    {
+      "matches": [
         "https://nouveau.europresse.com/Search/Reading*",
         "https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/Reading*",
         "https://nouveau-europresse-com.rp1.ensam.eu/Search/Reading*",
