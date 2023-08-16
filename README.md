@@ -46,6 +46,8 @@ L'extension fonctionne avec les portails universitaires suivants :
   - [La Montagne](https://www.lamontagne.fr)
   - [Le Point](https://www.lepoint.fr)
   - [Le Soir](https://www.lesoir.be)
+  - [La Libre Belgique](https://www.lalibre.be/)
+  - [Le Temps](https://www.letemps.ch/)
 
 Vous pouvez proposer d'autres sites en ouvrant une [demande sur github](https://github.com/lovasoa/ophirofox/issues)
 
