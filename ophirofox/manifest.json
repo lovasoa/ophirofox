@@ -169,6 +169,7 @@
         "https://nouveau-europresse-com.rp1.ensam.eu/*",
         "https://nouveau-europresse-com.ezproxy.universite-paris-saclay.fr/*",
         "https://nouveau-europresse-com.ezpaarse.univ-paris1.fr/*",
+        "https://nouveau-europresse-com.accesdistant.bu.univ-paris8.fr/*",
         "https://nouveau-europresse-com.docelec.insa-lyon.fr/*",
         "https://nouveau-europresse-com.bnf.idm.oclc.org/*",
         "https://nouveau-europresse-com.sid2nomade-2.grenet.fr/*",
@@ -233,6 +234,10 @@
         {
           "name": "Université Paris 1 Panthéon-Sorbonne",
           "AUTH_URL": "https://ezpaarse.univ-paris1.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=SORBONNET_1"
+        },
+        {
+          "name": "Université Paris 8",
+          "AUTH_URL": "https://accesdistant.bu.univ-paris8.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=paris8"
         },
         {
           "name": "Université Paris Cité",
