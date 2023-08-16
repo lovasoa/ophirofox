@@ -140,11 +140,36 @@
     },
     {
       "matches": [
+        "https://www.letemps.ch/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/letemps.js"
+      ],
+      "css": [
+        "content_scripts/letemps.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.lalibre.be/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/lalibre.js"
+      ],
+      "css": [
+        "content_scripts/lalibre.css"
+      ]
+    },
+    {
+      "matches": [
         "https://nouveau.europresse.com/*",
         "https://nouveau-europresse-com.proxy.rubens.ens.fr/*",
         "https://nouveau-europresse-com.rp1.ensam.eu/*",
         "https://nouveau-europresse-com.ezproxy.universite-paris-saclay.fr/*",
         "https://nouveau-europresse-com.ezpaarse.univ-paris1.fr/*",
+        "https://nouveau-europresse-com.accesdistant.bu.univ-paris8.fr/*",
         "https://nouveau-europresse-com.docelec.insa-lyon.fr/*",
         "https://nouveau-europresse-com.bnf.idm.oclc.org/*",
         "https://nouveau-europresse-com.sid2nomade-2.grenet.fr/*",
@@ -156,7 +181,9 @@
         "https://nouveau-europresse-com.ezproxy.u-paris.fr/*",
         "https://nouveau-europresse-com.scd1.univ-fcomte.fr/*",
         "https://nouveau-europresse-com.rproxy.univ-pau.fr/*",
-        "https://nouveau-europresse-com.ezproxy.univ-artois.fr/*"
+        "https://nouveau-europresse-com.ezproxy.univ-artois.fr/*",
+        "https://nouveau-europresse-com.doc-elec.univ-lemans.fr/*",
+        "https://nouveau-europresse-com.lama.univ-amu.fr/*"
       ],
       "css": [
         "content_scripts/europresse_article.css"
@@ -179,6 +206,10 @@
           "AUTH_URL": "https://nouveau.europresse.com/Login"
         },
         {
+          "name": "Aix-Marseille Université",
+          "AUTH_URL": "https://lama.univ-amu.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031032T_1"
+        },
+        {
           "name": "BNF",
           "AUTH_URL": "https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032999T_1"
         },
@@ -195,6 +226,10 @@
           "AUTH_URL": "https://docelec.insa-lyon.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=INSAT_3"
         },
         {
+          "name": "Le Mans Université",
+          "AUTH_URL": "https://login.doc-elec.univ-lemans.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031524T_1"
+        },
+        {
           "name": "ULM",
           "AUTH_URL": "https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1"
         },
@@ -209,6 +244,10 @@
         {
           "name": "Université Paris 1 Panthéon-Sorbonne",
           "AUTH_URL": "https://ezpaarse.univ-paris1.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=SORBONNET_1"
+        },
+        {
+          "name": "Université Paris 8",
+          "AUTH_URL": "https://accesdistant.bu.univ-paris8.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=paris8"
         },
         {
           "name": "Université Paris Cité",

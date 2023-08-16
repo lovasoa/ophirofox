@@ -46,6 +46,8 @@ L'extension fonctionne avec les portails universitaires suivants :
   - [La Montagne](https://www.lamontagne.fr)
   - [Le Point](https://www.lepoint.fr)
   - [Le Soir](https://www.lesoir.be)
+  - [La Libre Belgique](https://www.lalibre.be/)
+  - [Le Temps](https://www.letemps.ch/)
 
 Vous pouvez proposer d'autres sites en ouvrant une [demande sur github](https://github.com/lovasoa/ophirofox/issues)
 
@@ -68,7 +70,7 @@ ophirofox est [présent sur le Chrome Webstore](https://chrome.google.com/websto
 
 <img width="624" alt="image" src="https://user-images.githubusercontent.com/552629/94343918-dbff7100-001b-11eb-86e4-df66e15bc6f6.png">
 
-# Comment ajouter un nouveau partenaires Europresse
+# Comment ajouter un nouveau partenaire Europresse
 
 Si votre établissement a un portail Europresse, vous pouvez facilement ajouter son support à cette extension.
 
@@ -76,9 +78,9 @@ Si votre établissement a un portail Europresse, vous pouvez facilement ajouter 
 2. Sur github, ouvrez [le fichier `manifest.json` de l'extension](https://github.com/lovasoa/ophirofox/blob/master/ophirofox/manifest.json).
 3. Cliquez sur le crayon pour éditer le fichier.
 4. Ajoutez votre université à la liste des partenaires Europresse supportés, en suivant le modèle des autres universités.
-  - Dans la section qui contient toutes les URLs au format `https://nouveau-europresse-com.proxy.universite.fr/Search/Reading*`, ajoutez une ligne avec l'URL du proxy europresse de votre université.
+  - Dans la section qui contient toutes les URLs au format `https://nouveau-europresse-com.proxy.univ-xyz.fr/Search/Reading*`, ajoutez une ligne avec l'URL du proxy europresse de votre université.
   - Dans la section qui contient tous les objets au format 
-    `{ "name": "Université XYZ", "AUTH_URL": "https://rproxy.univ-xyz.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CODE_UNIVERSITE" }`
+    `{ "name": "Université XYZ", "AUTH_URL": "https://proxy.univ-xyz.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CODE_UNIVERSITE" }`
     , ajoutez un objet avec le nom de votre université et l'URL de son lien de connexion europresse. Vous pouvez trouver l'URL de connexion en vous connectant à votre portail d'université, puis en faisant un clic droit sur le lien de connexion à Europresse et en choisissant *Copier l'adresse du lien*. Conservez l'ordre alphabétique des universités.
 5. Cliquez sur *Propose file change*.
 6. Indiquez le nom de votre université dans le champ *Propose file change*.
