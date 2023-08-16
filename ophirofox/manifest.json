@@ -182,7 +182,8 @@
         "https://nouveau-europresse-com.scd1.univ-fcomte.fr/*",
         "https://nouveau-europresse-com.rproxy.univ-pau.fr/*",
         "https://nouveau-europresse-com.ezproxy.univ-artois.fr/*",
-        "https://nouveau-europresse-com.doc-elec.univ-lemans.fr/*"
+        "https://nouveau-europresse-com.doc-elec.univ-lemans.fr/*",
+        "https://nouveau-europresse-com.lama.univ-amu.fr/*"
       ],
       "css": [
         "content_scripts/europresse_article.css"
@@ -203,6 +204,10 @@
         {
           "name": "Pas d'intermédiaire",
           "AUTH_URL": "https://nouveau.europresse.com/Login"
+        },
+        {
+          "name": "Aix-Marseille Université",
+          "AUTH_URL": "https://lama.univ-amu.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031032T_1"
         },
         {
           "name": "BNF",
