@@ -238,6 +238,10 @@
           "AUTH_URL": "https://www.ezproxy.u-bordeaux-montaigne.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVMONTAIGNET_1"
         },
         {
+          "name": "Université Côte d'Azur",
+          "AUTH_URL": "http://proxy.unice.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032557T_1"
+        },
+        {
           "name": "Université Grenoble-Alpes",
           "AUTH_URL": "https://sid2nomade-2.grenet.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=grenobleT_1"
         },
@@ -280,7 +284,7 @@
         {
           "name": "Université de Pau et des Pays de l'Adour",
           "AUTH_URL": "https://rproxy.univ-pau.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=uppaT_2"
-        }
+        }        
       ]
     }
   }
