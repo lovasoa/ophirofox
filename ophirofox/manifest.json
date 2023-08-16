@@ -158,7 +158,6 @@
         "https://nouveau-europresse-com.scd1.univ-fcomte.fr/*",
         "https://nouveau-europresse-com.rproxy.univ-pau.fr/*",
         "https://nouveau-europresse-com.ezproxy.univ-artois.fr/*"
-        
       ],
       "css": [
         "content_scripts/europresse_article.css"
