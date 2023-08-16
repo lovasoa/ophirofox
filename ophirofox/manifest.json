@@ -181,7 +181,8 @@
         "https://nouveau-europresse-com.ezproxy.u-paris.fr/*",
         "https://nouveau-europresse-com.scd1.univ-fcomte.fr/*",
         "https://nouveau-europresse-com.rproxy.univ-pau.fr/*",
-        "https://nouveau-europresse-com.ezproxy.univ-artois.fr/*"
+        "https://nouveau-europresse-com.ezproxy.univ-artois.fr/*",
+        "https://nouveau-europresse-com.doc-elec.univ-lemans.fr/*"
       ],
       "css": [
         "content_scripts/europresse_article.css"
@@ -218,6 +219,10 @@
         {
           "name": "INSA Lyon",
           "AUTH_URL": "https://docelec.insa-lyon.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=INSAT_3"
+        },
+        {
+          "name": "Le Mans Université",
+          "AUTH_URL": "https://login.doc-elec.univ-lemans.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031524T_1"
         },
         {
           "name": "ULM",
