@@ -39,18 +39,30 @@ L'extension fonctionne avec les portails universitaires suivants :
 Ou directement via le site Europresse.
 
 ## Sites supportés
-  - [Le Monde](https://www.lemonde.fr/)
-  - [Le Figaro](https://www.lefigaro.fr/)
-  - [Libération](https://www.liberation.fr/)
-  - [Le Monde Diplomatique](https://www.www.monde-diplomatique.fr)
-  - [La Croix](https://www.la-croix.com)
-  - [Courrier international](https://www.courrierinternational.com)
+
+### Presse nationale
   - [L'Humanité](https://www.humanite.fr)
-  - [La Montagne](https://www.lamontagne.fr)
+  - [La Croix](https://www.la-croix.com)
+  - [Le Figaro](https://www.lefigaro.fr/)
+  - [Le Monde Diplomatique](https://www.www.monde-diplomatique.fr)
+  - [Le Monde](https://www.lemonde.fr/)
   - [Le Point](https://www.lepoint.fr)
-  - [Le Soir](https://www.lesoir.be)
+  - [Libération](https://www.liberation.fr/)
+  
+### Presse régionale
+  - [La Dépêche du Midi](https://www.ladepeche.fr/)
+  - [La Montagne](https://www.lamontagne.fr)
+  - [La Provence](https://www.laprovence.com/)
+  - [La Voix du Nord](https://www.lavoixdunord.fr/)
+  - [Le Parisien](https://www.leparisien.fr/)
+  - [Ouest France](https://www.ouest-france.fr/)
+  - [Sud Ouest](https://www.sudouest.fr/)
+  
+### Presse étrangère
+  - [Courrier international](https://www.courrierinternational.com)
   - [La Libre Belgique](https://www.lalibre.be/)
-  - [Le Temps](https://www.letemps.ch/)
+  - [Le Soir (Belgique)](https://www.lesoir.be)
+  - [Le Temps (Suisse)](https://www.letemps.ch/)
 
 Vous pouvez proposer d'autres sites en ouvrant une [demande sur github](https://github.com/lovasoa/ophirofox/issues)
 
