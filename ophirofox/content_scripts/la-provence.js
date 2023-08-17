@@ -1,9 +1,5 @@
-function extractKeywords() {
-    return document.querySelector("h1").textContent;
-}
-
 async function createLink() {
-    const a = await ophirofoxEuropresseLink(extractKeywords());
+    const a = await ophirofoxEuropresseLink();
     a.classList.add();
     return a;
 }
