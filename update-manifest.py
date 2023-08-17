@@ -2,6 +2,7 @@
 
 import json
 import sys
+import os
 import urllib.request
 from pathlib import Path
 
@@ -14,8 +15,11 @@ def get_extension_manifest():
 
 
 def get_github_releases():
-    url = "https://api.github.com/repos/lovasoa/ophirofox/releases"
-    return json.load(urllib.request.urlopen(url))
+    token = os.environ.get("GITHUB_TOKEN")
+    return json.load(urllib.request.urlopen(urllib.request.Request(
+        url="https://api.github.com/repos/lovasoa/ophirofox/releases",
+        headers={"authorization": "Bearer " + token} if token else {},
+    )))
 
 
 def version_details(release):

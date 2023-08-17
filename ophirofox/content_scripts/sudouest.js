@@ -4,22 +4,22 @@ function extractKeywords() {
 
 async function createLink() {
     const a = await ophirofoxEuropresseLink(extractKeywords());
-    a.classList.add("fig-premium-mark-article__text");
+    a.classList.add();
     return a;
 }
 
 
 function findPremiumBanner() {
-    const title = document.querySelector("h1");
+    const title = document.querySelector(".tag.color-premium.uppercase");
     if (!title) return null;
     const elems = title.parentElement.querySelectorAll("span");
     return [...elems].find(d => d.textContent.includes("Réservé aux abonnés"))
 }
 
 async function onLoad() {
-    const premiumBanner = findPremiumBanner();
-    if (!premiumBanner) return;
-    premiumBanner.after(await createLink());
+    const head = document.querySelector(".article-premium-header");
+    if (!head) return;
+    head.appendChild(await createLink());
 }
 
 onLoad().catch(console.error);

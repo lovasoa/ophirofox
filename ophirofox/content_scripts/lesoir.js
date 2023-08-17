@@ -13,7 +13,7 @@ function findPremiumBanner() {
     const title = document.querySelector("h1");
     if (!title) return null;
     const elems = title.parentElement.querySelectorAll("span");
-    return [...elems].find(d => d.textContent.includes("Réservé aux abonnés"))
+    return [...elems].find(d => d.textContent.includes("réservé aux abonnés"))
 }
 
 async function onLoad() {
