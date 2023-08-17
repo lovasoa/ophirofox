@@ -164,6 +164,78 @@
     },
     {
       "matches": [
+        "https://www.lavoixdunord.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/lavdn.js"
+      ],
+      "css": [
+        "content_scripts/lavdn.css"
+      ]
+    },
+	{
+      "matches": [
+        "https://www.ouest-france.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/ouestfrance.js"
+      ],
+      "css": [
+        "content_scripts/ouestfrance.css"
+      ]
+    },
+   	{
+      "matches": [
+        "https://www.sudouest.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/sudouest.js"
+      ],
+      "css": [
+        "content_scripts/sudouest.css"
+      ]
+    },
+       	{
+      "matches": [
+        "https://www.laprovence.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/la-provence.js"
+      ],
+      "css": [
+        "content_scripts/la-provence.css"
+      ]
+    },
+	{
+      "matches": [
+        "https://www.ladepeche.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/la-depeche.js"
+      ],
+      "css": [
+        "content_scripts/la-depeche.css"
+      ]
+    },
+	{
+      "matches": [
+        "https://www.leparisien.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/le-parisien.js"
+      ],
+      "css": [
+        "content_scripts/le-parisien.css"
+      ]
+    },
+    {
+      "matches": [
         "https://nouveau.europresse.com/*",
         "https://nouveau-europresse-com.proxy.rubens.ens.fr/*",
         "https://nouveau-europresse-com.rp1.ensam.eu/*",
