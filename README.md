@@ -44,6 +44,7 @@ L'extension fonctionne avec les portails universitaires suivants :
   - [Le Figaro](https://www.lefigaro.fr/)
   - [Le Monde Diplomatique](https://www.www.monde-diplomatique.fr)
   - [Le Monde](https://www.lemonde.fr/)
+  - [Le Point](https://www.lepoint.fr)
   - [Libération](https://www.liberation.fr/)
   
 ### Presse régionale
@@ -52,7 +53,6 @@ L'extension fonctionne avec les portails universitaires suivants :
   - [La Provence](https://www.laprovence.com/)
   - [La Voix du Nord](https://www.lavoixdunord.fr/)
   - [Le Parisien](https://www.leparisien.fr/)
-  - [Le Point](https://www.lepoint.fr)
   - [Ouest France](https://www.ouest-france.fr/)
   - [Sud Ouest](https://www.sudouest.fr/)
   
