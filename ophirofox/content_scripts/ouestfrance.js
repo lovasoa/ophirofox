@@ -4,22 +4,24 @@ function extractKeywords() {
 
 async function createLink() {
     const a = await ophirofoxEuropresseLink(extractKeywords());
-    a.classList.add("fig-premium-mark-article__text");
+    a.classList.add("ophirofox-europresse");
+    a.style.cssText = 'color:white;border-bottom:none';
     return a;
 }
 
 
 function findPremiumBanner() {
-    const title = document.querySelector("h1");
+    const title = document.querySelector(".su-premium-info");
     if (!title) return null;
     const elems = title.parentElement.querySelectorAll("span");
-    return [...elems].find(d => d.textContent.includes("Réservé aux abonnés"))
+    return [...elems].find(d => d.textContent.includes("Article premium"))
 }
 
 async function onLoad() {
-    const premiumBanner = findPremiumBanner();
+	const premiumBanner = findPremiumBanner();
     if (!premiumBanner) return;
-    premiumBanner.after(await createLink());
+    const head = document.querySelector("h1");
+    head.after(await createLink());
 }
 
 onLoad().catch(console.error);

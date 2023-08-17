@@ -1,8 +1,3 @@
-async function makeEuropresseUrl() {
-    const keywords = extractKeywords(window.location);
-    return await makeOphirofoxReadingLink(keywords);
-}
-
 function extractKeywords() {
     return document
       .querySelector("meta[property='og:title']")
@@ -10,10 +5,8 @@ function extractKeywords() {
 }
 
 async function createLink() {
-    const a = document.createElement("a");
-    a.href = await makeEuropresseUrl(new URL(window.location));
-    a.textContent = "Lire sur Europresse";
-    a.className = "ribbon-premium ophirofox-europresse";
+    const a = await ophirofoxEuropresseLink(extractKeywords());
+    a.classList.add("ribbon-premium");
     return a;
 }
 

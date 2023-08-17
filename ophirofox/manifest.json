@@ -1,12 +1,13 @@
 {
   "manifest_version": 2,
   "name": "Ophirofox",
-  "version": "1.9",
+  "version": "2.0",
   "description": "Lire les articles du monde, du figaro, et d'autres journaux grâce à sa connexion europresse",
   "icons": {
     "48": "icons/48.png",
     "128": "icons/128.png"
   },
+  "homepage_url": "https://ophirofox.ophir.dev/",
   "options_ui": {
     "page": "settings/options_ui.html"
   },
@@ -16,7 +17,9 @@
   "background": {
     "scripts": [
       "background.js"
-    ]
+    ],
+    "persistent": false,
+    "type": "module"
   },
   "content_scripts": [
     {
@@ -125,60 +128,143 @@
     },
     {
       "matches": [
-        "https://nouveau.europresse.com/Search/Reading*",
-        "https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/Reading*",
-        "https://nouveau-europresse-com.rp1.ensam.eu/Search/Reading*",
-        "https://nouveau-europresse-com.proxy.scd.u-psud.fr/Search/Reading*",
-        "https://nouveau-europresse-com.docelec.insa-lyon.fr/Search/Reading*",
-        "https://nouveau-europresse-com.bnf.idm.oclc.org/Search/Reading*",
-        "https://nouveau-europresse-com.sid2nomade-2.grenet.fr/Search/Reading*",
-        "https://nouveau-europresse-com.ezpum.scdi-montpellier.fr/Search/Reading*",
-        "https://nouveau-europresse-com.ezproxy.u-bordeaux-montaigne.fr/Search/Reading*",
-        "https://nouveau-europresse-com.docelec.u-bordeaux.fr/Search/Reading*",
-        "https://nouveau-europresse-com.portail.psl.eu/Search/Reading*"
-      ],
-      "js": [
-        "content_scripts/europresse_search.js"
-      ]
-    },
-    {
-      "matches": [
-        "https://nouveau.europresse.com/Login*",
-        "https://nouveau-europresse-com.proxy.rubens.ens.fr/Login*",
-        "https://nouveau-europresse-com.rp1.ensam.eu/Login*",
-        "https://nouveau-europresse-com.proxy.scd.u-psud.fr/Login*",
-        "https://nouveau-europresse-com.docelec.insa-lyon.fr/Login*",
-        "https://nouveau-europresse-com.bnf.idm.oclc.org/Login*",
-        "https://nouveau-europresse-com.sid2nomade-2.grenet.fr/Login*",
-        "https://nouveau-europresse-com.ezpum.scdi-montpellier.fr/Login*",
-        "https://nouveau-europresse-com.ezproxy.u-bordeaux-montaigne.fr/Login*",
-        "https://nouveau-europresse-com.docelec.u-bordeaux.fr/Login*",
-        "https://nouveau-europresse-com.portail.psl.eu/Login*"
+        "https://www.lesoir.be/*"
       ],
       "js": [
         "content_scripts/config.js",
-        "content_scripts/europresse_login.js"
+        "content_scripts/lesoir.js"
+      ],
+      "css": [
+        "content_scripts/lesoir.css"
       ]
     },
     {
       "matches": [
-        "https://nouveau.europresse.com/Search/ResultMobile*",
-        "https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/ResultMobile*",
-        "https://nouveau-europresse-com.rp1.ensam.eu/Search/ResultMobile*",
-        "https://nouveau-europresse-com.proxy.scd.u-psud.fr/Search/ResultMobile*",
-        "https://nouveau-europresse-com.docelec.insa-lyon.fr/Search/ResultMobile*",
-        "https://nouveau-europresse-com.bnf.idm.oclc.org/Search/ResultMobile*",
-        "https://nouveau-europresse-com.sid2nomade-2.grenet.fr/Search/ResultMobile*",
-        "https://nouveau-europresse-com.ezpum.scdi-montpellier.fr/Search/ResultMobile*",
-        "https://nouveau-europresse-com.ezproxy.u-bordeaux-montaigne.fr/Search/ResultMobile*",
-        "https://nouveau-europresse-com.docelec.u-bordeaux.fr/Search/ResultMobile*",
-        "https://nouveau-europresse-com.portail.psl.eu/Search/ResultMobile*"
+        "https://www.letemps.ch/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/letemps.js"
+      ],
+      "css": [
+        "content_scripts/letemps.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.lalibre.be/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/lalibre.js"
+      ],
+      "css": [
+        "content_scripts/lalibre.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.lavoixdunord.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/lavdn.js"
+      ],
+      "css": [
+        "content_scripts/lavdn.css"
+      ]
+    },
+	{
+      "matches": [
+        "https://www.ouest-france.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/ouestfrance.js"
+      ],
+      "css": [
+        "content_scripts/ouestfrance.css"
+      ]
+    },
+   	{
+      "matches": [
+        "https://www.sudouest.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/sudouest.js"
+      ],
+      "css": [
+        "content_scripts/sudouest.css"
+      ]
+    },
+       	{
+      "matches": [
+        "https://www.laprovence.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/la-provence.js"
+      ],
+      "css": [
+        "content_scripts/la-provence.css"
+      ]
+    },
+	{
+      "matches": [
+        "https://www.ladepeche.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/la-depeche.js"
+      ],
+      "css": [
+        "content_scripts/la-depeche.css"
+      ]
+    },
+	{
+      "matches": [
+        "https://www.leparisien.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/le-parisien.js"
+      ],
+      "css": [
+        "content_scripts/le-parisien.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://nouveau.europresse.com/*",
+        "https://nouveau-europresse-com.proxy.rubens.ens.fr/*",
+        "https://nouveau-europresse-com.rp1.ensam.eu/*",
+        "https://nouveau-europresse-com.ezproxy.universite-paris-saclay.fr/*",
+        "https://nouveau-europresse-com.ezpaarse.univ-paris1.fr/*",
+        "https://nouveau-europresse-com.accesdistant.bu.univ-paris8.fr/*",
+        "https://nouveau-europresse-com.docelec.insa-lyon.fr/*",
+        "https://nouveau-europresse-com.bnf.idm.oclc.org/*",
+        "https://nouveau-europresse-com.sid2nomade-2.grenet.fr/*",
+        "https://nouveau-europresse-com.ezpum.scdi-montpellier.fr/*",
+        "https://nouveau-europresse-com.ezproxy.u-bordeaux-montaigne.fr/*",
+        "https://nouveau-europresse-com.docelec.u-bordeaux.fr/*",
+        "https://nouveau-europresse-com.proxy.unice.fr/*",
+        "https://nouveau-europresse-com.acces.bibliotheque-diderot.fr/*",
+        "https://nouveau-europresse-com.scd-proxy.uha.fr/*",
+        "https://nouveau-europresse-com.ezproxy.u-paris.fr/*",
+        "https://nouveau-europresse-com.scd1.univ-fcomte.fr/*",
+        "https://nouveau-europresse-com.rproxy.univ-pau.fr/*",
+        "https://nouveau-europresse-com.ezproxy.univ-artois.fr/*",
+        "https://nouveau-europresse-com.doc-elec.univ-lemans.fr/*",
+        "https://nouveau-europresse-com.lama.univ-amu.fr/*",
+        "https://nouveau-europresse-com.portail.psl.eu/*"
       ],
       "css": [
         "content_scripts/europresse_article.css"
       ],
       "js": [
-        "content_scripts/europresse_article.js"
+        "content_scripts/europresse_article.js",
+        "content_scripts/europresse_search.js"
       ]
     }
   ],
@@ -186,6 +272,98 @@
     "gecko": {
       "id": "{cfd3c5c2-31ec-4c1b-a28e-df38357d02d9}",
       "update_url": "https://github.com/lovasoa/ophirofox/releases/latest/download/update_manifest.json"
+    },
+    "ophirofox_metadata": {
+      "partners": [
+        {
+          "name": "Pas d'intermédiaire",
+          "AUTH_URL": "https://nouveau.europresse.com/Login"
+        },
+        {
+          "name": "Aix-Marseille Université",
+          "AUTH_URL": "https://lama.univ-amu.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031032T_1"
+        },
+        {
+          "name": "BNF",
+          "AUTH_URL": "https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032999T_1"
+        },
+        {
+          "name": "ENS de Lyon",
+          "AUTH_URL": "https://acces.bibliotheque-diderot.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ENSLYONT_1"
+        },
+        {
+          "name": "ENSAM",
+          "AUTH_URL": "https://rp1.ensam.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=AML"
+        },
+        {
+          "name": "INSA Lyon",
+          "AUTH_URL": "https://docelec.insa-lyon.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=INSAT_3"
+        },
+        {
+          "name": "Le Mans Université",
+          "AUTH_URL": "https://login.doc-elec.univ-lemans.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031524T_1"
+        },
+        {
+          "name": "ULM",
+          "AUTH_URL": "https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1"
+        },
+        {
+          "name": "Université d'Artois",
+          "AUTH_URL": "http://ezproxy.univ-artois.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=littoralT_1"
+        },
+        {
+          "name": "Université de Bordeaux",
+          "AUTH_URL": "https://docelec.u-bordeaux.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVBORDEAUXT_1"
+        },
+        {
+          "name": "Université Bordeaux Montaigne",
+          "AUTH_URL": "https://www.ezproxy.u-bordeaux-montaigne.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVMONTAIGNET_1"
+        },
+        {
+          "name": "Université Côte d'Azur",
+          "AUTH_URL": "http://proxy.unice.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032557T_1"
+        },
+        {
+          "name": "Université de Franche-Comté",
+          "AUTH_URL": "http://scd1.univ-fcomte.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=FCOMTET_1"
+        },
+        {
+          "name": "Université Grenoble-Alpes",
+          "AUTH_URL": "https://sid2nomade-2.grenet.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=grenobleT_1"
+        },
+        {
+          "name": "Université de Haute-Alsace",
+          "AUTH_URL": "https://scd-proxy.uha.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=ALSACET_1"
+        },
+        {
+          "name": "Université de Montpellier",
+          "AUTH_URL": "https://ezpum.scdi-montpellier.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MontpellierT_1"
+        },
+        {
+          "name": "Université Paris 1 Panthéon-Sorbonne",
+          "AUTH_URL": "https://ezpaarse.univ-paris1.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=SORBONNET_1"
+        },
+        {
+          "name": "Université Paris 8",
+          "AUTH_URL": "https://accesdistant.bu.univ-paris8.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=paris8"
+        },
+        {
+          "name": "Université Paris Cité",
+          "AUTH_URL": "https://ezproxy.u-paris.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVPARIS"
+        },
+        {
+          "name": "Université Paris-Saclay",
+          "AUTH_URL": "https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_9"
+        },
+        {
+          "name": "Université PSL",
+          "AUTH_URL": "https://portail.psl.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1"
+        },
+        {
+          "name": "Université de Pau et des Pays de l'Adour",
+          "AUTH_URL": "https://rproxy.univ-pau.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=uppaT_2"
+        }        
+      ]
     }
   }
 }

@@ -1,23 +1,5 @@
-async function makeEuropresseUrl(lacroixUrl) {
-    const keywords = extractKeywords();
-    return await makeOphirofoxReadingLink(keywords);
-}
-
-function extractKeywords() {
-    return extractKeywordsFromTitle();
-}
-
-function extractKeywordsFromTitle() {
-    const titleElem = document.querySelector(".tag-subscriber");
-    return titleElem && titleElem.textContent;
-}
-
 async function createLink() {
-    const a = document.createElement("a");
-    a.textContent = "Lire sur Europresse";
-    a.className = "ophirofox-europresse";
-    a.href = await makeEuropresseUrl(new URL(window.location));
-    return a;
+    return await ophirofoxEuropresseLink();
 }
 
 async function onLoad() {
