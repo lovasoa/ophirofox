@@ -1,0 +1,11 @@
+.ophirofox-europresse {
+    background: #cba200;
+    color: #fff;
+    text-transform: none;
+    text-decoration: none;
+    border: 0;
+    font-weight: var(--font-weight-bold);
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 8px 12px;
+}

@@ -1,0 +1,15 @@
+.ophirofox-europresse {
+    color: black;
+    margin-left: 7px;
+    padding: 0.4em 0.6em;
+    background-color: #ffc400;
+    font-size: 10px;
+    font-family: "SF Text","Helvetica Neue","Helvetica","Open Sans","Arial",sans-serif;
+    line-height: 1em;
+    border-radius: 0;
+    display: inline-block;
+    width: auto;
+   	text-transform: uppercase;
+    font-weight: 700;
+    height: auto;
+}
