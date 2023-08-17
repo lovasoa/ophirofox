@@ -4,7 +4,8 @@ function extractKeywords() {
 
 async function createLink() {
     const a = await ophirofoxEuropresseLink(extractKeywords());
-    a.classList.add("ap-StoryDate-update");
+    a.classList.add();
+	a.style.cssText = 'color:#5d3c10';
     return a;
 }
 
