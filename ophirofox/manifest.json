@@ -257,6 +257,7 @@
         "https://nouveau-europresse-com.ezproxy.univ-artois.fr/*",
         "https://nouveau-europresse-com.doc-elec.univ-lemans.fr/*",
         "https://nouveau-europresse-com.lama.univ-amu.fr/*"
+	"https://nouveau-europresse-com.passerelle.univ-rennes1.fr/Search/Reading"
       ],
       "css": [
         "content_scripts/europresse_article.css"
@@ -357,7 +358,11 @@
         {
           "name": "Université de Pau et des Pays de l'Adour",
           "AUTH_URL": "https://rproxy.univ-pau.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=uppaT_2"
-        }        
+        },
+        {
+          "name": "Université de Rennes",
+          "AUTH_URL": "https://nouveau-europresse-com.passerelle.univ-rennes1.fr/login?ur1=https://nouveau-europresse-com.passerelle.univ-rennes1.fr/access/ip/default.aspx?un=RENNES1AT_1"
+	
       ]
     }
   }
