@@ -256,8 +256,9 @@
         "https://nouveau-europresse-com.rproxy.univ-pau.fr/*",
         "https://nouveau-europresse-com.ezproxy.univ-artois.fr/*",
         "https://nouveau-europresse-com.doc-elec.univ-lemans.fr/*",
-        "https://nouveau-europresse-com.lama.univ-amu.fr/*"
-	"https://nouveau-europresse-com.passerelle.univ-rennes1.fr/Search/Reading"
+        "https://nouveau-europresse-com.lama.univ-amu.fr/*",
+	      "https://nouveau-europresse-com.passerelle.univ-rennes1.fr/*",
+      	"https://nouveau-europresse-com.ressources-electroniques.univ-lille.fr/*"
       ],
       "css": [
         "content_scripts/europresse_article.css"
@@ -336,6 +337,10 @@
           "AUTH_URL": "https://scd-proxy.uha.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=ALSACET_1"
         },
         {
+          "name": "Université de Lille",
+          "AUTH_URL": "https://ressources-electroniques.univ-lille.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=TourcoingT_1"
+        },
+        {
           "name": "Université de Montpellier",
           "AUTH_URL": "https://ezpum.scdi-montpellier.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MontpellierT_1"
         },
@@ -362,7 +367,7 @@
         {
           "name": "Université de Rennes",
           "AUTH_URL": "https://nouveau-europresse-com.passerelle.univ-rennes1.fr/login?ur1=https://nouveau-europresse-com.passerelle.univ-rennes1.fr/access/ip/default.aspx?un=RENNES1AT_1"
-	
+        }
       ]
     }
   }
