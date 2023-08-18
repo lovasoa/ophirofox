@@ -257,7 +257,7 @@
         "https://nouveau-europresse-com.ezproxy.univ-artois.fr/*",
         "https://nouveau-europresse-com.doc-elec.univ-lemans.fr/*",
         "https://nouveau-europresse-com.lama.univ-amu.fr/*",
-	      "https://nouveau-europresse-com.passerelle.univ-rennes1.fr/*",
+	"https://nouveau-europresse-com.passerelle.univ-rennes1.fr/*",
       	"https://nouveau-europresse-com.ressources-electroniques.univ-lille.fr/*"
       ],
       "css": [
