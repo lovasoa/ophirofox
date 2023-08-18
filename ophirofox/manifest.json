@@ -256,7 +256,8 @@
         "https://nouveau-europresse-com.rproxy.univ-pau.fr/*",
         "https://nouveau-europresse-com.ezproxy.univ-artois.fr/*",
         "https://nouveau-europresse-com.doc-elec.univ-lemans.fr/*",
-        "https://nouveau-europresse-com.lama.univ-amu.fr/*"
+        "https://nouveau-europresse-com.lama.univ-amu.fr/*",
+	"https://nouveau-europresse-com.ressources-electroniques.univ-lille.fr/*"
       ],
       "css": [
         "content_scripts/europresse_article.css"
@@ -333,6 +334,10 @@
         {
           "name": "Université de Haute-Alsace",
           "AUTH_URL": "https://scd-proxy.uha.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=ALSACET_1"
+        },
+        {
+          "name": "Université de Lille",
+          "AUTH_URL": "https://ressources-electroniques.univ-lille.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=TourcoingT_1"
         },
         {
           "name": "Université de Montpellier",
