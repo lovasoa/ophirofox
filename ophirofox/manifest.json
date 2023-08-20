@@ -306,6 +306,10 @@
           "AUTH_URL": "https://login.doc-elec.univ-lemans.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031524T_1"
         },
         {
+          "name": "Sciences Po Paris",
+          "AUTH_URL": "https://acces-distant.sciencespo.fr/fork?https://nouveau.europresse.com/access/ip/default.aspx?un=politique2T_1"
+        },
+        {
           "name": "ULM",
           "AUTH_URL": "https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1"
         },
@@ -368,11 +372,7 @@
         {
           "name": "Université de Rennes",
           "AUTH_URL": "https://nouveau-europresse-com.passerelle.univ-rennes1.fr/login?ur1=https://nouveau-europresse-com.passerelle.univ-rennes1.fr/access/ip/default.aspx?un=RENNES1AT_1"
-        },
-        {
-          "name": "Sciences Po Paris",
-          "AUTH_URL": "https://acces-distant.sciencespo.fr/fork?https://nouveau.europresse.com/access/ip/default.aspx?un=politique2T_1"
-        }	      
+        }
       ]
     }
   }
