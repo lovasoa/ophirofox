@@ -257,6 +257,7 @@
         "https://nouveau-europresse-com.ezproxy.univ-artois.fr/*",
         "https://nouveau-europresse-com.doc-elec.univ-lemans.fr/*",
         "https://nouveau-europresse-com.lama.univ-amu.fr/*",
+        "https://nouveau-europresse-com.portail.psl.eu/*",
 	"https://nouveau-europresse-com.passerelle.univ-rennes1.fr/*",
       	"https://nouveau-europresse-com.ressources-electroniques.univ-lille.fr/*",
 	"https://nouveau-europresse-com.acces-distant.sciencespo.fr/*"
@@ -364,6 +365,10 @@
         {
           "name": "Université Paris-Saclay",
           "AUTH_URL": "https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_9"
+        },
+        {
+          "name": "Université PSL",
+          "AUTH_URL": "https://portail.psl.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1"
         },
         {
           "name": "Université de Pau et des Pays de l'Adour",
