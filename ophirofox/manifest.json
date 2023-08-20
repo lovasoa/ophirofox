@@ -258,7 +258,8 @@
         "https://nouveau-europresse-com.doc-elec.univ-lemans.fr/*",
         "https://nouveau-europresse-com.lama.univ-amu.fr/*",
 	"https://nouveau-europresse-com.passerelle.univ-rennes1.fr/*",
-      	"https://nouveau-europresse-com.ressources-electroniques.univ-lille.fr/*"
+      	"https://nouveau-europresse-com.ressources-electroniques.univ-lille.fr/*",
+	"https://nouveau-europresse-com.acces-distant.sciencespo.fr/*"
       ],
       "css": [
         "content_scripts/europresse_article.css"
@@ -368,6 +369,10 @@
           "name": "Université de Rennes",
           "AUTH_URL": "https://nouveau-europresse-com.passerelle.univ-rennes1.fr/login?ur1=https://nouveau-europresse-com.passerelle.univ-rennes1.fr/access/ip/default.aspx?un=RENNES1AT_1"
         }
+        {
+          "name": "Sciences Po Paris",
+          "AUTH_URL": "https://acces-distant.sciencespo.fr/fork?https://nouveau.europresse.com/access/ip/default.aspx?un=politique2T_1#_ga=2.64094063.1939459122.1692479087-545339644.1689253102"
+        }	      
       ]
     }
   }
