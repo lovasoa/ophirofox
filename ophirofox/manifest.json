@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Ophirofox",
-  "version": "2.0",
+  "version": "2.1",
   "description": "Lire les articles du monde, du figaro, et d'autres journaux grâce à sa connexion europresse",
   "icons": {
     "48": "icons/48.png",
@@ -257,7 +257,10 @@
         "https://nouveau-europresse-com.ezproxy.univ-artois.fr/*",
         "https://nouveau-europresse-com.doc-elec.univ-lemans.fr/*",
         "https://nouveau-europresse-com.lama.univ-amu.fr/*",
-        "https://nouveau-europresse-com.portail.psl.eu/*"
+        "https://nouveau-europresse-com.portail.psl.eu/*",
+	      "https://nouveau-europresse-com.passerelle.univ-rennes1.fr/*",
+      	"https://nouveau-europresse-com.ressources-electroniques.univ-lille.fr/*",
+	      "https://nouveau-europresse-com.acces-distant.sciencespo.fr/*"
       ],
       "css": [
         "content_scripts/europresse_article.css"
@@ -304,6 +307,10 @@
           "AUTH_URL": "https://login.doc-elec.univ-lemans.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031524T_1"
         },
         {
+          "name": "Sciences Po Paris",
+          "AUTH_URL": "https://acces-distant.sciencespo.fr/fork?https://nouveau.europresse.com/access/ip/default.aspx?un=politique2T_1"
+        },
+        {
           "name": "ULM",
           "AUTH_URL": "https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1"
         },
@@ -336,6 +343,10 @@
           "AUTH_URL": "https://scd-proxy.uha.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=ALSACET_1"
         },
         {
+          "name": "Université de Lille",
+          "AUTH_URL": "https://ressources-electroniques.univ-lille.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=TourcoingT_1"
+        },
+        {
           "name": "Université de Montpellier",
           "AUTH_URL": "https://ezpum.scdi-montpellier.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MontpellierT_1"
         },
@@ -362,7 +373,11 @@
         {
           "name": "Université de Pau et des Pays de l'Adour",
           "AUTH_URL": "https://rproxy.univ-pau.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=uppaT_2"
-        }        
+        },
+        {
+          "name": "Université de Rennes",
+          "AUTH_URL": "https://nouveau-europresse-com.passerelle.univ-rennes1.fr/login?ur1=https://nouveau-europresse-com.passerelle.univ-rennes1.fr/access/ip/default.aspx?un=RENNES1AT_1"
+        }
       ]
     }
   }
