@@ -244,6 +244,7 @@
         "https://nouveau-europresse-com.accesdistant.bu.univ-paris8.fr/*",
         "https://nouveau-europresse-com.docelec.insa-lyon.fr/*",
         "https://nouveau-europresse-com.bnf.idm.oclc.org/*",
+        "https://nouveau-europresse-com.docelec.univ-lyon1.fr/*",
         "https://nouveau-europresse-com.sid2nomade-2.grenet.fr/*",
         "https://nouveau-europresse-com.ezpum.scdi-montpellier.fr/*",
         "https://nouveau-europresse-com.ezproxy.u-bordeaux-montaigne.fr/*",
@@ -313,6 +314,10 @@
         {
           "name": "ULM",
           "AUTH_URL": "https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1"
+        },
+        {
+          "name": "Université Claude Bernard Lyon 1",
+          "AUTH_URL": "http://docelec.univ-lyon1.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U033081T_1"
         },
         {
           "name": "Université d'Artois",
