@@ -258,7 +258,8 @@
         "https://nouveau-europresse-com.doc-elec.univ-lemans.fr/*",
         "https://nouveau-europresse-com.lama.univ-amu.fr/*",
 	"https://nouveau-europresse-com.passerelle.univ-rennes1.fr/*",
-      	"https://nouveau-europresse-com.ressources-electroniques.univ-lille.fr/*"
+      	"https://nouveau-europresse-com.ressources-electroniques.univ-lille.fr/*",
+	"https://nouveau-europresse-com.acces-distant.sciencespo.fr/*"
       ],
       "css": [
         "content_scripts/europresse_article.css"
@@ -303,6 +304,10 @@
         {
           "name": "Le Mans Université",
           "AUTH_URL": "https://login.doc-elec.univ-lemans.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031524T_1"
+        },
+        {
+          "name": "Sciences Po Paris",
+          "AUTH_URL": "https://acces-distant.sciencespo.fr/fork?https://nouveau.europresse.com/access/ip/default.aspx?un=politique2T_1"
         },
         {
           "name": "ULM",
