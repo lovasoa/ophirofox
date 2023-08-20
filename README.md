@@ -37,6 +37,7 @@ L'extension fonctionne avec les portails universitaires suivants :
  - [**Europresse Université de Pau et des pays de l'Adour**](https://nouveau-europresse-com.rproxy.univ-pau.fr/access/ip/default.aspx?un=uppaT_2)
  - [**Europresse Université de Rennes**](https://nouveau-europresse-com.passerelle.univ-rennes1.fr/login?ur1=https://nouveau-europresse-com.passerelle.univ-rennes1.fr/access/ip/default.aspx?un=RENNES1AT_1)
  - [**Europresse Université du Mans**](https://login.doc-elec.univ-lemans.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031524T_1)
+ - [**Europresse Sciences Po**](https://acces-distant.sciencespo.fr/fork?https://nouveau.europresse.com/access/ip/default.aspx?un=politique2T_1)
 
 Ou directement via le site Europresse.
 
