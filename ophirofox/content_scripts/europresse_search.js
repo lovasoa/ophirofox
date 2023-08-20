@@ -20,6 +20,8 @@ async function onLoad() {
         .join(' ');
     const keyword_field = document.getElementById("Keywords");
     keyword_field.value = 'TIT_HEAD=' + keywords;
+    const date_filter = document.getElementById("DateFilter_DateRange");
+    if (date_filter) date_filter.value = 9;
     keyword_field.form.submit();
 }
 
