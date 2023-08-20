@@ -12,7 +12,7 @@ async function onLoad() {
     if (!window.location.pathname.startsWith("/Search/Reading")) return;
     const search_terms = await consumeSearchTerms();
     if (!search_terms) return;
-    const stopwords = new Set(['d', 'l', 'et']);
+    const stopwords = new Set(['d', 'l', 'et', 'sans']);
     const keywords = search_terms
         .replace(/œ/g, 'oe')
         .split(/[^\p{L}]+/u)
