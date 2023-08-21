@@ -386,7 +386,7 @@
         },
 	{
 	  "name": "Université Lumière Lyon 2",
-          "AUTH_URL": "https://bu.univ-lyon2.fr/bibelec/titres-e/europresse"
+          "AUTH_URL": "http://bibelec.univ-lyon2.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=LYONT_3"
         }
       ]
     }
