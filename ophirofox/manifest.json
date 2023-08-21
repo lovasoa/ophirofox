@@ -382,7 +382,11 @@
         {
           "name": "Université de Rennes",
           "AUTH_URL": "https://nouveau-europresse-com.passerelle.univ-rennes1.fr/login?ur1=https://nouveau-europresse-com.passerelle.univ-rennes1.fr/access/ip/default.aspx?un=RENNES1AT_1"
-        }
+        },
+	 {
+          "name": "Université Toulouse",
+          "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_2"
+        }     
       ]
     }
   }
