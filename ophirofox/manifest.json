@@ -261,7 +261,7 @@
         "https://nouveau-europresse-com.portail.psl.eu/*",
 	"https://nouveau-europresse-com.passerelle.univ-rennes1.fr/*",
       	"https://nouveau-europresse-com.ressources-electroniques.univ-lille.fr/*",
-	"https://nouveau-europresse-com.bibelec.univ-lyon2.fr/",
+	"https://nouveau-europresse-com.bibelec.univ-lyon2.fr/*",
 	"https://nouveau-europresse-com.acces-distant.sciencespo.fr/*"
       ],
       "css": [
