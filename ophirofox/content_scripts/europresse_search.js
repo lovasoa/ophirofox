@@ -12,7 +12,7 @@ async function onLoad() {
     if (!window.location.pathname.startsWith("/Search/Reading")) return;
     const search_terms = await consumeSearchTerms();
     if (!search_terms) return;
-    const stopwords = new Set(['d', 'l', 'et']);
+    const stopwords = new Set(['d', 'l', 'et', 'sans']);
     const keywords = search_terms
         .replace(/œ/g, 'oe')
         .split(/[^\p{L}]+/u)
@@ -20,6 +20,8 @@ async function onLoad() {
         .join(' ');
     const keyword_field = document.getElementById("Keywords");
     keyword_field.value = 'TIT_HEAD=' + keywords;
+    const date_filter = document.getElementById("DateFilter_DateRange");
+    if (date_filter) date_filter.value = 9;
     keyword_field.form.submit();
 }
 

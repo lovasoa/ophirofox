@@ -259,10 +259,11 @@
         "https://nouveau-europresse-com.doc-elec.univ-lemans.fr/*",
         "https://nouveau-europresse-com.lama.univ-amu.fr/*",
         "https://nouveau-europresse-com.portail.psl.eu/*",
-	"https://nouveau-europresse-com.passerelle.univ-rennes1.fr/*",
+	      "https://nouveau-europresse-com.passerelle.univ-rennes1.fr/*",
       	"https://nouveau-europresse-com.ressources-electroniques.univ-lille.fr/*",
-	"https://nouveau-europresse-com.bibelec.univ-lyon2.fr/*",
-	"https://nouveau-europresse-com.acces-distant.sciencespo.fr/*"
+	      "https://nouveau-europresse-com.bibelec.univ-lyon2.fr/*",
+	      "https://nouveau-europresse-com.gorgone.univ-toulouse.fr/*",
+	      "https://nouveau-europresse-com.acces-distant.sciencespo.fr/*"
       ],
       "css": [
         "content_scripts/europresse_article.css"
@@ -384,8 +385,12 @@
           "name": "Université de Rennes",
           "AUTH_URL": "https://nouveau-europresse-com.passerelle.univ-rennes1.fr/login?ur1=https://nouveau-europresse-com.passerelle.univ-rennes1.fr/access/ip/default.aspx?un=RENNES1AT_1"
         },
-	{
-	  "name": "Université Lumière Lyon 2",
+        {
+          "name": "Université de Toulouse",
+          "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_2"
+        },
+        {
+	        "name": "Université Lumière Lyon 2",
           "AUTH_URL": "http://bibelec.univ-lyon2.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=LYONT_3"
         }
       ]
