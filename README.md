@@ -41,6 +41,7 @@ L'extension fonctionne avec les portails universitaires suivants :
  - [**Europresse Université de Toulouse**](https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_2)
  - [**Europresse Université du Mans**](https://login.doc-elec.univ-lemans.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031524T_1)
  - [**Europresse Sciences Po**](https://acces-distant.sciencespo.fr/fork?https://nouveau.europresse.com/access/ip/default.aspx?un=politique2T_1)
+ - [**Europresse Université de Lyon 2**](https://nouveau-europresse-com.bibelec.univ-lyon2.fr/)
 
 Ou directement via le site Europresse.
 
