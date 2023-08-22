@@ -357,7 +357,7 @@
         },
         {
           "name": "Université de Montpellier",
-          "AUTH_URL": "https://ezpum.scdi-montpellier.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MontpellierT_1"
+          "AUTH_URL": "https://login.ezpum.scdi-montpellier.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MontpellierT_1"
         },
         {
           "name": "Université Paris 1 Panthéon-Sorbonne",
