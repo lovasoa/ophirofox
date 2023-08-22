@@ -377,7 +377,7 @@
         },
 	{
           "name": "Université Paul-Valéry Montpellier 3",
-          "AUTH_URL": "https://ezpupv.scdi-montpellier.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MontpellierT_1"
+          "AUTH_URL": "https://login.ezpupv.scdi-montpellier.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MontpellierT_1"
         },
         {
           "name": "Université PSL",
