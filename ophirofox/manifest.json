@@ -267,7 +267,8 @@
         "https://nouveau-europresse-com.ressources.univ-poitiers.fr/*",
         "https://nouveau-europresse-com.bibelec.univ-lyon2.fr/*",
         "https://nouveau-europresse-com.gorgone.univ-toulouse.fr/*",
-	"https://nouveau-europresse-com.ezscd.univ-lyon3.fr/*"
+	"https://nouveau-europresse-com.ezscd.univ-lyon3.fr/*",
+	"https://nouveau-europresse-com.ezproxy.u-pec.fr/*"
       ],
       "css": [
         "content_scripts/europresse_article.css"
@@ -381,6 +382,10 @@
           "name": "Université Paris Cité",
           "AUTH_URL": "https://ezproxy.u-paris.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVPARIS"
         },
+	{
+	  "name": "Université Paris-Est Créteil",
+	  "AUTH_URL": "https://ezproxy.u-pec.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=D000030T_4"
+	},
         {
           "name": "Université Paris-Saclay",
           "AUTH_URL": "https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_9"
