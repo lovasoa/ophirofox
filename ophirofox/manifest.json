@@ -237,6 +237,7 @@
     {
       "matches": [
         "https://nouveau.europresse.com/*",
+        "https://nouveau-europresse-com.budistant.univ-nantes.fr/*",
         "https://nouveau-europresse-com.proxy.rubens.ens.fr/*",
         "https://nouveau-europresse-com.rp1.ensam.eu/*",
         "https://nouveau-europresse-com.ezproxy.universite-paris-saclay.fr/*",
@@ -358,6 +359,10 @@
         {
           "name": "Université de Montpellier",
           "AUTH_URL": "https://login.ezpum.scdi-montpellier.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MontpellierT_1"
+        },
+        {
+          "name": "Université de Nantes",
+          "AUTH_URL": "https://budistant.univ-nantes.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=NANTEST_1"
         },
         {
           "name": "Université Paris 1 Panthéon-Sorbonne",
