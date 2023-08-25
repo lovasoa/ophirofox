@@ -73,7 +73,7 @@ async function ophirofoxEuropresseLink(keywords) {
   const a = document.createElement("a");
   a.textContent = "Lire sur Europresse";
   a.className = "ophirofox-europresse";
-  a.onclick = function (evt) {
+  a.onmousedown = a.onclick = function (evt) {
     evt.preventDefault();
     chrome.storage.local.set({ "ophirofox_keywords": keywords }, () => {
       ophirofox_config.then(({ AUTH_URL }) => window.location = AUTH_URL);
