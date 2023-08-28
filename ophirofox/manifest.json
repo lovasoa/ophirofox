@@ -381,7 +381,7 @@
         },
         {
           "name": "Université Paris 8",
-          "AUTH_URL": "https://accesdistant.bu.univ-paris8.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=paris8ZZ"
+          "AUTH_URL": "https://accesdistant.bu.univ-paris8.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=paris8"
         },
         {
           "name": "Université Paris Cité",
