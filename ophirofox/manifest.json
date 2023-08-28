@@ -242,7 +242,7 @@
         "https://nouveau-europresse-com.rp1.ensam.eu/*",
         "https://nouveau-europresse-com.ezproxy.universite-paris-saclay.fr/*",
         "https://nouveau-europresse-com.ezpaarse.univ-paris1.fr/*",
-        "https://nouveau-europresse-com.accesdistant.bu.univ-paris8.fr/*",
+        "https://nouveau-europresse-com.accesdistant.bu.univ-paris8.fr/Search/Reading*",
         "https://nouveau-europresse-com.docelec.insa-lyon.fr/*",
         "https://nouveau-europresse-com.bnf.idm.oclc.org/*",
         "https://nouveau-europresse-com.docelec.univ-lyon1.fr/*",
@@ -381,7 +381,7 @@
         },
         {
           "name": "Université Paris 8",
-          "AUTH_URL": "https://accesdistant.bu.univ-paris8.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=paris8"
+          "AUTH_URL": "https://accesdistant.bu.univ-paris8.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=paris8ZZ"
         },
         {
           "name": "Université Paris Cité",
