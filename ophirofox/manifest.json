@@ -269,7 +269,8 @@
         "https://nouveau-europresse-com.gorgone.univ-toulouse.fr/*",
         "https://nouveau-europresse-com.ezscd.univ-lyon3.fr/*",
         "https://nouveau-europresse-com.ezproxy.u-pec.fr/*",
-        "https://nouveau-europresse-com.buadistant.univ-angers.fr/*"
+        "https://nouveau-europresse-com.buadistant.univ-angers.fr/*",
+        "https://nouveau-europresse-com.proxybib-pp.cnam.fr/*"
       ],
       "css": [
         "content_scripts/europresse_article.css"
@@ -302,6 +303,10 @@
         {
           "name": "ENS de Lyon",
           "AUTH_URL": "https://acces.bibliotheque-diderot.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ENSLYONT_1"
+        },
+        {
+          "name": "Conservatoire national des arts et métiers",
+          "AUTH_URL": "https://nouveau-europresse-com.proxybib-pp.cnam.fr/access/ip/default.aspx?un=CNAM"
         },
         {
           "name": "ENSAM",
