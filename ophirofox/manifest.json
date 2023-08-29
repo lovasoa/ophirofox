@@ -437,7 +437,7 @@
         {
           "name": "Université Catholique de l'Ouest",
           "AUTH_URL": "https://srvext.uco.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UCOT_1"
-        },
+        }
       ]
     }
   }
