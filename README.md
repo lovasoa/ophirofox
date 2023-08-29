@@ -46,6 +46,7 @@ L'extension fonctionne avec les portails universitaires suivants :
  - [**Europresse Université de Picardie Jules Verne**](https://merlin.u-picardie.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=BUPICARDIET_2)
  - [**Europresse Université de Poitiers**](http://ressources.univ-poitiers.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032521T_1)
  - [**Europresse Université PSL**](https://portail.psl.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1)
+ - [**Europresse Université de Reims Champagne-Ardenne**](https://urca.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ArdenneT_1)
  - [**Europresse Université de Rennes**](https://nouveau-europresse-com.passerelle.univ-rennes1.fr/login?ur1=https://nouveau-europresse-com.passerelle.univ-rennes1.fr/access/ip/default.aspx?un=RENNES1AT_1)
  - [**Europresse Université de Toulouse**](https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_2)
  - [**Europresse Université du Mans**](https://login.doc-elec.univ-lemans.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031524T_1)
