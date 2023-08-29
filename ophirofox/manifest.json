@@ -270,6 +270,7 @@
         "https://nouveau-europresse-com.ezscd.univ-lyon3.fr/*",
         "https://nouveau-europresse-com.ezproxy.u-pec.fr/*",
         "https://nouveau-europresse-com.buadistant.univ-angers.fr/*",
+        "https://nouveau-europresse-com.urca.idm.oclc.org/*",
         "https://nouveau-europresse-com.merlin.u-picardie.fr/*"
       ],
       "css": [
@@ -375,6 +376,10 @@
         {
           "name": "Université de Nantes",
           "AUTH_URL": "https://budistant.univ-nantes.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=NANTEST_1"
+        },
+        {
+          "name": "Université de Reims Champagne-Ardenne",
+          "AUTH_URL": "https://urca.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ArdenneT_1"
         },
         {
           "name": "Université Paris 1 Panthéon-Sorbonne",
