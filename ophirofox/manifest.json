@@ -269,7 +269,8 @@
         "https://nouveau-europresse-com.gorgone.univ-toulouse.fr/*",
         "https://nouveau-europresse-com.ezscd.univ-lyon3.fr/*",
         "https://nouveau-europresse-com.ezproxy.u-pec.fr/*",
-        "https://nouveau-europresse-com.buadistant.univ-angers.fr/*"
+        "https://nouveau-europresse-com.buadistant.univ-angers.fr/*",
+        "https://nouveau-europresse-com.srvext.uco.fr/*"
       ],
       "css": [
         "content_scripts/europresse_article.css"
@@ -422,7 +423,11 @@
         {
           "name": "Université Lumière Lyon 2",
           "AUTH_URL": "http://bibelec.univ-lyon2.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=LYONT_3"
-        }
+        },
+        {
+          "name": "Université Catholique de l'Ouest",
+          "AUTH_URL": "https://srvext.uco.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UCOT_1"
+        },
       ]
     }
   }
