@@ -30,6 +30,7 @@ L'extension fonctionne avec les portails universitaires suivants :
  - [**Europresse Université Paris Cité**](https://ezproxy.u-paris.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVPARIS)
  - [**Europresse Université Paris-Saclay**](https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_9),
  - [**Europresse Université Paul-Valery Montpellier 3**](https://ezpupv.scdi-montpellier.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MontpellierT_1)
+ - [**Europresse Université des Antilles**](http://bu-services.univ-antilles.fr:5000/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ANTILLEST_1)
  - [**Europresse Université d'Aix-Marseille**](https://lama.univ-amu.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031032T_1)
  - [**Europresse Université d'Angers**](https://buadistant.univ-angers.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=BUANGERST_1)
  - [**Europresse Université d'Artois**](http://ezproxy.univ-artois.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=littoralT_1)
