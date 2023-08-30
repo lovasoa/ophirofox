@@ -268,7 +268,8 @@
         "https://nouveau-europresse-com.bibelec.univ-lyon2.fr/*",
         "https://nouveau-europresse-com.gorgone.univ-toulouse.fr/*",
         "https://nouveau-europresse-com.ezscd.univ-lyon3.fr/*",
-        "https://nouveau-europresse-com.ezproxy.u-pec.fr/*"
+        "https://nouveau-europresse-com.ezproxy.u-pec.fr/*",
+        "https://nouveau-europresse-com.buadistant.univ-angers.fr/*"
       ],
       "css": [
         "content_scripts/europresse_article.css"
@@ -325,6 +326,10 @@
         {
           "name": "Université Claude Bernard Lyon 1",
           "AUTH_URL": "http://docelec.univ-lyon1.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U033081T_1"
+        },
+        {
+          "name": "Université d'Angers",
+          "AUTH_URL": "https://buadistant.univ-angers.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=BUANGERST_1"
         },
         {
           "name": "Université d'Artois",
