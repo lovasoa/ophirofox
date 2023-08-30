@@ -60,6 +60,7 @@ Ou directement via le site Europresse.
 ## Sites supportés
 
 ### Presse nationale
+  - [L'Express](https://www.lexpress.fr/)
   - [L'Humanité](https://www.humanite.fr)
   - [La Croix](https://www.la-croix.com)
   - [Le Figaro](https://www.lefigaro.fr/)

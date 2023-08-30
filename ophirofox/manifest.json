@@ -236,6 +236,18 @@
     },
     {
       "matches": [
+        "https://www.lexpress.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/lexpress.js"
+      ],
+      "css": [
+        "content_scripts/lexpress.css"
+      ]
+    },
+    {
+      "matches": [
         "https://nouveau.europresse.com/*",
         "https://nouveau-europresse-com.budistant.univ-nantes.fr/*",
         "https://nouveau-europresse-com.proxy.rubens.ens.fr/*",
