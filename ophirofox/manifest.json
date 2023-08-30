@@ -269,7 +269,8 @@
         "https://nouveau-europresse-com.gorgone.univ-toulouse.fr/*",
         "https://nouveau-europresse-com.ezscd.univ-lyon3.fr/*",
         "https://nouveau-europresse-com.ezproxy.u-pec.fr/*",
-        "https://nouveau-europresse-com.buadistant.univ-angers.fr/*"
+        "https://nouveau-europresse-com.buadistant.univ-angers.fr/*",
+        "https://nouveau-europresse-com.acces-distant.bnu.fr/*"
       ],
       "css": [
         "content_scripts/europresse_article.css"
@@ -294,6 +295,10 @@
         {
           "name": "Aix-Marseille Université",
           "AUTH_URL": "https://lama.univ-amu.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031032T_1"
+        },
+        {
+          "name": "Bibliotheque nationale et universitaire de Strasbourg",
+          "AUTH_URL": "http://acces-distant.bnu.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=bnus"
         },
         {
           "name": "BNF",
