@@ -1,7 +1,5 @@
 async function createLink() {
     const a = await ophirofoxEuropresseLink();
-    a.classList.add();
-    a.textContent = '(Lire sur Europresse)';
     return a;
 }
 
@@ -16,7 +14,11 @@ function findPremiumBanner() {
 async function onLoad() {
     const head = findPremiumBanner();
     if (!head) return;
-    head.after(await createLink());
+    const newDiv = document.createElement('div');
+    newDiv.classList.add('europresseButton');
+    const title = document.querySelector(".premium_label.label");
+    title.after(newDiv);
+    newDiv.appendChild(await createLink());
 }
 
 onLoad().catch(console.error);
