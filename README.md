@@ -17,6 +17,7 @@ d'être redirigé automatiquement vers une page de recherche europresse qui cont
 
 L'extension fonctionne avec les portails universitaires suivants :
  - [**Europresse Bibliothèque nationale de France**](https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=bnf)
+ - [**Europresse Conservatoire national des arts et métiers (CNAM)**](https://nouveau-europresse-com.proxybib-pp.cnam.fr/access/ip/default.aspx?un=CNAM)
  - [**Europresse ENS Lyon**](https://acces.bibliotheque-diderot.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ENSLYONT_1),
  - [**Europresse ENS Ulm PSL**](http://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1),
  - [**Europresse ENSAM (Arts et Métiers)**](http://rp1.ensam.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=AML),

@@ -270,6 +270,7 @@
         "https://nouveau-europresse-com.ezscd.univ-lyon3.fr/*",
         "https://nouveau-europresse-com.ezproxy.u-pec.fr/*",
         "https://nouveau-europresse-com.buadistant.univ-angers.fr/*",
+        "https://nouveau-europresse-com.proxybib-pp.cnam.fr/*",
         "https://nouveau-europresse-com.srvext.uco.fr/*",
         "https://nouveau-europresse-com.urca.idm.oclc.org/*",
         "https://nouveau-europresse-com.merlin.u-picardie.fr/*"
@@ -305,6 +306,10 @@
         {
           "name": "ENS de Lyon",
           "AUTH_URL": "https://acces.bibliotheque-diderot.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ENSLYONT_1"
+        },
+        {
+          "name": "Conservatoire national des arts et métiers",
+          "AUTH_URL": "https://proxybib-pp.cnam.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CNAM"
         },
         {
           "name": "ENSAM",
