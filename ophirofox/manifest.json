@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Ophirofox",
-  "version": "2.2",
+  "version": "2.3",
   "description": "Lire les articles du monde, du figaro, et d'autres journaux grâce à sa connexion europresse",
   "icons": {
     "48": "icons/48.png",
@@ -281,7 +281,12 @@
         "https://nouveau-europresse-com.gorgone.univ-toulouse.fr/*",
         "https://nouveau-europresse-com.ezscd.univ-lyon3.fr/*",
         "https://nouveau-europresse-com.ezproxy.u-pec.fr/*",
-        "https://nouveau-europresse-com.buadistant.univ-angers.fr/*"
+        "https://nouveau-europresse-com.buadistant.univ-angers.fr/*",
+        "https://nouveau-europresse-com.bu-services.univ-antilles.fr/*",
+        "https://nouveau-europresse-com.proxybib-pp.cnam.fr/*",
+        "https://nouveau-europresse-com.srvext.uco.fr/*",
+        "https://nouveau-europresse-com.urca.idm.oclc.org/*",
+        "https://nouveau-europresse-com.merlin.u-picardie.fr/*"
       ],
       "css": [
         "content_scripts/europresse_article.css"
@@ -316,6 +321,10 @@
           "AUTH_URL": "https://acces.bibliotheque-diderot.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ENSLYONT_1"
         },
         {
+          "name": "Conservatoire national des arts et métiers",
+          "AUTH_URL": "https://proxybib-pp.cnam.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CNAM"
+        },
+        {
           "name": "ENSAM",
           "AUTH_URL": "https://rp1.ensam.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=AML"
         },
@@ -342,6 +351,10 @@
         {
           "name": "Université d'Angers",
           "AUTH_URL": "https://buadistant.univ-angers.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=BUANGERST_1"
+        },
+        {
+          "name": "Université des Antilles",
+          "AUTH_URL": "http://bu-services.univ-antilles.fr:5000/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ANTILLEST_1"
         },
         {
           "name": "Université d'Artois",
@@ -388,6 +401,10 @@
           "AUTH_URL": "https://budistant.univ-nantes.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=NANTEST_1"
         },
         {
+          "name": "Université de Reims Champagne-Ardenne",
+          "AUTH_URL": "https://urca.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ArdenneT_1"
+        },
+        {
           "name": "Université Paris 1 Panthéon-Sorbonne",
           "AUTH_URL": "https://ezpaarse.univ-paris1.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=SORBONNET_1"
         },
@@ -412,6 +429,10 @@
           "AUTH_URL": "https://login.ezpupv.scdi-montpellier.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MontpellierT_1"
         },
         {
+          "name": "Université de Picardie Jules Verne",
+          "AUTH_URL": "https://merlin.u-picardie.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=BUPICARDIET_2"
+        },
+        {
           "name": "Université PSL",
           "AUTH_URL": "https://portail.psl.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1"
         },
@@ -434,6 +455,10 @@
         {
           "name": "Université Lumière Lyon 2",
           "AUTH_URL": "http://bibelec.univ-lyon2.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=LYONT_3"
+        },
+        {
+          "name": "Université Catholique de l'Ouest",
+          "AUTH_URL": "https://srvext.uco.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UCOT_1"
         }
       ]
     }
