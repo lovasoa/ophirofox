@@ -15,7 +15,7 @@ async function onLoad() {
     const head = findPremiumBanner();
     if (!head) return;
     const newDiv = document.createElement('div');
-    newDiv.classList.add('europresseButton');
+    newDiv.classList.add('europresse-button');
     const title = document.querySelector(".premium_label.label");
     title.after(newDiv);
     newDiv.appendChild(await createLink());
