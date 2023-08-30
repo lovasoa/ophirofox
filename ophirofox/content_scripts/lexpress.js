@@ -14,9 +14,9 @@ function findPremiumBanner() {
 }
 
 async function onLoad() {
-    const head = document.querySelector(".premium_label.label");
+    const head = findPremiumBanner();
     if (!head) return;
-    head.appendChild(await createLink());
+    head.after(await createLink());
 }
 
 onLoad().catch(console.error);
