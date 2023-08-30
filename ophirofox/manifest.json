@@ -309,7 +309,7 @@
         },
         {
           "name": "Conservatoire national des arts et métiers",
-          "AUTH_URL": "https://nouveau-europresse-com.proxybib-pp.cnam.fr/access/ip/default.aspx?un=CNAM"
+          "AUTH_URL": "https://proxybib-pp.cnam.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CNAM"
         },
         {
           "name": "ENSAM",
