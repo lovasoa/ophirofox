@@ -270,6 +270,7 @@
         "https://nouveau-europresse-com.ezscd.univ-lyon3.fr/*",
         "https://nouveau-europresse-com.ezproxy.u-pec.fr/*",
         "https://nouveau-europresse-com.buadistant.univ-angers.fr/*"
+        "https://nouveau-europresse-com.proxybib-pp.cnam.fr/*"
       ],
       "css": [
         "content_scripts/europresse_article.css"
@@ -422,7 +423,10 @@
         {
           "name": "Université Lumière Lyon 2",
           "AUTH_URL": "http://bibelec.univ-lyon2.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=LYONT_3"
+        },
         }
+          "name": "Conservatoire national des arts et métiers",
+          "AUTH_URL": "https://nouveau-europresse-com.proxybib-pp.cnam.fr/access/ip/default.aspx?un=CNAM"
       ]
     }
   }
