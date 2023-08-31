@@ -270,6 +270,7 @@
         "https://nouveau-europresse-com.ezscd.univ-lyon3.fr/*",
         "https://nouveau-europresse-com.ezproxy.u-pec.fr/*",
         "https://nouveau-europresse-com.buadistant.univ-angers.fr/*"
+        "https://nouveau-europresse-com.mediaproxy.imtbs-tsp.eu/*"
       ],
       "css": [
         "content_scripts/europresse_article.css"
@@ -422,6 +423,10 @@
         {
           "name": "Université Lumière Lyon 2",
           "AUTH_URL": "http://bibelec.univ-lyon2.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=LYONT_3"
+        }
+         {
+          "name": "Médiathèque de Télécom SudParis & Institut Mines-Télécom Business School",
+          "AUTH_URL": "http://mediaproxy.imtbs-tsp.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_8"
         }
       ]
     }
