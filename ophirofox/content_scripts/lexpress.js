@@ -1,8 +1,3 @@
-async function createLink() {
-    const a = await ophirofoxEuropresseLink();
-    return a;
-}
-
 const title = document.querySelector(".premium_label.label");
     
 function findPremiumBanner() {
@@ -17,7 +12,7 @@ async function onLoad() {
     const newDiv = document.createElement('div');
     newDiv.classList.add('europresse-button');
     title.after(newDiv);
-    newDiv.appendChild(await createLink());
+    newDiv.appendChild(await ophirofoxEuropresseLink());
 }
 
 onLoad().catch(console.error);
