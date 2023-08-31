@@ -282,6 +282,7 @@
         "https://nouveau-europresse-com.ezscd.univ-lyon3.fr/*",
         "https://nouveau-europresse-com.ezproxy.u-pec.fr/*",
         "https://nouveau-europresse-com.buadistant.univ-angers.fr/*",
+        "https://nouveau-europresse-com.acces-distant.bnu.fr/*",
         "https://nouveau-europresse-com.bu-services.univ-antilles.fr/*",
         "https://nouveau-europresse-com.proxybib-pp.cnam.fr/*",
         "https://nouveau-europresse-com.srvext.uco.fr/*",
@@ -311,6 +312,10 @@
         {
           "name": "Aix-Marseille Université",
           "AUTH_URL": "https://lama.univ-amu.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031032T_1"
+        },
+        {
+          "name": "Bibliotheque nationale et universitaire de Strasbourg",
+          "AUTH_URL": "http://acces-distant.bnu.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=bnus"
         },
         {
           "name": "BNF",
