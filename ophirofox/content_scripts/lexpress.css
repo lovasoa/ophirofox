@@ -1,8 +1,24 @@
 .ophirofox-europresse {
-	background-color: #ffe066;
 	padding: 0px;
-	margin-left: 1em;
-	text-transform: uppercase;
-	color: #333;
 	text-decoration: none;
+	color: #333 !important;
+}
+
+.europresse-button {
+	background-color: #ffe066;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 10px;
+	font-size: .75rem;
+	align-items: center;
+	display: flex;
+	border-radius: 5px;
+	margin-right: 14px;
+	margin-top: 14px;
+	width: fit-content;
+	font-weight: 600;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	box-sizing: inherit;
+	color: #333;
 }
