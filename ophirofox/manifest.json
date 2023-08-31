@@ -336,6 +336,10 @@
           "AUTH_URL": "http://ezproxy.univ-artois.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=littoralT_1"
         },
         {
+          "name": "Université d'Évry Val d'Essonne",
+          "AUTH_URL": "https://nouveau-europresse-com.ezproxy.universite-paris-saclay.fr/access/ip/default.aspx?un=U031535T_8"
+        },
+        {
           "name": "Université de Bordeaux",
           "AUTH_URL": "https://docelec.u-bordeaux.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVBORDEAUXT_1"
         },
