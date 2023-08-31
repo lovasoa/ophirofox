@@ -281,6 +281,7 @@
         "https://nouveau-europresse-com.gorgone.univ-toulouse.fr/*",
         "https://nouveau-europresse-com.ezscd.univ-lyon3.fr/*",
         "https://nouveau-europresse-com.ezproxy.u-pec.fr/*",
+        "https://nouveau-europresse-com.mediaproxy.imtbs-tsp.eu/*",
         "https://nouveau-europresse-com.buadistant.univ-angers.fr/*",
         "https://nouveau-europresse-com.docelec-u-paris2.idm.oclc.org/*",
         "https://nouveau-europresse-com.acces-distant.bnu.fr/*",
@@ -341,6 +342,10 @@
         {
           "name": "Le Mans Université",
           "AUTH_URL": "https://login.doc-elec.univ-lemans.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031524T_1"
+        },
+        {
+          "name": "Médiathèque de Télécom SudParis & Institut Mines-Télécom Business School",
+          "AUTH_URL": "http://mediaproxy.imtbs-tsp.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_8"
         },
         {
           "name": "Sciences Po Paris",
