@@ -55,6 +55,7 @@ L'extension fonctionne avec les portails universitaires suivants :
  - [**Europresse Université PSL**](https://portail.psl.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1)
  - [**Europresse Université de Reims Champagne-Ardenne**](https://urca.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ArdenneT_1)
  - [**Europresse Université de Rennes**](https://nouveau-europresse-com.passerelle.univ-rennes1.fr/login?ur1=https://nouveau-europresse-com.passerelle.univ-rennes1.fr/access/ip/default.aspx?un=RENNES1AT_1)
+ - [**Europresse Université Savoie Mont Blanc**](http://univ-smb.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=savoieT_1)
  - [**Europresse Université de Toulouse**](https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_2)
  - [**Europresse Université de Versailles St-Quentin-en-Yvelines**](https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_1)
  - [**Europresse Université du Mans**](https://login.doc-elec.univ-lemans.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031524T_1)
