@@ -270,6 +270,7 @@
         "https://nouveau-europresse-com.ezscd.univ-lyon3.fr/*",
         "https://nouveau-europresse-com.ezproxy.u-pec.fr/*",
         "https://nouveau-europresse-com.buadistant.univ-angers.fr/*"
+        "https://nouveau-europresse-com.ezproxy.univ-paris13.fr/*"
       ],
       "css": [
         "content_scripts/europresse_article.css"
@@ -414,6 +415,10 @@
         {
           "name": "Université de Rennes",
           "AUTH_URL": "https://nouveau-europresse-com.passerelle.univ-rennes1.fr/login?ur1=https://nouveau-europresse-com.passerelle.univ-rennes1.fr/access/ip/default.aspx?un=RENNES1AT_1"
+        },
+        {
+          "name": "Université Sorbonne Paris Nord - Paris 13",
+          "AUTH_URL": "https://login.ezproxy.univ-paris13.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=paris13"
         },
         {
           "name": "Université de Toulouse",
