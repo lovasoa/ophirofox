@@ -423,7 +423,7 @@
         },
         {
           "name": "Université Sorbonne Université",
-          "AUTH_URL": "https://auth.sorbonne-universite.fr/cas/login?service=https://sorbonne-universite.primo.exlibrisgroup.com/infra/casRedirect?ctx=/primaws"
+          "AUTH_URL": "https://accesdistant.sorbonne-universite.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UPMCT_1"
         },
         {
           "name": "Université de Toulouse",
