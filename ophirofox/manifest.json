@@ -284,6 +284,7 @@
         "https://nouveau-europresse-com.ezproxy.campus-condorcet.fr/*",
         "https://nouveau-europresse-com.mediaproxy.imtbs-tsp.eu/*",
         "https://nouveau-europresse-com.buadistant.univ-angers.fr/*",
+        "https://nouveau-europresse-com.accesdistant.sorbonne-universite.fr/*",
         "https://nouveau-europresse-com.docelec-u-paris2.idm.oclc.org/*",
         "https://nouveau-europresse-com.acces-distant.bnu.fr/*",
         "https://nouveau-europresse-com.bu-services.univ-antilles.fr/*",
@@ -471,6 +472,10 @@
         {
           "name": "Université de Rennes",
           "AUTH_URL": "https://passerelle.univ-rennes1.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=RENNES1AT_1"
+        },
+        {
+          "name": "Université Sorbonne Université",
+          "AUTH_URL": "https://accesdistant.sorbonne-universite.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UPMCT_1"
         },
         {
           "name": "Université de Toulouse",
