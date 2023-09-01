@@ -29,6 +29,7 @@ L'extension fonctionne avec les portails universitaires suivants :
  - [**Europresse Université Paris 1 Panthéon-Sorbonne**](http://ezpaarse.univ-paris1.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=SORBONNET_1)
  - [**Europresse Université Paris 2 Panthéon Assas**](https://docelec-u-paris2.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ASSAST_1)
  - [**Europresse Université Paris 8 Vincennes - Saint-Denis**](https://accesdistant.bu.univ-paris8.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=paris8)
+ - [**Europresse Université Paris 13 Sorbonne Paris Nord**](https://login.ezproxy.univ-paris13.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=paris13)
  - [**Europresse Université Paris-Est Créteil**](https://ezproxy.u-pec.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=D000030T_4)
  - [**Europresse Université Paris Cité**](https://ezproxy.u-paris.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVPARIS)
  - [**Europresse Université Paris-Saclay**](https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_9),

@@ -281,6 +281,7 @@
         "https://nouveau-europresse-com.gorgone.univ-toulouse.fr/*",
         "https://nouveau-europresse-com.ezscd.univ-lyon3.fr/*",
         "https://nouveau-europresse-com.ezproxy.u-pec.fr/*",
+        "https://nouveau-europresse-com.ezproxy.univ-paris13.fr/*",
         "https://nouveau-europresse-com.ezproxy.campus-condorcet.fr/*",
         "https://nouveau-europresse-com.mediaproxy.imtbs-tsp.eu/*",
         "https://nouveau-europresse-com.buadistant.univ-angers.fr/*",
@@ -476,6 +477,10 @@
         {
           "name": "Université Sorbonne Université",
           "AUTH_URL": "https://accesdistant.sorbonne-universite.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UPMCT_1"
+        },
+        {
+          "name": "Université Sorbonne Paris Nord - Paris 13",
+          "AUTH_URL": "https://login.ezproxy.univ-paris13.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=paris13"
         },
         {
           "name": "Université de Toulouse",
