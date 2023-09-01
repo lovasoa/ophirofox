@@ -270,6 +270,7 @@
         "https://nouveau-europresse-com.ezscd.univ-lyon3.fr/*",
         "https://nouveau-europresse-com.ezproxy.u-pec.fr/*",
         "https://nouveau-europresse-com.buadistant.univ-angers.fr/*"
+        "https://nouveau-europresse-com.univ-smb.idm.oclc.org/*"
       ],
       "css": [
         "content_scripts/europresse_article.css"
@@ -414,6 +415,10 @@
         {
           "name": "Université de Rennes",
           "AUTH_URL": "https://nouveau-europresse-com.passerelle.univ-rennes1.fr/login?ur1=https://nouveau-europresse-com.passerelle.univ-rennes1.fr/access/ip/default.aspx?un=RENNES1AT_1"
+        },
+          {
+          "name": "Université Savoie Mont Blanc",
+          "AUTH_URL": "http://univ-smb.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=savoieT_1"
         },
         {
           "name": "Université de Toulouse",
