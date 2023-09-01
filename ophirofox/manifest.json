@@ -267,6 +267,7 @@
         "https://nouveau-europresse-com.acces.bibliotheque-diderot.fr/*",
         "https://nouveau-europresse-com.scd-proxy.uha.fr/*",
         "https://nouveau-europresse-com.ezproxy.u-paris.fr/*",
+        "https://nouveau-europresse-com.faraway.parisnanterre.fr/*",
         "https://nouveau-europresse-com.scd1.univ-fcomte.fr/*",
         "https://nouveau-europresse-com.rproxy.univ-pau.fr/*",
         "https://nouveau-europresse-com.ezproxy.univ-artois.fr/*",
@@ -446,6 +447,10 @@
         {
           "name": "Université Paris-Est Créteil",
           "AUTH_URL": "https://ezproxy.u-pec.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=D000030T_4"
+        },
+        {
+          "name": "Université Paris Nanterre",
+          "AUTH_URL": "http://faraway.parisnanterre.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=Paris10T_1"
         },
         {
           "name": "Université Paris-Saclay",
