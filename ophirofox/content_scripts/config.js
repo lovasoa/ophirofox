@@ -1,4 +1,9 @@
-const ophirofox_config_list = chrome.runtime.getManifest().browser_specific_settings.ophirofox_metadata.partners;
+const manifest = chrome.runtime.getManifest();
+
+/**
+ * @type {{AUTH_URL:string, name:string}[]}}
+ */
+const ophirofox_config_list = manifest.browser_specific_settings.ophirofox_metadata.partners;
 
 /**
  * Get the config with the given name
@@ -92,9 +97,7 @@ function partnerTopDomain({ AUTH_URL }) {
  * @param {string} partner_name 
  */
 async function ophirofoxCheckPermissions(partner_name) {
-  const manifest = chrome.runtime.getManifest();
-  const partners = manifest.browser_specific_settings.ophirofox_metadata.partners;
-  const partner = partners.find(({ name }) => name === partner_name);
+  const partner = ophirofox_config_list.find(({ name }) => name === partner_name);
   if (!partner) throw new Error(`No partner found with name ${partner_name}`);
   const auth_url_domain = partnerTopDomain(partner);
   const optional_permissions = manifest.optional_permissions;

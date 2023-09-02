@@ -296,18 +296,6 @@
       "css": [
         "content_scripts/lexpress.css"
       ]
-    },
-    {
-      "matches": [
-        "https://nouveau.europresse.com/*"
-      ],
-      "css": [
-        "content_scripts/europresse_article.css"
-      ],
-      "js": [
-        "content_scripts/europresse_article.js",
-        "content_scripts/europresse_search.js"
-      ]
     }
   ],
   "browser_specific_settings": {
