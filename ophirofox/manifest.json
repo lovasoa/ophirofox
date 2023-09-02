@@ -13,7 +13,8 @@
   },
   "permissions": [
     "storage",
-    "scripting"
+    "scripting",
+    "https://nouveau.europresse.com/*"
   ],
   "optional_permissions": [
     "webNavigation",
