@@ -18,6 +18,7 @@ function add_partner(name, settings) {
       try {
         await ophirofoxAskPermissions(name);
         setSettings({ ...settings, partner_name: name });
+        reCheckPermissions(name);
       } catch (err) {
         console.error(err);
         // restore previous value
