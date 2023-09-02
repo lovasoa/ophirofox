@@ -17,6 +17,8 @@ const DEFAULT_SETTINGS = {
   partner_name: "Pas d'intermédiaire",
 };
 
+let current_settings = DEFAULT_SETTINGS;
+
 const OPHIROFOX_SETTINGS_KEY = "ophirofox_settings";
 
 /**
@@ -26,7 +28,10 @@ async function getSettings() {
   const key = OPHIROFOX_SETTINGS_KEY;
   return new Promise((accept) => {
     chrome.storage.local.get([key], function (result) {
-      if (result.hasOwnProperty(key)) accept(JSON.parse(result[key]));
+      if (result.hasOwnProperty(key)) {
+        current_settings = JSON.parse(result[key]);
+        accept(current_settings);
+      }
       else accept(DEFAULT_SETTINGS);
     });
   });
@@ -36,6 +41,7 @@ async function getSettings() {
  * @param {typeof DEFAULT_SETTINGS} settings
  */
 async function setSettings(settings) {
+  current_settings = settings;
   return new Promise((accept) => {
     chrome.storage.local.set(
       { [OPHIROFOX_SETTINGS_KEY]: JSON.stringify(settings) },
@@ -96,7 +102,7 @@ function partnerTopDomain({ AUTH_URL }) {
 /**
  * @param {string} partner_name 
  */
-async function ophirofoxCheckPermissions(partner_name) {
+function makePermissionsRequest(partner_name) {
   const partner = ophirofox_config_list.find(({ name }) => name === partner_name);
   if (!partner) throw new Error(`No partner found with name ${partner_name}`);
   const auth_url_domain = partnerTopDomain(partner);
@@ -107,20 +113,44 @@ async function ophirofoxCheckPermissions(partner_name) {
       return url.hostname.endsWith(auth_url_domain);
     } catch (_) { }
   });
-  if (!optional_permission_for_auth_url) {
-    throw new Error(`No permission found for ${auth_url_domain}`);
+  if (!optional_permission_for_auth_url) throw new Error(`No permission found for ${auth_url_domain}`);
+  return { permissions: missing_permissions, origins: [optional_permission_for_auth_url] };
+}
+
+/**
+ * @param {string} partner_name 
+ * @returns {Promise<boolean>} true if the permissions are present
+ **/
+function ophirofoxCheckPermissions(partner_name) {
+  try {
+    const perms = makePermissionsRequest(partner_name);
+    return new Promise((accept) => chrome.permissions.contains(perms, accept));
+  } catch (err) {
+    console.warn(err);
+    return Promise.resolve(false);
   }
-  const permission_req = { permissions: missing_permissions, origins: [optional_permission_for_auth_url] };
-  const granted = await new Promise((accept) => chrome.permissions.request(permission_req, accept));
-  if (!granted) throw new Error(`Permission not granted for ${auth_url_domain}`);
+}
+
+/**
+ * @param {string} partner_name 
+ * @returns {Promise<void>} true if the permissions are prsent
+ * @throws {Error} if the permissions are not granted
+ **/
+async function ophirofoxAskPermissions(partner_name) {
+  const granted = await new Promise(a => chrome.permissions.request(makePermissionsRequest(partner_name), a));
+  if (!granted) throw new Error("Permission not granted");
 }
 
 const missing_permissions = [];
 
 // Returns a list of permissions that must be asked for.
 // This extension can use either the "scripting" permission (available in firefox), or "webNavigation" (in chrome) 
-(async function requiredAdditionalPermissions() {
+async function requiredAdditionalPermissions() {
   const { permissions } = await new Promise((accept) => chrome.permissions.getAll(accept));
   // if we already have "scripting", we don't need anything else
   if (!permissions.includes("scripting") && !permissions.includes("webNavigation")) missing_permissions.push("webNavigation");
-})();
+  else missing_permissions.length = 0;
+  return missing_permissions;
+}
+
+requiredAdditionalPermissions();
