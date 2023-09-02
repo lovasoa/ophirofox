@@ -16,11 +16,12 @@
         padding: 10px;
         border: 1px solid #e6e6e6;
       }
-      label {
+      label, input[type="search"] {
         display: block;
         padding: 0.8rem 0.3rem;
         border: 1px solid #e6e6e6;
         border-radius: 5px;
+        width: 100%;
         margin-bottom: .5rem;
         transition: .1s;
       }
@@ -32,6 +33,10 @@
         background-color: #ddd;
       }
 
+      .partner[hidden] {
+        display: none;
+      }
+      
       /* Dark theme */
       @media (prefers-color-scheme: dark) {
         body {
@@ -41,8 +46,12 @@
         fieldset {
           border-color: #6e6e6e;
         }
-        label {
+        label, input[type="search"] {
           border-color: #6e6e6e;
+        }
+        input[type="search"] {
+          background-color: #333;
+          color: #eee;
         }
         label:hover {
           background-color: #444;
@@ -62,12 +71,13 @@
           Ophirofox supporte plusieurs universités partenaires d'Europresse.
         </p>
         <p>Partenaire Europresse à utiliser:</p>
+        <input type="search" id="partner_search" placeholder="Rechercher un partenaire..." />
         <p id="partner_choices"></p>
       </fieldset>
     </form>
 
     <template id="partner_template">
-      <label>
+      <label class="partner">
         <input type="radio" name="partner" />
         <span id="partner_name">Partner name</span>
       </label>

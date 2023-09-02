@@ -1,5 +1,7 @@
 const choicelist = document.getElementById("partner_choices");
 const template = document.getElementById("partner_template");
+const search = document.getElementById("partner_search");
+
 const settings_promise = getSettings();
 
 ophirofox_config_list.forEach(({ name }) => {
@@ -25,3 +27,12 @@ ophirofox_config_list.forEach(({ name }) => {
     };
   });
 });
+
+search.oninput = () => {
+  const search_term = search.value;
+  const partners = choicelist.getElementsByClassName("partner");
+  Array.from(partners).forEach((partner) => {
+    const partner_name = partner.textContent;
+    partner.hidden = !partner_name.toLowerCase().includes(search_term.toLowerCase());
+  });
+}
