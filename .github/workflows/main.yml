@@ -19,7 +19,7 @@ jobs:
           node-version: '20'
       - run: npm install --global web-ext
       - id: version
-        run: echo version=$(jq -r ".version + \".$(($(date +%s)/100000)).$(($(date +%s)%65535))\"" < manifest.json) >> $GITHUB_OUTPUT
+        run: echo version=$(jq -r ".version + \".$(($(date +%s)/65535)).$(($(date +%s)%65535))\"" < manifest.json) >> $GITHUB_OUTPUT
       - run: jq ".version |= \"$VERSION\"" < manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
         env:
           VERSION: ${{ steps.version.outputs.version }}
