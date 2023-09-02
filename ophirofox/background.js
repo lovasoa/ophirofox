@@ -16,7 +16,7 @@ async function injectEuropressUsingWebNavigation(europresse_origins) {
   const url = europresse_origins.map(origin => ({ hostEquals: new URL(origin).hostname }));
   if (url.length === 0) return;
   chrome.webNavigation.onDOMContentLoaded.addListener(({ tabId }) => {
-    console.log("Injecting Europress using webNavigation", tabId);
+    console.log("Injecting Europress using webNavigation", url);
     europresse_content_script.js.forEach(file => chrome.tabs.executeScript(tabId, { file }));
     europresse_content_script.css.forEach(file => chrome.tabs.insertCSS(tabId, { file }));
   }, { url });
