@@ -9,17 +9,19 @@ chrome.runtime.onInstalled.addListener(({ reason }) => {
   }
 });
 
+function webNavigationListener({ tabId }) {
+  europresse_content_script.js.forEach(file => chrome.tabs.executeScript(tabId, { file }));
+  europresse_content_script.css.forEach(file => chrome.tabs.insertCSS(tabId, { file }));
+}
+
 /**
  * @param {string[]} europresse_origins 
  */
 async function injectEuropressUsingWebNavigation(europresse_origins) {
   const url = europresse_origins.map(origin => ({ hostEquals: new URL(origin).hostname }));
   if (url.length === 0) return;
-  chrome.webNavigation.onDOMContentLoaded.addListener(({ tabId }) => {
-    console.log("Injecting Europress using webNavigation", url);
-    europresse_content_script.js.forEach(file => chrome.tabs.executeScript(tabId, { file }));
-    europresse_content_script.css.forEach(file => chrome.tabs.insertCSS(tabId, { file }));
-  }, { url });
+  console.log("Adding webNavigation listener", url);
+  chrome.webNavigation.onDOMContentLoaded.addListener(webNavigationListener, { url });
 }
 
 /**
@@ -46,4 +48,5 @@ async function injectEuropress() {
 // update injection on permission change
 chrome.permissions.onAdded.addListener(injectEuropress);
 chrome.permissions.onRemoved.addListener(injectEuropress);
+chrome.storage.onChanged.addListener(injectEuropress);
 injectEuropress();
