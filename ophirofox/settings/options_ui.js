@@ -11,8 +11,17 @@ ophirofox_config_list.forEach(({ name }) => {
   choicelist.appendChild(clone);
   settings_promise.then((settings) => {
     input.checked = settings.partner_name === name;
-    input.onchange = () => {
-      if (input.checked) setSettings({ ...settings, partner_name: name });
+    input.onchange = async () => {
+      if (input.checked) {
+        try {
+          await ophirofoxCheckPermissions(name); 
+          setSettings({ ...settings, partner_name: name });
+        } catch (err) {
+          console.error(err);
+          // restore previous value
+          input.checked = false;
+        }
+      }
     };
   });
 });
