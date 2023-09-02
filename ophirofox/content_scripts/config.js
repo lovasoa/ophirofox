@@ -111,7 +111,7 @@ async function ophirofoxCheckPermissions(partner_name) {
     throw new Error(`No permission found for ${auth_url_domain}`);
   }
   const permission_req = { permissions: missing_permissions, origins: [optional_permission_for_auth_url] };
-  const granted = new Promise((accept) => chrome.permissions.request(permission_req, accept));
+  const granted = await new Promise((accept) => chrome.permissions.request(permission_req, accept));
   if (!granted) throw new Error(`Permission not granted for ${auth_url_domain}`);
 }
 
