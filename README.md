@@ -16,53 +16,9 @@ d'être redirigé automatiquement vers une page de recherche europresse qui cont
 ## Partenaires Europresse supportés
 
 L'extension fonctionne avec les portails universitaires suivants :
- - [**Europresse Bibliothèque nationale de France**](https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=bnf)
- - [**Europresse Conservatoire national des arts et métiers (CNAM)**](https://nouveau-europresse-com.proxybib-pp.cnam.fr/access/ip/default.aspx?un=CNAM)
- - [**Europresse ENS Lyon**](https://acces.bibliotheque-diderot.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ENSLYONT_1),
- - [**Europresse ENS Ulm PSL**](http://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1),
- - [**Europresse ENSAM (Arts et Métiers)**](http://rp1.ensam.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=AML),
- - [**Europresse Humathèque Campus Condorcet**](https://ezproxy.campus-condorcet.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=EPCS)
- - [**Europresse INSA Lyon**](https://docelec.insa-lyon.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=INSAT_3)
- - [**Europresse Médiathèque de Télécom SudParis & Institut Mines-Télécom Business School**](http://mediaproxy.imtbs-tsp.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_8)
- - [**Europresse Université Catholique de l'Ouest**](https://srvext.uco.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UCOT_1)
- - [**Europresse Université Côte d'Azur**](http://proxy.unice.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032557T_1)
- - [**Europresse Université Paris 1 Panthéon-Sorbonne**](http://ezpaarse.univ-paris1.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=SORBONNET_1)
- - [**Europresse Université Paris 2 Panthéon Assas**](https://docelec-u-paris2.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ASSAST_1)
- - [**Europresse Université Paris 8 Vincennes - Saint-Denis**](https://accesdistant.bu.univ-paris8.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=paris8)
- - [**Europresse Université Paris 13 Sorbonne Paris Nord**](https://login.ezproxy.univ-paris13.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=paris13)
- - [**Europresse Université Paris-Est Créteil**](https://ezproxy.u-pec.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=D000030T_4)
- - [**Europresse Université Paris Cité**](https://ezproxy.u-paris.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVPARIS)
- - [**Europresse Université Paris Nanterre**](http://faraway.parisnanterre.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=Paris10T_1)
- - [**Europresse Université Paris-Saclay**](https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_9),
- - [**Europresse Université Paul-Valery Montpellier 3**](https://ezpupv.scdi-montpellier.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MontpellierT_1)
- - [**Europresse Université des Antilles**](http://bu-services.univ-antilles.fr:5000/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ANTILLEST_1)
- - [**Europresse Université d'Aix-Marseille**](https://lama.univ-amu.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031032T_1)
- - [**Europresse Université d'Angers**](https://buadistant.univ-angers.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=BUANGERST_1)
- - [**Europresse Université d'Artois**](http://ezproxy.univ-artois.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=littoralT_1)
- - [**Europresse Université de Bordeaux Montaigne**](https://www.ezproxy.u-bordeaux-montaigne.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVMONTAIGNET_1)
- - [**Europresse Université de Bordeaux**](https://docelec.u-bordeaux.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVBORDEAUXT_1)
- - [**Europresse Université de Franche-Comté**](http://scd1.univ-fcomte.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=FCOMTET_1)
- - [**Europresse Université de Grenoble**](https://sid2nomade-2.grenet.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=grenobleT_1)
- - [**Europresse Université de Haute-Alsace**](https://scd-proxy.uha.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=ALSACET_1)
- - [**Europresse Université de Lille**](https://ressources-electroniques.univ-lille.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=TourcoingT_1)
- - [**Europresse Université de Lyon 1 (Claude Bernard)**](http://docelec.univ-lyon1.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U033081T_1)
- - [**Europresse Université de Lyon 2**](https://nouveau-europresse-com.bibelec.univ-lyon2.fr/)
- - [**Université Université de Lyon 3 (Jean Moulin)**](http://ezscd.univ-lyon3.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MOULINT_1)
- - [**Europresse Université de Montpellier**](https://ezpum.scdi-montpellier.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MontpellierT_1)
- - [**Europresse Université de Nantes**](https://budistant.univ-nantes.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=NANTEST_1)
- - [**Europresse Université de Pau et des pays de l'Adour**](https://nouveau-europresse-com.rproxy.univ-pau.fr/access/ip/default.aspx?un=uppaT_2)
- - [**Europresse Université de Picardie Jules Verne**](https://merlin.u-picardie.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=BUPICARDIET_2)
- - [**Europresse Université de Poitiers**](http://ressources.univ-poitiers.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032521T_1)
- - [**Europresse Université PSL**](https://portail.psl.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1)
- - [**Europresse Université de Reims Champagne-Ardenne**](https://urca.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ArdenneT_1)
- - [**Europresse Université de Rennes**](https://nouveau-europresse-com.passerelle.univ-rennes1.fr/login?ur1=https://nouveau-europresse-com.passerelle.univ-rennes1.fr/access/ip/default.aspx?un=RENNES1AT_1)
- - [**Europresse Université Savoie Mont Blanc**](http://univ-smb.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=savoieT_1)
- - [**Europresse Université de Toulouse**](https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_2)
- - [**Europresse Université de Versailles St-Quentin-en-Yvelines**](https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_1)
- - [**Europresse Université du Mans**](https://login.doc-elec.univ-lemans.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031524T_1)
- - [**Europresse Sciences Po**](https://acces-distant.sciencespo.fr/fork?https://nouveau.europresse.com/access/ip/default.aspx?un=politique2T_1)
+ - [La liste des universités et autres partenaires europresse qui fonctionnent se trouve sur le site web.](https://ophirofox.ophir.dev/#partenaires-europresse-support%C3%A9s)
 
-Ou directement via le site Europresse.
+Si votre université n'est pas dans la liste, vous pouvez [l'ajouter](#comment-ajouter-un-nouveau-partenaire-europresse).
 
 ## Sites supportés
 
@@ -120,10 +76,10 @@ Si votre établissement a un portail Europresse, vous pouvez facilement ajouter 
 2. Sur github, ouvrez [le fichier `manifest.json` de l'extension](https://github.com/lovasoa/ophirofox/blob/master/ophirofox/manifest.json).
 3. Cliquez sur le crayon pour éditer le fichier.
 4. Ajoutez votre université à la liste des partenaires Europresse supportés, en suivant le modèle des autres universités.
-  - Dans la section qui contient toutes les URLs au format `https://nouveau-europresse-com.proxy.univ-xyz.fr/Search/Reading*`, ajoutez une ligne avec l'URL du proxy europresse de votre université.
+  - Dans la section qui contient toutes les URLs au format `https://nouveau-europresse-com.proxy.univ-xyz.fr/*`, ajoutez une ligne avec l'URL du proxy europresse de votre université.
   - Dans la section qui contient tous les objets au format 
     `{ "name": "Université XYZ", "AUTH_URL": "https://proxy.univ-xyz.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CODE_UNIVERSITE" }`
-    , ajoutez un objet avec le nom de votre université et l'URL de son lien de connexion europresse. Vous pouvez trouver l'URL de connexion en vous connectant à votre portail d'université, puis en faisant un clic droit sur le lien de connexion à Europresse et en choisissant *Copier l'adresse du lien*. Conservez l'ordre alphabétique des universités.
+    , ajoutez un objet avec le nom de votre université et l'URL de son lien de connexion europresse. Vous pouvez trouver l'URL de connexion en vous connectant à votre portail d'université, puis en faisant un clic droit sur le lien de connexion à Europresse et en choisissant *Copier l'adresse du lien*. Conservez l'ordre alphabétique des universités. Faites attention au format de l'URL, qui doit contenir le code europresse de l'établissement.
 5. Cliquez sur *Propose file change*.
 6. Indiquez le nom de votre université dans le champ *Propose file change*.
 7. Cliquez sur *Create pull request*.
