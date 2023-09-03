@@ -1,33 +1,45 @@
-<link rel="icon" type="image/png" sizes="48x48" href="/ophirofox/icons/48.png">
-<link rel="icon" type="image/png" sizes="128x128" href="/ophirofox/icons/128.png">
-<meta name="theme-color" content="#ffffff">
+<link
+  rel="icon"
+  type="image/png"
+  sizes="48x48"
+  href="/ophirofox/icons/48.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="128x128"
+  href="/ophirofox/icons/128.png"
+/>
+<meta name="theme-color" content="#ffffff" />
 
 <script type="module">
-  const manifest_promise = fetch("/ophirofox/manifest.json").then(x=>x.json());
+  const manifest_promise = fetch("/ophirofox/manifest.json").then((x) =>
+    x.json()
+  );
   addEventListener("DOMContentLoaded", async (event) => {
-    const {ul, li} = getUl();
+    const { ul, li } = getUl();
     const manifest = await manifest_promise;
     const { partners } = manifest.browser_specific_settings.ophirofox_metadata;
     mkList(ul, li, partners);
   });
   function getUl() {
-     for(
-        var el = document.getElementById("partenaires-europresse-supportés");
-  			el.tagName != "UL";
-        el = el.nextElementSibling
-     );
-     const ul = el;
-     const li = ul.getElementsByTagName("li")[0].cloneNode(true);
-     ul.innerHTML = "";
-     return { ul, li };
+    for (
+      var el = document.getElementById("partenaires-europresse-supportés");
+      el.tagName != "UL";
+      el = el.nextElementSibling
+    );
+    const ul = el;
+    const li = ul.getElementsByTagName("li")[0].cloneNode(true);
+    ul.innerHTML = "";
+    return { ul, li };
   }
   function mkList(ul, li, partners) {
-     partners.forEach((p) => {
-        const l = li.cloneNode(true);
-        const a = l.getElementsByTagName("a")[0];
-        a.textContent = p.name;
-        a.href = p.AUTH_URL;
-        ul.appendChild(l)
-     });
+    partners.forEach((p) => {
+      const l = li.cloneNode(true);
+      const a = l.getElementsByTagName("a")[0];
+      a.textContent = p.name;
+      a.href = p.AUTH_URL;
+      ul.appendChild(l);
+    });
   }
 </script>
