@@ -31,7 +31,7 @@ jobs:
           WEB_EXT_API_SECRET: ${{ secrets.AMO_JWT_SECRET }}
       - run: ls -lah ./web-ext-artifacts
       - run: cp $PWD/web-ext-artifacts/*xpi ../ophirofox.xpi
-      - run: ../update-manifest.py | tee /tmp/update_manifest.json
+      - run: node ../update-manifest.js | tee /tmp/update_manifest.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Create Release
