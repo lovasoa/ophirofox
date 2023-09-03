@@ -34,7 +34,7 @@ async function injectEuropressUsingScripting(matches) {
 
 async function injectEuropress() {
   chrome.permissions.getAll(({ origins, permissions }) => {
-    const europresse_origins = origins.filter(origin => origin.includes("nouveau-europresse-com"));
+    const europresse_origins = origins.filter(origin => origin.includes("europresse"));
     if (permissions.includes("scripting") && europresse_origins.length > 0) {
       injectEuropressUsingScripting(europresse_origins);
     } else if (permissions.includes("webNavigation") && europresse_origins.length > 0) {
