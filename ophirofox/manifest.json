@@ -64,7 +64,8 @@
     "https://nouveau-europresse-com.proxybib-pp.cnam.fr/*",
     "https://nouveau-europresse-com.srvext.uco.fr/*",
     "https://nouveau-europresse-com.urca.idm.oclc.org/*",
-    "https://nouveau-europresse-com.merlin.u-picardie.fr/*"
+    "https://nouveau-europresse-com.merlin.u-picardie.fr/*",
+    "https://nouveau-europresse-com.ezproxy.univ-littoral.fr/*"
   ],
   "background": {
     "scripts": [
@@ -501,6 +502,10 @@
         {
           "name": "Université Catholique de l'Ouest",
           "AUTH_URL": "https://srvext.uco.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UCOT_1"
+        },
+        {
+          "name": "Université du Littoral Côte d'Opale",
+          "AUTH_URL": "http://ezproxy.univ-littoral.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=dunkerqueT_1"
         }
       ]
     }
