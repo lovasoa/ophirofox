@@ -5,26 +5,29 @@
 <script type="module">
   const manifest_promise = fetch("/ophirofox/manifest.json").then(x=>x.json());
   addEventListener("DOMContentLoaded", async (event) => {
+    const {ul, li} = getUl();
     const manifest = await manifest_promise;
     const { partners } = manifest.browser_specific_settings.ophirofox_metadata;
-    console.log(partners);
+    mkList(ul, li, partners);
   });
-  function mkList(partners) {
+  function getUl() {
      for(
-        let el = document.getElementById("partenaires-europresse-supportés");
+        var el = document.getElementById("partenaires-europresse-supportés");
   			el.tagName != "UL";
         el = el.nextElementSibling
-     ) if (!el) return;
+     );
      const ul = el;
-     const li = ul.getElementsByTagName("li")[0];
-     const lis = partners.map((p) => {
+     const li = ul.getElementsByTagName("li")[0].cloneNode(true);
+     ul.innerHTML = "";
+     return { ul, li };
+  }
+  function mkList(ul, li, partners) {
+     partners.forEach((p) => {
         const l = li.cloneNode(true);
         const a = l.getElementsByTagName("a")[0];
         a.textContent = p.name;
         a.href = p.AUTH_URL;
-        return a;
+        ul.appendChild(l)
      });
-    ul.innerHTML = "";
-    lis.forEach(li => ul.appendChild(li));
   }
 </script>
