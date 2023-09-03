@@ -65,7 +65,8 @@
     "https://nouveau-europresse-com.proxybib-pp.cnam.fr/*",
     "https://nouveau-europresse-com.srvext.uco.fr/*",
     "https://nouveau-europresse-com.urca.idm.oclc.org/*",
-    "https://nouveau-europresse-com.merlin.u-picardie.fr/*"
+    "https://nouveau-europresse-com.merlin.u-picardie.fr/*",
+    "https://nouveau-europresse-com.ezproxy.univ-littoral.fr/*"
   ],
   "background": {
     "scripts": [
@@ -414,6 +415,10 @@
         {
           "name": "Université de Lille",
           "AUTH_URL": "https://ressources-electroniques.univ-lille.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=TourcoingT_1"
+        },
+        {
+          "name": "Université du Littoral Côte d'Opale (UCLO)",
+          "AUTH_URL": "http://ezproxy.univ-littoral.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=dunkerqueT_1"
         },
         {
           "name": "Université de Montpellier",
