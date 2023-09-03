@@ -3,8 +3,9 @@
 <meta name="theme-color" content="#ffffff">
 
 <script type="module">
-  const manifest = fetch("/ophirofox/manifest.json").then(x=>x.json());
+  const manifest_promise = fetch("/ophirofox/manifest.json").then(x=>x.json());
   addEventListener("DOMContentLoaded", async (event) => {
+    const manifest = await manifest_promise;
     const { partners } = manifest.browser_specific_settings.ophirofox_metadata;
     console.log(partners);
   });
