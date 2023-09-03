@@ -317,7 +317,7 @@
           "AUTH_URL": "https://lama.univ-amu.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031032T_1"
         },
         {
-          "name": "BAnQ",
+          "name": "Bibliothèque et Archives nationales du Québec (BAnQ)",
           "AUTH_URL": "https://idp.banq.qc.ca/idp/profile/SAML2/POST/SSO?execution=e2s1"
         },
         {
