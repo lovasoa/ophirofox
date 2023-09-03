@@ -412,6 +412,10 @@
           "AUTH_URL": "https://ressources-electroniques.univ-lille.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=TourcoingT_1"
         },
         {
+          "name": "Université du Littoral Côte d'Opale (UCLO)",
+          "AUTH_URL": "http://ezproxy.univ-littoral.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=dunkerqueT_1"
+        },
+        {
           "name": "Université de Montpellier",
           "AUTH_URL": "https://login.ezpum.scdi-montpellier.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MontpellierT_1"
         },
@@ -502,10 +506,6 @@
         {
           "name": "Université Catholique de l'Ouest",
           "AUTH_URL": "https://srvext.uco.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UCOT_1"
-        },
-        {
-          "name": "Université du Littoral Côte d'Opale",
-          "AUTH_URL": "http://ezproxy.univ-littoral.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=dunkerqueT_1"
         }
       ]
     }
