@@ -9,7 +9,14 @@ async function consumeSearchTerms() {
 }
 
 async function onLoad() {
-    if (!window.location.pathname.startsWith("/Search/Reading")) return;
+    const path = window.location.pathname;
+    if (!(
+        path.startsWith("/Search/Reading") ||
+        path.startsWith("/Search/Advanced") ||
+        path.startsWith("/Search/AdvancedMobile") ||
+        path.startsWith("/Search/Express") ||
+        path.startsWith("/Search/Simple")
+    )) return;
     const search_terms = await consumeSearchTerms();
     if (!search_terms) return;
     const stopwords = new Set(['d', 'l', 'et', 'sans']);
