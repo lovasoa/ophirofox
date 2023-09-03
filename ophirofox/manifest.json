@@ -347,6 +347,10 @@
           "name": "Le Mans Université",
           "AUTH_URL": "https://login.doc-elec.univ-lemans.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031524T_1"
         },
+         {
+          "name": "Lycée International de l'Est Parisien",
+          "AUTH_URL": "https://nouveau.europresse.com/Login/Esidoc?sso_id=0932638M"
+        },
         {
           "name": "Médiathèque de Télécom SudParis & Institut Mines-Télécom Business School",
           "AUTH_URL": "http://mediaproxy.imtbs-tsp.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_8"
