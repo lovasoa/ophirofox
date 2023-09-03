@@ -318,7 +318,7 @@
         },
         {
           "name": "Bibliothèque et Archives nationales du Québec (BAnQ)",
-          "AUTH_URL": "https://idp.banq.qc.ca/idp/profile/SAML2/POST/SSO?execution=e2s1"
+          "AUTH_URL": "http://res.banq.qc.ca/login?url=https://nouveau.eureka.cc/access/ip/default.aspx?un=bnat1"
         },
         {
           "name": "Bibliotheque nationale et universitaire de Strasbourg",
