@@ -19,10 +19,8 @@ jobs:
           node-version: '20'
       - run: npm install --global web-ext
       - id: version
-        run: echo version=$(jq -r ".version + \".$(($(date +%s)/65535)).$(($(date +%s)%65535))\"" < manifest.json) >> $GITHUB_OUTPUT
-      - run: jq ".version |= \"$VERSION\"" < manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
-        env:
-          VERSION: ${{ steps.version.outputs.version }}
+        run: echo OPHIROFOX_VERSION=$(jq -r ".version + \".$(($(date +%s)/65535)).$(($(date +%s)%65535))\"" < manifest.json) >> $GITHUB_ENV
+      - run: jq ".version |= \"$OPHIROFOX_VERSION\"" < manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
       - run: web-ext lint --self-hosted --warnings-as-errors
       - run: web-ext build
       - run: web-ext sign --channel=unlisted
@@ -37,12 +35,10 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: v${{ steps.version.outputs.version }}
-          name: Release ${{ steps.version.outputs.version }}
+          tag_name: v${{ env.OPHIROFOX_VERSION }}
+          name: Release ${{ env.OPHIROFOX_VERSION }}
           draft: false
           prerelease: false
           files: |
             ophirofox.xpi
             /tmp/update_manifest.json
-
-
