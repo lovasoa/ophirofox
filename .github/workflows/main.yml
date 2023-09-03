@@ -32,6 +32,7 @@ jobs:
       - run: node ../update-manifest.js | tee /tmp/update_manifest.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: git log -1 --pretty=%B | tee /tmp/changelog.txt
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
@@ -42,3 +43,4 @@ jobs:
           files: |
             ophirofox.xpi
             /tmp/update_manifest.json
+            /tmp/changelog.txt

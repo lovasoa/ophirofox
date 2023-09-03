@@ -89,15 +89,14 @@ async function getGithubReleases() {
  */
 function versionDetails(release) {
     const version = release.tag_name.slice(1);
-    for (const asset of release.assets) {
-        if (asset.name.endsWith('.xpi')) {
-            return {
-                version,
-                update_link: asset.browser_download_url,
-                update_info_url: release.html_url,
-            };
-        }
-    }
+    const xpi_asset = release.assets.find(asset => asset.name.endsWith('.xpi'));
+    const changelog_asset = release.assets.find(asset => asset.name === 'changelog.txt');
+    return xpi_asset && {
+        version,
+        update_link: xpi_asset.browser_download_url,
+        update_info_url:
+            changelog_asset ? changelog_asset.browser_download_url : release.html_url,
+    };
 }
 
 /**
@@ -107,28 +106,25 @@ function versionDetails(release) {
 async function updateManifest() {
     const manifest = getExtensionManifest();
     const addonId = manifest.browser_specific_settings.gecko.id;
-
-    const updates = [];
     const releases = await getGithubReleases();
 
-    for (const release of releases) {
-        if (!release.draft) {
-            const details = versionDetails(release);
-            if (details) {
-                updates.push(details);
-            }
-        }
-    }
-
-    const manifestObj = {
+    return {
         addons: {
             [addonId]: {
-                updates,
+                updates: [
+                    {
+                        version: process.env.OPHIROFOX_VERSION || "0.0.0.0",
+                        update_link: "https://github.com/lovasoa/ophirofox/releases/latest/download/ophirofox.xpi",
+                        update_info_url: "https://github.com/lovasoa/ophirofox/releases/latest/download/changelog.txt",
+                    },
+                    ...releases
+                        .filter(release => !release.draft)
+                        .map(versionDetails)
+                        .filter(Boolean),
+                ]
             },
         },
     };
-
-    return manifestObj;
 }
 
 /**
