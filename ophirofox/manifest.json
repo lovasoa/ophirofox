@@ -19,6 +19,7 @@
   "optional_permissions": [
     "webNavigation",
     "https://nouveau.europresse.com/*",
+    "https://nouveau-eureka-cc.res.banq.qc.ca/*",
     "https://nouveau-europresse-com.budistant.univ-nantes.fr/*",
     "https://nouveau-europresse-com.proxy.rubens.ens.fr/*",
     "https://nouveau-europresse-com.rp1.ensam.eu/*",
@@ -314,6 +315,10 @@
         {
           "name": "Aix-Marseille Université",
           "AUTH_URL": "https://lama.univ-amu.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031032T_1"
+        },
+        {
+          "name": "Bibliothèque et Archives nationales du Québec (BAnQ)",
+          "AUTH_URL": "http://res.banq.qc.ca/login?url=https://nouveau.eureka.cc/access/ip/default.aspx?un=bnat1"
         },
         {
           "name": "Bibliotheque nationale et universitaire de Strasbourg",
