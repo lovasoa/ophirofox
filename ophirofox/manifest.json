@@ -66,7 +66,8 @@
     "https://nouveau-europresse-com.srvext.uco.fr/*",
     "https://nouveau-europresse-com.urca.idm.oclc.org/*",
     "https://nouveau-europresse-com.merlin.u-picardie.fr/*",
-    "https://nouveau-europresse-com.ezproxy.univ-littoral.fr/*"
+    "https://nouveau-europresse-com.ezproxy.univ-littoral.fr/*",
+    "https://nouveau.europresse.com.ezproxy.utbm.fr/*"
   ],
   "background": {
     "scripts": [
@@ -397,6 +398,10 @@
           "AUTH_URL": "https://ezproxy.u-bordeaux-montaigne.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVMONTAIGNET_1"
         },
         {
+          "name": "Université Catholique de l'Ouest",
+          "AUTH_URL": "https://srvext.uco.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UCOT_1"
+        },
+        {
           "name": "Université Côte d'Azur",
           "AUTH_URL": "http://proxy.unice.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032557T_1"
         },
@@ -423,6 +428,10 @@
         {
           "name": "Université du Littoral Côte d'Opale (UCLO)",
           "AUTH_URL": "http://ezproxy.univ-littoral.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=dunkerqueT_1"
+        },
+        {
+          "name": "Université Lumière Lyon 2",
+          "AUTH_URL": "http://bibelec.univ-lyon2.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=LYONT_3"
         },
         {
           "name": "Université de Montpellier",
@@ -501,20 +510,16 @@
           "AUTH_URL": "http://univ-smb.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=savoieT_1"
         },
         {
+          "name": "Université de Technologie de Belfort-Montébliard",
+          "AUTH_URL": "http://ezproxy.utbm.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UTBMT_2"
+        },
+        {
           "name": "Université de Toulouse",
           "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_2"
         },
         {
           "name": "Université de Versailles St-Quentin-en-Yvelines",
           "AUTH_URL": "https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_1"
-        }, 
-        {
-          "name": "Université Lumière Lyon 2",
-          "AUTH_URL": "http://bibelec.univ-lyon2.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=LYONT_3"
-        },
-        {
-          "name": "Université Catholique de l'Ouest",
-          "AUTH_URL": "https://srvext.uco.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UCOT_1"
         }
       ]
     }
