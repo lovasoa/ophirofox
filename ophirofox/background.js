@@ -28,8 +28,15 @@ async function injectEuropressUsingWebNavigation(europresse_origins) {
  * @param {string[]} matches 
  */
 async function injectEuropressUsingScripting(matches) {
-  console.log("Injecting Europress using scripting", matches);
-  chrome.scripting.registerContentScripts([{ ...europresse_content_script, matches, id: "europresse" }])
+  const content_scripts = [{ ...europresse_content_script, matches, id: "europresse" }];
+  try {
+    await new Promise(acc => chrome.scripting.unregisterContentScripts({ ids: ["europresse"] }, acc));
+    console.log("Unregistered old content script");
+  } catch (err) {
+    console.log("No old content script unregistered", err);
+  }
+  await new Promise(acc => chrome.scripting.registerContentScripts(content_scripts, acc));
+  console.log("Injected Europress using scripting", matches);
 }
 
 async function injectEuropress() {
