@@ -146,6 +146,7 @@ const missing_permissions = [];
 // Returns a list of permissions that must be asked for.
 // This extension can use either the "scripting" permission (available in firefox), or "webNavigation" (in chrome) 
 async function requiredAdditionalPermissions() {
+  if (!chrome.permissions) return [];
   const { permissions } = await new Promise((accept) => chrome.permissions.getAll(accept));
   // if we already have "scripting", we don't need anything else
   if (!permissions.includes("scripting") && !permissions.includes("webNavigation")) missing_permissions.push("webNavigation");
