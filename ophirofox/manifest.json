@@ -444,7 +444,7 @@
         },
         {
           "name": "Université de Lorraine",
-          "AUTH_URL": "https://auth.univ-lorraine.fr/login?service=https://auth-bases-doc.univ-lorraine.fr/index.php?url=http%3a%2f%2fnouveau.europresse.com%2faccess%2fip%2fdefault.aspx%3fun%3dNANCY2&logup=false"
+          "AUTH_URL": "https://login.bases-doc.univ-lorraine.fr/login?qurl=http://nouveau.europresse.com/access/ip/default.aspx?un=NANCY2"
         },
         {
           "name": "Université Lumière Lyon 2",
