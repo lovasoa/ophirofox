@@ -13,12 +13,7 @@
     
 }
 
-.ophirofox-europresse:hover {
-	background-color: #000000;
-	color: #ffffff;
-}
-
-.ophirofox-europresse:active {
+.ophirofox-europresse:hover, .ophirofox-europresse:active {
 	background-color: #000000;
 	color: #ffffff;
 }
