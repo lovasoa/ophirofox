@@ -9,6 +9,7 @@ async function consumeSearchTerms() {
 }
 
 async function onLoad() {
+    ophirofoxRealoadOnExpired();
     const path = window.location.pathname;
     if (!(
         path.startsWith("/Search/Reading") ||
@@ -30,6 +31,14 @@ async function onLoad() {
     const date_filter = document.getElementById("DateFilter_DateRange");
     if (date_filter) date_filter.value = 9;
     keyword_field.form.submit();
+}
+
+function ophirofoxRealoadOnExpired() {
+    const params = new URLSearchParams(window.location.search)
+    if (params.get("ErrorCode") == "4000112") {
+        // session expirée
+        window.history.back();
+    }
 }
 
 onLoad();
