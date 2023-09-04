@@ -300,6 +300,18 @@
       "css": [
         "content_scripts/lexpress.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.nouvelobs.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/lobs.js"
+      ],
+      "css": [
+        "content_scripts/lobs.css"
+      ]
     }
   ],
   "browser_specific_settings": {
