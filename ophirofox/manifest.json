@@ -65,7 +65,8 @@
     "https://nouveau-europresse-com.srvext.uco.fr/*",
     "https://nouveau-europresse-com.urca.idm.oclc.org/*",
     "https://nouveau-europresse-com.merlin.u-picardie.fr/*",
-    "https://nouveau-europresse-com.ezproxy.univ-littoral.fr/*"
+    "https://nouveau-europresse-com.ezproxy.univ-littoral.fr/*",
+    "https://nouveau.europresse.com.ezproxy.utbm.fr/*"
   ],
   "background": {
     "scripts": [
@@ -510,7 +511,11 @@
         {
           "name": "Université Catholique de l'Ouest",
           "AUTH_URL": "https://srvext.uco.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UCOT_1"
-        }
+        },
+        {
+          "name": "Université de Technologie de Belfort-Montébliard",
+          "AUTH_URL": "http://ezproxy.utbm.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UTBMT_2"
+        }        
       ]
     }
   }
