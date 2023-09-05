@@ -69,6 +69,7 @@
     "https://nouveau-europresse-com.ezproxy.univ-littoral.fr/*",
     "https://nouveau-europresse-com.bases-doc.univ-lorraine.fr/*",
     "https://nouveau.europresse.com.ezproxy.utbm.fr/*"
+    "https://nouveau-europresse-com.distant.bu.univ-rennes2.fr/*"
   ],
   "background": {
     "scripts": [
@@ -515,6 +516,9 @@
           "AUTH_URL": "https://passerelle.univ-rennes1.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=RENNES1AT_1"
         },
         {
+          "name": "Université Rennes 2",
+          "AUTH_URL": "https://distant.bu.univ-rennes2.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=RENNES22T_1"},
+        {
           "name": "Université Sorbonne Université",
           "AUTH_URL": "https://accesdistant.sorbonne-universite.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UPMCT_1"
         },
@@ -536,7 +540,10 @@
         },
         {
           "name": "Université de Versailles St-Quentin-en-Yvelines",
-          "AUTH_URL": "https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_1"
+          "AUTH_URL": "https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_1"},
+        
+        }
+        
         }
       ]
     }
