@@ -67,6 +67,7 @@
     "https://nouveau-europresse-com.urca.idm.oclc.org/*",
     "https://nouveau-europresse-com.merlin.u-picardie.fr/*",
     "https://nouveau-europresse-com.ezproxy.univ-littoral.fr/*",
+    "https://nouveau-europresse-com.bases-doc.univ-lorraine.fr/*",
     "https://nouveau.europresse.com.ezproxy.utbm.fr/*"
   ],
   "background": {
@@ -300,6 +301,18 @@
       "css": [
         "content_scripts/lexpress.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.nouvelobs.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/lobs.js"
+      ],
+      "css": [
+        "content_scripts/lobs.css"
+      ]
     }
   ],
   "browser_specific_settings": {
@@ -428,6 +441,10 @@
         {
           "name": "Université du Littoral Côte d'Opale (UCLO)",
           "AUTH_URL": "http://ezproxy.univ-littoral.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=dunkerqueT_1"
+        },
+        {
+          "name": "Université de Lorraine",
+          "AUTH_URL": "https://login.bases-doc.univ-lorraine.fr/login?qurl=http://nouveau.europresse.com/access/ip/default.aspx?un=NANCY2"
         },
         {
           "name": "Université Lumière Lyon 2",

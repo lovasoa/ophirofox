@@ -25,6 +25,7 @@ Si votre université n'est pas dans la liste, vous pouvez [l'ajouter](#comment-a
 ### Presse nationale
   - [L'Express](https://www.lexpress.fr/)
   - [L'Humanité](https://www.humanite.fr)
+  - [L'Obs](https://www.nouvelobs.com/)
   - [La Croix](https://www.la-croix.com)
   - [Le Figaro](https://www.lefigaro.fr/)
   - [Le Monde Diplomatique](https://www.www.monde-diplomatique.fr)
