@@ -68,6 +68,7 @@
     "https://nouveau-europresse-com.merlin.u-picardie.fr/*",
     "https://nouveau-europresse-com.ezproxy.univ-littoral.fr/*",
     "https://nouveau-europresse-com.bases-doc.univ-lorraine.fr/*",
+    "https://nouveau-europresse-com.distant.bu.univ-rennes2.fr/*",
     "https://nouveau.europresse.com.ezproxy.utbm.fr/*",
     "https://nouveau-europresse-com.ezproxy.hec.fr/*",
     "https://nouveau-europresse-com.proxy-bu1.u-bourgogne.fr/*"
@@ -523,6 +524,10 @@
         {
           "name": "Université de Rennes",
           "AUTH_URL": "https://passerelle.univ-rennes1.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=RENNES1AT_1"
+        },
+        {
+          "name": "Université Rennes 2",
+          "AUTH_URL": "https://distant.bu.univ-rennes2.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=RENNES22T_1"
         },
         {
           "name": "Université Sorbonne Université",
