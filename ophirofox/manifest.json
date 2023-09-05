@@ -68,7 +68,8 @@
     "https://nouveau-europresse-com.merlin.u-picardie.fr/*",
     "https://nouveau-europresse-com.ezproxy.univ-littoral.fr/*",
     "https://nouveau-europresse-com.bases-doc.univ-lorraine.fr/*",
-    "https://nouveau.europresse.com.ezproxy.utbm.fr/*"
+    "https://nouveau.europresse.com.ezproxy.utbm.fr/*",
+    "https://nouveau-europresse-com.ezproxy.normandie-univ.fr/*"
   ],
   "background": {
     "scripts": [
@@ -413,6 +414,10 @@
         {
           "name": "Université Catholique de l'Ouest",
           "AUTH_URL": "https://srvext.uco.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UCOT_1"
+        },
+        {
+          "name": "Université de Caen Normandie",
+          "AUTH_URL": "http://ezproxy.normandie-univ.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031221T_3"
         },
         {
           "name": "Université Côte d'Azur",
