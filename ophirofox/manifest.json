@@ -69,7 +69,8 @@
     "https://nouveau-europresse-com.ezproxy.univ-littoral.fr/*",
     "https://nouveau-europresse-com.bases-doc.univ-lorraine.fr/*",
     "https://nouveau.europresse.com.ezproxy.utbm.fr/*",
-    "https://nouveau-europresse-com.ezproxy.hec.fr/*"
+    "https://nouveau-europresse-com.ezproxy.hec.fr/*",
+    "https://nouveau-europresse-com.proxy-bu1.u-bourgogne.fr/*"
   ],
   "background": {
     "scripts": [
@@ -415,6 +416,10 @@
         {
           "name": "Université Bordeaux Montaigne",
           "AUTH_URL": "https://ezproxy.u-bordeaux-montaigne.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVMONTAIGNET_1"
+        },
+        {
+          "name": "Université de Bourgogne",
+          "AUTH_URL": "http://proxy-scd.u-bourgogne.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032591T_1"
         },
         {
           "name": "Université Catholique de l'Ouest",
