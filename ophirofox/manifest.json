@@ -69,6 +69,7 @@
     "https://nouveau-europresse-com.ezproxy.univ-littoral.fr/*",
     "https://nouveau-europresse-com.bases-doc.univ-lorraine.fr/*",
     "https://nouveau.europresse.com.ezproxy.utbm.fr/*",
+    "https://nouveau-europresse-com.ezproxy.hec.fr/*",
     "https://nouveau-europresse-com.proxy-bu1.u-bourgogne.fr/*"
   ],
   "background": {
@@ -358,6 +359,10 @@
         {
           "name": "Humathèque Campus Condorcet",
           "AUTH_URL": "https://ezproxy.campus-condorcet.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=EPCS"
+        },
+        {
+          "name": "HEC Paris",
+          "AUTH_URL": "http://login.ezproxy.hec.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=josasT_1"
         },
         {
           "name": "INSA Lyon",
