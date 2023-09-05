@@ -18,7 +18,6 @@
   ],
   "optional_permissions": [
     "webNavigation",
-    "https://nouveau.europresse.com/*",
     "https://nouveau-eureka-cc.res.banq.qc.ca/*",
     "https://nouveau-europresse-com.budistant.univ-nantes.fr/*",
     "https://nouveau-europresse-com.proxy.rubens.ens.fr/*",
