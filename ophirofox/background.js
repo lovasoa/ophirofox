@@ -28,15 +28,31 @@ async function injectEuropressUsingWebNavigation(europresse_origins) {
  * @param {string[]} matches 
  */
 async function injectEuropressUsingScripting(matches) {
-  const content_scripts = [{ ...europresse_content_script, matches, id: "europresse" }];
+  const content_script = { ...europresse_content_script, matches, id: "europresse" };
+  await unregisterContentScripts();
+  await registerContentScripts(content_script);
+  console.log("Injected Europress using scripting", matches);
+}
+
+async function unregisterContentScripts() {
   try {
     await new Promise(acc => chrome.scripting.unregisterContentScripts({ ids: ["europresse"] }, acc));
     console.log("Unregistered old content script");
   } catch (err) {
     console.log("No old content script unregistered", err);
   }
-  await new Promise(acc => chrome.scripting.registerContentScripts(content_scripts, acc));
-  console.log("Injected Europress using scripting", matches);
+}
+
+async function registerContentScripts(content_script) {
+  try {
+    await new Promise(acc => chrome.scripting.registerContentScripts([content_script], acc));
+    console.log("Registered new content script");
+  } catch (err) {
+    // Old versions of firefox do not suppport persistent content scripts
+    // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/scripting/RegisteredContentScript
+    content_script.persistAcrossSessions = false;
+    await new Promise(acc => chrome.scripting.registerContentScripts([content_script], acc));
+  }
 }
 
 async function injectEuropress() {

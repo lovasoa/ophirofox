@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Ophirofox",
-  "version": "2.3",
+  "version": "2.4",
   "description": "Lire les articles du monde, du figaro, et d'autres journaux grâce à sa connexion europresse",
   "icons": {
     "48": "icons/48.png",
@@ -18,7 +18,6 @@
   ],
   "optional_permissions": [
     "webNavigation",
-    "https://nouveau.europresse.com/*",
     "https://nouveau-eureka-cc.res.banq.qc.ca/*",
     "https://nouveau-europresse-com.budistant.univ-nantes.fr/*",
     "https://nouveau-europresse-com.proxy.rubens.ens.fr/*",
@@ -68,7 +67,11 @@
     "https://nouveau-europresse-com.merlin.u-picardie.fr/*",
     "https://nouveau-europresse-com.ezproxy.univ-littoral.fr/*",
     "https://nouveau-europresse-com.bases-doc.univ-lorraine.fr/*",
-    "https://nouveau.europresse.com.ezproxy.utbm.fr/*"
+    "https://nouveau.europresse.com.ezproxy.utbm.fr/*",
+    "https://nouveau-europresse-com.distant.bu.univ-rennes2.fr/*",
+    "https://nouveau-europresse-com.ezproxy.hec.fr/*",
+    "https://nouveau-europresse-com.proxy-bu1.u-bourgogne.fr/*",
+    "https://nouveau-europresse-com.ezproxy.normandie-univ.fr/*"
   ],
   "background": {
     "scripts": [
@@ -359,6 +362,10 @@
           "AUTH_URL": "https://ezproxy.campus-condorcet.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=EPCS"
         },
         {
+          "name": "HEC Paris",
+          "AUTH_URL": "http://login.ezproxy.hec.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=josasT_1"
+        },
+        {
           "name": "INSA Lyon",
           "AUTH_URL": "https://docelec.insa-lyon.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=INSAT_3"
         },
@@ -411,8 +418,16 @@
           "AUTH_URL": "https://ezproxy.u-bordeaux-montaigne.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVMONTAIGNET_1"
         },
         {
+          "name": "Université de Bourgogne",
+          "AUTH_URL": "http://proxy-scd.u-bourgogne.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032591T_1"
+        },
+        {
           "name": "Université Catholique de l'Ouest",
           "AUTH_URL": "https://srvext.uco.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UCOT_1"
+        },
+        {
+          "name": "Université de Caen Normandie",
+          "AUTH_URL": "http://ezproxy.normandie-univ.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031221T_3"
         },
         {
           "name": "Université Côte d'Azur",
@@ -513,6 +528,10 @@
         {
           "name": "Université de Rennes",
           "AUTH_URL": "https://passerelle.univ-rennes1.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=RENNES1AT_1"
+        },
+        {
+          "name": "Université Rennes 2",
+          "AUTH_URL": "https://distant.bu.univ-rennes2.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=RENNES22T_1"
         },
         {
           "name": "Université Sorbonne Université",
