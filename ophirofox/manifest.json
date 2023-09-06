@@ -18,6 +18,7 @@
   ],
   "optional_permissions": [
     "webNavigation",
+    "https://nouveau-europresse-com.ezproxy.upf.pf/*",
     "https://nouveau-eureka-cc.res.banq.qc.ca/*",
     "https://nouveau-europresse-com.budistant.univ-nantes.fr/*",
     "https://nouveau-europresse-com.proxy.rubens.ens.fr/*",
@@ -524,6 +525,10 @@
         {
           "name": "Université de Poitiers",
           "AUTH_URL": "http://ressources.univ-poitiers.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032521T_1"
+        },
+        {
+          "name": "Université de la Polynésie Française",
+          "AUTH_URL": "http://nouveau.europresse.com.ezproxy.upf.pf/access/ip/default.aspx?un=tahitiT_1"
         },
         {
           "name": "Université de Rennes",
