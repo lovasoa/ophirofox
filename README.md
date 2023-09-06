@@ -54,7 +54,10 @@ Vous pouvez proposer d'autres sites en ouvrant une [demande sur github](https://
 
 ### Pour firefox
 
- - Téléchargez [la dernière version d'Ophirofox](https://github.com/lovasoa/ophirofox/releases/latest) et ouvrez le fichier `.xpi` avec firefox.
+ - Installer [la dernière version d'Ophirofox](https://github.com/lovasoa/ophirofox/releases/latest).
+    - Pour les versions de Firefox plus récentes: il suffit de cliquer sur `ophirofox.xpi` et autoriser l'installation du module complémentaire.
+    - Pour les versions de Firefox plus anciennes: enregistrer le fichier `ophirofox.xpi` via un clic-droit, depuis le menu de Firefox ouvrir le gestionnaire des extensions, ouvrir les paramètres (roue dentée), sélectionner `Installer un module depuis un fichier`, sélectionner le fichier `ophirofox.xpi` précédemment téléchargé.
+ - Après installation, sélectionner dans les paramètres du module le nom de votre université.
 
 ### Pour chrome
 
