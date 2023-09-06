@@ -72,7 +72,8 @@
     "https://nouveau-europresse-com.distant.bu.univ-rennes2.fr/*",
     "https://nouveau-europresse-com.ezproxy.hec.fr/*",
     "https://nouveau-europresse-com.proxy-bu1.u-bourgogne.fr/*",
-    "https://nouveau-europresse-com.ezproxy.normandie-univ.fr/*"
+    "https://nouveau-europresse-com.ezproxy.normandie-univ.fr/*",
+    "https://nouveau-europresse-com.proxy.bu.dauphine.fr/"
   ],
   "background": {
     "scripts": [
@@ -561,6 +562,10 @@
         {
           "name": "Université de Versailles St-Quentin-en-Yvelines",
           "AUTH_URL": "https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_1"
+            },
+        {
+          "name":"Université Paris Dauphine - PSL",
+          "AUTH_URL":"https://passeport.dauphine.fr/cas/login?service=https%3a%2f%2flogin.proxy.bu.dauphine.fr%2flogin%3fqurl%3dezp.2aHR0cHM6Ly9ub3V2ZWF1LmV1cm9wcmVzc2UuY29tL2FjY2Vzcy9pcC9kZWZhdWx0LmFzcHg.dW49UFNMVF8xMA--"
         }
       ]
     }
