@@ -72,7 +72,8 @@
     "https://nouveau-europresse-com.distant.bu.univ-rennes2.fr/*",
     "https://nouveau-europresse-com.ezproxy.hec.fr/*",
     "https://nouveau-europresse-com.proxy-bu1.u-bourgogne.fr/*",
-    "https://nouveau-europresse-com.ezproxy.normandie-univ.fr/*"
+    "https://nouveau-europresse-com.ezproxy.normandie-univ.fr/*",
+    "https://nouveau-europresse-com.bibdocs.u-cergy.fr/*"
   ],
   "background": {
     "scripts": [
@@ -345,6 +346,10 @@
         {
           "name": "BNF",
           "AUTH_URL": "https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032999T_1"
+        },
+        {
+          "name": "CY Cergy Paris Université",
+          "AUTH_URL": "https://bibdocs.u-cergy.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031547T_1"
         },
         {
           "name": "ENS de Lyon",
