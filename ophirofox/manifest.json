@@ -72,7 +72,8 @@
     "https://nouveau-europresse-com.distant.bu.univ-rennes2.fr/*",
     "https://nouveau-europresse-com.ezproxy.hec.fr/*",
     "https://nouveau-europresse-com.proxy-bu1.u-bourgogne.fr/*",
-    "https://nouveau-europresse-com.ezproxy.normandie-univ.fr/*"
+    "https://nouveau-europresse-com.ezproxy.normandie-univ.fr/*",
+    "https://nouveau-europresse-com.ezproxy.uca.fr/"
   ],
   "background": {
     "scripts": [
@@ -389,6 +390,10 @@
         {
           "name": "ULM",
           "AUTH_URL": "https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1"
+        },
+         {
+          "name": "Université Clermont Auvergne",
+          "AUTH_URL": "https://ezproxy.uca.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=FERRANDU_1"
         },
         {
           "name": "Université Claude Bernard Lyon 1",
