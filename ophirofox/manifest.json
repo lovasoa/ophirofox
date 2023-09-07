@@ -72,7 +72,8 @@
     "https://nouveau-europresse-com.distant.bu.univ-rennes2.fr/*",
     "https://nouveau-europresse-com.ezproxy.hec.fr/*",
     "https://nouveau-europresse-com.proxy-bu1.u-bourgogne.fr/*",
-    "https://nouveau-europresse-com.ezproxy.normandie-univ.fr/*"
+    "https://nouveau-europresse-com.ezproxy.normandie-univ.fr/*",
+    "https://nouveau-europresse-com.bibdocs.u-cergy.fr/*"
   ],
   "background": {
     "scripts": [
@@ -561,6 +562,10 @@
         {
           "name": "Université de Versailles St-Quentin-en-Yvelines",
           "AUTH_URL": "https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_1"
+        },
+        {
+          "name": "CY Cergy Paris Université",
+          "AUTH_URL": "https://bibdocs.u-cergy.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031547T_1"
         }
       ]
     }
