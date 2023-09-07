@@ -348,6 +348,10 @@
           "AUTH_URL": "https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032999T_1"
         },
         {
+          "name": "CY Cergy Paris Université",
+          "AUTH_URL": "https://bibdocs.u-cergy.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031547T_1"
+        },
+        {
           "name": "ENS de Lyon",
           "AUTH_URL": "https://acces.bibliotheque-diderot.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ENSLYONT_1"
         },
@@ -562,10 +566,6 @@
         {
           "name": "Université de Versailles St-Quentin-en-Yvelines",
           "AUTH_URL": "https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_1"
-        },
-        {
-          "name": "CY Cergy Paris Université",
-          "AUTH_URL": "https://bibdocs.u-cergy.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031547T_1"
         }
       ]
     }
