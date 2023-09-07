@@ -18,6 +18,7 @@
   ],
   "optional_permissions": [
     "webNavigation",
+    "https://nouveau.europresse.com/*",
     "https://nouveau-europresse-com.ezproxy.upf.pf/*",
     "https://nouveau-eureka-cc.res.banq.qc.ca/*",
     "https://nouveau-europresse-com.budistant.univ-nantes.fr/*",
@@ -482,6 +483,10 @@
         {
           "name": "Université de Reims Champagne-Ardenne",
           "AUTH_URL": "https://urca.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ArdenneT_1"
+        },
+        {
+          "name": "Université Jean Monnet Saint-Étienne",
+          "AUTH_URL": "https://nouveau.europresse.com/access/ip/default.aspx?un=MONNETT_1"
         },
         {
           "name": "Université Paris 1 Panthéon-Sorbonne",
