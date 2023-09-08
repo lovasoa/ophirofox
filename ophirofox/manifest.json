@@ -392,6 +392,10 @@
           "AUTH_URL": "https://acces-distant.sciencespo.fr/fork?https://nouveau.europresse.com/access/ip/default.aspx?un=politique2T_1"
         },
         {
+          "name": "Télécom Paris",
+          "AUTH_URL": "https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_1"
+        },
+        {
           "name": "ULM",
           "AUTH_URL": "https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1"
         },
