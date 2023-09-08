@@ -55,7 +55,6 @@
     "https://nouveau-europresse-com.ezproxy.u-pec.fr/*",
     "https://nouveau-europresse-com.univ-smb.idm.oclc.org/*",
     "https://nouveau-europresse-com.ezproxy.univ-paris13.fr/*",
-    "https://nouveau-europresse-com.ezproxy.campus-condorcet.fr/*",
     "https://nouveau-europresse-com.mediaproxy.imtbs-tsp.eu/*",
     "https://nouveau-europresse-com.buadistant.univ-angers.fr/*",
     "https://nouveau-europresse-com.accesdistant.sorbonne-universite.fr/*",
@@ -362,10 +361,6 @@
         {
           "name": "ENSAM",
           "AUTH_URL": "https://rp1.ensam.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=AML"
-        },
-        {
-          "name": "Humathèque Campus Condorcet",
-          "AUTH_URL": "https://ezproxy.campus-condorcet.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=EPCS"
         },
         {
           "name": "HEC Paris",
