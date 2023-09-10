@@ -74,7 +74,8 @@
     "https://nouveau-europresse-com.proxy-bu1.u-bourgogne.fr/*",
     "https://nouveau-europresse-com.ezproxy.normandie-univ.fr/*",
     "https://nouveau-europresse-com.bibdocs.u-cergy.fr/*",
-    "https://nouveau-europresse-com.ezproxy.univ-paris3.fr/*"
+    "https://nouveau-europresse-com.ezproxy.univ-paris3.fr/*",
+    "https://nouveau-europresse-com.ezproxy.campus-condorcet.fr/*"
   ],
   "background": {
     "scripts": [
@@ -363,6 +364,10 @@
         {
           "name": "ENSAM",
           "AUTH_URL": "https://rp1.ensam.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=AML"
+        },
+        {
+          "name": "EHESS",
+          "AUTH_URL": "https://login.ezproxy.campus-condorcet.fr/login?qurl=https://nouveau.europresse.com%2f"
         },
         {
           "name": "Humathèque Campus Condorcet",
