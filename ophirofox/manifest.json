@@ -27,6 +27,7 @@
     "https://nouveau-europresse-com.ezpaarse.univ-paris1.fr/*",
     "https://nouveau-europresse-com.accesdistant.bu.univ-paris8.fr/*",
     "https://nouveau-europresse-com.docelec.insa-lyon.fr/*",
+    "https://nouveau-europresse-com.rproxy.insa-rennes.fr/*",
     "https://nouveau-europresse-com.bnf.idm.oclc.org/*",
     "https://nouveau-europresse-com.docelec.univ-lyon1.fr/*",
     "https://nouveau-europresse-com.ezpum.scdi-montpellier.fr/*",
@@ -377,6 +378,10 @@
         {
           "name": "INSA Lyon",
           "AUTH_URL": "https://docelec.insa-lyon.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=INSAT_3"
+        },
+        {
+          "name": "INSA Rennes",
+          "AUTH_URL": "http://rproxy.insa-rennes.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=INSAT_1"
         },
         {
           "name": "Le Mans Université",
