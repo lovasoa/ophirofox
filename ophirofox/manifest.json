@@ -75,6 +75,7 @@
     "https://nouveau-europresse-com.ezproxy.normandie-univ.fr/*",
     "https://nouveau-europresse-com.bibdocs.u-cergy.fr/*",
     "https://nouveau-europresse-com.ezproxy.univ-paris3.fr/*"
+    "https://nouveau-europresse-com.ezproxy.univ-tln.fr/*"
   ],
   "background": {
     "scripts": [
@@ -567,6 +568,10 @@
         {
           "name": "Université de Toulouse",
           "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_2"
+        },
+        {
+          "name": "Université de Toulon",
+          "AUTH_URL": "http://ezproxy.univ-tln.fr:2048/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=ToulonT_1"
         },
         {
           "name": "Université de Versailles St-Quentin-en-Yvelines",
