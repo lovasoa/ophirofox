@@ -74,8 +74,9 @@
     "https://nouveau-europresse-com.proxy-bu1.u-bourgogne.fr/*",
     "https://nouveau-europresse-com.ezproxy.normandie-univ.fr/*",
     "https://nouveau-europresse-com.bibdocs.u-cergy.fr/*",
-    "https://nouveau-europresse-com.ezproxy.univ-paris3.fr/*"
     "https://nouveau-europresse-com.ezproxy.univ-tln.fr/*"
+    "https://nouveau-europresse-com.ezproxy.univ-paris3.fr/*",
+    "https://nouveau-europresse-com.proxy.scd.univ-tours.fr/*"
   ],
   "background": {
     "scripts": [
@@ -573,6 +574,10 @@
           "name": "Université de Toulon",
           "AUTH_URL": "http://ezproxy.univ-tln.fr:2048/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=ToulonT_1"
         },
+        {
+          "name": "Université de Tours",
+          "AUTH_URL": "https://proxy.scd.univ-tours.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=butours"
+        },        
         {
           "name": "Université de Versailles St-Quentin-en-Yvelines",
           "AUTH_URL": "https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_1"
