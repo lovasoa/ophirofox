@@ -77,7 +77,8 @@
     "https://nouveau-europresse-com.bibdocs.u-cergy.fr/*",
     "https://nouveau-europresse-com.ezproxy.univ-tln.fr/*",
     "https://nouveau-europresse-com.ezproxy.univ-paris3.fr/*",
-    "https://nouveau-europresse-com.proxy.scd.univ-tours.fr/*"
+    "https://nouveau-europresse-com.proxy.scd.univ-tours.fr/*",
+    "https://nouveau-europresse-com.federation.unimes.fr/*"
   ],
   "background": {
     "scripts": [
@@ -486,6 +487,10 @@
         {
           "name": "Université de Nantes",
           "AUTH_URL": "https://budistant.univ-nantes.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=NANTEST_1"
+        },
+        {
+          "name": "Université de Nîmes",
+          "AUTH_URL": "https://federation.unimes.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=NimesT_1"
         },
         {
           "name": "Université de Reims Champagne-Ardenne",
