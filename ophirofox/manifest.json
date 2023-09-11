@@ -74,7 +74,7 @@
     "https://nouveau-europresse-com.proxy-bu1.u-bourgogne.fr/*",
     "https://nouveau-europresse-com.ezproxy.normandie-univ.fr/*",
     "https://nouveau-europresse-com.bibdocs.u-cergy.fr/*",
-    "https://nouveau-europresse-com.ezproxy.univ-paris3.fr/*"
+    "https://nouveau-europresse-com.ezproxy.univ-paris3.fr/*",
     "https://nouveau-europresse-com.proxy.scd.univ-tours.fr/*"
   ],
   "background": {
@@ -569,7 +569,7 @@
           "name": "Université de Toulouse",
           "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_2"
         },
-     {
+        {
           "name": "Université de Tours",
           "AUTH_URL": "https://proxy.scd.univ-tours.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=butours"
         },        
