@@ -18,7 +18,7 @@
   ],
   "optional_permissions": [
     "webNavigation",
-    "https://nouveau-europresse-com.ezproxy.univ-catholille.fr/*"
+    "https://nouveau-europresse-com.ezproxy.univ-catholille.fr/*",
     "https://nouveau-europresse-com.ezproxy.upf.pf/*",
     "https://nouveau-eureka-cc.res.banq.qc.ca/*",
     "https://nouveau-europresse-com.budistant.univ-nantes.fr/*",
@@ -358,16 +358,16 @@
           "AUTH_URL": "https://bibdocs.u-cergy.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031547T_1"
         },
         {
-          "name": "ENS de Lyon",
+          "name": "École normale supérieure de Lyon (ENS Lyon)",
           "AUTH_URL": "https://acces.bibliotheque-diderot.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ENSLYONT_1"
+        },
+        {
+          "name": "École normale supérieure de Paris (ENS ULM)",
+          "AUTH_URL": "https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1"
         },
         {
           "name": "Conservatoire national des arts et métiers",
           "AUTH_URL": "https://proxybib-pp.cnam.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CNAM"
-        },
-         {
-          "name": "Université Catholique de Lille",
-          "AUTH_URL": "https://login.ezproxy.univ-catholille.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=Vauban2T_1"
         },
         {
           "name": "ENSAM",
@@ -406,8 +406,8 @@
           "AUTH_URL": "https://acces-distant.sciencespo.fr/fork?https://nouveau.europresse.com/access/ip/default.aspx?un=politique2T_1"
         },
         {
-          "name": "ULM",
-          "AUTH_URL": "https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1"
+          "name": "Université Catholique de Lille",
+          "AUTH_URL": "https://login.ezproxy.univ-catholille.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=Vauban2T_1"
         },
         {
           "name": "Université Claude Bernard Lyon 1",
