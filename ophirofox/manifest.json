@@ -79,7 +79,8 @@
     "https://nouveau-europresse-com.ezproxy.univ-tln.fr/*",
     "https://nouveau-europresse-com.ezproxy.univ-paris3.fr/*",
     "https://nouveau-europresse-com.proxy.scd.univ-tours.fr/*",
-    "https://nouveau-europresse-com.federation.unimes.fr/*"
+    "https://nouveau-europresse-com.federation.unimes.fr/*",
+    "https://nouveau-europresse-com.scd-proxy.univ-brest.fr"
   ],
   "background": {
     "scripts": [
@@ -440,6 +441,10 @@
         {
           "name": "Université de Bourgogne",
           "AUTH_URL": "http://proxy-scd.u-bourgogne.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032591T_1"
+        },
+        {
+          "name": "Université de Bretagne Occidentale",
+          "AUTH_URL": "http://scd-proxy.univ-brest.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=OCCIDENTALET_1"
         },
         {
           "name": "Université Catholique de l'Ouest",
