@@ -17,63 +17,69 @@
     "https://nouveau.europresse.com/*"
   ],
   "optional_permissions": [
-    "webNavigation",
-    "https://nouveau-europresse-com.ezproxy.upf.pf/*",
-    "https://nouveau-eureka-cc.res.banq.qc.ca/*",
-    "https://nouveau-europresse-com.budistant.univ-nantes.fr/*",
-    "https://nouveau-europresse-com.proxy.rubens.ens.fr/*",
-    "https://nouveau-europresse-com.rp1.ensam.eu/*",
-    "https://nouveau-europresse-com.ezproxy.universite-paris-saclay.fr/*",
-    "https://nouveau-europresse-com.ezpaarse.univ-paris1.fr/*",
-    "https://nouveau-europresse-com.accesdistant.bu.univ-paris8.fr/*",
-    "https://nouveau-europresse-com.docelec.insa-lyon.fr/*",
-    "https://nouveau-europresse-com.bnf.idm.oclc.org/*",
-    "https://nouveau-europresse-com.docelec.univ-lyon1.fr/*",
-    "https://nouveau-europresse-com.ezpum.scdi-montpellier.fr/*",
-    "https://nouveau-europresse-com.ezpupv.scdi-montpellier.fr/*",
-    "https://nouveau-europresse-com.sid2nomade-2.grenet.fr/*",
-    "https://nouveau-europresse-com.ezproxy.u-bordeaux-montaigne.fr/*",
-    "https://nouveau-europresse-com.docelec.u-bordeaux.fr/*",
-    "https://nouveau-europresse-com.proxy.unice.fr/*",
-    "https://nouveau-europresse-com.acces.bibliotheque-diderot.fr/*",
-    "https://nouveau-europresse-com.scd-proxy.uha.fr/*",
-    "https://nouveau-europresse-com.ezproxy.u-paris.fr/*",
-    "https://nouveau-europresse-com.faraway.parisnanterre.fr/*",
-    "https://nouveau-europresse-com.scd1.univ-fcomte.fr/*",
-    "https://nouveau-europresse-com.rproxy.univ-pau.fr/*",
-    "https://nouveau-europresse-com.ezproxy.univ-artois.fr/*",
-    "https://nouveau-europresse-com.doc-elec.univ-lemans.fr/*",
-    "https://nouveau-europresse-com.lama.univ-amu.fr/*",
-    "https://nouveau-europresse-com.portail.psl.eu/*",
-    "https://nouveau-europresse-com.passerelle.univ-rennes1.fr/*",
-    "https://nouveau-europresse-com.ressources-electroniques.univ-lille.fr/*",
-    "https://nouveau-europresse-com.acces-distant.sciencespo.fr/*",
-    "https://nouveau-europresse-com.ressources.univ-poitiers.fr/*",
-    "https://nouveau-europresse-com.bibelec.univ-lyon2.fr/*",
-    "https://nouveau-europresse-com.gorgone.univ-toulouse.fr/*",
-    "https://nouveau-europresse-com.ezscd.univ-lyon3.fr/*",
-    "https://nouveau-europresse-com.ezproxy.u-pec.fr/*",
-    "https://nouveau-europresse-com.univ-smb.idm.oclc.org/*",
-    "https://nouveau-europresse-com.ezproxy.univ-paris13.fr/*",
-    "https://nouveau-europresse-com.ezproxy.campus-condorcet.fr/*",
-    "https://nouveau-europresse-com.mediaproxy.imtbs-tsp.eu/*",
-    "https://nouveau-europresse-com.buadistant.univ-angers.fr/*",
-    "https://nouveau-europresse-com.accesdistant.sorbonne-universite.fr/*",
-    "https://nouveau-europresse-com.docelec-u-paris2.idm.oclc.org/*",
-    "https://nouveau-europresse-com.acces-distant.bnu.fr/*",
-    "https://nouveau-europresse-com.bu-services.univ-antilles.fr/*",
-    "https://nouveau-europresse-com.proxybib-pp.cnam.fr/*",
-    "https://nouveau-europresse-com.srvext.uco.fr/*",
-    "https://nouveau-europresse-com.urca.idm.oclc.org/*",
-    "https://nouveau-europresse-com.merlin.u-picardie.fr/*",
-    "https://nouveau-europresse-com.ezproxy.univ-littoral.fr/*",
-    "https://nouveau-europresse-com.bases-doc.univ-lorraine.fr/*",
-    "https://nouveau.europresse.com.ezproxy.utbm.fr/*",
-    "https://nouveau-europresse-com.distant.bu.univ-rennes2.fr/*",
-    "https://nouveau-europresse-com.ezproxy.hec.fr/*",
-    "https://nouveau-europresse-com.proxy-bu1.u-bourgogne.fr/*",
-    "https://nouveau-europresse-com.ezproxy.normandie-univ.fr/*",
-    "https://nouveau-europresse-com.bibdocs.u-cergy.fr/*"
+    "webNavigation"
+    , "https://nouveau-europresse-com.ezproxy.univ-catholille.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.upf.pf/*"
+    , "https://nouveau-eureka-cc.res.banq.qc.ca/*"
+    , "https://nouveau-europresse-com.budistant.univ-nantes.fr/*"
+    , "https://nouveau-europresse-com.proxy.rubens.ens.fr/*"
+    , "https://nouveau-europresse-com.rp1.ensam.eu/*"
+    , "https://nouveau-europresse-com.ezproxy.universite-paris-saclay.fr/*"
+    , "https://nouveau-europresse-com.ezpaarse.univ-paris1.fr/*"
+    , "https://nouveau-europresse-com.accesdistant.bu.univ-paris8.fr/*"
+    , "https://nouveau-europresse-com.docelec.insa-lyon.fr/*"
+    , "https://nouveau-europresse-com.rproxy.insa-rennes.fr/*"
+    , "https://nouveau-europresse-com.bnf.idm.oclc.org/*"
+    , "https://nouveau-europresse-com.docelec.univ-lyon1.fr/*"
+    , "https://nouveau-europresse-com.ezpum.scdi-montpellier.fr/*"
+    , "https://nouveau-europresse-com.ezpupv.scdi-montpellier.fr/*"
+    , "https://nouveau-europresse-com.sid2nomade-2.grenet.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.u-bordeaux-montaigne.fr/*"
+    , "https://nouveau-europresse-com.docelec.u-bordeaux.fr/*"
+    , "https://nouveau-europresse-com.proxy.unice.fr/*"
+    , "https://nouveau-europresse-com.acces.bibliotheque-diderot.fr/*"
+    , "https://nouveau-europresse-com.scd-proxy.uha.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.u-paris.fr/*"
+    , "https://nouveau-europresse-com.faraway.parisnanterre.fr/*"
+    , "https://nouveau-europresse-com.scd1.univ-fcomte.fr/*"
+    , "https://nouveau-europresse-com.rproxy.univ-pau.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.univ-artois.fr/*"
+    , "https://nouveau-europresse-com.doc-elec.univ-lemans.fr/*"
+    , "https://nouveau-europresse-com.lama.univ-amu.fr/*"
+    , "https://nouveau-europresse-com.portail.psl.eu/*"
+    , "https://nouveau-europresse-com.passerelle.univ-rennes1.fr/*"
+    , "https://nouveau-europresse-com.ressources-electroniques.univ-lille.fr/*"
+    , "https://nouveau-europresse-com.acces-distant.sciencespo.fr/*"
+    , "https://nouveau-europresse-com.ressources.univ-poitiers.fr/*"
+    , "https://nouveau-europresse-com.bibelec.univ-lyon2.fr/*"
+    , "https://nouveau-europresse-com.gorgone.univ-toulouse.fr/*"
+    , "https://nouveau-europresse-com.ezscd.univ-lyon3.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.u-pec.fr/*"
+    , "https://nouveau-europresse-com.univ-smb.idm.oclc.org/*"
+    , "https://nouveau-europresse-com.ezproxy.univ-paris13.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.campus-condorcet.fr/*"
+    , "https://nouveau-europresse-com.mediaproxy.imtbs-tsp.eu/*"
+    , "https://nouveau-europresse-com.buadistant.univ-angers.fr/*"
+    , "https://nouveau-europresse-com.accesdistant.sorbonne-universite.fr/*"
+    , "https://nouveau-europresse-com.docelec-u-paris2.idm.oclc.org/*"
+    , "https://nouveau-europresse-com.acces-distant.bnu.fr/*"
+    , "https://nouveau-europresse-com.bu-services.univ-antilles.fr/*"
+    , "https://nouveau-europresse-com.proxybib-pp.cnam.fr/*"
+    , "https://nouveau-europresse-com.srvext.uco.fr/*"
+    , "https://nouveau-europresse-com.urca.idm.oclc.org/*"
+    , "https://nouveau-europresse-com.merlin.u-picardie.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.univ-littoral.fr/*"
+    , "https://nouveau-europresse-com.bases-doc.univ-lorraine.fr/*"
+    , "https://nouveau.europresse.com.ezproxy.utbm.fr/*"
+    , "https://nouveau-europresse-com.distant.bu.univ-rennes2.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.hec.fr/*"
+    , "https://nouveau-europresse-com.proxy-bu1.u-bourgogne.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.normandie-univ.fr/*"
+    , "https://nouveau-europresse-com.bibdocs.u-cergy.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.univ-tln.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.univ-paris3.fr/*"
+    , "https://nouveau-europresse-com.proxy.scd.univ-tours.fr/*"
+    , "https://nouveau-europresse-com.federation.unimes.fr/*"
   ],
   "background": {
     "scripts": [
@@ -352,8 +358,12 @@
           "AUTH_URL": "https://bibdocs.u-cergy.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031547T_1"
         },
         {
-          "name": "ENS de Lyon",
+          "name": "École normale supérieure de Lyon (ENS Lyon)",
           "AUTH_URL": "https://acces.bibliotheque-diderot.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ENSLYONT_1"
+        },
+        {
+          "name": "École normale supérieure de Paris (ENS ULM)",
+          "AUTH_URL": "https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1"
         },
         {
           "name": "Conservatoire national des arts et métiers",
@@ -376,6 +386,10 @@
           "AUTH_URL": "https://docelec.insa-lyon.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=INSAT_3"
         },
         {
+          "name": "INSA Rennes",
+          "AUTH_URL": "http://rproxy.insa-rennes.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=INSAT_1"
+        },
+        {
           "name": "Le Mans Université",
           "AUTH_URL": "https://login.doc-elec.univ-lemans.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031524T_1"
         },
@@ -396,8 +410,8 @@
           "AUTH_URL": "https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_1"
         },
         {
-          "name": "ULM",
-          "AUTH_URL": "https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1"
+          "name": "Université Catholique de Lille",
+          "AUTH_URL": "https://login.ezproxy.univ-catholille.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=Vauban2T_1"
         },
         {
           "name": "Université Claude Bernard Lyon 1",
@@ -484,6 +498,10 @@
           "AUTH_URL": "https://budistant.univ-nantes.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=NANTEST_1"
         },
         {
+          "name": "Université de Nîmes",
+          "AUTH_URL": "https://federation.unimes.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=NimesT_1"
+        },
+        {
           "name": "Université de Reims Champagne-Ardenne",
           "AUTH_URL": "https://urca.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ArdenneT_1"
         },
@@ -548,6 +566,10 @@
           "AUTH_URL": "https://distant.bu.univ-rennes2.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=RENNES22T_1"
         },
         {
+          "name": "Université Sorbonne Nouvelle Paris 3",
+          "AUTH_URL": "http://ezproxy.univ-paris3.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=pantheonT_1"
+        },
+        {
           "name": "Université Sorbonne Université",
           "AUTH_URL": "https://accesdistant.sorbonne-universite.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UPMCT_1"
         },
@@ -567,6 +589,14 @@
           "name": "Université de Toulouse",
           "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_2"
         },
+        {
+          "name": "Université de Toulon",
+          "AUTH_URL": "http://ezproxy.univ-tln.fr:2048/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=ToulonT_1"
+        },
+        {
+          "name": "Université de Tours",
+          "AUTH_URL": "https://proxy.scd.univ-tours.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=butours"
+        },        
         {
           "name": "Université de Versailles St-Quentin-en-Yvelines",
           "AUTH_URL": "https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_1"
