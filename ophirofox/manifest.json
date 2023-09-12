@@ -18,6 +18,7 @@
   ],
   "optional_permissions": [
     "webNavigation",
+    "https://nouveau-europresse-com.ezproxy.univ-catholille.fr/*"
     "https://nouveau-europresse-com.ezproxy.upf.pf/*",
     "https://nouveau-eureka-cc.res.banq.qc.ca/*",
     "https://nouveau-europresse-com.budistant.univ-nantes.fr/*",
@@ -363,6 +364,10 @@
         {
           "name": "Conservatoire national des arts et métiers",
           "AUTH_URL": "https://proxybib-pp.cnam.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CNAM"
+        },
+         {
+          "name": "Université Catholique de Lille",
+          "AUTH_URL": "https://login.ezproxy.univ-catholille.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=Vauban2T_1"
         },
         {
           "name": "ENSAM",
