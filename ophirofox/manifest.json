@@ -408,6 +408,10 @@
           "AUTH_URL": "https://acces-distant.sciencespo.fr/fork?https://nouveau.europresse.com/access/ip/default.aspx?un=politique2T_1"
         },
         {
+          "name": "Télécom Paris",
+          "AUTH_URL": "https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_1"
+        },
+        {
           "name": "Université Catholique de Lille",
           "AUTH_URL": "https://login.ezproxy.univ-catholille.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=Vauban2T_1"
         },
