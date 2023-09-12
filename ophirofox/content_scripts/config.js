@@ -106,8 +106,8 @@ function makePermissionsRequest(partner_name) {
   const partner = ophirofox_config_list.find(({ name }) => name === partner_name);
   if (!partner) throw new Error(`No partner found with name ${partner_name}`);
   const auth_url_domain = partnerTopDomain(partner);
-  const optional_permissions = manifest.optional_permissions;
-  const optional_permission_for_auth_url = optional_permissions.find((permission) => {
+  const all_permissions = [...manifest.optional_permissions, ...manifest.permissions];
+  const optional_permission_for_auth_url = all_permissions.find((permission) => {
     try {
       const url = new URL(permission);
       return url.hostname.endsWith(auth_url_domain);
@@ -137,7 +137,10 @@ function ophirofoxCheckPermissions(partner_name) {
  * @throws {Error} if the permissions are not granted
  **/
 async function ophirofoxAskPermissions(partner_name) {
-  const granted = await new Promise(a => chrome.permissions.request(makePermissionsRequest(partner_name), a));
+  const perm_request = makePermissionsRequest(partner_name);
+  const granted = await new Promise(a => chrome.permissions.request(perm_request, a)) ||
+    // the permissions may have been granted before, so if we have them now anyway, we're good
+    await new Promise((accept) => chrome.permissions.contains(perm_request, accept));
   if (!granted) throw new Error("Permission not granted");
 }
 
