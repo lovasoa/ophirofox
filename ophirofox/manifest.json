@@ -36,6 +36,7 @@
     , "https://nouveau-europresse-com.sid2nomade-2.grenet.fr/*"
     , "https://nouveau-europresse-com.ezproxy.u-bordeaux-montaigne.fr/*"
     , "https://nouveau-europresse-com.docelec.u-bordeaux.fr/*"
+    , "https://nouveau-europresse-com.proxy.sciencespobordeaux.fr/*"
     , "https://nouveau-europresse-com.proxy.unice.fr/*"
     , "https://nouveau-europresse-com.acces.bibliotheque-diderot.fr/*"
     , "https://nouveau-europresse-com.scd-proxy.uha.fr/*"
@@ -442,6 +443,10 @@
         {
           "name": "Université Bordeaux Montaigne",
           "AUTH_URL": "https://ezproxy.u-bordeaux-montaigne.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVMONTAIGNET_1"
+        },
+        {
+          "name": "Sciences Po Bordeaux",
+          "AUTH_URL": "http://proxy.sciencespobordeaux.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=SCIENCESPOT_1"
         },
         {
           "name": "Université de Bourgogne",
