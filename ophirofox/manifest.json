@@ -83,6 +83,7 @@
     , "https://nouveau-europresse-com.federation.unimes.fr/*"
     , "https://nouveau-europresse-com.ezp.lib.cam.ac.uk/*"
     , "https://nouveau-europresse-com.scd-proxy.univ-brest.fr/*"
+    , "https://nouveau-europresse-com-s.docadis.univ-tlse3.fr/*"
   ],
   "background": {
     "scripts": [
@@ -547,6 +548,10 @@
         {
           "name": "Université Paris-Saclay",
           "AUTH_URL": "https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_9"
+        },
+        {
+          "name": "Université Paul Sabatier, Toulouse III",
+          "AUTH_URL": "https://docadis.univ-tlse3.fr/https/nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_6"
         },
         {
           "name": "Université Paul-Valéry Montpellier 3",
