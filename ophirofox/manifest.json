@@ -84,6 +84,7 @@
     , "https://nouveau-europresse-com.ezp.lib.cam.ac.uk/*"
     , "https://nouveau-europresse-com.scd-proxy.univ-brest.fr/*"
     , "https://nouveau-europresse-com-s.docadis.univ-tlse3.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.univ-orleans.fr/*"
   ],
   "background": {
     "scripts": [
@@ -434,10 +435,6 @@
           "AUTH_URL": "http://ezproxy.univ-artois.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=littoralT_1"
         },
         {
-          "name": "Université d'Évry Val d'Essonne",
-          "AUTH_URL": "https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_8"
-        },
-        {
           "name": "Université de Bordeaux",
           "AUTH_URL": "https://docelec.u-bordeaux.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVBORDEAUXT_1"
         },
@@ -468,6 +465,10 @@
         {
           "name": "Université Côte d'Azur",
           "AUTH_URL": "http://proxy.unice.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032557T_1"
+        },
+        {
+          "name": "Université d'Évry Val d'Essonne",
+          "AUTH_URL": "https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_8"
         },
         {
           "name": "Université de Franche-Comté",
@@ -518,8 +519,8 @@
           "AUTH_URL": "https://federation.unimes.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=NimesT_1"
         },
         {
-          "name": "Université de Reims Champagne-Ardenne",
-          "AUTH_URL": "https://urca.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ArdenneT_1"
+          "name": "Université d'Orléans",
+          "AUTH_URL": "https://ezproxy.univ-orleans.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=OrleansT_1"
         },
         {
           "name": "Université Paris 1 Panthéon-Sorbonne",
@@ -576,6 +577,10 @@
         {
           "name": "Université de la Polynésie Française",
           "AUTH_URL": "http://nouveau.europresse.com.ezproxy.upf.pf/access/ip/default.aspx?un=tahitiT_1"
+        },
+        {
+          "name": "Université de Reims Champagne-Ardenne",
+          "AUTH_URL": "https://urca.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ArdenneT_1"
         },
         {
           "name": "Université de Rennes",
