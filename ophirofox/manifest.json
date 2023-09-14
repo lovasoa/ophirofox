@@ -84,6 +84,7 @@
     , "https://nouveau-europresse-com.ezp.lib.cam.ac.uk/*"
     , "https://nouveau-europresse-com.scd-proxy.univ-brest.fr/*"
     , "https://nouveau-europresse-com-s.docadis.univ-tlse3.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.univ-orleans.fr"
   ],
   "background": {
     "scripts": [
@@ -436,6 +437,10 @@
         {
           "name": "Université d'Évry Val d'Essonne",
           "AUTH_URL": "https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_8"
+        },
+        {
+          "name": "Université d'Orléans",
+          "AUTH_URL": "https://ezproxy.univ-orleans.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=OrleansT_1"
         },
         {
           "name": "Université de Bordeaux",
