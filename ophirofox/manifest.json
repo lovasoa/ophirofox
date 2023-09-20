@@ -85,6 +85,7 @@
     , "https://nouveau-europresse-com.scd-proxy.univ-brest.fr/*"
     , "https://nouveau-europresse-com-s.docadis.univ-tlse3.fr/*"
     , "https://nouveau-europresse-com.ezproxy.univ-orleans.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.uca.fr/*"
   ],
   "background": {
     "scripts": [
@@ -629,6 +630,10 @@
         {
           "name": "University of Cambridge",
           "AUTH_URL": "https://ezp.lib.cam.ac.uk/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031883T_1"
+        },
+        {
+          "name": "Université Clermont Auvergne",
+          "AUTH_URL": "https://ezproxy.uca.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=FERRANDU_1"
         }
       ]
     }
