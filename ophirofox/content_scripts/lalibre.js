@@ -4,7 +4,6 @@ function extractKeywords() {
 
 async function createLink() {
     const a = await ophirofoxEuropresseLink(extractKeywords());
-    a.classList.add("ap-StoryDate-update");
     return a;
 }
 

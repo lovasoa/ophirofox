@@ -1,6 +1,12 @@
 .ophirofox-europresse {
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: medium;
-    color: rgb(172, 17, 93);
+	margin-left: 0.25em;
+	background-color: #f7b500;
+	border-radius: 0.25rem;
+	color: #5d3c10 !important;
+	margin-right: 0.25em;
+	font-size: medium;
+	font-family: Libre Franklin,Helvetica Neue,Helvetica,Arial,sans-serif;
+	vertical-align: middle;
+	line-height: 2.5rem;
+	padding: 0.5rem 1rem 0.2rem;
 }
