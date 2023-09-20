@@ -86,6 +86,7 @@
     , "https://nouveau-europresse-com-s.docadis.univ-tlse3.fr/*"
     , "https://nouveau-europresse-com.ezproxy.univ-orleans.fr/*"
     , "https://nouveau-europresse-com.ezproxy.uca.fr/*"
+    , "https://nouveau-europresse-com.ressources.sciencespo-lyon.fr/*"
   ],
   "background": {
     "scripts": [
@@ -406,6 +407,10 @@
         {
           "name": "Médiathèque de Télécom SudParis & Institut Mines-Télécom Business School",
           "AUTH_URL": "http://mediaproxy.imtbs-tsp.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_8"
+        },
+        {
+          "name": "SciencesPo Lyon",
+          "AUTH_URL": "http://ressources.sciencespo-lyon.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=LYONT_5"
         },
         {
           "name": "Sciences Po Paris",
