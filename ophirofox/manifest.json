@@ -331,6 +331,18 @@
       "css": [
         "content_scripts/lobs.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.estrepublicain.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/est-republicain.js"
+      ],
+      "css": [
+        "content_scripts/est-republicain.css"
+      ]
     }
   ],
   "browser_specific_settings": {
