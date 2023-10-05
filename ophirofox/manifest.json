@@ -87,6 +87,7 @@
     , "https://nouveau-europresse-com.ezproxy.univ-orleans.fr/*"
     , "https://nouveau-europresse-com.ezproxy.uca.fr/*"
     , "https://nouveau-europresse-com.ressources.sciencespo-lyon.fr/*"
+    , "https://nouveau-europresse-com.proxy.univ-nc.nc/*"
   ],
   "background": {
     "scripts": [
@@ -511,6 +512,10 @@
         {
           "name": "Université Jean Moulin Lyon 3",
           "AUTH_URL": "http://ezscd.univ-lyon3.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MOULINT_1"
+        },
+        {
+          "name": "Université de la Nouvelle-Calédonie",
+          "AUTH_URL": "https://nouveau-europresse-com.proxy.univ-nc.nc/access/ip/default.aspx?un=CaledonieT_1"
         },
         {
           "name": "Université de Lille",
