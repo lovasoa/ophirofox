@@ -87,6 +87,7 @@
     , "https://nouveau-europresse-com.ezproxy.univ-orleans.fr/*"
     , "https://nouveau-europresse-com.ezproxy.uca.fr/*"
     , "https://nouveau-europresse-com.ressources.sciencespo-lyon.fr/*"
+    , "https://nouveau-europresse-com.proxy.univ-nc.nc/*"
   ],
   "background": {
     "scripts": [
