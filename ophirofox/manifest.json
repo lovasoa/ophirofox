@@ -88,6 +88,7 @@
     , "https://nouveau-europresse-com.ezproxy.univ-orleans.fr/*"
     , "https://nouveau-europresse-com.ezproxy.uca.fr/*"
     , "https://nouveau-europresse-com.ressources.sciencespo-lyon.fr/*"
+    , "https://nouveau-europresse-com.proxy.rubens.ens.fr/Search/Reading"
   ],
   "background": {
     "scripts": [
@@ -384,6 +385,12 @@
         {
           "name": "École normale supérieure de Paris (ENS ULM)",
           "AUTH_URL": "https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1"
+ 
+          
+          "name": "École normale supérieure de Paris (ENS ULM)",
+          "AUTH_URL": "https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1"
+
+          
         },
         {
           "name": "Conservatoire national des arts et métiers",
