@@ -394,6 +394,10 @@
           "AUTH_URL": "https://rp1.ensam.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=AML"
         },
         {
+          "name": "ENSTA Paris",
+          "AUTH_URL": "https://nouveau.europresse.com/access/httpref/default.aspx?un=U033137T_4"
+        },
+        {
           "name": "Humathèque Campus Condorcet",
           "AUTH_URL": "https://ezproxy.campus-condorcet.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=EPCS"
         },
@@ -436,10 +440,6 @@
         {
           "name": "Télécom Paris",
           "AUTH_URL": "https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_1"
-        },
-        {
-          "name": "ENSTA Paris",
-          "AUTH_URL": "https://nouveau.europresse.com/access/httpref/default.aspx?un=U033137T_4"
         },
         {
           "name": "Université Catholique de Lille",
