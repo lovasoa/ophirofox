@@ -438,6 +438,10 @@
           "AUTH_URL": "https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_1"
         },
         {
+          "name": "ENSTA Paris",
+          "AUTH_URL": "https://nouveau.europresse.com/access/httpref/default.aspx?un=U033137T_4"
+        },
+        {
           "name": "Université Catholique de Lille",
           "AUTH_URL": "https://login.ezproxy.univ-catholille.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=Vauban2T_1"
         },
