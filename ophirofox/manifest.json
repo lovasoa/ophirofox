@@ -416,10 +416,6 @@
           "AUTH_URL": "https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_1"
         },
         {
-          "name": "Université Bretagne Sud",
-          "AUTH_URL": "http://ezproxy.univ-ubs.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=BRETAGNESUDT_1"
-        },
-        {
           "name": "Université Catholique de Lille",
           "AUTH_URL": "https://login.ezproxy.univ-catholille.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=Vauban2T_1"
         },
@@ -460,6 +456,9 @@
           "AUTH_URL": "http://scd-proxy.univ-brest.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=OCCIDENTALET_1"
         },
         {
+          "name": "Université Bretagne Sud",
+          "AUTH_URL": "http://ezproxy.univ-ubs.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=BRETAGNESUDT_1"
+        },
           "name": "Université Catholique de l'Ouest",
           "AUTH_URL": "https://srvext.uco.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UCOT_1"
         },
