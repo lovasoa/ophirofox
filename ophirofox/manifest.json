@@ -91,6 +91,7 @@
     , "https://nouveau-europresse-com.ezproxy.uca.fr/*"
     , "https://nouveau-europresse-com.ressources.sciencespo-lyon.fr/*"
     , "https://nouveau-europresse-com.proxy.univ-nc.nc/*"
+    , "https://nouveau-europresse-com.buproxy2.univ-avignon.fr/*"
   ],
   "background": {
     "scripts": [
@@ -467,6 +468,10 @@
         {
           "name": "Université d'Artois",
           "AUTH_URL": "http://ezproxy.univ-artois.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=littoralT_1"
+        },
+        {
+          "name": "Université d'Avignon",
+          "AUTH_URL": "https://buproxy2.univ-avignon.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=AvignonT_1"
         },
         {
           "name": "Université de Bordeaux",
