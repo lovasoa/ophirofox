@@ -63,6 +63,7 @@
     , "https://nouveau-europresse-com.buadistant.univ-angers.fr/*"
     , "https://nouveau-europresse-com.accesdistant.sorbonne-universite.fr/*"
     , "https://nouveau-europresse-com.docelec-u-paris2.idm.oclc.org/*"
+    , "https://nouveau-europresse-com.esc-clermont.idm.oclc.org/*"
     , "https://nouveau-europresse-com.acces-distant.bnu.fr/*"
     , "https://nouveau-europresse-com.bu-services.univ-antilles.fr/*"
     , "https://nouveau-europresse-com.proxybib-pp.cnam.fr/*"
@@ -398,6 +399,10 @@
         {
           "name": "ENSTA Paris",
           "AUTH_URL": "https://nouveau.europresse.com/access/httpref/default.aspx?un=U033137T_4"
+        },
+        {
+          "name": "ESC Clermont Business School",
+          "AUTH_URL": "https://esc-clermont.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ESCT_1"
         },
         {
           "name": "Humathèque Campus Condorcet",
