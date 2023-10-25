@@ -672,6 +672,10 @@
           "name": "University of Cambridge",
           "AUTH_URL": "https://ezp.lib.cam.ac.uk/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031883T_1"
         }
+          {
+          "name": "Avignon Université",
+          "AUTH_URL": "https://buproxy2.univ-avignon.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=AvignonT_1"
+        }
       ]
     }
   }
