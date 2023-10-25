@@ -465,6 +465,10 @@
           "AUTH_URL": "http://ezproxy.univ-artois.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=littoralT_1"
         },
         {
+          "name": "Université d'Avignon",
+          "AUTH_URL": "https://buproxy2.univ-avignon.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=AvignonT_1"
+        },
+        {
           "name": "Université de Bordeaux",
           "AUTH_URL": "https://docelec.u-bordeaux.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UNIVBORDEAUXT_1"
         },
@@ -671,10 +675,6 @@
         {
           "name": "University of Cambridge",
           "AUTH_URL": "https://ezp.lib.cam.ac.uk/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031883T_1"
-        }
-          {
-          "name": "Avignon Université",
-          "AUTH_URL": "https://buproxy2.univ-avignon.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=AvignonT_1"
         }
       ]
     }
