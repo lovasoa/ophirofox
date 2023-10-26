@@ -49,7 +49,7 @@
     , "https://nouveau-europresse-com.lama.univ-amu.fr/*"
     , "https://nouveau-europresse-com.portail.psl.eu/*"
     , "https://nouveau-europresse-com.passerelle.univ-rennes1.fr/*"
-    , "https://nouveau-europresse-com.ressources-electroniques.univ-lille.fr/*"
+    , "https://nouveau-europresse-com.ressources-elecniques.univ-lille.fr/*"
     , "https://nouveau-europresse-com.acces-distant.sciencespo.fr/*"
     , "https://nouveau-europresse-com.ressources.univ-poitiers.fr/*"
     , "https://nouveau-europresse-com.bibelec.univ-lyon2.fr/*"
@@ -544,7 +544,7 @@
         },
         {
           "name": "Université de Lille",
-          "AUTH_URL": "https://ressources-electroniques.univ-lille.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=TourcoingT_1"
+          "AUTH_URL": "https://ressources-elecniques.univ-lille.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=TourcoingT_1"
         },
         {
           "name": "Université du Littoral Côte d'Opale (UCLO)",
@@ -662,7 +662,7 @@
           "name": "Université de Technologie de Belfort-Montbéliard",
           "AUTH_URL": "https://ezproxy.utbm.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UTBMT_2"
         },
-                 {
+        {
           "name": "Université de Technologie de Troyes",
           "AUTH_URL": "http://proxy.utt.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=BUTROYEST_2"
         },
