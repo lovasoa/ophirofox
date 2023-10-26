@@ -92,6 +92,7 @@
     , "https://nouveau-europresse-com.ressources.sciencespo-lyon.fr/*"
     , "https://nouveau-europresse-com.proxy.univ-nc.nc/*"
     , "https://nouveau-europresse-com.buproxy2.univ-avignon.fr/*"
+    , "https://nouveau-europresse-com.proxy.utt.fr/*"
   ],
   "background": {
     "scripts": [
@@ -660,6 +661,10 @@
         {
           "name": "Université de Technologie de Belfort-Montbéliard",
           "AUTH_URL": "https://ezproxy.utbm.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UTBMT_2"
+        },
+                 {
+          "name": "Université de Technologie de Troyes",
+          "AUTH_URL": "http://proxy.utt.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=BUTROYEST_2"
         },
         {
           "name": "Université de Toulouse",
