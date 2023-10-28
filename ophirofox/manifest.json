@@ -93,6 +93,7 @@
     , "https://nouveau-europresse-com.proxy.univ-nc.nc/*"
     , "https://nouveau-europresse-com.buproxy2.univ-avignon.fr/*"
     , "https://nouveau-europresse-com.proxy.utt.fr/*"
+    , "https://nouveau-europresse-com.proxy.bnl.lu/*"
   ],
   "background": {
     "scripts": [
@@ -685,6 +686,10 @@
         {
           "name": "University of Cambridge",
           "AUTH_URL": "https://ezp.lib.cam.ac.uk/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031883T_1"
+        },
+        {
+          "name": "Bibliotheque nationale du Luxembourg",
+          "AUTH_URL": "http://proxy.bnl.lu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U030612T_1"
         }
       ]
     }
