@@ -368,6 +368,10 @@
           "AUTH_URL": "https://lama.univ-amu.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031032T_1"
         },
         {
+          "name": "Bibliotheque nationale du Luxembourg",
+          "AUTH_URL": "http://proxy.bnl.lu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U030612T_1"
+        },
+        {
           "name": "Bibliothèque et Archives nationales du Québec (BAnQ)",
           "AUTH_URL": "http://res.banq.qc.ca/login?url=https://nouveau.eureka.cc/access/ip/default.aspx?un=bnat1"
         },
@@ -686,10 +690,6 @@
         {
           "name": "University of Cambridge",
           "AUTH_URL": "https://ezp.lib.cam.ac.uk/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031883T_1"
-        },
-        {
-          "name": "Bibliotheque nationale du Luxembourg",
-          "AUTH_URL": "http://proxy.bnl.lu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U030612T_1"
         }
       ]
     }
