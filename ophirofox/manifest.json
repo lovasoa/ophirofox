@@ -87,6 +87,7 @@
     , "https://nouveau-europresse-com.scd-proxy.univ-brest.fr/*"
     , "https://nouveau-europresse-com-s.docadis.univ-tlse3.fr/*"
     , "https://nouveau-europresse-com.ezproxy.univ-orleans.fr/*"
+    , "https://europresse.ezproxy.univ-ubs.fr/*"
     , "https://nouveau.europresse.com.elgebar.univ-reunion.fr/*"
     , "https://nouveau-europresse-com.ezproxy.uca.fr/*"
     , "https://nouveau-europresse-com.ressources.sciencespo-lyon.fr/*"
@@ -498,6 +499,10 @@
         {
           "name": "Université de Bretagne Occidentale",
           "AUTH_URL": "http://scd-proxy.univ-brest.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=OCCIDENTALET_1"
+        },
+        {
+          "name": "Université Bretagne Sud",
+          "AUTH_URL": "http://ezproxy.univ-ubs.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=BRETAGNESUDT_1"
         },
         {
           "name": "Université Catholique de l'Ouest",
