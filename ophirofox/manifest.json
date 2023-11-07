@@ -381,6 +381,10 @@
           "AUTH_URL": "http://acces-distant.bnu.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=bnus"
         },
         {
+          "name": "Bibliotheque municipale de Lyon",
+          "AUTH_URL": "https://connect.bm-lyon.fr/get/login?&access_list=LVAw&url=aHR0cHM6Ly9ub3V2ZWF1LmV1cm9wcmVzc2UuY29tL2FjY2Vzcy9odHRwcmVmL2RlZmF1bHQuYXNweD91bj1CTUxZT05BVV8x"
+        },
+        {
           "name": "BNF",
           "AUTH_URL": "https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032999T_1"
         },
