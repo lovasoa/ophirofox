@@ -1,16 +1,14 @@
 async function createLink() {
-    const a = await ophirofoxEuropresseLink(); 
-    const span = document.createElement("span");
-    span.className = "ophirofox-europresse";
-    span.appendChild(a);
-    return span;
+    const a = await ophirofoxEuropresseLink();
+    a.classList.add("btn");
+    return a;
 }
 
 async function onLoad() {
-    const reserve = document.querySelector(".ArticleHeader > .subscribers-only");
+    const reserve = document.querySelector(".abo");
     if (!reserve) return;
 
-    reserve.appendChild(await createLink());
+    reserve.after(await createLink());
 }
 
 onLoad().catch(console.error);
