@@ -18,6 +18,7 @@
   ],
   "optional_permissions": [
     "webNavigation"
+    , "https://nouveau-europresse-com.essec.idm.oclc.org/*"
     , "https://nouveau-europresse-com.ezproxy.univ-catholille.fr/*"
     , "https://nouveau-europresse-com.ezproxy.upf.pf/*"
     , "https://nouveau-eureka-cc.res.banq.qc.ca/*"
@@ -411,6 +412,10 @@
         {
           "name": "ESC Clermont Business School",
           "AUTH_URL": "https://esc-clermont.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ESCT_1"
+        },
+        {
+          "name": "ESSEC",
+          "AUTH_URL": "https://essec.idm.oclc.org/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=ESSECT_1"
         },
         {
           "name": "Humathèque Campus Condorcet",
