@@ -96,6 +96,7 @@
     , "https://nouveau-europresse-com.buproxy2.univ-avignon.fr/*"
     , "https://nouveau-europresse-com.proxy.utt.fr/*"
     , "https://nouveau-europresse-com.proxy.bnl.lu/*"
+    , "https://nouveau-europresse-com.revproxy.escpeurope.eu/*"
   ],
   "background": {
     "scripts": [
@@ -712,7 +713,11 @@
         {
           "name": "University of Cambridge",
           "AUTH_URL": "https://ezp.lib.cam.ac.uk/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031883T_1"
-        }
+        },
+        {
+          "name": "ESCP Business School",
+          "AUTH_URL": "https://login.revproxy.escpeurope.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=escpT_1"
+        },
       ]
     }
   }
