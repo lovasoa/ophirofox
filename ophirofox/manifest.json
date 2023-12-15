@@ -419,6 +419,10 @@
           "AUTH_URL": "https://esc-clermont.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ESCT_1"
         },
         {
+          "name": "ESCP Business School",
+          "AUTH_URL": "https://login.revproxy.escpeurope.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=escpT_1"
+        },
+        {
           "name": "ESSEC",
           "AUTH_URL": "https://essec.idm.oclc.org/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=ESSECT_1"
         },
@@ -713,11 +717,7 @@
         {
           "name": "University of Cambridge",
           "AUTH_URL": "https://ezp.lib.cam.ac.uk/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031883T_1"
-        },
-        {
-          "name": "ESCP Business School",
-          "AUTH_URL": "https://login.revproxy.escpeurope.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=escpT_1"
-        },
+        }
       ]
     }
   }
