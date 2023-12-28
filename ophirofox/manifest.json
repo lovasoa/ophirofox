@@ -97,6 +97,7 @@
     , "https://nouveau-europresse-com.proxy.utt.fr/*"
     , "https://nouveau-europresse-com.proxy.bnl.lu/*"
     , "https://nouveau-europresse-com.revproxy.escpeurope.eu/*"
+    , "https://nouveau-europresse-com.univ-eiffel.idm.oclc.org/"
   ],
   "background": {
     "scripts": [
@@ -545,6 +546,10 @@
         {
           "name": "Université Grenoble-Alpes",
           "AUTH_URL": "https://sid2nomade-2.grenet.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=grenobleT_1"
+        },
+        {
+          "name": "Université Gustave Eiffel",
+          "AUTH_URL": "https://univ-eiffel.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=D000030T_5"
         },
         {
           "name": "Université Le Havre Normandie",
