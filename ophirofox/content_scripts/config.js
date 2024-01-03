@@ -101,7 +101,7 @@ async function ophirofoxEuropresseLink(keywords) {
  */
 function permissionForPartner({ AUTH_URL }) {
   const auth_url_host = new URL(AUTH_URL).hostname.split('.');
-  const all_permissions = [...manifest.optional_permissions, ...manifest.permissions];
+  const all_permissions = [...manifest.permissions, ...manifest.optional_permissions];
   let { permission, match_length } = all_permissions.reduce((best, permission) => {
     let permission_host = "";
     try {
@@ -120,9 +120,10 @@ function permissionForPartner({ AUTH_URL }) {
     if (match_length > best.match_length) {
       return { permission, match_length };
     } else return best;
-  }, { permission: "", match_length: 0 });
-  // match at least the top level domain
-  if (match_length < 2) throw new Error(`No permission found for ${AUTH_URL}`);
+  }, { permission: "", match_length: -1 });
+  if (match_length < 2) { // no match for the top level domain
+    console.log(`No permission found for ${AUTH_URL}, will return the first URL permission (${permission})`);
+  }
   return permission;
 }
 
