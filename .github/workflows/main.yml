@@ -31,7 +31,7 @@ jobs:
       - run: cp $PWD/web-ext-artifacts/*xpi ../ophirofox.xpi
       - name: Create the mobile version (with all permissions asked on installation and no optional permissions)
         run: |
-          jq '.permissions += .optional_permissions | del(.optional_permissions)' manifest.json > manifest.mobile.json
+          jq '.permissions += .optional_permissions | .optional_permissions = []' manifest.json > manifest.mobile.json
           mv manifest.mobile.json manifest.json
           web-ext build --overwrite-dest
           cp $PWD/web-ext-artifacts/*zip ../ophirofox.mobile.zip
