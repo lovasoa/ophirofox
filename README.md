@@ -72,6 +72,10 @@ ophirofox est [présent sur le Chrome Webstore](https://chrome.google.com/websto
 
 <img width="624" alt="image" src="https://user-images.githubusercontent.com/552629/94343918-dbff7100-001b-11eb-86e4-df66e15bc6f6.png">
 
+### Pour mobile
+
+Si vous souhaitez utiliser ophirofox sur un téléphone android, vous pouvez vous référer à [ces instruction](https://github.com/lovasoa/ophirofox/issues/139).
+
 # Comment ajouter un nouveau partenaire Europresse
 
 Si votre établissement a un portail Europresse, vous pouvez facilement ajouter son support à cette extension.
