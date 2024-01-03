@@ -48,6 +48,6 @@ jobs:
           prerelease: false
           files: |
             ophirofox.xpi
-            ophirofox.mobile.xpi
+            ophirofox.mobile.zip
             /tmp/update_manifest.json
             /tmp/changelog.txt
