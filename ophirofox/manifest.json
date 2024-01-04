@@ -469,7 +469,7 @@
         },
         {
           "name": "Télécom Paris",
-          "AUTH_URL": "https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_1"
+          "AUTH_URL": "https://nouveau.europresse.com/access/httpref/default.aspx?un=U033137T_5"
         },
         {
           "name": "Université Catholique de Lille",
