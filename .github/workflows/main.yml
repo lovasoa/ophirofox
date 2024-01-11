@@ -29,6 +29,12 @@ jobs:
           WEB_EXT_API_SECRET: ${{ secrets.AMO_JWT_SECRET }}
       - run: ls -lah ./web-ext-artifacts
       - run: cp $PWD/web-ext-artifacts/*xpi ../ophirofox.xpi
+      - name: Create the mobile version (with all permissions asked on installation and no optional permissions)
+        run: |
+          jq '.permissions += .optional_permissions | .optional_permissions = []' manifest.json > manifest.mobile.json
+          mv manifest.mobile.json manifest.json
+          web-ext build --overwrite-dest
+          cp $PWD/web-ext-artifacts/*zip ../ophirofox.mobile.zip
       - run: node ../update-manifest.js | tee /tmp/update_manifest.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -42,5 +48,6 @@ jobs:
           prerelease: false
           files: |
             ophirofox.xpi
+            ophirofox.mobile.zip
             /tmp/update_manifest.json
             /tmp/changelog.txt

@@ -9,7 +9,7 @@ function extractArticleNumber(){
 }
 
 function extractKeywordsFromTitle() {
-    const titleElem = document.getElementsByClassName("crayon article-titre-" + extractArticleNumber() + " h1")[0].innerHTML;
+    const titleElem = document.getElementsByClassName("crayon article-titre-" + extractArticleNumber() + " h1")[0].textContent;
     return titleElem;
 }
 

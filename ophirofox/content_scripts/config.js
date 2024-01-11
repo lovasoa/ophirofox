@@ -90,13 +90,41 @@ async function ophirofoxEuropresseLink(keywords) {
 }
 
 /**
- * @param {{AUTH_URL:string}} partner 
- * @returns {string} the top domain of the AUTH_URL
+ * Finds the permission that matches the AUTH_URL of the given partner
+ * by finding the permission URL that has the longest matching suffix
+ * 
+ * For instance, if the AUTH_URL is "https://a.b.c.d.com/auth", and the manifest
+ * contains the permissions "https://b.c.d.com", "https://c.d.com", and "https://x.com"
+ * then this function will return "https://b.c.d.com"
+ * @param {{AUTH_URL:string}} partner
+ * @returns {string} the permission
  */
-function partnerTopDomain({ AUTH_URL }) {
-  const auth_url_domain = new URL(AUTH_URL).hostname;
-  const auth_url_domain_parts = auth_url_domain.split(".");
-  return auth_url_domain_parts.slice(-2).join(".");
+function permissionForPartner({ AUTH_URL }) {
+  const auth_url_host = new URL(AUTH_URL).hostname.split('.');
+  const all_permissions = [...manifest.permissions, ...manifest.optional_permissions];
+  let { permission, match_length } = all_permissions.reduce((best, permission) => {
+    let permission_host = "";
+    try {
+      permission_host = new URL(permission).hostname;
+    } catch (_) { // ignore permissions that are not URLs
+      return best;
+    }
+    let match_length = 0;
+    let host_parts = permission_host.split(".");
+    for (let i = 0; i < auth_url_host.length && i < host_parts.length; i++) {
+      let part = host_parts[host_parts.length - 1 - i];
+      let auth_part = auth_url_host[auth_url_host.length - 1 - i];
+      if (part !== auth_part) break;
+      match_length = i;
+    }
+    if (match_length > best.match_length) {
+      return { permission, match_length };
+    } else return best;
+  }, { permission: "", match_length: -1 });
+  if (match_length < 2) { // no match for the top level domain
+    console.log(`No permission found for ${AUTH_URL}, will return the first URL permission (${permission})`);
+  }
+  return permission;
 }
 
 /**
@@ -105,16 +133,8 @@ function partnerTopDomain({ AUTH_URL }) {
 function makePermissionsRequest(partner_name) {
   const partner = ophirofox_config_list.find(({ name }) => name === partner_name);
   if (!partner) throw new Error(`No partner found with name ${partner_name}`);
-  const auth_url_domain = partnerTopDomain(partner);
-  const all_permissions = [...manifest.optional_permissions, ...manifest.permissions];
-  const optional_permission_for_auth_url = all_permissions.find((permission) => {
-    try {
-      const url = new URL(permission);
-      return url.hostname.endsWith(auth_url_domain);
-    } catch (_) { }
-  });
-  if (!optional_permission_for_auth_url) throw new Error(`No permission found for ${auth_url_domain}`);
-  return { permissions: missing_permissions, origins: [optional_permission_for_auth_url] };
+  const permission = permissionForPartner(partner);
+  return { permissions: missing_permissions, origins: [permission] };
 }
 
 /**
