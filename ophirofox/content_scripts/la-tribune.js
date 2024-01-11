@@ -4,16 +4,15 @@ async function createLink() {
     return a;
 }
 
-
 function findPremiumBanner() {
-    const title = document.querySelector(".facade-container");
+    const title = document.querySelector('.facade-container');
     if (!title) return null;
-    const elems = title.querySelectorAll("span");
-    return [...elems].find(d => d.textContent === "Réservé aux abonnés")
+    const elems = title.querySelectorAll('span');
+    return [...elems].find((d) => d.textContent === 'Réservé aux abonnés');
 }
 
 async function onLoad() {
-	const premiumBanner = findPremiumBanner();
+    const premiumBanner = findPremiumBanner();
     if (!premiumBanner) return;
     premiumBanner.after(await createLink());
 }

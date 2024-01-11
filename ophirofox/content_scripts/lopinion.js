@@ -4,17 +4,16 @@ async function createLink() {
     return a;
 }
 
-
 function findPremiumBanner() {
-    const title = document.querySelector("div.paywall");
+    const title = document.querySelector('div.paywall');
     if (!title) return null;
     return title;
 }
 
 async function onLoad() {
-	const premiumBanner = findPremiumBanner();
+    const premiumBanner = findPremiumBanner();
     if (!premiumBanner) return;
-    const anchor = document.querySelector(".Article-date");
+    const anchor = document.querySelector('.Article-date');
     anchor.after(await createLink());
 }
 

@@ -4,15 +4,14 @@ async function createLink() {
     return a;
 }
 
-
 function findPremiumBanner() {
-    const title = document.querySelector("div.ml-2");
+    const title = document.querySelector('div.ml-2');
     if (!title) return null;
     return title;
 }
 
 async function onLoad() {
-	const premiumBanner = findPremiumBanner();
+    const premiumBanner = findPremiumBanner();
     if (!premiumBanner) return;
     premiumBanner.after(await createLink());
 }
