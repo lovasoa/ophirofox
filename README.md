@@ -49,6 +49,7 @@ Si votre université n'est pas dans la liste, vous pouvez [l'ajouter](#comment-a
   
 ### Presse étrangère
   - [Courrier international](https://www.courrierinternational.com)
+  - [L'Orient-Le Jour (Liban)](https://www.lorientlejour.com/)
   - [La Libre Belgique](https://www.lalibre.be/)
   - [Le Soir (Belgique)](https://www.lesoir.be)
   - [Le Temps (Suisse)](https://www.letemps.ch/)

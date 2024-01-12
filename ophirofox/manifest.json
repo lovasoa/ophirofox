@@ -402,6 +402,18 @@
       "css": [
         "content_scripts/corse-matin.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.lorientlejour.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/lorient-lejour.js"
+      ],
+      "css": [
+        "content_scripts/lorient-lejour.css"
+      ]
     }
   ],
   "browser_specific_settings": {

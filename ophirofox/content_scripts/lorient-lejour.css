@@ -1,0 +1,16 @@
+.ophirofox-europresse {
+    font-size: 10px;
+    font-family: "AktivGrotesk-Medium", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    color: #8f7f54;
+    width: auto;
+    height: 26px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: #ffdf8a;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 0 0 10px;
+    line-height: 26px;
+}
