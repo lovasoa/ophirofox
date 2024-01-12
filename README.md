@@ -26,7 +26,9 @@ Si votre université n'est pas dans la liste, vous pouvez [l'ajouter](#comment-a
   - [L'Express](https://www.lexpress.fr/)
   - [L'Humanité](https://www.humanite.fr)
   - [L'Obs](https://www.nouvelobs.com/)
+  - [L'Opinion](https://www.lopinion.fr/)
   - [La Croix](https://www.la-croix.com)
+  - [La Tribune](https://www.latribune.fr)
   - [Le Figaro](https://www.lefigaro.fr/)
   - [Le Monde Diplomatique](https://www.www.monde-diplomatique.fr)
   - [Le Monde](https://www.lemonde.fr/)
@@ -34,16 +36,20 @@ Si votre université n'est pas dans la liste, vous pouvez [l'ajouter](#comment-a
   - [Libération](https://www.liberation.fr/)
   
 ### Presse régionale
+  - [Corse Matin](https://www.corsematin.com/)
+  - [L'Est républicain](https://www.estrepublicain.fr/)
   - [La Dépêche du Midi](https://www.ladepeche.fr/)
   - [La Montagne](https://www.lamontagne.fr)
   - [La Provence](https://www.laprovence.com/)
   - [La Voix du Nord](https://www.lavoixdunord.fr/)
   - [Le Parisien](https://www.leparisien.fr/)
+  - [Nice-Matin](https://www.nicematin.com/)
   - [Ouest France](https://www.ouest-france.fr/)
   - [Sud Ouest](https://www.sudouest.fr/)
   
 ### Presse étrangère
   - [Courrier international](https://www.courrierinternational.com)
+  - [L'Orient-Le Jour (Liban)](https://www.lorientlejour.com/)
   - [La Libre Belgique](https://www.lalibre.be/)
   - [Le Soir (Belgique)](https://www.lesoir.be)
   - [Le Temps (Suisse)](https://www.letemps.ch/)

@@ -354,6 +354,66 @@
       "css": [
         "content_scripts/est-republicain.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.latribune.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/la-tribune.js"
+      ],
+      "css": [
+        "content_scripts/la-tribune.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.lopinion.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/lopinion.js"
+      ],
+      "css": [
+        "content_scripts/lopinion.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.nicematin.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/nice-matin.js"
+      ],
+      "css": [
+        "content_scripts/nice-matin.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.corsematin.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/corse-matin.js"
+      ],
+      "css": [
+        "content_scripts/corse-matin.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.lorientlejour.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/lorient-lejour.js"
+      ],
+      "css": [
+        "content_scripts/lorient-lejour.css"
+      ]
     }
   ],
   "browser_specific_settings": {
