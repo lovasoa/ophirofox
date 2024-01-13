@@ -1,6 +1,6 @@
 async function createLink() {
     const a = await ophirofoxEuropresseLink();
-    a.classList.add();
+    a.classList.add('bt_special');
     return a;
 }
 
@@ -16,7 +16,7 @@ async function onLoad() {
 	const premiumBanner = findPremiumBanner();
     if (!premiumBanner) return;
     const head = document.querySelector("h1");
-    head.before(await createLink());
+    head.after(await createLink());
 }
 
 onLoad().catch(console.error);
