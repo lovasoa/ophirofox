@@ -49,10 +49,13 @@ Si votre université n'est pas dans la liste, vous pouvez [l'ajouter](#comment-a
   
 ### Presse étrangère
   - [Courrier international](https://www.courrierinternational.com)
+  - [L'Avenir (Belgique)](https://www.lavenir.net/)
   - [L'Orient-Le Jour (Liban)](https://www.lorientlejour.com/)
+  - [La DH (Belgique)](https://www.dhnet.be/)
   - [La Libre Belgique](https://www.lalibre.be/)
   - [Le Soir (Belgique)](https://www.lesoir.be)
   - [Le Temps (Suisse)](https://www.letemps.ch/)
+  - [Sudinfo (Belgique)](https://www.sudinfo.be/)
 
 Vous pouvez proposer d'autres sites en ouvrant une [demande sur github](https://github.com/lovasoa/ophirofox/issues)
 
