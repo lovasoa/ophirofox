@@ -1,3 +1,5 @@
+console.log('Ophirofox injected');
+
 function extractKeywords() {
     return document
       .querySelector("meta[property='og:title']")
@@ -6,19 +8,21 @@ function extractKeywords() {
 
 async function createLink() {
     const a = await ophirofoxEuropresseLink(extractKeywords());
-    a.classList.add("ribbon-premium");
     return a;
 }
 
+function findPremiumBanner() {
+  const anchor = document.querySelector('div.TypologyArticle__BlockPremium-sc-1vro4tp-2');
+  if (!anchor) {
+    return;
+  }
+  return anchor;
+}
+
 async function onLoad() {
-    const reserve = document.evaluate(
-      "//*[contains(text(), 'réservé aux abonnés')]",
-      document.body,
-      null,
-      XPathResult.UNORDERED_NODE_ITERATOR_TYPE
-    ).iterateNext();
-    if (!reserve) return;
-    reserve.appendChild(await createLink());
+    const premiumBanner = findPremiumBanner();
+    if (!premiumBanner) return;
+    premiumBanner.after(await createLink());
 }
 
 onLoad();
