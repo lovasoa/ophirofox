@@ -22,7 +22,7 @@ function findPremiumBanner() {
 async function onLoad() {
     const premiumBanner = findPremiumBanner();
     if (!premiumBanner) return;
-    premiumBanner.after(await createLink());
+    premiumBanner.appendChild(await createLink());
 }
 
 onLoad();
