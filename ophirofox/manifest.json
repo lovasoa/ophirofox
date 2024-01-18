@@ -414,6 +414,42 @@
       "css": [
         "content_scripts/lorient-lejour.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.lavenir.net/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/lavenir.js"
+      ],
+      "css": [
+        "content_scripts/lavenir.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.dhnet.be/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/ladh.js"
+      ],
+      "css": [
+        "content_scripts/ladh.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.sudinfo.be/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/sudinfo.js"
+      ],
+      "css": [
+        "content_scripts/sudinfo.css"
+      ]
     }
   ],
   "browser_specific_settings": {

@@ -1,0 +1,11 @@
+.ophirofox-europresse {
+    display: inline-block;
+    margin: 0.4em 0.7em 0 -0.25em;
+    padding: 0 1em;
+    border-radius: 0.25em;
+    background-color: #ffcb00;
+    color: #000 !important;
+    font-size: small;
+    vertical-align: top;
+    line-height: 2.5;
+}
