@@ -1,34 +1,56 @@
 function extractKeywords() {
-    return extractKeywordsFromTitle() || extractKeywordsFromUrl(window.location);
-}
-
-function extractKeywordsFromTitle() {
     const titleElem = document.querySelector("h1").childNodes[0];
     return titleElem && titleElem.textContent;
 }
 
-function extractKeywordsFromUrl(url) {
-    /*const source_url = new URL(url);
-    const lemonde_match = source_url.pathname.match(/([^/.]+)(_\d*_\d*\.html)?$/);
-    if (!lemonde_match) throw new Error("Could not find keywords in lemonde url");
-    return lemonde_match[1];*/
-    throw new Error("not implemented");
-}
+let buttonAdded = false;
 
-async function createLink() {
-    const a = await ophirofoxEuropresseLink(extractKeywords());
-    a.classList.add("btn", "btn--premium");
-    return a;
+async function addEuropresseButton() {
+    if(!buttonAdded) {
+        const elt = document.querySelector("button[aria-label=Commenter]")?.parentElement?.parentElement;
+        if (elt) {
+            const a = await ophirofoxEuropresseLink(extractKeywords());
+            elt.appendChild(a);
+            buttonAdded = true;
+        }
+    }
 }
 
 async function onLoad() {
-    /* Weird reloading after load */
-    await new Promise(r => setTimeout(r, 1000));
-    const article = document.querySelectorAll("article")[0];
-    const elt = article.children[1].children[1].children[0].children[0].children[1].children[0]
-    if (elt) {
-        elt.appendChild(await createLink());
-    }
+    
+    /* 2 cases:
+       1. either a page is initially loaded,  and we must wait for the actual end of loading (determined
+          by a new iframe #rufous-sandbox) and add the button (this is the first observer)
+       2. Or a page is newly routed (for instance, when one goes from the homepage to an article) :
+        - it is detected with the second observer that watches for changes in <title> and reset the button
+        - we wait for the end of actual loading of the new content by observing <main>
+    */
+    
+    const callback = (mutationList, observer) => {
+        for (const mutation of mutationList) {
+            for (const e of mutation.addedNodes) {
+                if(e.id == "rufous-sandbox") {
+                    addEuropresseButton();
+                }
+            }
+        }
+    };
+
+    const observer = new MutationObserver(callback);
+    observer.observe(document.body, { childList: true});
+    
+    const observerTitle = new MutationObserver(() => {
+        buttonAdded = false;
+        addEuropresseButton();
+    });
+    const title = document.querySelector("title")
+    observerTitle.observe(title, { childList: true, subtree: false });
+    
+    const observerMain = new MutationObserver(() => {
+        addEuropresseButton();
+    }); 
+    const main = document.querySelector("main")
+    observerMain.observe(main, { childList: true, subtree: false }); 
 }
 
 onLoad().catch(console.error);
