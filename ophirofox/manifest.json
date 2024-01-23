@@ -98,6 +98,7 @@
     , "https://nouveau-europresse-com.proxy.bnl.lu/*"
     , "https://nouveau-europresse-com.revproxy.escpeurope.eu/*"
     , "https://nouveau-europresse-com.univ-eiffel.idm.oclc.org/"
+    , "https://nouveau.europresse.com/*"
   ],
   "background": {
     "scripts": [
@@ -510,6 +511,10 @@
         {
           "name": "ENSTA Paris",
           "AUTH_URL": "https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_9"
+        },
+        {
+          "name": "ENSAE Paris/ENSAI",
+          "AUTH_URL": "https://nouveau.europresse.com/access/httpref/default.aspx?un=U033137T_3"
         },
         {
           "name": "ESC Clermont Business School",
