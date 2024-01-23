@@ -22,10 +22,11 @@ async function createLink() {
 }
 
 async function onLoad() {
+    /* Weird reloading after load */
+    await new Promise(r => setTimeout(r, 1000));
     const article = document.querySelectorAll("article")[0];
-    const elt = article?.children[1].children[1].children[0].children[0].children[1].children[0]
+    const elt = article.children[1].children[1].children[0].children[0].children[1].children[0]
     if (elt) {
-    console.log("fig", elt);
         elt.appendChild(await createLink());
     }
 }
