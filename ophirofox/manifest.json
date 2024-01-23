@@ -98,7 +98,6 @@
     , "https://nouveau-europresse-com.proxy.bnl.lu/*"
     , "https://nouveau-europresse-com.revproxy.escpeurope.eu/*"
     , "https://nouveau-europresse-com.univ-eiffel.idm.oclc.org/"
-    , "https://nouveau.europresse.com/*"
   ],
   "background": {
     "scripts": [
