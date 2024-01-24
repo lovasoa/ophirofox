@@ -98,6 +98,7 @@
     , "https://nouveau-europresse-com.proxy.bnl.lu/*"
     , "https://nouveau-europresse-com.revproxy.escpeurope.eu/*"
     , "https://nouveau-europresse-com.univ-eiffel.idm.oclc.org/"
+    , "https://nouveau-europresse-com.ezproxy.unilim.fr/*"
   ],
   "background": {
     "scripts": [
@@ -690,6 +691,10 @@
         {
           "name": "Université de Lille",
           "AUTH_URL": "https://ressources-electroniques.univ-lille.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=TourcoingT_1"
+        },
+        {
+          "name": "Université de Limoges",
+          "AUTH_URL": "https://ezproxy.unilim.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031697T_1"
         },
         {
           "name": "Université du Littoral Côte d'Opale (UCLO)",
