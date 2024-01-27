@@ -26,11 +26,11 @@ async function onLoad() {
     } 
     else {
         /* Premium banner couldn't be found, use MutationObserver as fallback */
+        var elementFound = false;
         const callback = (mutationList, observer) => {
             for (const mutation of mutationList) {
                 for (const e of mutation.addedNodes) {
                     const bannerSelectorString = 'paywall-sticky width_full d_flex pt_3_m pb_3_m pt_4_nm pb_4_nm pos_stick ff_gct fw_r justify_center';
-                    var elementFound = false;
                     if(e.className == bannerSelectorString) {
                         observer.disconnect();
                         elementFound = true;
@@ -39,6 +39,9 @@ async function onLoad() {
                         }
                         break;
                     }                    
+                }
+                if (elementFound) {
+                    break;
                 }
             }
         };
