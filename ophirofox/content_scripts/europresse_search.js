@@ -37,6 +37,7 @@ async function onLoad() {
             date_filter.value = 9;
         } else {
             const publishedDate = new Date(published_time);
+            publishedDate.setUTCHours(0, 0, 0, 0); // Europresse saves the exact UTC date, but "depuis X jours" is based on midnight 
             const currentDate = new Date();
 
             const timeDifference = currentDate.getTime() - publishedDate.getTime();
