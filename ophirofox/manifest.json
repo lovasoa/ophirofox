@@ -99,6 +99,7 @@
     , "https://nouveau-europresse-com.revproxy.escpeurope.eu/*"
     , "https://nouveau-europresse-com.univ-eiffel.idm.oclc.org/"
     , "https://nouveau-europresse-com.ezproxy.unilim.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.uphf.fr/*"
   ],
   "background": {
     "scripts": [
@@ -783,6 +784,10 @@
         {
           "name": "Université de la Polynésie Française",
           "AUTH_URL": "http://nouveau.europresse.com.ezproxy.upf.pf/access/ip/default.aspx?un=tahitiT_1"
+        },
+        {
+          "name": "Université Polytechnique Hauts-de-France",
+          "AUTH_URL": "http://ezproxy.uphf.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=valenciennesT_1"
         },
         {
           "name": "Université de Reims Champagne-Ardenne",
