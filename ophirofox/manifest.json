@@ -464,6 +464,18 @@
       "css": [
         "content_scripts/sudinfo.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.letelegramme.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/le-telegramme.js"
+      ],
+      "css": [
+        "content_scripts/le-telegramme.css"
+      ]
     }
   ],
   "browser_specific_settings": {
@@ -836,7 +848,7 @@
         {
           "name": "Université de Tours",
           "AUTH_URL": "https://proxy.scd.univ-tours.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=butours"
-        },        
+        },
         {
           "name": "Université de Versailles St-Quentin-en-Yvelines",
           "AUTH_URL": "https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_1"
