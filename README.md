@@ -5,7 +5,7 @@ Une extension pour navigateurs qui permet de lire la plupart des titres de press
 [![Mozilla Firefox: download on mozilla addons](https://user-images.githubusercontent.com/552629/82738693-f4900f80-9d39-11ea-816c-1bddb73b6967.png)](https://github.com/lovasoa/ophirofox/releases/latest/download/ophirofox.xpi)
 [![Google Chrome: download on the chrome web store](https://user-images.githubusercontent.com/552629/104166652-661ceb00-53fb-11eb-91c1-2db0718db66f.png)](https://chrome.google.com/webstore/detail/ophirofox/mmmjkgckgcpankonbgbianpnfenbhodf)
 
-Comme illustré ci-dessous, l'extension ajoute un bouton **Lire sur Europresse** sur les articles réservés aux abonnés disponibles sur la base de données.
+Comme illustré ci-dessous, l'extension ajoute un bouton **Lire sur Europresse** sur les articles réservés aux abonnés des journaux compatibles.
 
 Ce bouton vous permet de vous connecter avec votre compte sur Europresse via le site de votre établissement, et une fois authentifié,
 d'être redirigé automatiquement vers une page de recherche Europresse qui contient l'article souhaité. Un article peut plusieurs heures avant d'être archivé par Europresse.
