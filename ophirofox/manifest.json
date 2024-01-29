@@ -472,6 +472,9 @@
       "js": [
         "content_scripts/config.js",
         "content_scripts/le-telegramme.js"
+      ],
+      "css": [
+        "content_scripts/le-telegramme.css"
       ]
     }
   ],
