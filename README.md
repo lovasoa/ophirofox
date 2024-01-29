@@ -8,7 +8,7 @@ Une extension pour navigateurs qui permet de lire la plupart des titres de press
 Comme illustré ci-dessous, l'extension ajoute un bouton **Lire sur Europresse** sur les articles réservés aux abonnés des journaux compatibles.
 
 Ce bouton vous permet de vous connecter avec votre compte sur Europresse via le site de votre établissement, et une fois authentifié,
-d'être redirigé automatiquement vers une page de recherche Europresse qui contient l'article souhaité. Un article peut plusieurs heures avant d'être archivé par Europresse.
+d'être redirigé automatiquement vers une page de recherche Europresse qui contient l'article souhaité. Un article peut prendre plusieurs heures avant d'être archivé par Europresse.
 
 ![Capture d'écran animée de démonstration de l'extension](https://user-images.githubusercontent.com/552629/93182919-98168d00-f73a-11ea-9518-175847fdc677.gif)
 
