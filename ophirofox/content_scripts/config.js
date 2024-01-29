@@ -77,17 +77,8 @@ async function ophirofoxEuropresseLink(keywords) {
   keywords = keywords ? keywords.trim() : document.querySelector("h1").textContent;
 
   // Trying to determine published time with meta tags (Open Graph values)
-  let publishedTime = ''; // If not found, screw it, unless someone wants to add a parser for each website
-document.querySelector( "meta[property='article:published_time'], meta[property='og:article:published_time'], meta[property='date:published_time']").getAttribute("content");
-  metaTags.forEach(metaTag => {
-    const property = metaTag.getAttribute('property');
-    if (property === 'article:published_time' ||
-      property === 'date:published_time' ||
-      property === 'og:article:published_time') {
-      publishedTime = metaTag.getAttribute('content');
-      return;
-    }
-  });
+  let publishedTime = document.querySelector( "meta[property='article:published_time'], meta[property='og:article:published_time'], meta[property='date:published_time']")
+  ?.getAttribute("content") || '';
 
   // Creating HTML anchor element
   const a = document.createElement("a");
