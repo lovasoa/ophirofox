@@ -21,9 +21,17 @@ async function onLoad() {
     const { search_terms, published_time } = await consumeReadRequest();
     if (!search_terms) return;
     const stopwords = new Set(['d', 'l', 'et', 'sans']);
+
+    /*
+        L = { Lu , Ll , Lt , Lm , Lo }
+        M = { Mn , Mc , Me }
+        Nd: a decimal digit
+        Unicode specification: https://www.unicode.org/reports/tr44/#General_Category_Values
+        Categories browser: https://www.compart.com/fr/unicode/category
+    */
     const keywords = search_terms
         .replace(/œ/g, 'oe')
-        .split(/[^\p{L}]+/u)
+        .split(/[^\p{L}\p{M}\p{Nd}]+/u)
         .filter(w => !stopwords.has(w))
         .join(' ');
     const keyword_field = document.getElementById("Keywords");
