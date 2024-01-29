@@ -59,15 +59,16 @@ Voici la liste triée par ordre alphabétique :
   - [Le Temps (Suisse)](https://www.letemps.ch/)
   - [Sudinfo (Belgique)](https://www.sudinfo.be/)
 
-Vous pouvez proposer d'autres site Web de médias en ouvrant une [demande ici-même](https://github.com/lovasoa/ophirofox/issues).
+Vous pouvez proposer d'autres sites Web de médias en ouvrant une [demande ici-même](https://github.com/lovasoa/ophirofox/issues).
 
 # Tester la dernière version
 
 ## Firefox sur ordinateur
 
 1. Téléchargez la dernière version d'Ophirofox depuis les *releases* disponibles [ici](https://github.com/lovasoa/ophirofox/releases/latest) ;
-2. Pour les versions récentes de Firefox : cliquez simplement sur `ophirofox.xpi` et autorisez l'installation du module complémentaire ;
-3. Pour les versions plus anciennes de Firefox : Enregistrez le fichier `ophirofox.xpi` en réalisant un clic droit, puis ouvrez le gestionnaire des extensions depuis le menu de Firefox. Ensuite, ouvrez les paramètres (représentés par une roue dentée), sélectionnez « Installer un module depuis un fichier », puis choisissez le fichier `ophirofox.xpi` que vous avez téléchargé précédemment ;
+2. Deux options en fonction de la version de Firefox :
+- Pour les versions récentes : cliquez simplement sur `ophirofox.xpi` et autorisez l'installation du module complémentaire ;
+- Pour les versions plus anciennes : enregistrez le fichier `ophirofox.xpi` en réalisant un clic droit, puis ouvrez le gestionnaire des extensions depuis le menu de Firefox. Ensuite, ouvrez les paramètres (représentés par une roue dentée), sélectionnez « Installer un module depuis un fichier », puis choisissez le fichier `ophirofox.xpi` que vous avez téléchargé précédemment ;
 4. Une fois installée, allez dans les paramètres du module et choisissez le nom de votre établissement.
 
 ## Chrome, Edge et similaires sur ordinateur
