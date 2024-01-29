@@ -1,9 +1,9 @@
-async function consumeSearchTerms() {
+async function consumeReadRequest() {
     return new Promise((accept, reject) => {
-        chrome.storage.local.get("ophirofox_keywords",
+        chrome.storage.local.get("ophirofox_read_request",
             (r) => {
-                accept(r.ophirofox_keywords);
-                chrome.storage.local.remove("ophirofox_keywords");
+                accept(r.ophirofox_read_request);
+                chrome.storage.local.remove("ophirofox_read_request");
             });
     })
 }
@@ -18,7 +18,7 @@ async function onLoad() {
         path.startsWith("/Search/Express") ||
         path.startsWith("/Search/Simple")
     )) return;
-    const search_terms = await consumeSearchTerms();
+    const { search_terms, published_time } = await consumeReadRequest();
     if (!search_terms) return;
     const stopwords = new Set(['d', 'l', 'et', 'sans']);
 
@@ -36,8 +36,58 @@ async function onLoad() {
         .join(' ');
     const keyword_field = document.getElementById("Keywords");
     keyword_field.value = 'TIT_HEAD=' + keywords;
+
+    // Looking for a time range
     const date_filter = document.getElementById("DateFilter_DateRange");
-    if (date_filter) date_filter.value = 9;
+
+    if (date_filter) {
+        if (!published_time) { // Full expand the time range
+            date_filter.value = 9;
+        } else {
+            const publishedDate = new Date(published_time);
+            publishedDate.setUTCHours(0, 0, 0, 0); // Europresse saves the exact UTC date, but "depuis X jours" is based on midnight 
+            const currentDate = new Date();
+
+            const timeDifference = currentDate.getTime() - publishedDate.getTime();
+            // Rounds up for tolerance to be sure to not filtering badly
+            const daysDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+            let filterValue = 9;
+
+            switch (true) {
+                case (daysDifference <= 1):
+                    filterValue = 2; // Depuis hier
+                    break;
+                case (daysDifference <= 3):
+                    filterValue = 11; // Depuis 3 jours
+                    break;
+                case (daysDifference <= 7):
+                    filterValue = 3; // Depuis 7 jours
+                    break;
+                case (daysDifference <= 30):
+                    filterValue = 4; // Depuis 30 jours
+                    break;
+                case (daysDifference <= 90):
+                    filterValue = 5; // Depuis 3 mois
+                    break;
+                case (daysDifference <= 180):
+                    filterValue = 6; // Depuis 6 mois
+                    break;
+                case (daysDifference <= 365):
+                    filterValue = 7; // Depuis 1 an
+                    break;
+                case (daysDifference <= 730):
+                    filterValue = 8; // Depuis 2 ans
+                    break;
+                default:
+                    filterValue = 9; // Dans toutes les archives
+                    break;
+            }
+
+            date_filter.value = filterValue;
+        }
+    }
+
     keyword_field.form.submit();
 }
 
