@@ -1,0 +1,24 @@
+.ophirofox-europresse {
+    background-color: rgb(254, 194, 45);
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    display: block;
+    font-family: robotoslab-bold, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    height: 38px;
+    line-height: 18.4px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    text-align: center;
+    width: 190px;
+    -webkit-user-drag: auto;
+    -webkit-user-select: text;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.ophirofox-europresse:hover {
+    color: #ffffff;
+}

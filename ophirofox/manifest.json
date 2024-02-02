@@ -476,6 +476,18 @@
       "css": [
         "content_scripts/le-telegramme.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.lsa-conso.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/lsa-conso.js"
+      ],
+      "css": [
+        "content_scripts/lsa-conso.css"
+      ]
     }
   ],
   "browser_specific_settings": {
