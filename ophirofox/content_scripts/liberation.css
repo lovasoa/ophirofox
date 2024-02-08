@@ -1,7 +1,9 @@
 .ophirofox-europresse {
+    display: inline-block;
     font-size: 0.875rem;
     line-height: 1.125rem;
-    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 0px;
     padding: 5px 10px;
     background-color: #eeb54e;
     color: #000;
