@@ -73,12 +73,27 @@ const ophirofox_config = getOphirofoxConfig();
  * @returns {Promise<HTMLAnchorElement>}
  */
 async function ophirofoxEuropresseLink(keywords) {
+  // Keywords is the article name
   keywords = keywords ? keywords.trim() : document.querySelector("h1").textContent;
+
+  // Trying to determine published time with meta tags (Open Graph values)
+  let publishedTime = document.querySelector( "meta[property='article:published_time'], meta[property='og:article:published_time'], meta[property='date:published_time']")
+  ?.getAttribute("content") || '';
+
+  // Creating HTML anchor element
   const a = document.createElement("a");
   a.textContent = "Lire sur Europresse";
   a.className = "ophirofox-europresse";
+  
   const setKeywords = () => new Promise(accept =>
-    chrome.storage.local.set({ "ophirofox_keywords": keywords }, accept));
+    chrome.storage.local.set({
+      "ophirofox_read_request":
+      {
+        'search_terms': keywords,
+        'published_time': publishedTime
+      }
+    },
+      accept));
   a.onmousedown = setKeywords;
   a.onclick = async function (evt) {
     evt.preventDefault();

@@ -1,9 +1,9 @@
 console.log('Ophirofox injected');
 
 function extractKeywords() {
-    return document
-      .querySelector("meta[property='og:title']")
-      .getAttribute("content");
+  return document
+    .querySelector("meta[property='og:title']")
+    .getAttribute("content");
 }
 
 async function createLink() {
