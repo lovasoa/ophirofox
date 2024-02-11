@@ -1,16 +1,17 @@
 function extractKeywords() {
-    return extractKeywordsFromTitle() || extractKeywordsFromUrl(window.location);
+    // Works better with keywords from url
+    return extractKeywordsFromUrl(window.location) || extractKeywordsFromTitle();
 }
 
 function extractKeywordsFromTitle() {
-    const titleElem = document.querySelector("article h1");
+    const titleElem = document.querySelector("head > title, article h1");
     return titleElem && titleElem.textContent;
 }
 
 function extractKeywordsFromUrl(url) {
     const source_url = new URL(url);
     const le_progres_match = source_url.pathname.match(/([^/.]+)(_\d*_\d*\.html)?$/);
-    if (!le_progres_match) throw new Error("Could not find keywords in le-progres url");
+    if (!le_progres_match) return false;
     return le_progres_match[1];
 }
 
