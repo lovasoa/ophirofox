@@ -48,6 +48,7 @@ Voici la liste triée par ordre alphabétique :
   - [Ouest France](https://www.ouest-france.fr/)
   - [Sud Ouest](https://www.sudouest.fr/)
   - [Le Télégramme](https://www.letelegramme.fr/)
+  - [Le Progrès](https://www.leprogres.fr/)
   
 ### Presse étrangère
   - [Courrier international](https://www.courrierinternational.com)
