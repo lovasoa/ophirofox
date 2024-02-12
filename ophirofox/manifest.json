@@ -488,6 +488,18 @@
       "css": [
         "content_scripts/lsa-conso.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.leprogres.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/le-progres.js"
+      ],
+      "css": [
+        "content_scripts/le-progres.css"
+      ]
     }
   ],
   "browser_specific_settings": {
