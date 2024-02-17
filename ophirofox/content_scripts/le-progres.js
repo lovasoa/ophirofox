@@ -15,8 +15,20 @@ function extractKeywordsFromUrl(url) {
     return le_progres_match[1];
 }
 
+function extractPublishDate() {
+    try {
+        const script = document.querySelector("script[type='application/ld+json']")
+        const json = JSON.parse(script.innerText)
+        const datePublished = json[0].datePublished;
+        return datePublished;
+    } catch {
+        // tant pis
+        return null;
+    }
+}
+
 async function createLink() {
-    const a = await ophirofoxEuropresseLink(extractKeywords());
+    const a = await ophirofoxEuropresseLink(extractKeywords(), { publishedTime: extractPublishDate() });
     a.classList.add("btn", "bt_default");
     return a;
 }
@@ -53,7 +65,6 @@ async function onLoad() {
     const link = await createLink();
     link.className = "button";
     paywallElem.parentNode.insertBefore(link, paywallElem);
-    
 }
 
 onLoad().catch(console.error);

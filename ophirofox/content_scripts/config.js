@@ -72,12 +72,12 @@ const ophirofox_config = getOphirofoxConfig();
  * @param {string} keywords
  * @returns {Promise<HTMLAnchorElement>}
  */
-async function ophirofoxEuropresseLink(keywords) {
+async function ophirofoxEuropresseLink(keywords, { publishedTime } = {}) {
   // Keywords is the article name
   keywords = keywords ? keywords.trim() : document.querySelector("h1").textContent;
 
   // Trying to determine published time with meta tags (Open Graph values)
-  let publishedTime = document.querySelector( "meta[property='article:published_time'], meta[property='og:article:published_time'], meta[property='date:published_time']")
+  publishedTime = publishedTime || document.querySelector( "meta[property='article:published_time'], meta[property='og:article:published_time'], meta[property='date:published_time']")
   ?.getAttribute("content") || '';
 
   // Creating HTML anchor element
