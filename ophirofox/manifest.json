@@ -41,6 +41,7 @@
     , "https://nouveau-europresse-com.proxy.unice.fr/*"
     , "https://nouveau-europresse-com.acces.bibliotheque-diderot.fr/*"
     , "https://nouveau-europresse-com.scd-proxy.uha.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.ensta-bretagne.fr/*"
     , "https://nouveau-europresse-com.ezproxy.u-paris.fr/*"
     , "https://nouveau-europresse-com.faraway.parisnanterre.fr/*"
     , "https://nouveau-europresse-com.scd1.univ-fcomte.fr/*"
@@ -556,6 +557,10 @@
         {
           "name": "ENSAM",
           "AUTH_URL": "https://rp1.ensam.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=AML"
+        },
+        {
+          "name": "ENSTA Bretagne",
+          "AUTH_URL": "https://nouveau.europresse.com/access/ip/default.aspx?un=ENSTAT_1"
         },
         {
           "name": "ENSTA Paris",
