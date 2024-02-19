@@ -501,6 +501,78 @@
       "css": [
         "content_scripts/le-progres.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.levif.be/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/levif.js"
+      ],
+      "css": [
+        "content_scripts/levif.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://trends.levif.be/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/trendstendances.js"
+      ],
+      "css": [
+        "content_scripts/trendstendances.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.knack.be/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/knack.js"
+      ],
+      "css": [
+        "content_scripts/knack.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.demorgen.be/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/demorgen.js"
+      ],
+      "css": [
+        "content_scripts/demorgen.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.standaard.be/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/destandaard.js"
+      ],
+      "css": [
+        "content_scripts/destandaard.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.economist.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/theeconomist.js"
+      ],
+      "css": [
+        "content_scripts/theeconomist.css"
+      ]
     }
   ],
   "browser_specific_settings": {

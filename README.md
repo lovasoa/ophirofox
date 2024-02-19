@@ -52,13 +52,19 @@ Voici la liste triée par ordre alphabétique :
   
 ### Presse étrangère
   - [Courrier international](https://www.courrierinternational.com)
+  - [De Morgen (Belgique - néerlandophone)](https://www.demorgen.be/)
+  - [De Standaard (Belgique - néerlandophone)](https://www.standaard.be/)
+  - [Knack (Belgique - néerlandophone)](https://www.knack.be/)
   - [L'Avenir (Belgique)](https://www.lavenir.net/)
   - [L'Orient-Le Jour (Liban)](https://www.lorientlejour.com/)
   - [La DH (Belgique)](https://www.dhnet.be/)
   - [La Libre Belgique](https://www.lalibre.be/)
   - [Le Soir (Belgique)](https://www.lesoir.be)
   - [Le Temps (Suisse)](https://www.letemps.ch/)
+  - [Le Vif (Belgique)](https://www.levif.be/)
   - [Sudinfo (Belgique)](https://www.sudinfo.be/)
+  - [The Economist (Royaume-Uni)](https://www.economist.com/)
+  - [Trends-Tendances (Belgique)](https://trends.levif.be/)
 
 Vous pouvez proposer d'autres sites Web de médias en ouvrant une [demande ici-même](https://github.com/lovasoa/ophirofox/issues).
 
