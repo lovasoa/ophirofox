@@ -54,6 +54,10 @@ Voici la liste triée par ordre alphabétique :
   - [Courrier international](https://www.courrierinternational.com)
   - [De Morgen (Belgique - néerlandophone)](https://www.demorgen.be/)
   - [De Standaard (Belgique - néerlandophone)](https://www.standaard.be/)
+  - [Financial Times (Royaume-Uni)](https://www.ft.com/)
+  - [Gazet van Antwerpen (Belgique - néerlandophone)](https://www.gva.be/)
+  - [Het Laatste Nieuws (Belgique - néerlandophone)](https://www.hln.be/)
+  - [Het Nieuwsblad (Belgique - néerlandophone)](https://www.nieuwsblad.be/)
   - [Knack (Belgique - néerlandophone)](https://www.knack.be/)
   - [L'Avenir (Belgique)](https://www.lavenir.net/)
   - [L'Orient-Le Jour (Liban)](https://www.lorientlejour.com/)
@@ -64,6 +68,7 @@ Voici la liste triée par ordre alphabétique :
   - [Le Vif (Belgique)](https://www.levif.be/)
   - [Sudinfo (Belgique)](https://www.sudinfo.be/)
   - [The Economist (Royaume-Uni)](https://www.economist.com/)
+  - [The Washington Post (USA)](https://www.washingtonpost.com/)
   - [Trends-Tendances (Belgique)](https://trends.levif.be/)
 
 Vous pouvez proposer d'autres sites Web de médias en ouvrant une [demande ici-même](https://github.com/lovasoa/ophirofox/issues).

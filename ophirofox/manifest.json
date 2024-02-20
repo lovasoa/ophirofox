@@ -573,6 +573,66 @@
       "css": [
         "content_scripts/theeconomist.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.ft.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/financialtimes.js"
+      ],
+      "css": [
+        "content_scripts/financialtimes.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.washingtonpost.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/washingtonpost.js"
+      ],
+      "css": [
+        "content_scripts/washingtonpost.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.gva.be/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/gazetvanantwerpen.js"
+      ],
+      "css": [
+        "content_scripts/gazetvanantwerpen.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.nieuwsblad.be/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/hetnieuwsblad.js"
+      ],
+      "css": [
+        "content_scripts/hetnieuwsblad.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.hln.be/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/hetlaatstenieuws.js"
+      ],
+      "css": [
+        "content_scripts/hetlaatstenieuws.css"
+      ]
     }
   ],
   "browser_specific_settings": {
