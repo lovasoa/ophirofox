@@ -1,0 +1,8 @@
+.ophirofox-europresse {
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+    padding: 0.25rem 1rem;
+    width: 40%;
+    border: 1px solid #1955a5;
+}
