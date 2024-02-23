@@ -1,34 +1,46 @@
 function extractKeywords() {
-    return document.querySelector("h1").textContent;
+    return document.querySelector("header h1").textContent;
 }
 
 let buttonAdded = false;
 
-async function createLink() {
-    const subscriptionElem = document.querySelector('[data-current-screen="CtaAuthPaying"] form');
-    if (subscriptionElem && buttonAdded == false){
+async function createLink(elt) {
+    if (elt && buttonAdded == false){
         const a = await ophirofoxEuropresseLink(extractKeywords());
-        subscriptionElem.after(a);
+        elt.after(a);
     }
 }
 
 async function onLoad() {
-    // Lien Europresse dans la modale au chargement de l'article
-    createLink();
+    // Lien Europresse dans le corps de l'article
+    const paywall = document.querySelector('[data-cj-root="subscription-wall"]');
+    const article_title = document.querySelector('header h1');
+    
+    if(paywall){
+        createLink(article_title);
+    }
 
-    // Lien Europresse dans le corps de l'article, une fois la modale fermée
+    // Lien Europresse dans la modale, au chargement
     const callback = (mutationList, observer) => {
         for (const mutation of mutationList) {
-            if(mutation.removedNodes.length > 0){
-                createLink();
-                buttonAdded = true;
+            if(mutation.type === 'childList'){
+                for(let node of mutation.addedNodes){
+                    const paywall_modal = document.querySelector('.cj-root');
+                    if(paywall_modal){
+                        const subscriptionForm = document.querySelector('[data-current-screen="CtaAuthPaying"] form');
+                        createLink(subscriptionForm);
+                        buttonAdded = true;
+                        subscriptionForm.nextElementSibling.classList.add('ophirofox-modal-link');
+                        observer.disconnect();
+                    }
+                }
             }
         }
     };
 
-    const htmlElement = document.querySelector('.cj-root');
+    const htmlElement = document.querySelector('body');
     const observer = new MutationObserver(callback);
-    observer.observe(htmlElement, { childList: true});
+    observer.observe(htmlElement, { childList: true });
 }
 
 onLoad().catch(console.error);

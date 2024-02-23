@@ -1,5 +1,11 @@
 .ophirofox-europresse {
     display: block;
-    margin-top: 1rem;
+    width: 12vw;
+    margin: 1rem auto;
+    padding: 0.25rem;
+    border-radius: 0.3rem;
+    background-color: #ffc700;
+    color: #000 !important;
     text-align: center;
+    text-decoration: none;
 }

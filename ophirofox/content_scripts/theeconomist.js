@@ -14,10 +14,11 @@ async function onLoad() {
                 for(let node of mutation.addedNodes){
                     const subscriptionElem = document.querySelector('section[data-body-id*="cp"]');
                     if(node === subscriptionElem){
-                        const subtitle = document.querySelector('#new-article-template h2');
+                        const subtitle = document.querySelector('#new-article-template h1');
                         createLink().then(function(data){
                             subtitle.after(data);
                         });
+                        observer.disconnect();
                     }
                 }
             }
@@ -26,7 +27,7 @@ async function onLoad() {
     
     const htmlElement = document.querySelector('#new-article-template');
     const observer = new MutationObserver(callback);
-    observer.observe(htmlElement, { childList: true, subtree: true});
+    observer.observe(htmlElement, { childList: true, subtree: true });
 }
 
 onLoad().catch(console.error);

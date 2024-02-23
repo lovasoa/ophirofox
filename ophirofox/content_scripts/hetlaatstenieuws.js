@@ -25,6 +25,7 @@ async function onLoad() {
                 const newClassState = mutation.target.classList.contains('js-tm-backdrop-active');
                 if(classState !== newClassState){
                     addEuropresseButton();
+                    observer.disconnect();
                 }
             }
         }
