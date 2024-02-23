@@ -3,6 +3,9 @@
     justify-content: center;
     margin: 1rem auto;
     padding: 0.25rem 1rem;
-    width: 40%;
-    border: 1px solid #1955a5;
+    width: 12vw;
+    border-radius: 0.3rem;
+    background-color: #ffc700;
+    color: #000;
+    text-decoration: none;
 }
