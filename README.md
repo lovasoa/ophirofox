@@ -136,7 +136,7 @@ Si votre établissement a un portail Europresse, vous pouvez facilement ajouter 
 4. Quand l'utilisateur se retrouve sur la page d'accueil d'Europresse, après s'être connecté, l'extension utilise le titre stocké à l'étape précédente pour lancer une recherche. Le titre est parallèlement supprimé de l'espace de stockage local.
 5. Lorsque l'utilisateur ouvre l'article, l'extension supprime l'horrible surlignage jaune qui est ajouté par défaut par Europresse.
 
-# License
+# Licence
 
 Cette extension est un logiciel libre sous license [MPL](https://github.com/lovasoa/ophirofox/blob/master/LICENSE).
 Vous pouvez y contribuer [sur github](https://github.com/lovasoa/ophirofox).
