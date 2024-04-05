@@ -14,7 +14,9 @@ d'être redirigé automatiquement vers une page de recherche Europresse qui cont
 
 ## Partenaires Europresse supportés
 
-L'extension supporte la majorité des portails universitaires, mais aussi d'autres partenaires d'Europresse. La liste exhaustive se trouve sur le [site Web de l'extension](https://ophirofox.ophir.dev/#partenaires-europresse-support%C3%A9s).
+L'extension supporte la majorité des portails universitaires, mais aussi d'autres partenaires d'Europresse.
+
+ - [La liste exhaustive se trouve sur le site Web de l'extension](https://ophirofox.ophir.dev/#partenaires-europresse-support%C3%A9s)
 
 Si votre établissement n'est pas dans la liste, vous pouvez [l'ajouter](#comment-ajouter-un-nouveau-partenaire-europresse).
 
