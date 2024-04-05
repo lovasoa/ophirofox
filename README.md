@@ -37,6 +37,7 @@ Voici la liste triée par ordre alphabétique :
 - [Le Monde Diplomatique](https://www.monde-diplomatique.fr)
 - [Le Point](https://www.lepoint.fr)
 - [Libération](https://www.liberation.fr/)
+- [Les Échos](https://www.lesechos.fr)
   
 ### Presse régionale
   - [Corse Matin](https://www.corsematin.com/)
