@@ -744,6 +744,10 @@
           "AUTH_URL": "https://nouveau.europresse.com/Login/Esidoc?sso_id=0940880W"
         },
         {
+          "name": "Lycée Clemenceau à Nantes",
+          "AUTH_URL": "https://nouveau.europresse.com/Login/Esidoc?sso_id=0440021J"
+        },
+        {
           "name": "Lycée International de l'Est Parisien",
           "AUTH_URL": "https://nouveau.europresse.com/Login/Esidoc?sso_id=0932638M"
         },
