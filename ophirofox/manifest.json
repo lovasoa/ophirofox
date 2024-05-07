@@ -71,7 +71,6 @@
     , "https://nouveau-europresse-com.proxybib-pp.cnam.fr/*"
     , "https://nouveau-europresse-com.srvext.uco.fr/*"
     , "https://nouveau-europresse-com.urca.idm.oclc.org/*"
-    , "https://nouveau-europresse-com.merlin.u-picardie.fr/*"
     , "https://nouveau-europresse-com.ezproxy.univ-littoral.fr/*"
     , "https://nouveau-europresse-com.bases-doc.univ-lorraine.fr/*"
     , "https://nouveau-europresse-com.ezproxy.utbm.fr/*"
@@ -738,7 +737,7 @@
         {
           "name": "Le Mans Université",
           "AUTH_URL": "https://login.doc-elec.univ-lemans.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031524T_1"
-        },        
+        },
         {
           "name": "Lycée Albert de Mun à Nogent-sur-Marne",
           "AUTH_URL": "https://nouveau.europresse.com/Login/Esidoc?sso_id=0940880W"
@@ -954,10 +953,6 @@
         {
           "name": "Université Paul-Valéry Montpellier 3",
           "AUTH_URL": "https://login.ezpupv.scdi-montpellier.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MontpellierT_1"
-        },
-        {
-          "name": "Université de Picardie Jules Verne",
-          "AUTH_URL": "https://merlin.u-picardie.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=BUPICARDIET_2"
         },
         {
           "name": "Université PSL",
