@@ -102,6 +102,7 @@
     , "https://nouveau-europresse-com.ezproxy.unilim.fr/*"
     , "https://nouveau-europresse-com.ezproxy.uphf.fr/*"
     , "https://nouveau-europresse-com.rennes-sb.idm.oclc.org/"
+    , "https://nouveau-europresse-com.hub.tbs-education.fr/"
   ],
   "background": {
     "scripts": [
@@ -1034,6 +1035,10 @@
         {
           "name": "University of Cambridge",
           "AUTH_URL": "https://ezp.lib.cam.ac.uk/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031883T_1"
+        },
+        {
+          { "name": "TBS Education", 
+          "AUTH_URL": "http://hub.tbs-education.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_11ip"
         }
       ]
     }
