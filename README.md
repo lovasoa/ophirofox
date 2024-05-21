@@ -14,7 +14,9 @@ d'être redirigé automatiquement vers une page de recherche Europresse qui cont
 
 ## Partenaires Europresse supportés
 
-L'extension supporte la majorité des portails universitaires, mais aussi d'autres partenaires d'Europresse. La liste exhaustive se trouve sur le [site Web de l'extension](https://ophirofox.ophir.dev/#partenaires-europresse-support%C3%A9s).
+L'extension supporte la majorité des portails universitaires, mais aussi d'autres partenaires d'Europresse.
+
+ - [La liste exhaustive se trouve sur le site Web de l'extension](https://ophirofox.ophir.dev/#partenaires-europresse-support%C3%A9s)
 
 Si votre établissement n'est pas dans la liste, vous pouvez [l'ajouter](#comment-ajouter-un-nouveau-partenaire-europresse).
 
@@ -35,6 +37,7 @@ Voici la liste triée par ordre alphabétique :
 - [Le Monde Diplomatique](https://www.monde-diplomatique.fr)
 - [Le Point](https://www.lepoint.fr)
 - [Libération](https://www.liberation.fr/)
+- [Les Échos](https://www.lesechos.fr)
   
 ### Presse régionale
   - [Corse Matin](https://www.corsematin.com/)
@@ -48,16 +51,28 @@ Voici la liste triée par ordre alphabétique :
   - [Ouest France](https://www.ouest-france.fr/)
   - [Sud Ouest](https://www.sudouest.fr/)
   - [Le Télégramme](https://www.letelegramme.fr/)
+  - [Le Progrès](https://www.leprogres.fr/)
   
 ### Presse étrangère
   - [Courrier international](https://www.courrierinternational.com)
+  - [De Morgen (Belgique - néerlandophone)](https://www.demorgen.be/)
+  - [De Standaard (Belgique - néerlandophone)](https://www.standaard.be/)
+  - [Financial Times (Royaume-Uni)](https://www.ft.com/)
+  - [Gazet van Antwerpen (Belgique - néerlandophone)](https://www.gva.be/)
+  - [Het Laatste Nieuws (Belgique - néerlandophone)](https://www.hln.be/)
+  - [Het Nieuwsblad (Belgique - néerlandophone)](https://www.nieuwsblad.be/)
+  - [Knack (Belgique - néerlandophone)](https://www.knack.be/)
   - [L'Avenir (Belgique)](https://www.lavenir.net/)
   - [L'Orient-Le Jour (Liban)](https://www.lorientlejour.com/)
   - [La DH (Belgique)](https://www.dhnet.be/)
   - [La Libre Belgique](https://www.lalibre.be/)
   - [Le Soir (Belgique)](https://www.lesoir.be)
   - [Le Temps (Suisse)](https://www.letemps.ch/)
+  - [Le Vif (Belgique)](https://www.levif.be/)
   - [Sudinfo (Belgique)](https://www.sudinfo.be/)
+  - [The Economist (Royaume-Uni)](https://www.economist.com/)
+  - [The Washington Post (USA)](https://www.washingtonpost.com/)
+  - [Trends-Tendances (Belgique)](https://trends.levif.be/)
 
 Vous pouvez proposer d'autres sites Web de médias en ouvrant une [demande ici-même](https://github.com/lovasoa/ophirofox/issues).
 
@@ -124,7 +139,7 @@ Si votre établissement a un portail Europresse, vous pouvez facilement ajouter 
 4. Quand l'utilisateur se retrouve sur la page d'accueil d'Europresse, après s'être connecté, l'extension utilise le titre stocké à l'étape précédente pour lancer une recherche. Le titre est parallèlement supprimé de l'espace de stockage local.
 5. Lorsque l'utilisateur ouvre l'article, l'extension supprime l'horrible surlignage jaune qui est ajouté par défaut par Europresse.
 
-# License
+# Licence
 
 Cette extension est un logiciel libre sous license [MPL](https://github.com/lovasoa/ophirofox/blob/master/LICENSE).
 Vous pouvez y contribuer [sur github](https://github.com/lovasoa/ophirofox).

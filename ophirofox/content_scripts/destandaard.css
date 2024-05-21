@@ -1,0 +1,17 @@
+.ophirofox-europresse {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.25rem 1rem;
+    border-radius: 0.3rem;
+    background-color: #ffc700 !important;
+    color: #000 !important;
+    text-align: center;
+    text-decoration: none !important;
+}
+
+.ophirofox-modal-link {
+    display: block;
+    margin-top: 0;
+    padding: 0.5rem;
+    border-radius: 0;
+}

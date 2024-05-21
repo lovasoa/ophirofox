@@ -41,6 +41,7 @@
     , "https://nouveau-europresse-com.proxy.unice.fr/*"
     , "https://nouveau-europresse-com.acces.bibliotheque-diderot.fr/*"
     , "https://nouveau-europresse-com.scd-proxy.uha.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.ensta-bretagne.fr/*"
     , "https://nouveau-europresse-com.ezproxy.u-paris.fr/*"
     , "https://nouveau-europresse-com.faraway.parisnanterre.fr/*"
     , "https://nouveau-europresse-com.scd1.univ-fcomte.fr/*"
@@ -100,6 +101,8 @@
     , "https://nouveau-europresse-com.univ-eiffel.idm.oclc.org/"
     , "https://nouveau-europresse-com.ezproxy.unilim.fr/*"
     , "https://nouveau-europresse-com.ezproxy.uphf.fr/*"
+    , "https://nouveau-europresse-com.rennes-sb.idm.oclc.org/"
+    , "https://nouveau-europresse-com.hub.tbs-education.fr/"
   ],
   "background": {
     "scripts": [
@@ -488,6 +491,150 @@
       "css": [
         "content_scripts/lsa-conso.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.leprogres.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/le-progres.js"
+      ],
+      "css": [
+        "content_scripts/le-progres.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.levif.be/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/levif.js"
+      ],
+      "css": [
+        "content_scripts/levif.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://trends.levif.be/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/trendstendances.js"
+      ],
+      "css": [
+        "content_scripts/trendstendances.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.knack.be/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/knack.js"
+      ],
+      "css": [
+        "content_scripts/knack.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.demorgen.be/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/demorgen.js"
+      ],
+      "css": [
+        "content_scripts/demorgen.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.standaard.be/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/destandaard.js"
+      ],
+      "css": [
+        "content_scripts/destandaard.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.economist.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/theeconomist.js"
+      ],
+      "css": [
+        "content_scripts/theeconomist.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.ft.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/financialtimes.js"
+      ],
+      "css": [
+        "content_scripts/financialtimes.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.washingtonpost.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/washingtonpost.js"
+      ],
+      "css": [
+        "content_scripts/washingtonpost.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.gva.be/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/gazetvanantwerpen.js"
+      ],
+      "css": [
+        "content_scripts/gazetvanantwerpen.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.nieuwsblad.be/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/hetnieuwsblad.js"
+      ],
+      "css": [
+        "content_scripts/hetnieuwsblad.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.hln.be/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/hetlaatstenieuws.js"
+      ],
+      "css": [
+        "content_scripts/hetlaatstenieuws.css"
+      ]
     }
   ],
   "browser_specific_settings": {
@@ -546,6 +693,10 @@
           "AUTH_URL": "https://rp1.ensam.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=AML"
         },
         {
+          "name": "ENSTA Bretagne",
+          "AUTH_URL": "https://nouveau.europresse.com/access/ip/default.aspx?un=ENSTAT_1"
+        },
+        {
           "name": "ENSTA Paris",
           "AUTH_URL": "https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_9"
         },
@@ -588,14 +739,30 @@
         {
           "name": "Le Mans Université",
           "AUTH_URL": "https://login.doc-elec.univ-lemans.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031524T_1"
+        },        
+        {
+          "name": "Lycée Albert de Mun à Nogent-sur-Marne",
+          "AUTH_URL": "https://nouveau.europresse.com/Login/Esidoc?sso_id=0940880W"
+        },
+        {
+          "name": "Lycée Clemenceau à Nantes",
+          "AUTH_URL": "https://nouveau.europresse.com/Login/Esidoc?sso_id=0440021J"
         },
         {
           "name": "Lycée International de l'Est Parisien",
           "AUTH_URL": "https://nouveau.europresse.com/Login/Esidoc?sso_id=0932638M"
         },
         {
+          "name": "Lycée la Martinière Diderot",
+          "AUTH_URL": "https://idp-auth.gar.education.fr/domaineGar?idENT=QzAw&idEtab=MDY5MDAzN1I=&idRessource=ark%3A%2F57800%2Feuropresse-cision"
+        },
+        {
           "name": "Médiathèque de Télécom SudParis & Institut Mines-Télécom Business School",
           "AUTH_URL": "http://mediaproxy.imtbs-tsp.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_8"
+        },
+        {
+          "name": "Rennes School of Business",
+          "AUTH_URL": "https://rennes-sb.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=RENNES2T_2"
         },
         {
           "name": "SciencesPo Lyon",
@@ -868,6 +1035,9 @@
         {
           "name": "University of Cambridge",
           "AUTH_URL": "https://ezp.lib.cam.ac.uk/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031883T_1"
+        },
+        { "name": "TBS Education", 
+          "AUTH_URL": "http://hub.tbs-education.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_11ip"
         }
       ]
     }
