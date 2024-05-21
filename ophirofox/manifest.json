@@ -635,6 +635,18 @@
       "css": [
         "content_scripts/hetlaatstenieuws.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.challenges.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/challenges.js"
+      ],
+      "css": [
+        "content_scripts/challenges.css"
+      ]
     }
   ],
   "browser_specific_settings": {
