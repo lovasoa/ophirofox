@@ -1,5 +1,9 @@
+function extractKeywords() {
+    return document.querySelector('h1[itemprop="Headline"]').textContent;
+}
+
 async function createLink() {
-    const a = await ophirofoxEuropresseLink();
+    const a = await ophirofoxEuropresseLink(extractKeywords());
     a.classList.add();
     return a;
 }
