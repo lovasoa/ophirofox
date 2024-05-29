@@ -1050,6 +1050,10 @@
         },
         { "name": "TBS Education", 
           "AUTH_URL": "http://hub.tbs-education.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_11ip"
+        },
+         {
+          "name": "Toulouse Métropole - MaBM",
+          "AUTH_URL": "https://mabm.toulouse-metropole.fr/Portal/ASSARedirect.ashx?url=https://nouveau.europresse.com/access/httpref/default.aspx?un=bmtoulouseAU_1"
         }
       ]
     }
