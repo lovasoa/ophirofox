@@ -19,12 +19,12 @@ async function addEuropresseButton() {
 async function onLoad() {
 
     /* 2 cases:
-         1. either a page is initially loaded,  and we must wait for the actual end of loading (determined
-            by a new iframe w/ name __tcfapiLocator) and add the button (this is the first observer)
-         2. Or a page is newly routed (for instance, when one goes from the homepage to an article) :
-          - it is detected with the second observer that watches for changes in <title> and reset the button
-          - we wait for the end of actual loading of the new content by observing <main>
-      */
+    1. either a page is initially loaded,  and we must wait for the actual end of loading (determined
+        by a new meta with name ad:postAcces) and add the button (this is the first observer).
+    2. Or a page is newly routed (for instance, when one goes from the homepage to an article) :
+        - it is detected with the second observer that watches for changes in <title> and reset the button
+        - we wait for the end of actual loading of the new content by observing <main><meta content>.
+    */
 
     const isPremium = () => {
         if (document.querySelector("meta[name='ad:postAccess']").content == 'subscribers') {
