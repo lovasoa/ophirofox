@@ -20,7 +20,7 @@ async function onLoad() {
     )) return;
     const { search_terms, published_time } = await consumeReadRequest();
     if (!search_terms) return;
-    const stopwords = new Set(['d', 'l', 'et', 'sans']);
+    const stopwords = new Set(['d', 'l', 'et', 'sans', 'or']);
 
     /*
         L = { Lu , Ll , Lt , Lm , Lo }
