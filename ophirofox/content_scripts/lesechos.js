@@ -27,14 +27,14 @@ async function onLoad() {
     */
 
     const isPremium = (metaElement) => {
-        if (metaElement && metaElement.content === 'subscribers') {
+        if (metaElement.content == 'subscribers') {
             return true;
         }
         return false;
     };
 
     // Observer [ Direct URL Access ]
-    const callback = (mutationList, observer) => {
+    const callbackDirectAccess = (mutationList, observer) => {
         const metaElement = document.querySelector('meta[name="ad:postAccess"]');
         if (metaElement) {
             if (isPremium(metaElement)) {
@@ -45,7 +45,7 @@ async function onLoad() {
         }
         for (const mutation of mutationList) {
             for (const e of mutation.addedNodes) {
-                if (e.name === "ad:postAccess") {
+                if (e.name == "ad:postAccess") {
                     if (isPremium(e)) {
                         addEuropresseButton();
                     }
@@ -56,8 +56,8 @@ async function onLoad() {
         }
     };
 
-    const observer = new MutationObserver(callback);
-    observer.observe(document.body, {
+    const observerDirectAccess = new MutationObserver(callbackDirectAccess);
+    observerDirectAccess.observe(document.body, {
         childList: true,
         subtree: false
     });
@@ -66,8 +66,10 @@ async function onLoad() {
     const callbackTitle = (mutationList, observer) => {
         buttonAdded = false;
         const metaElement = document.querySelector('meta[name="ad:postAccess"]');
-        if (isPremium(metaElement)) {
-            addEuropresseButton();
+        if (metaElement) {
+            if (isPremium(metaElement)) {
+                addEuropresseButton();
+            }
         }
     };
 
