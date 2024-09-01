@@ -1,14 +1,19 @@
-function findPremiumBanner() {
-    const title = document.querySelector(".article-page-header");
-    if (!title) return null;
-    const elems = title.parentElement.querySelectorAll("a");
-    return [...elems].find(d => d.href.includes("ph-abo"))
+function extractKeywords() {
+    return document.querySelector("h1").textContent;
 }
 
+const isPremium = () => {
+    const metaElement = document.querySelector('meta[name="ad:teaser"]');
+    if (metaElement) {
+        if (metaElement.content === 'true')
+          return true;
+    }
+    return false;
+};
+
 async function onLoad() {
-    const head = findPremiumBanner();
-    if (!head) return;
-    head.after(await ophirofoxEuropresseLink());
+    if (!isPremium()) return;
+    document.querySelector("h1").after(await ophirofoxEuropresseLink(extractKeywords()));
 }
 
 onLoad().catch(console.error);
