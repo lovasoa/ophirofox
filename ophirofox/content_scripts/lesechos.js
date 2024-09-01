@@ -3,11 +3,9 @@ function extractKeywords() {
     return titleElem && titleElem.textContent;
 }
 
-let buttonAdded = false;
-
 async function addEuropresseButton() {
-    if (!buttonAdded) {
-        buttonAdded = true;
+    const ophiroBtnPresence = document.querySelector('.ophirofox-europresse');
+    if (!ophiroBtnPresence) {
         const elt = document.querySelector("button[aria-label=Commenter]")?.parentElement?.parentElement;
         if (elt) {
             const a = await ophirofoxEuropresseLink(extractKeywords());
@@ -64,7 +62,6 @@ async function onLoad() {
 
     // Observer [ Dynamic page Loading ]
     const callbackDynamicLoading = (mutationList, observer) => {
-        buttonAdded = false;
         const metaElement = document.querySelector('meta[name="ad:postAccess"]');
         if (metaElement) {
             if (isPremium(metaElement)) {
