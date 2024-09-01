@@ -63,7 +63,7 @@ async function onLoad() {
     });
 
     // Observer [ Dynamic page Loading ]
-    const callbackTitle = (mutationList, observer) => {
+    const callbackDynamicLoading = (mutationList, observer) => {
         buttonAdded = false;
         const metaElement = document.querySelector('meta[name="ad:postAccess"]');
         if (metaElement) {
@@ -73,8 +73,8 @@ async function onLoad() {
         }
     };
 
-    const observerTitle = new MutationObserver(callbackTitle);
-    observerTitle.observe(document.querySelector('title'), {
+    const observerDynamicLoading = new MutationObserver(callbackDynamicLoading);
+    observerDynamicLoading.observe(document.querySelector('title'), {
         childList: true,
         subtree: false
     });
