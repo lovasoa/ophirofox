@@ -16,7 +16,8 @@ async function onLoad() {
         path.startsWith("/Search/Advanced") ||
         path.startsWith("/Search/AdvancedMobile") ||
         path.startsWith("/Search/Express") ||
-        path.startsWith("/Search/Simple")
+        path.startsWith("/Search/Simple") ||
+        path.startsWith("/Search/Result")
     )) return;
     const { search_terms, published_time } = await consumeReadRequest();
     if (!search_terms) return;
@@ -34,7 +35,8 @@ async function onLoad() {
         .split(/[^\p{L}\p{M}\p{Nd}]+/u)
         .filter(w => !stopwords.has(w))
         .join(' ');
-    const keyword_field = document.getElementById("Keywords");
+    const keyword_field_id = path.startsWith("/Search/Result") ? "#NativeQuery" : "#Keywords";
+    const keyword_field = document.getElementById(keyword_field_id);
     keyword_field.value = 'TIT_HEAD=' + keywords;
 
     // Looking for a time range
