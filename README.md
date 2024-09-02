@@ -52,6 +52,7 @@ Voici la liste triée par ordre alphabétique :
   - [Sud Ouest](https://www.sudouest.fr/)
   - [Le Télégramme](https://www.letelegramme.fr/)
   - [Le Progrès](https://www.leprogres.fr/)
+  - [Le Courrier des maires](https://www.courrierdesmaires.fr/)
   
 ### Presse étrangère
   - [Courrier international](https://www.courrierinternational.com)
