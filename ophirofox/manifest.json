@@ -162,6 +162,18 @@
     },
     {
       "matches": [
+        "https://www.courrierdesmaires.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/courrier-maires.js"
+      ],
+      "css": [
+        "content_scripts/courrier-maires.css"
+      ]
+    },
+    {
+      "matches": [
         "https://www.la-croix.com/*"
       ],
       "js": [
