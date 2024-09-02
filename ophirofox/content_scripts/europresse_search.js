@@ -35,7 +35,7 @@ async function onLoad() {
         .split(/[^\p{L}\p{M}\p{Nd}]+/u)
         .filter(w => !stopwords.has(w))
         .join(' ');
-    const keyword_field_id = path.startsWith("/Search/Result") ? "#NativeQuery" : "#Keywords";
+    const keyword_field_id = path.startsWith("/Search/Result") ? "NativeQuery" : "Keywords";
     const keyword_field = document.getElementById(keyword_field_id);
     keyword_field.value = 'TIT_HEAD=' + keywords;
 
