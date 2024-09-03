@@ -1,0 +1,13 @@
+.ophirofox-europresse {
+    background-color: #fec22d;
+    padding: 1rem 1.5rem;
+    color: #262626;
+    text-align: center;
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.ophirofox-europresse:hover {
+    background-color: #e5ae29;
+}
