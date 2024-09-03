@@ -38,6 +38,7 @@ Voici la liste triée par ordre alphabétique :
 - [Le Point](https://www.lepoint.fr)
 - [Libération](https://www.liberation.fr/)
 - [Les Échos](https://www.lesechos.fr)
+- [Télérama (Magazine en PDF)](https://www.telerama.fr/kiosque/telerama)
   
 ### Presse régionale
   - [Corse Matin](https://www.corsematin.com/)

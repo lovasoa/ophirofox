@@ -85,15 +85,64 @@ async function ophirofoxEuropresseLink(keywords, { publishedTime } = {}) {
   a.textContent = "Lire sur Europresse";
   a.className = "ophirofox-europresse";
   
-  const setKeywords = () => new Promise(accept =>
-    chrome.storage.local.set({
-      "ophirofox_read_request":
-      {
-        'search_terms': keywords,
-        'published_time': publishedTime
-      }
-    },
-      accept));
+  const setKeywords = () => new Promise(accept => {
+    Promise.all([
+      // set request type (read, or readPDF)
+      chrome.storage.local.set({
+        "ophirofox_request_type":
+        {
+          'type': 'read'
+        }
+      }),
+      chrome.storage.local.set({
+        "ophirofox_read_request":
+        {
+          'search_terms': keywords,
+          'published_time': publishedTime
+        }
+      }),
+    ]).then(() => accept());
+  });
+  a.onmousedown = setKeywords;
+  a.onclick = async function (evt) {
+    evt.preventDefault();
+    const [{ AUTH_URL }] = await Promise.all([ophirofox_config, setKeywords()]);
+    window.location = AUTH_URL
+  }
+  ophirofox_config.then(({ AUTH_URL }) => { a.href = AUTH_URL });
+  return a;
+}
+
+/**
+ * Crée un lien vers Europresse pour la consultation de PDF, avec l'id du media, et la date de parution
+ * @param {string} media_id
+ * @param {string} publishedTime
+ * @returns {Promise<HTMLAnchorElement>}
+ */
+async function ophirofoxEuropressePDFLink(media_id, publishedTime) {
+  // Creating HTML anchor element
+  const a = document.createElement("a");
+  a.textContent = "Lire sur Europresse";
+  a.className = "ophirofox-europresse";
+  
+  const setKeywords = () => new Promise(accept => {
+    Promise.all([
+      // set request type (read, or readPDF)
+      chrome.storage.local.set({
+        "ophirofox_request_type":
+        {
+          'type': 'readPDF'
+        }
+      }),
+      chrome.storage.local.set({
+        "ophirofox_readPDF_request":
+        {
+          'media_id': media_id,
+          'published_time': publishedTime
+        }
+      }),
+    ]).then(() => accept());
+  });
   a.onmousedown = setKeywords;
   a.onclick = async function (evt) {
     evt.preventDefault();

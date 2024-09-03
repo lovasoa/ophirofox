@@ -186,6 +186,15 @@
     },
     {
       "matches": [
+        "https://www.telerama.fr/kiosque/telerama"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/telerama.js"
+      ]
+    },
+    {
+      "matches": [
         "https://www.courrierinternational.com/*"
       ],
       "js": [
