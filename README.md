@@ -78,8 +78,6 @@ Voici la liste triée par ordre alphabétique :
   - [Le Temps (Suisse)](https://www.letemps.ch/)
   - [Le Vif (Belgique)](https://www.levif.be/)
   - [Sudinfo (Belgique)](https://www.sudinfo.be/)
-  - [The Economist (Royaume-Uni)](https://www.economist.com/)
-  - [The Washington Post (USA)](https://www.washingtonpost.com/)
   - [Trends-Tendances (Belgique)](https://trends.levif.be/)
 
 Vous pouvez proposer d'autres sites Web de médias en ouvrant une [demande ici-même](https://github.com/lovasoa/ophirofox/issues).
