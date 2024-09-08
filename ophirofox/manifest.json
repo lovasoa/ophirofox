@@ -588,18 +588,6 @@
     },
     {
       "matches": [
-        "https://www.economist.com/*"
-      ],
-      "js": [
-        "content_scripts/config.js",
-        "content_scripts/theeconomist.js"
-      ],
-      "css": [
-        "content_scripts/theeconomist.css"
-      ]
-    },
-    {
-      "matches": [
         "https://www.ft.com/*"
       ],
       "js": [
@@ -608,18 +596,6 @@
       ],
       "css": [
         "content_scripts/financialtimes.css"
-      ]
-    },
-    {
-      "matches": [
-        "https://www.washingtonpost.com/*"
-      ],
-      "js": [
-        "content_scripts/config.js",
-        "content_scripts/washingtonpost.js"
-      ],
-      "css": [
-        "content_scripts/washingtonpost.css"
       ]
     },
     {
