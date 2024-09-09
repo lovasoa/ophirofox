@@ -104,6 +104,7 @@
     , "https://nouveau-europresse-com.rennes-sb.idm.oclc.org/"
     , "https://nouveau-europresse-com.hub.tbs-education.fr/"
     , "https://nouveau-europresse-com.ezproxy.univ-perp.fr/"
+    ,"https://nouveau-europresse-com.ezproxy.normandie-univ.fr/Search/Reading"
   ],
   "background": {
     "scripts": [
@@ -1005,6 +1006,10 @@
         {
           "name": "Université Rennes 2",
           "AUTH_URL": "https://distant.bu.univ-rennes2.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=RENNES22T_1"
+        },
+        {
+          "name": "Université de Rouen Normandie",
+          "AUTH_URL": "http://ezproxy.normandie-univ.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031221T_4"
         },
         {
           "name": "Université Sorbonne Nouvelle Paris 3",
