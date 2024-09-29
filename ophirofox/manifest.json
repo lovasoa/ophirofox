@@ -1058,9 +1058,13 @@
         { "name": "TBS Education", 
           "AUTH_URL": "http://hub.tbs-education.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_11ip"
         },
-         {
+        {
           "name": "Toulouse Métropole - MaBM",
           "AUTH_URL": "https://mabm.toulouse-metropole.fr/Portal/ASSARedirect.ashx?url=https://nouveau.europresse.com/access/httpref/default.aspx?un=bmtoulouseAU_1"
+        },
+        {
+          "name": "Métropole de Grenoble - Numothèque",
+          "AUTH_URL": "https://numotheque.grenoblealpesmetropole.fr/plateforme-redirect/BIB?url=https%3A%2F%2Fnouveau.europresse.com%2Faccess%2Fhttpref%2Fdefault.aspx?un=GRENOBLEU_2"
         }
       ]
     }
