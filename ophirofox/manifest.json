@@ -1066,8 +1066,8 @@
         {
           "name": "Métropole de Grenoble - Numothèque",
           "AUTH_URL": "https://numotheque.grenoblealpesmetropole.fr/plateforme-redirect/BIB?url=https%3A%2F%2Fnouveau.europresse.com%2Faccess%2Fhttpref%2Fdefault.aspx?un=GRENOBLEU_2"
-        }
-          {
+        },
+        {
           "name": "VetAgro Sup",
           "AUTH_URL": "https://ezproxy.vetagro-sup.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032869T_1"
         }
