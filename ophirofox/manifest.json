@@ -105,6 +105,7 @@
     , "https://nouveau-europresse-com.hub.tbs-education.fr/*"
     , "https://nouveau-europresse-com.ezproxy.univ-perp.fr/*"
     , "https://nouveau-europresse-com.ezproxy.vetagro-sup.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.utc.fr/*"
   ],
   "background": {
     "scripts": [
@@ -1030,6 +1031,10 @@
         {
           "name": "Université de Technologie de Belfort-Montbéliard",
           "AUTH_URL": "https://ezproxy.utbm.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UTBMT_2"
+        },
+        {
+          "name": "Université de Technologie de Compiègne",
+          "AUTH_URL": "https://ezproxy.utc.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=BUCOMPIEGNET_2"
         },
         {
           "name": "Université de Technologie de Troyes",
