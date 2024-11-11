@@ -4,8 +4,13 @@ function extractKeywords() {
     .getAttribute("content");
 }
 
-async function createLink() {
-  const a = await ophirofoxEuropresseLink(extractKeywords());
+/**
+ * Crée un lien vers Europresse avec les keywords donnés
+ * @param {string} publishedTime - article publication date (2024-01-01)
+ * @returns {Promise<HTMLAnchorElement>}
+ */
+async function createLink(publishedTime) {
+  const a = await ophirofoxEuropresseLink(extractKeywords(), { publishedTime: publishedTime });
   return a;
 }
 
@@ -40,7 +45,27 @@ async function onLoad(premiumBanner) {
 
             // Not sure if premiumBanner is (and will be) still valid after DOM rewrite
             if (!document.querySelector('div.TypologyArticle__BlockPremium-sc-1vro4tp-2 + a.ophirofox-europresse')) {
-              findPremiumBanner().after(await createLink());
+              // See #239, Libération replaces date:published_time with the date of edit, which means that a search limited by the time of publication may be too restrictive
+              // We need to specify the date to use for the generic ophirofoxEuropresseLink function 
+              // Might need refactor if other medias have the same problem, more properties for fail-safe
+              let publishedDate = document.querySelector( "meta[property='article:published_time'], meta[property='og:article:published_time'], meta[property='date:published_time']")
+  ?.getAttribute("content") || '';
+              let firstPublishedDate = /\"first_publish_date\":\"(\d{4}-\d{2}-\d{2}[A-Z]+\d{2}:\d{2}:\d{2}.[0-9+-:]+Z)/.exec(document.getElementById('fusion-metadata').textContent)[1]  // 2024-08-27T18:18:55.663Z => UTC
+              let firstPublishedDateInstance = new Date(firstPublishedDate);
+
+              // date:published_time is used by default and when firstPublishedDate is not older 
+              if (publishedDate && !publishedDate.trim()) {
+                // If the first published date is valid and older
+                if (!isNaN(firstPublishedDateInstance) && (firstPublishedDateInstance < new Date(publishedDate)))
+                  publishedDate = firstPublishedDate;   
+              } else {
+                  // If we are here, Libération did big shit or just changed their Open Grahs properties
+                  if (!isNaN(firstPublishedDateInstance)) {
+                    publishedDate = firstPublishedDate;
+                  }
+              }
+
+              findPremiumBanner().after(await createLink(publishedDate));
               console.log('Ophirofox injected after React DOM rewrite');
               break;
             }

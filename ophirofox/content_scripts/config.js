@@ -69,16 +69,26 @@ const ophirofox_config = getOphirofoxConfig();
 
 /**
  * Crée un lien vers Europresse avec les keywords donnés
- * @param {string} keywords
+ * @param {string} keywords - input for Europress search engine
+ * @param {string} publishedTime - article publication date (i.e. 2024-08-27T18:18:55.663Z or 2024-08-27)
  * @returns {Promise<HTMLAnchorElement>}
  */
 async function ophirofoxEuropresseLink(keywords, { publishedTime } = {}) {
   // Keywords is the article name
   keywords = keywords ? keywords.trim() : document.querySelector("h1").textContent;
 
-  // Trying to determine published time with meta tags (Open Graph values)
+  // Trying generically to determine published time with meta tags (Open Graph values)
+  // Heuristics would suggest that it's normally UTC in the media world. 
   publishedTime = publishedTime || document.querySelector( "meta[property='article:published_time'], meta[property='og:article:published_time'], meta[property='date:published_time']")
   ?.getAttribute("content") || '';
+  let publishedTimeInstance = new Date(publishedTime);
+
+  if (!isNaN(publishedTimeInstance)) {
+    // JavaScript, what a pleasure.
+    publishedTime = publishedTimeInstance.toISOString().slice(0, 10);
+  } else {
+    publishedTime = ''
+  }
 
   // Creating HTML anchor element
   const a = document.createElement("a");
