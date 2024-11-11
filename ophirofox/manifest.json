@@ -106,6 +106,7 @@
     , "https://nouveau-europresse-com.ezproxy.univ-perp.fr/*"
     , "https://nouveau-europresse-com.ezproxy.vetagro-sup.fr/*"
     , "https://nouveau-europresse-com.ezproxy.utc.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.ulb.ac.be/*"
   ],
   "background": {
     "scripts": [
@@ -895,6 +896,10 @@
         {
           "name": "Université de Liège",
           "AUTH_URL": "https://nouveau.europresse.com/access/ip/default.aspx?un=U031558T_1"
+        },
+        {
+          "name": "Université Libre de Bruxelles",
+          "AUTH_URL": "http://nouveau.europresse.com.ezproxy.ulb.ac.be/access/ip/default.aspx?un=LIBRET_1"
         },
         {
           "name": "Université de Lille",
