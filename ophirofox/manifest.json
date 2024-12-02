@@ -98,11 +98,15 @@
     , "https://nouveau-europresse-com.proxy.utt.fr/*"
     , "https://nouveau-europresse-com.proxy.bnl.lu/*"
     , "https://nouveau-europresse-com.revproxy.escpeurope.eu/*"
-    , "https://nouveau-europresse-com.univ-eiffel.idm.oclc.org/"
+    , "https://nouveau-europresse-com.univ-eiffel.idm.oclc.org/*"
     , "https://nouveau-europresse-com.ezproxy.unilim.fr/*"
     , "https://nouveau-europresse-com.ezproxy.uphf.fr/*"
-    , "https://nouveau-europresse-com.rennes-sb.idm.oclc.org/"
-    , "https://nouveau-europresse-com.hub.tbs-education.fr/"
+    , "https://nouveau-europresse-com.rennes-sb.idm.oclc.org/*"
+    , "https://nouveau-europresse-com.hub.tbs-education.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.univ-perp.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.vetagro-sup.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.utc.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.ulb.ac.be/*"
   ],
   "background": {
     "scripts": [
@@ -161,6 +165,18 @@
     },
     {
       "matches": [
+        "https://www.courrierdesmaires.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/courrier-maires.js"
+      ],
+      "css": [
+        "content_scripts/courrier-maires.css"
+      ]
+    },
+    {
+      "matches": [
         "https://www.la-croix.com/*"
       ],
       "js": [
@@ -169,6 +185,15 @@
       ],
       "css": [
         "content_scripts/lacroix.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.telerama.fr/kiosque/telerama"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/telerama.js"
       ]
     },
     {
@@ -566,18 +591,6 @@
     },
     {
       "matches": [
-        "https://www.economist.com/*"
-      ],
-      "js": [
-        "content_scripts/config.js",
-        "content_scripts/theeconomist.js"
-      ],
-      "css": [
-        "content_scripts/theeconomist.css"
-      ]
-    },
-    {
-      "matches": [
         "https://www.ft.com/*"
       ],
       "js": [
@@ -586,18 +599,6 @@
       ],
       "css": [
         "content_scripts/financialtimes.css"
-      ]
-    },
-    {
-      "matches": [
-        "https://www.washingtonpost.com/*"
-      ],
-      "js": [
-        "content_scripts/config.js",
-        "content_scripts/washingtonpost.js"
-      ],
-      "css": [
-        "content_scripts/washingtonpost.css"
       ]
     },
     {
@@ -634,6 +635,18 @@
       ],
       "css": [
         "content_scripts/hetlaatstenieuws.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.challenges.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/challenges.js"
+      ],
+      "css": [
+        "content_scripts/challenges.css"
       ]
     }
   ],
@@ -885,6 +898,10 @@
           "AUTH_URL": "https://nouveau.europresse.com/access/ip/default.aspx?un=U031558T_1"
         },
         {
+          "name": "Université Libre de Bruxelles",
+          "AUTH_URL": "http://nouveau.europresse.com.ezproxy.ulb.ac.be/access/ip/default.aspx?un=LIBRET_1"
+        },
+        {
           "name": "Université de Lille",
           "AUTH_URL": "https://ressources-electroniques.univ-lille.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=TourcoingT_1"
         },
@@ -957,6 +974,10 @@
           "AUTH_URL": "https://login.ezpupv.scdi-montpellier.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MontpellierT_1"
         },
         {
+          "name": "Université de Perpignan",
+          "AUTH_URL": "https://ezproxy.univ-perp.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031536T_1"
+        },
+        {
           "name": "Université de Picardie Jules Verne",
           "AUTH_URL": "https://merlin.u-picardie.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=BUPICARDIET_2"
         },
@@ -993,6 +1014,10 @@
           "AUTH_URL": "https://distant.bu.univ-rennes2.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=RENNES22T_1"
         },
         {
+          "name": "Université de Rouen Normandie",
+          "AUTH_URL": "http://ezproxy.normandie-univ.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031221T_4"
+        },
+        {
           "name": "Université Sorbonne Nouvelle Paris 3",
           "AUTH_URL": "http://ezproxy.univ-paris3.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=pantheonT_1"
         },
@@ -1011,6 +1036,10 @@
         {
           "name": "Université de Technologie de Belfort-Montbéliard",
           "AUTH_URL": "https://ezproxy.utbm.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=UTBMT_2"
+        },
+        {
+          "name": "Université de Technologie de Compiègne",
+          "AUTH_URL": "https://ezproxy.utc.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=BUCOMPIEGNET_2"
         },
         {
           "name": "Université de Technologie de Troyes",
@@ -1038,6 +1067,18 @@
         },
         { "name": "TBS Education", 
           "AUTH_URL": "http://hub.tbs-education.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_11ip"
+        },
+        {
+          "name": "Toulouse Métropole - MaBM",
+          "AUTH_URL": "https://mabm.toulouse-metropole.fr/Portal/ASSARedirect.ashx?url=https://nouveau.europresse.com/access/httpref/default.aspx?un=bmtoulouseAU_1"
+        },
+        {
+          "name": "Métropole de Grenoble - Numothèque",
+          "AUTH_URL": "https://numotheque.grenoblealpesmetropole.fr/plateforme-redirect/BIB?url=https%3A%2F%2Fnouveau.europresse.com%2Faccess%2Fhttpref%2Fdefault.aspx?un=GRENOBLEU_2"
+        },
+        {
+          "name": "VetAgro Sup",
+          "AUTH_URL": "https://ezproxy.vetagro-sup.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032869T_1"
         }
       ]
     }

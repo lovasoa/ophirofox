@@ -1,0 +1,13 @@
+.ophirofox-europresse {
+    background-color: #fcc525;
+    font-family: "DIN",Helvetica,arial,sans-serif;
+    color: #101010 !important;
+    text-transform: uppercase;
+    font-size: 11px;
+    padding: 4px 6px 1px 6px;
+    display: inline-block;
+}
+
+.ophirofox-europresse:hover {
+    color: #a6a6a6 !important;
+}

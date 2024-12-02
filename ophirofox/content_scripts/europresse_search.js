@@ -1,3 +1,13 @@
+async function consumeRequestType() {
+    return new Promise((accept, reject) => {
+        chrome.storage.local.get("ophirofox_request_type",
+            (r) => {
+                accept(r.ophirofox_request_type);
+                chrome.storage.local.remove("ophirofox_request_type");
+            });
+    })
+}
+
 async function consumeReadRequest() {
     return new Promise((accept, reject) => {
         chrome.storage.local.get("ophirofox_read_request",
@@ -8,19 +18,21 @@ async function consumeReadRequest() {
     })
 }
 
-async function onLoad() {
-    ophirofoxRealoadOnExpired();
+async function consumeReadPDFRequest() {
+    return new Promise((accept, reject) => {
+        chrome.storage.local.get("ophirofox_readPDF_request",
+            (r) => {
+                accept(r.ophirofox_readPDF_request);
+                chrome.storage.local.remove("ophirofox_readPDF_request");
+            });
+    })
+}
+
+async function loadRead(){
     const path = window.location.pathname;
-    if (!(
-        path.startsWith("/Search/Reading") ||
-        path.startsWith("/Search/Advanced") ||
-        path.startsWith("/Search/AdvancedMobile") ||
-        path.startsWith("/Search/Express") ||
-        path.startsWith("/Search/Simple")
-    )) return;
     const { search_terms, published_time } = await consumeReadRequest();
     if (!search_terms) return;
-    const stopwords = new Set(['d', 'l', 'et', 'sans']);
+    const stopwords = new Set(['d', 'l', 'et', 'sans', 'or']);
 
     /*
         L = { Lu , Ll , Lt , Lm , Lo }
@@ -34,7 +46,8 @@ async function onLoad() {
         .split(/[^\p{L}\p{M}\p{Nd}]+/u)
         .filter(w => !stopwords.has(w))
         .join(' ');
-    const keyword_field = document.getElementById("Keywords");
+    const keyword_field_id = path.startsWith("/Search/Result") ? "NativeQuery" : "Keywords";
+    const keyword_field = document.getElementById(keyword_field_id);
     keyword_field.value = 'TIT_HEAD=' + keywords;
 
     // Looking for a time range
@@ -87,8 +100,32 @@ async function onLoad() {
             date_filter.value = filterValue;
         }
     }
-
     keyword_field.form.submit();
+}
+
+async function loadReadPDF(){
+    const { media_id, published_time } = await consumeReadPDFRequest();
+    window.location = window.location.origin + `/PDF/EditionDate?sourceCode=${media_id}&singleDate=${published_time}&useFuzzyDate=false`;
+}
+
+async function onLoad() {
+    ophirofoxRealoadOnExpired();
+    const path = window.location.pathname;
+    if (!(
+        path.startsWith("/Search/Reading") ||
+        path.startsWith("/Search/Advanced") ||
+        path.startsWith("/Search/AdvancedMobile") ||
+        path.startsWith("/Search/Express") ||
+        path.startsWith("/Search/Simple") ||
+        path.startsWith("/Search/Result")
+    )) return;
+    const { type } = await consumeRequestType();
+    console.log("request_type", type);
+    if (type == "readPDF") {
+        await loadReadPDF();
+    } else {
+        await loadRead();
+    }
 }
 
 function ophirofoxRealoadOnExpired() {
