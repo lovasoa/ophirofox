@@ -1,8 +1,10 @@
 .ophirofox-europresse {
-    background-color: #fed500;
+    background-color: #FEEB6F;
     padding: 1rem 1.5rem;
     color: #000;
     border: none;
+    border-radius: 3.6rem;
+    text-decoration: none;
     box-shadow: none;
     text-transform: uppercase;
     font-size: 1.2rem;
@@ -17,6 +19,5 @@
 }
 
 .ophirofox-europresse:hover, .ophirofox-europresse:active {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #FFC70F;
 }
