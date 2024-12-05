@@ -107,6 +107,7 @@
     , "https://nouveau-europresse-com.ezproxy.vetagro-sup.fr/*"
     , "https://nouveau-europresse-com.ezproxy.utc.fr/*"
     , "https://nouveau-europresse-com.ezproxy.ulb.ac.be/*"
+    , "https://nouveau-europresse-com.gutenberg.univ-lr.fr/*"
   ],
   "background": {
     "scripts": [
@@ -748,6 +749,10 @@
         {
           "name": "INSA Rennes",
           "AUTH_URL": "http://rproxy.insa-rennes.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=INSAT_1"
+        },
+        {
+          "name" : "La Rochelle Université",
+          "AUTH_URL" : "https://gutenberg.univ-lr.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ROCHELLET_1"
         },
         {
           "name": "Le Mans Université",
