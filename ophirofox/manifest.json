@@ -783,7 +783,7 @@
         },
         {
           "name": "Sciences Po Paris",
-          "AUTH_URL": "https://acces-distant.sciencespo.fr/fork?https://nouveau.europresse.com/access/ip/default.aspx?un=politique2T_1"
+          "AUTH_URL": "https://catalogue-bibliotheque.sciencespo.fr/view/action/uresolver.do?operation=resolveService&package_service_id=20109524480005808&institutionId=5808&customerId=5800&VE=true"
         },
         {
           "name": "Télécom Paris",
