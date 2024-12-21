@@ -1040,7 +1040,7 @@
         },
         {
           "name": "Université Savoie Mont Blanc",
-          "AUTH_URL": "http://univ-smb.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=savoieT_1"
+          "AUTH_URL": "https://univ-smb.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=savoieT_1"
         },
         {
           "name": "Université de Technologie de Belfort-Montbéliard",
