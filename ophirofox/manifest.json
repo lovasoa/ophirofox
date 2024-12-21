@@ -107,6 +107,7 @@
     , "https://nouveau-europresse-com.ezproxy.vetagro-sup.fr/*"
     , "https://nouveau-europresse-com.ezproxy.utc.fr/*"
     , "https://nouveau-europresse-com.ezproxy.ulb.ac.be/*"
+    , "https://nouveau-europresse-com.ec-lyon.idm.oclc.org/*"
   ],
   "background": {
     "scripts": [
@@ -1079,6 +1080,10 @@
         {
           "name": "VetAgro Sup",
           "AUTH_URL": "https://ezproxy.vetagro-sup.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032869T_1"
+        },
+        {
+          "name": "École Centrale de Lyon"
+          "AUTH_URL": "https://ec-lyon.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=LYONT_7"
         }
       ]
     }
