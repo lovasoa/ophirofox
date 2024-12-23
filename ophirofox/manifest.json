@@ -108,6 +108,7 @@
     , "https://nouveau-europresse-com.ezproxy.utc.fr/*"
     , "https://nouveau-europresse-com.ezproxy.ulb.ac.be/*"
     , "https://nouveau-europresse-com.gutenberg.univ-lr.fr/*"
+    , "https://nouveau-europresse-com.bpi.idm.oclc.org/*"
   ],
   "background": {
     "scripts": [
@@ -685,6 +686,10 @@
         {
           "name": "BNF",
           "AUTH_URL": "https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=D000067U_1"
+        },
+        {
+          "name": "Bibliothèque Publique d'Information (BPI)",
+          "AUTH_URL": "https://bpi.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=pompi"
         },
         {
           "name": "Centrale Lyon",
