@@ -796,12 +796,13 @@
           "AUTH_URL": "https://rennes-sb.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=RENNES2T_2"
         },
         {
-          "name": "SciencesPo Lyon",
+          "name": "Sciences Po Lyon",
           "AUTH_URL": "http://ressources.sciencespo-lyon.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=LYONT_5"
         },
         {
           "name": "Sciences Po Paris",
-          "AUTH_URL": "https://catalogue-bibliotheque.sciencespo.fr/view/action/uresolver.do?operation=resolveService&package_service_id=20109524480005808&institutionId=5808&customerId=5800&VE=true"
+          "AUTH_URL": "https://catalogue-bibliotheque.sciencespo.fr/view/action/uresolver.do?operation=resolveService&package_service_id=20109524480005808&institutionId=5808&customerId=5800&VE=true",
+          "PROXY_URL": "https://nouveau-europresse-com.scpo.idm.oclc.org/*"
         },
         {
           "name": "Télécom Paris",
