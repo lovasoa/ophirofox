@@ -201,13 +201,24 @@ function permissionForPartner({ AUTH_URL }) {
   return permission;
 }
 
-/**
- * @param {string} partner_name 
+ /**
+ * Makes a permissions request for the specified partner by checking
+ * if a PROXY_URL exists or falling back to a generic matching logic based on AUTH_URL.
+ *
+ * @param {string} partner_name
+ * @returns {{permissions: string[], origins: string[]}}
  */
 function makePermissionsRequest(partner_name) {
   const partner = ophirofox_config_list.find(({ name }) => name === partner_name);
   if (!partner) throw new Error(`No partner found with name ${partner_name}`);
-  const permission = permissionForPartner(partner);
+
+  let permission = partner.PROXY_URL;
+  if (!permission) {
+    permission = permissionForPartner(partner);
+  }
+
+  if (!permission) throw new Error(`No valid permission found for partner "${partner_name}"`);
+
   return { permissions: missing_permissions, origins: [permission] };
 }
 
