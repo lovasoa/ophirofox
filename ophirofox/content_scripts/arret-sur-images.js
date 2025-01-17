@@ -19,16 +19,15 @@ async function createLink() {
 
 /**
  * @description check DOM for article under paywall 
- * @return {HTMLElement} DOM Premium Banner
+ * @return {HTMLElement} DOM Premium Banner and head of the article
 */
 function findPremiumBanner() {
-    const articleContainer = document.querySelector(".article-content");
-    //check if page is a article
-    if (!articleContainer) return null;
-    const paywall = document.querySelector(".paywall-block");
-    const elems = paywall.querySelectorAll("mark");
-    
-    return [...elems].find(d => d.textContent.includes("réservé aux abonné.e.s"))
+    const article = document.querySelector(".article");
+    if (!article) return null;
+    const elems = article.querySelectorAll("span, mark");
+    const textToFind = ["réservé aux abonné.e.s", "Réservé à nos abonné.e.s"];
+
+    return [...elems].filter(d => textToFind.some(text => d.textContent.includes(text)))        
 }
 
 /**@description check for BNF users. If yes, create link button */
@@ -39,7 +38,9 @@ async function onLoad() {
     const reserve = findPremiumBanner();
     if (!reserve) return;
 
-    reserve.parentElement.appendChild(await createLink());
+    for (const balise of reserve) {
+        balise.parentElement.appendChild(await createLink());
+    }
 }
 
 setTimeout(function(){
