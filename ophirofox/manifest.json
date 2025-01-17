@@ -697,7 +697,8 @@
         },
         {
           "name": "BNF",
-          "AUTH_URL": "https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=D000067U_1"
+          "AUTH_URL": "https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=D000067U_1",
+          "AUTH_URL_ARRETSURIMAGES" : "www-arretsurimages-net.bnf.idm.oclc.org" 
         },
         {
           "name": "Bibliothèque Publique d'Information (BPI)",

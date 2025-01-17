@@ -249,6 +249,16 @@ async function ophirofoxAskPermissions(partner_name) {
   if (!granted) throw new Error("Permission not granted");
 }
 
+/**
+ * @description check if user plugin config match website specific config
+ * @param {string[]} configNames names of partners in manifest.js
+ * @return {{AUTH_URL:string, name:string,AUTH_URL_NAMEOFWEBSITE:string}} current config with specific property as defined in manifest.js
+ */
+async function configurationsSpecifiques(configNames){
+  const config = await ophirofox_config;
+  if (configNames.find((name) => name === config.name)) return config
+}
+
 const missing_permissions = [];
 
 // Returns a list of permissions that must be asked for.
