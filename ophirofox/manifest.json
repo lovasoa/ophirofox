@@ -650,6 +650,18 @@
       "css": [
         "content_scripts/challenges.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.arretsurimages.net/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/arret-sur-images.js"
+      ],
+      "css": [
+        "content_scripts/arret-sur-images.css"
+      ]
     }
   ],
   "browser_specific_settings": {
