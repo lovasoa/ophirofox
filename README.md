@@ -117,7 +117,7 @@ Depuis la version 122 de Firefox publiée le 23 janvier 2024, il est maintenant 
 
 ## Userscript pour des besoins spécifiques
 
-Un projet annexe récupère la dernière version publiée de l'extension sur ce dépôt et la concatène en un seul *userscript*. Ce script est un fichier qui peut être installer par l'intermédiaire d'autres extensions, comme Greasemonkey, Tampermonkey, ou Violentmonkey.
+Un projet annexe récupère la dernière version publiée de l'extension sur ce dépôt et la concatène en un seul *userscript*. Ce script est un fichier qui peut être installé par l'intermédiaire d'autres extensions, comme Violentmonkey, Greasemonkey ou Tampermonkey.
 
 Le projet annexe *ophirofox-userscript* [se trouve ici](https://github.com/Write/ophirofox-userscript).
 
