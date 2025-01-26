@@ -1,0 +1,16 @@
+.ophirofox-europresse {
+  visibility: visible !important;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 50;
+}
+.ophirofox-europresse > a {
+  color: #fff !important;
+  padding: 1px 20px;
+  font-weight: 600;
+  background-color: #2bc48c;
+  border-radius: 25px;
+}
