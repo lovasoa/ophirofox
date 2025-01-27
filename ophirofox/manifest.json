@@ -662,6 +662,18 @@
       "css": [
         "content_scripts/arret-sur-images.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.pressreader.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/pressreader.js"
+      ],
+      "css": [
+        "content_scripts/pressreader.css"
+      ]
     }
   ],
   "browser_specific_settings": {
@@ -698,7 +710,8 @@
         {
           "name": "BNF",
           "AUTH_URL": "https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=D000067U_1",
-          "AUTH_URL_ARRETSURIMAGES" : "www-arretsurimages-net.bnf.idm.oclc.org" 
+          "AUTH_URL_ARRETSURIMAGES" : "www-arretsurimages-net.bnf.idm.oclc.org",
+          "AUTH_URL_PRESSREADER" : "www-pressreader-com.bnf.idm.oclc.org"
         },
         {
           "name": "Bibliothèque Publique d'Information (BPI)",
