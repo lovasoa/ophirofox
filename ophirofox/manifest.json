@@ -109,6 +109,7 @@
     , "https://nouveau-europresse-com.ezproxy.ulb.ac.be/*"
     , "https://nouveau-europresse-com.gutenberg.univ-lr.fr/*"
     , "https://nouveau-europresse-com.bpi.idm.oclc.org/*"
+    , "https://nouveau-europresse-com.eztest.biblio.univ-evry.fr/*"
   ],
   "background": {
     "scripts": [
@@ -1009,6 +1010,10 @@
         {
           "name": "Université Paris-Saclay",
           "AUTH_URL": "https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_9"
+        },
+        {
+          "name": "Université Paris-Saclay (etu)",
+          "AUTH_URL": "https://eztest.biblio.univ-evry.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_9"
         },
         {
           "name": "Université Paul Sabatier, Toulouse III",
