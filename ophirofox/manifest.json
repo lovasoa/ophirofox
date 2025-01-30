@@ -306,6 +306,15 @@
     },
     {
       "matches": [
+        "https://www.mediapart.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/mediapart.js"
+      ]
+    },
+    {
+      "matches": [
         "https://www.ouest-france.fr/*"
       ],
       "js": [
@@ -712,6 +721,7 @@
           "name": "BNF",
           "AUTH_URL": "https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=D000067U_1",
           "AUTH_URL_ARRETSURIMAGES" : "www-arretsurimages-net.bnf.idm.oclc.org",
+          "AUTH_URL_MEDIAPART": "https://bnf.idm.oclc.org/login?url=http://www.mediapart.fr/licence",
           "AUTH_URL_PRESSREADER" : "www-pressreader-com.bnf.idm.oclc.org"
         },
         {
