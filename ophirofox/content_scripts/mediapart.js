@@ -8,7 +8,8 @@ async function createLink(AUTH_URL_MEDIAPART) {
     span.textContent = "Lire avec BNF";
 
     const a = document.createElement("a");
-    a.href = new URL(AUTH_URL_MEDIAPART);
+    a.href = new URL(window.location);
+    a.host = AUTH_URL_MEDIAPART
     a.appendChild(span);
 
     return a;
@@ -35,14 +36,25 @@ async function onLoad() {
 
     const config = await configurationsSpecifiques(['BNF'])
     if(!config) return;
-    const reserve = findPremiumBanner();
-    if (!reserve) return;
+    var newUrl = new URL(window.location);//current page
+    if (newUrl.host+'/' == 'www-mediapart-fr.bnf.idm.oclc.org/' ) {
+        const domNavigation = document.querySelector('ul.nav__actions')
+        const spans = domNavigation.querySelectorAll('span')
+        //search account name
+    let isFound =   Array.from(spans).find((elem) => elem.textContent == 'Bibliothèque Nationale de France')
+        if(!isFound){
+            console.log('is not found')
+            //account name not found. fetch login page
+            fetch("https://www-mediapart-fr.bnf.idm.oclc.org/licence").then(() => window.location.reload());
+        }
+    }else{
+        const reserve = findPremiumBanner();
+        if (!reserve) return;
 
-    for (const balise of reserve) {
-     balise.appendChild(await createLink(config.AUTH_URL_MEDIAPART))
+        for (const balise of reserve) {
+        balise.appendChild(await createLink(config.AUTH_URL_MEDIAPART))
+        }
     }
 }
 
-setTimeout(function(){
-    onLoad().catch(console.error);
-}, 1000);
+onLoad().catch(console.error);
