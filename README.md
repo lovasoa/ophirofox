@@ -32,6 +32,7 @@ Les nouveau médias supportés sont mis à jour automatiquement avec l'extension
 
 ### Presse nationale
 Voici la liste triée par ordre alphabétique :
+- [Arret Sur Image (nécessite un abonnement BNF)](https://www.arretsurimages.net/)
 - [La Croix](https://www.la-croix.com)
 - [L'Express](https://www.lexpress.fr/)
 - [L'Humanité](https://www.humanite.fr)
@@ -44,6 +45,7 @@ Voici la liste triée par ordre alphabétique :
 - [Le Point](https://www.lepoint.fr)
 - [Libération](https://www.liberation.fr/)
 - [Les Échos](https://www.lesechos.fr)
+- [Mediapart (nécessite un abonnement BNF)](https://www.mediapart.fr/)
 - [Télérama (Magazine en PDF)](https://www.telerama.fr/kiosque/telerama)
   
 ### Presse régionale
@@ -77,6 +79,7 @@ Voici la liste triée par ordre alphabétique :
   - [Le Soir (Belgique)](https://www.lesoir.be)
   - [Le Temps (Suisse)](https://www.letemps.ch/)
   - [Le Vif (Belgique)](https://www.levif.be/)
+  - [PressReader (nécessite un abonnement BNF)](https://www.pressreader.com/fr)
   - [Sudinfo (Belgique)](https://www.sudinfo.be/)
   - [Trends-Tendances (Belgique)](https://trends.levif.be/)
 
