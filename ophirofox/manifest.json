@@ -110,6 +110,7 @@
     , "https://nouveau-europresse-com.gutenberg.univ-lr.fr/*"
     , "https://nouveau-europresse-com.bpi.idm.oclc.org/*"
     , "https://nouveau-europresse-com.eztest.biblio.univ-evry.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.uclouvain.be/*"
   ],
   "background": {
     "scripts": [
@@ -1140,6 +1141,10 @@
         {
           "name": "VetAgro Sup",
           "AUTH_URL": "https://ezproxy.vetagro-sup.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032869T_1"
+        },
+        {
+          "name": "UCLouvain",
+          "AUTH_URL": "https://nouveau-europresse-com.proxy.bib.uclouvain.be:2443"
         }
       ]
     }
