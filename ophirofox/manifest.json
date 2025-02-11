@@ -1145,6 +1145,10 @@
         {
           "name": "UCLouvain",
           "AUTH_URL": "https://nouveau-europresse-com.proxy.bib.uclouvain.be:2443"
+        },
+        {
+          "name": "E-medi@s Savoie Mont Blanc",
+          "AUTH_URL": "https://e-medias.biblio7374.fr/Portal/ASSARedirect.ashx?url=https://nouveau.europresse.com/access/httpref/default.aspx?un=PringyU_2"
         }
       ]
     }
