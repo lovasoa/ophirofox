@@ -809,7 +809,7 @@
         {
           "name": "Le Mans Université",
           "AUTH_URL": "https://login.doc-elec.univ-lemans.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031524T_1"
-        },        
+        },
         {
           "name": "Lycée Albert de Mun à Nogent-sur-Marne",
           "AUTH_URL": "https://nouveau.europresse.com/Login/Esidoc?sso_id=0940880W"
@@ -1127,7 +1127,7 @@
           "name": "University of Cambridge",
           "AUTH_URL": "https://ezp.lib.cam.ac.uk/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031883T_1"
         },
-        { "name": "TBS Education", 
+        { "name": "TBS Education",
           "AUTH_URL": "http://hub.tbs-education.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_11ip"
         },
         {
@@ -1145,6 +1145,10 @@
         {
           "name": "UCLouvain",
           "AUTH_URL": "https://nouveau-europresse-com.proxy.bib.uclouvain.be:2443"
+        },
+        {
+          "name": "E-medi@s Savoie Mont Blanc",
+          "AUTH_URL": "https://e-medias.biblio7374.fr/Portal/ASSARedirect.ashx?url=https://nouveau.europresse.com/access/httpref/default.aspx?un=PringyU_2"
         }
       ]
     }
