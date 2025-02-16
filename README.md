@@ -47,6 +47,7 @@ Voici la liste triée par ordre alphabétique :
 - [Les Échos](https://www.lesechos.fr)
 - [Mediapart (nécessite un abonnement BNF)](https://www.mediapart.fr/)
 - [Télérama (Magazine en PDF)](https://www.telerama.fr/kiosque/telerama)
+- [L'Usine Nouvelle](https://www.usinenouvelle.com/)
   
 ### Presse régionale
   - [Corse Matin](https://www.corsematin.com/)

@@ -686,6 +686,15 @@
       "css": [
         "content_scripts/pressreader.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.usinenouvelle.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/usineNouvelle.js"
+      ]
     }
   ],
   "browser_specific_settings": {
