@@ -1,19 +1,10 @@
-/**
- * 
- * @description titles don't match between europress and origin site. Use lead Paragraph instead.
- * @return truncated first part of paragraph. Dont cut off words
- */
 function extractKeywords() {
-    let edito =  document.querySelector(".editoTitleType9 > p").textContent;
-    console.log('edito length', edito.length)
-    if (edito.length > 75){
-        edito = edito.substring(0, edito.lastIndexOf(' ', 75));
-    }
-    return edito
+    return document.querySelector(".editoSocialBar__item[data-title]").dataset.title
 }
 
 async function createLink() {
     const a = await ophirofoxEuropresseLink(extractKeywords());
+    a.style = 'font-family: "arimo-bold",Arial,Helvetica,sans-serif; border-bottom: 2px solid #000; margin-left : 1rem'
     return a;
 }
 
