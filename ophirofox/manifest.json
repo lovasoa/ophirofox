@@ -695,6 +695,18 @@
         "content_scripts/config.js",
         "content_scripts/usineNouvelle.js"
       ]
+    },
+    {
+      "matches": [
+        "https://elpais.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/el-pais.js"
+      ],
+      "css":[
+        "content_scripts/el-pais.css"
+      ]
     }
   ],
   "browser_specific_settings": {

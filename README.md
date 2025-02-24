@@ -68,6 +68,7 @@ Voici la liste triée par ordre alphabétique :
   - [Courrier international](https://www.courrierinternational.com)
   - [De Morgen (Belgique - néerlandophone)](https://www.demorgen.be/)
   - [De Standaard (Belgique - néerlandophone)](https://www.standaard.be/)
+  - [el-pais (Espagne - nécessite le pack  europress Lexis Nexis)](https://www.standaard.be/)
   - [Financial Times (Royaume-Uni)](https://www.ft.com/)
   - [Gazet van Antwerpen (Belgique - néerlandophone)](https://www.gva.be/)
   - [Het Laatste Nieuws (Belgique - néerlandophone)](https://www.hln.be/)
