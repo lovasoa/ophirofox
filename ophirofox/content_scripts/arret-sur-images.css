@@ -1,0 +1,10 @@
+.ophirofox-europresse {
+    background-color: #f05246;
+    border: 1px #f05246 solid;
+    padding: calc(0.25em - 1px) 0.5em !important;
+    color: #fff;
+    font-family: "Merriweather", serif;
+    font-weight: 900 !important;
+    font-style: italic !important;
+    text-transform: none !important;
+}

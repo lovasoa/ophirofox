@@ -52,7 +52,7 @@
     , "https://nouveau-europresse-com.portail.psl.eu/*"
     , "https://nouveau-europresse-com.passerelle.univ-rennes1.fr/*"
     , "https://nouveau-europresse-com.ressources-electroniques.univ-lille.fr/*"
-    , "https://nouveau-europresse-com.acces-distant.sciencespo.fr/*"
+    , "https://nouveau-europresse-com.scpo.idm.oclc.org/*"
     , "https://nouveau-europresse-com.ressources.univ-poitiers.fr/*"
     , "https://nouveau-europresse-com.bibelec.univ-lyon2.fr/*"
     , "https://nouveau-europresse-com.gorgone.univ-toulouse.fr/*"
@@ -107,6 +107,10 @@
     , "https://nouveau-europresse-com.ezproxy.vetagro-sup.fr/*"
     , "https://nouveau-europresse-com.ezproxy.utc.fr/*"
     , "https://nouveau-europresse-com.ezproxy.ulb.ac.be/*"
+    , "https://nouveau-europresse-com.gutenberg.univ-lr.fr/*"
+    , "https://nouveau-europresse-com.bpi.idm.oclc.org/*"
+    , "https://nouveau-europresse-com.eztest.biblio.univ-evry.fr/*"
+    , "https://nouveau-europresse-com.ezproxy.uclouvain.be/*"
   ],
   "background": {
     "scripts": [
@@ -299,6 +303,16 @@
       ],
       "css": [
         "content_scripts/lavdn.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.mediapart.fr/*",
+        "https://www-mediapart-fr.bnf.idm.oclc.org/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/mediapart.js"
       ]
     },
     {
@@ -648,6 +662,39 @@
       "css": [
         "content_scripts/challenges.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.arretsurimages.net/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/arret-sur-images.js"
+      ],
+      "css": [
+        "content_scripts/arret-sur-images.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.pressreader.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/pressreader.js"
+      ],
+      "css": [
+        "content_scripts/pressreader.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.usinenouvelle.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/usineNouvelle.js"
+      ]
     }
   ],
   "browser_specific_settings": {
@@ -675,7 +722,7 @@
         },
         {
           "name": "Bibliotheque nationale et universitaire de Strasbourg",
-          "AUTH_URL": "http://acces-distant.bnu.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=bnus"
+          "AUTH_URL": "https://acces-distant.bnu.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=bnus"
         },
         {
           "name": "Bibliotheque municipale de Lyon",
@@ -683,11 +730,26 @@
         },
         {
           "name": "BNF",
-          "AUTH_URL": "https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=D000067U_1"
+          "AUTH_URL": "https://bnf.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=D000067U_1",
+          "AUTH_URL_ARRETSURIMAGES" : "www-arretsurimages-net.bnf.idm.oclc.org",
+          "AUTH_URL_MEDIAPART": "www-mediapart-fr.bnf.idm.oclc.org",
+          "AUTH_URL_PRESSREADER" : "www-pressreader-com.bnf.idm.oclc.org"
+        },
+        {
+          "name": "Bibliothèque Publique d'Information (BPI)",
+          "AUTH_URL": "https://bpi.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=pompi"
+        },
+        {
+          "name": "Centrale Lyon",
+          "AUTH_URL": "https://ec-lyon.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=LYONT_7"
         },
         {
           "name": "CY Cergy Paris Université",
           "AUTH_URL": "https://bibdocs.u-cergy.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031547T_1"
+        },
+        {
+          "name": "École Centrale de Lyon (ECL)",
+          "AUTH_URL": "https://ec-lyon.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=LYONT_7"
         },
         {
           "name": "École normale supérieure de Lyon (ENS Lyon)",
@@ -750,9 +812,13 @@
           "AUTH_URL": "http://rproxy.insa-rennes.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=INSAT_1"
         },
         {
+          "name" : "La Rochelle Université",
+          "AUTH_URL" : "https://gutenberg.univ-lr.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ROCHELLET_1"
+        },
+        {
           "name": "Le Mans Université",
           "AUTH_URL": "https://login.doc-elec.univ-lemans.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031524T_1"
-        },        
+        },
         {
           "name": "Lycée Albert de Mun à Nogent-sur-Marne",
           "AUTH_URL": "https://nouveau.europresse.com/Login/Esidoc?sso_id=0940880W"
@@ -778,12 +844,13 @@
           "AUTH_URL": "https://rennes-sb.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=RENNES2T_2"
         },
         {
-          "name": "SciencesPo Lyon",
+          "name": "Sciences Po Lyon",
           "AUTH_URL": "http://ressources.sciencespo-lyon.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=LYONT_5"
         },
         {
           "name": "Sciences Po Paris",
-          "AUTH_URL": "https://acces-distant.sciencespo.fr/fork?https://nouveau.europresse.com/access/ip/default.aspx?un=politique2T_1"
+          "AUTH_URL": "https://catalogue-bibliotheque.sciencespo.fr/view/action/uresolver.do?operation=resolveService&package_service_id=20109524480005808&institutionId=5808&customerId=5800&VE=true",
+          "PROXY_URL": "https://nouveau-europresse-com.scpo.idm.oclc.org/*"
         },
         {
           "name": "Télécom Paris",
@@ -966,6 +1033,10 @@
           "AUTH_URL": "https://ezproxy.universite-paris-saclay.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_9"
         },
         {
+          "name": "Université Paris-Saclay (etu)",
+          "AUTH_URL": "https://eztest.biblio.univ-evry.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031535T_9"
+        },
+        {
           "name": "Université Paul Sabatier, Toulouse III",
           "AUTH_URL": "https://docadis.univ-tlse3.fr/https/nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_6"
         },
@@ -1031,7 +1102,7 @@
         },
         {
           "name": "Université Savoie Mont Blanc",
-          "AUTH_URL": "http://univ-smb.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=savoieT_1"
+          "AUTH_URL": "https://univ-smb.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=savoieT_1"
         },
         {
           "name": "Université de Technologie de Belfort-Montbéliard",
@@ -1065,7 +1136,7 @@
           "name": "University of Cambridge",
           "AUTH_URL": "https://ezp.lib.cam.ac.uk/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031883T_1"
         },
-        { "name": "TBS Education", 
+        { "name": "TBS Education",
           "AUTH_URL": "http://hub.tbs-education.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_11ip"
         },
         {
@@ -1074,11 +1145,19 @@
         },
         {
           "name": "Métropole de Grenoble - Numothèque",
-          "AUTH_URL": "https://numotheque.grenoblealpesmetropole.fr/plateforme-redirect/BIB?url=https%3A%2F%2Fnouveau.europresse.com%2Faccess%2Fhttpref%2Fdefault.aspx?un=GRENOBLEU_2"
+          "AUTH_URL": "https://numotheque.grenoblealpesmetropole.fr/Default/redirection-contenu-europresse.aspx"
         },
         {
           "name": "VetAgro Sup",
           "AUTH_URL": "https://ezproxy.vetagro-sup.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032869T_1"
+        },
+        {
+          "name": "UCLouvain",
+          "AUTH_URL": "https://nouveau-europresse-com.proxy.bib.uclouvain.be:2443"
+        },
+        {
+          "name": "E-medi@s Savoie Mont Blanc",
+          "AUTH_URL": "https://e-medias.biblio7374.fr/Portal/ASSARedirect.ashx?url=https://nouveau.europresse.com/access/httpref/default.aspx?un=PringyU_2"
         }
       ]
     }

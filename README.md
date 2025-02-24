@@ -32,6 +32,7 @@ Les nouveau médias supportés sont mis à jour automatiquement avec l'extension
 
 ### Presse nationale
 Voici la liste triée par ordre alphabétique :
+- [Arret Sur Image (nécessite un abonnement BNF)](https://www.arretsurimages.net/)
 - [La Croix](https://www.la-croix.com)
 - [L'Express](https://www.lexpress.fr/)
 - [L'Humanité](https://www.humanite.fr)
@@ -44,7 +45,9 @@ Voici la liste triée par ordre alphabétique :
 - [Le Point](https://www.lepoint.fr)
 - [Libération](https://www.liberation.fr/)
 - [Les Échos](https://www.lesechos.fr)
+- [Mediapart (nécessite un abonnement BNF)](https://www.mediapart.fr/)
 - [Télérama (Magazine en PDF)](https://www.telerama.fr/kiosque/telerama)
+- [L'Usine Nouvelle](https://www.usinenouvelle.com/)
   
 ### Presse régionale
   - [Corse Matin](https://www.corsematin.com/)
@@ -77,6 +80,7 @@ Voici la liste triée par ordre alphabétique :
   - [Le Soir (Belgique)](https://www.lesoir.be)
   - [Le Temps (Suisse)](https://www.letemps.ch/)
   - [Le Vif (Belgique)](https://www.levif.be/)
+  - [PressReader (nécessite un abonnement BNF)](https://www.pressreader.com/fr)
   - [Sudinfo (Belgique)](https://www.sudinfo.be/)
   - [Trends-Tendances (Belgique)](https://trends.levif.be/)
 
@@ -117,7 +121,7 @@ Depuis la version 122 de Firefox publiée le 23 janvier 2024, il est maintenant 
 
 ## Userscript pour des besoins spécifiques
 
-Un projet annexe récupère la dernière version publiée de l'extension sur ce dépôt et la concatène en un seul *userscript*. Ce script est un fichier qui peut être installer par l'intermédiaire d'autres extensions, comme Greasemonkey, Tampermonkey, ou Violentmonkey.
+Un projet annexe récupère la dernière version publiée de l'extension sur ce dépôt et la concatène en un seul *userscript*. Ce script est un fichier qui peut être installé par l'intermédiaire d'autres extensions, comme Violentmonkey, Greasemonkey ou Tampermonkey.
 
 Le projet annexe *ophirofox-userscript* [se trouve ici](https://github.com/Write/ophirofox-userscript).
 

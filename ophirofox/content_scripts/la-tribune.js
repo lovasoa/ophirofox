@@ -1,5 +1,5 @@
 function extractKeywords() {
-    return document.querySelector('h1[itemprop="Headline"]').textContent;
+    return document.querySelector('h1').textContent;
 }
 
 async function createLink() {
@@ -9,10 +9,10 @@ async function createLink() {
 }
 
 function findPremiumBanner() {
-    const title = document.querySelector('.facade-container');
+    const title = document.querySelector('.rev-premium-tag-article-lt__container');
     if (!title) return null;
-    const elems = title.querySelectorAll('span');
-    return [...elems].find((d) => d.textContent === 'Réservé aux abonnés');
+	const elems = title.querySelectorAll('p');
+	return [...elems].find((d) => d.textContent === 'Ce contenu est réservé aux abonnés');
 }
 
 async function onLoad() {
