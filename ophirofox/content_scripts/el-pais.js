@@ -1,30 +1,32 @@
 let buttonAdded = false;
 function extractKeywords() {
-  let currentURL = new URL(window.location)
-  // get title at the end of URL pathname. 
+  let currentURL = new URL(window.location);
+  // get title at the end of URL pathname.
   // Remove noise characters, and make it search-ready for europress
-  const result = currentURL.pathname.split("/").pop().replace(/-|\.html$/g, ' ').trim()
-  return  result;
+  const result = currentURL.pathname
+    .split("/")
+    .pop()
+    .replace(/-|\.html$/g, " ")
+    .trim();
+  return result;
 }
 
 async function createLink(title) {
   if (title && buttonAdded == false) {
-    const div = document.createElement('div')
+    const div = document.createElement("div");
     const a = await ophirofoxEuropresseLink(extractKeywords());
-    a.textContent = 'Lire sur europresse (Lexis Nexis)'
+    a.textContent = "Lire sur europresse (Lexis Nexis)";
     div.appendChild(a);
-    title.after(div)
+    title.after(div);
   }
 }
 
 async function onLoad() {
   console.log("ophirofox loaded");
-
   const callback = (mutationList, observer) => {
     for (const mutation of mutationList) {
       if (mutation.type === "childList") {
         for (let node of mutation.addedNodes) {
-
           const paywall = document.querySelector("#ctn_freemium_article");
           if (paywall == null) return;
 
