@@ -820,6 +820,10 @@
           "AUTH_URL": "https://extranet.enpc.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=umiv"
         },
         {
+          "name": "INP Toulouse",
+          "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https/nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_7"
+        },
+        {
           "name": "INSA Rennes",
           "AUTH_URL": "http://rproxy.insa-rennes.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=INSAT_1"
         },
@@ -1050,7 +1054,7 @@
         },
         {
           "name": "Université Paul Sabatier, Toulouse III",
-          "AUTH_URL": "https://docadis.univ-tlse3.fr/https/nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_6"
+          "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https/nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_6"
         },
         {
           "name": "Université Paul-Valéry Montpellier 3",
@@ -1128,9 +1132,17 @@
           "name": "Université de Technologie de Troyes",
           "AUTH_URL": "http://proxy.utt.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=BUTROYEST_2"
         },
+         {
+          "name": "Université de Toulouse (ex : Université Paul Sabatier, Toulouse III)",
+          "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https/nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_6"
+        },
         {
-          "name": "Université de Toulouse",
-          "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_2"
+          "name": "Université Toulouse Capitole",
+          "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_1"
+        },
+         {
+          "name": "Université Toulouse Jean Jaures",
+          "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_5"
         },
         {
           "name": "Université de Toulon",
