@@ -1129,8 +1129,48 @@
           "AUTH_URL": "http://proxy.utt.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=BUTROYEST_2"
         },
         {
-          "name": "Université de Toulouse",
+          "name": "Université Toulouse 1 Capitole",
+          "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_1"
+        },
+        {
+          "name": "Institut National Universitaire Champollion",
           "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_2"
+        },
+	    	{
+          "name": "Institut national des sciences appliquées de Toulouse",
+          "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_3"
+        },
+    		{
+          "name": "Ecole nationale de l'aviation civile",
+          "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_4"
+        },
+	    	{
+          "name": "Université Toulouse Jean Jaurès",
+          "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_5"
+        },
+	    	{
+          "name": "Université de Toulouse",
+          "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_6"
+        },
+	    	{
+          "name": "Institut national polytechnique de Toulouse",
+          "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_7"
+        },
+	    	{
+          "name": "Institut supérieur de l'aéronautique et de l'espace",
+          "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_8"
+        },
+	    	{
+          "name": "Ecole des mines d'Albi-Carmaux",
+          "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_9"
+        },
+	    	{
+          "name": "Service Interétablissements de Coopération Documentaire",
+          "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_13"
+        },
+    		{
+          "name": "Ecole nationale supérieure d'architecture de Toulouse",
+          "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_14"
         },
         {
           "name": "Université de Toulon",
