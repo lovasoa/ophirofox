@@ -3,12 +3,8 @@
 Une extension pour navigateurs qui permet de lire la plupart des titres de presse, comme les articles du **Monde**, du **Figaro**, de **Libération** et du **Monde Diplomatique** avec son compte **Europresse**.
 
 <p align="center">
- <a href="#firefox-sur-ordinateur">
-  <img src="https://github.com/user-attachments/assets/eae883da-2669-4469-a61d-6a532a986f3b" alt="Obtenir l'extension pour Mozilla Firefox" style="vertical-align: middle;">
- </a>
- <a href="#chrome-edge-et-similaires-sur-ordinateur">
-  <img src="https://user-images.githubusercontent.com/552629/104166652-661ceb00-53fb-11eb-91c1-2db0718db66f.png" alt="Obtenir l'extension pour Google Chrome sur le Chrome Web Store" style="vertical-align: middle;">
- </a>
+    <a href="#firefox-sur-ordinateur"><img src="https://github.com/user-attachments/assets/eae883da-2669-4469-a61d-6a532a986f3b" hspace="20"></a>
+    <a href="#chrome-edge-et-similaires-sur-ordinateur"><img src="https://github.com/user-attachments/assets/8c3ab829-e8bd-4db3-8bd0-f0820ea21375" hspace="20"></a>
 </p>
 
 Comme illustré ci-dessous, l'extension ajoute un bouton **Lire sur Europresse** sur les articles réservés aux abonnés des journaux compatibles.
