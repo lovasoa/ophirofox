@@ -6,7 +6,7 @@ Une extension pour navigateurs qui permet de lire la plupart des titres de press
  <a href="https://github.com/lovasoa/ophirofox/releases/latest/download/ophirofox.xpi">
   <img src="https://github.com/user-attachments/assets/eae883da-2669-4469-a61d-6a532a986f3b" alt="Obtenir l'extension pour Mozilla Firefox" style="vertical-align: middle;">
  </a>
- <a href="https://chrome.google.com/webstore/detail/ophirofox/mmmjkgckgcpankonbgbianpnfenbhodf">
+ <a href="#chrome-edge-et-similaires-sur-ordinateur">
   <img src="https://user-images.githubusercontent.com/552629/104166652-661ceb00-53fb-11eb-91c1-2db0718db66f.png" alt="Obtenir l'extension pour Google Chrome sur le Chrome Web Store" style="vertical-align: middle;">
  </a>
 </p>
@@ -99,7 +99,9 @@ Vous pouvez proposer d'autres sites Web de médias en ouvrant une [demande ici-m
 
 ## Chrome, Edge et similaires sur ordinateur
 
-Ophirofox est [présent sur le Chrome Web Store](https://chrome.google.com/webstore/detail/ophirofox/mmmjkgckgcpankonbgbianpnfenbhodf), mais Google prend parfois du temps à approuver une nouvelle version de l'extension. Les instructions suivantes peuvent êtres suivies pour installer la dernière version sans passer par Google :
+Ophirofox est [présent sur le Chrome Web Store](https://chrome.google.com/webstore/detail/ophirofox/mmmjkgckgcpankonbgbianpnfenbhodf), mais Google prend parfois du temps à approuver une nouvelle version de l'extension -- la dernière version sur le Google Web Store date du 14 mai 2024. 
+
+Les instructions suivantes peuvent êtres suivies pour installer la dernière version sans passer par Google :
  - [Téléchargez le code source de l'extension](https://github.com/lovasoa/ophirofox/archive/master.zip) ;
  - Décompressez-le ;
  - Ouvrez l'adresse `chrome://extensions/` ;
