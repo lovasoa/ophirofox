@@ -3,7 +3,7 @@
 Une extension pour navigateurs qui permet de lire la plupart des titres de presse, comme les articles du **Monde**, du **Figaro**, de **Libération** et du **Monde Diplomatique** avec son compte **Europresse**.
 
 <p align="center">
- <a href="https://github.com/lovasoa/ophirofox/releases/latest/download/ophirofox.xpi">
+ <a href="#firefox-sur-ordinateur">
   <img src="https://github.com/user-attachments/assets/eae883da-2669-4469-a61d-6a532a986f3b" alt="Obtenir l'extension pour Mozilla Firefox" style="vertical-align: middle;">
  </a>
  <a href="#chrome-edge-et-similaires-sur-ordinateur">
@@ -91,7 +91,7 @@ Vous pouvez proposer d'autres sites Web de médias en ouvrant une [demande ici-m
 
 ## Firefox sur ordinateur
 
-1. Téléchargez la dernière version d'Ophirofox depuis les *releases* disponibles [ici](https://github.com/lovasoa/ophirofox/releases/latest) ;
+1. Téléchargez directement la dernière version d'Ophirofox [ici](https://github.com/lovasoa/ophirofox/releases/latest/download/ophirofox.xpi) où bien depuis les *releases* disponibles [ici](https://github.com/lovasoa/ophirofox/releases/latest) ;
 2. Deux options en fonction de la version de Firefox :
 - Pour les versions récentes : cliquez simplement sur `ophirofox.xpi` et autorisez l'installation du module complémentaire ;
 - Pour les versions plus anciennes : enregistrez le fichier `ophirofox.xpi` en réalisant un clic droit, puis ouvrez le gestionnaire des extensions depuis le menu de Firefox. Ensuite, ouvrez les paramètres (représentés par une roue dentée), sélectionnez « Installer un module depuis un fichier », puis choisissez le fichier `ophirofox.xpi` que vous avez téléchargé précédemment ;
