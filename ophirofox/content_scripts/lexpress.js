@@ -7,7 +7,7 @@ async function onLoad() {
     const banner = findPremiumBanner();
     if (!banner) return;
     const anchor = document.querySelector(
-        '.article__metas__container__info'
+        '.article__icons'
     );
     const newDiv = document.createElement('div');
     newDiv.classList.add('europresse-button');
