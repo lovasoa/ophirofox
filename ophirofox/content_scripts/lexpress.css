@@ -1,25 +1,53 @@
 .ophirofox-europresse {
-	padding: 0px;
-	text-decoration: none;
-	color: #333 !important;
+    text-decoration: none;
+    color: #1b1b1b;
+    transition: color 0.3s;
+}
+
+.ophirofox-europresse:hover {
+    color: #fff;
+}
+
+.ophirofox-europresse:visited {
+    color: #1b1b1b;
+}
+
+.ophirofox-europresse:visited:hover {
+    color: #fff;
 }
 
 .europresse-button {
-	background-color: #ffe066;
-	text-transform: uppercase;
-	text-align: center;
-	padding: 10px;
-	font-size: .75rem;
-	align-items: center;
-	display: flex;
-	border-radius: 5px;
-	margin-right: 14px;
-	margin-top: 14px;
-	width: fit-content;
-	font-weight: 600;
-	margin-bottom: 0px;
-	margin-left: 0px;
-	box-sizing: inherit;
-	color: #333;
-	font-family: 'Spartan','Spartan Fallback 1','Spartan Fallback 2',system-ui,'-apple-system','Segoe UI','Roboto','Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #1b1b1b;
+    border: solid 1px #1b1b1b;
+    gap: 8px;
+    height: 39px;
+    background-color: #fff;
+    font-weight: 600;
+    border-radius: 42px;
+    text-decoration: none;
+    font-size: 0.75rem;
+    cursor: pointer;
+    padding: 10px 14px;
+    font-family: Spartan, Spartan Fallback\1, Spartan Fallback\2, system-ui,
+        -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+        sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+        Noto Color Emoji;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.europresse-button:hover {
+    color: #fff;
+    background-color: #1b1b1b;
+}
+
+.europresse-button:hover a {
+    color: #fff;
+}
+
+.europresse-button:visited {
+    color: #1b1b1b;
 }
