@@ -28,6 +28,22 @@ async function consumeReadPDFRequest() {
     })
 }
 
+async function hasConsumable() {
+    return new Promise((accept, reject) => {
+        chrome.storage.local.get(
+            ["ophirofox_request_type", "ophirofox_readPDF_request"],
+            (result) => {
+                // Vérifie si l'une des deux clés existe et contient une valeur
+                const hasRequestType = result.ophirofox_request_type !== undefined;
+                const hasReadPDFRequest = result.ophirofox_readPDF_request !== undefined;
+                
+                // Retourne true si au moins une des clés existe avec une valeur
+                accept(hasRequestType || hasReadPDFRequest);
+            }
+        );
+    });
+}
+
 async function loadRead(){
     const path = window.location.pathname;
     const { search_terms, published_time } = await consumeReadRequest();
@@ -112,12 +128,6 @@ async function onLoad() {
     ophirofoxRealoadOnExpired();
     const path = window.location.pathname;
 
-    /* Fix une issue avec le proxy BNF qui redirige vers /Pdf */
-    if (path === '/Pdf') {
-        window.location.pathname = '/Search/Reading';
-        return;
-    }
-
     if (!(
         path.startsWith("/Search/Reading") ||
         path.startsWith("/Search/Advanced") ||
@@ -125,8 +135,15 @@ async function onLoad() {
         path.startsWith("/Search/Express") ||
         path.startsWith("/Search/Simple") ||
         path.startsWith("/Search/Result") ||
-        path.startsWith("/Search/ResultMobile")
+        path.startsWith("/Search/ResultMobile") || 
+        path == "/Search/Pdf"
     )) return;
+
+    /* Fix une issue avec le proxy BNF qui redirige vers /Pdf */
+    if (path === '/Pdf' && await hasConsumable()) {
+        window.location.pathname = '/Search/Reading';
+        return;
+    }
 
     const { type } = await consumeRequestType();
     console.log("request_type", type);
