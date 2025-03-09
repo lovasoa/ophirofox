@@ -111,14 +111,23 @@ async function loadReadPDF(){
 async function onLoad() {
     ophirofoxRealoadOnExpired();
     const path = window.location.pathname;
+
+    /* Fix une issue avec le proxy BNF qui redirige vers /Pdf */
+    if (path === '/Pdf') {
+        window.location.pathname = '/Search/Reading';
+        return;
+    }
+
     if (!(
         path.startsWith("/Search/Reading") ||
         path.startsWith("/Search/Advanced") ||
         path.startsWith("/Search/AdvancedMobile") ||
         path.startsWith("/Search/Express") ||
         path.startsWith("/Search/Simple") ||
-        path.startsWith("/Search/Result")
+        path.startsWith("/Search/Result") ||
+        path.startsWith("/Search/ResultMobile")
     )) return;
+
     const { type } = await consumeRequestType();
     console.log("request_type", type);
     if (type == "readPDF") {
