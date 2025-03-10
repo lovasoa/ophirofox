@@ -19,7 +19,13 @@ jobs:
           node-version: '20'
       - run: npm install --global web-ext
       - id: version
-        run: echo OPHIROFOX_VERSION=$(jq -r ".version + \".$(($(date +%s)/65535)).$(($(date +%s)%65535))\"" < manifest.json) >> $GITHUB_ENV
+        run: |
+          VERSION_BASE=$(jq -r ".version" < manifest.json)
+          YEAR=$(date +%y)
+          MONTH=$(date +%m)
+          DAY=$(date +%d)
+          BUILD=$(date +%H%M)
+          echo OPHIROFOX_VERSION="${VERSION_BASE}.${YEAR}${MONTH}.${DAY}${BUILD}" >> $GITHUB_ENV
       - run: jq ".version |= \"$OPHIROFOX_VERSION\"" < manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
       - run: web-ext lint --self-hosted --warnings-as-errors
       - run: web-ext build
