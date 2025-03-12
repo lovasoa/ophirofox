@@ -709,6 +709,18 @@
       "css":[
         "content_scripts/el-pais.css"
       ]
+    },
+    {
+      "matches": [
+        "https://acteurspublics.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/acteurspublics.js"
+      ],
+      "css":[
+        "content_scripts/acteurspublics.css"
+      ]
     }
   ],
   "browser_specific_settings": {
