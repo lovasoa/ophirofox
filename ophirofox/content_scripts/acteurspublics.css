@@ -1,0 +1,32 @@
+.ophirofox-europresse {
+    margin-left: 10px;
+    display: -ms-inline-flexbox;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 30px;
+    padding: 0 20px;
+    border: 2px solid transparent;
+    border-radius: 100px;
+    font-size: 16px;
+    line-height: 13px;
+    font-weight: 500;
+    background: var(--color-primary-base);
+    border-color: var(--color-primary-base);
+    color: var(--color-white-base);
+    -webkit-transition: border-color var(--carousel-transition) ease, background var(--carousel-transition) ease;
+    transition: border-color var(--carousel-transition) ease, background var(--carousel-transition) ease;
+    background: var(--color-primary-base);
+    border-color: var(--color-primary-base);
+    color: var(--color-white-base);
+    -webkit-transition: border-color var(--carousel-transition) ease, background var(--carousel-transition) ease;
+    transition: border-color var(--carousel-transition) ease, background var(--carousel-transition) ease;
+}
+
+.ophirofox-europresse:hover {
+    border-color: var(--color-secondary-base);
+    background: var(--color-secondary-base);
+}
