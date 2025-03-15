@@ -106,6 +106,9 @@ Les instructions suivantes peuvent êtres suivies pour installer la dernière ve
  - Puis choisissez le dossier *ophirofox* à l'intérieur du code téléchargé.
  - Ne déplacez jamais ce dossier de l'endroit où il est, sinon l'extension ne pourra plus être chargée.
 
+_Si l'extension **refuse de se charger**, il est possible qu'il vous faut autoriser les extensions Manifest V2 à se charger._  
+_Naviguez vers ce lien dans votre barre de recherche `chrome://flags/#allow-legacy-mv2-extensions`, puis activer le drapeau._
+
 <img width="624" alt="image" src="https://user-images.githubusercontent.com/552629/94343918-dbff7100-001b-11eb-86e4-df66e15bc6f6.png">
 
 ## Android avec Firefox
