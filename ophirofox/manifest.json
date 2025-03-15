@@ -121,7 +121,7 @@
     "scripts": [
       "background.js"
     ],
-    "persistent": false,
+    "persistent": true,
     "type": "module"
   },
   "content_scripts": [
