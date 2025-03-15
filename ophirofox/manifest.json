@@ -14,10 +14,13 @@
   "permissions": [
     "storage",
     "scripting",
-    "https://nouveau.europresse.com/*"
+    "webRequest",
+    "webRequestBlocking",
+    "https://nouveau.europresse.com/*",
+    "https://eureka.cc/*"
   ],
   "optional_permissions": [
-    "webNavigation"
+      "webNavigation"
     , "https://nouveau-europresse-com.essec.idm.oclc.org/*"
     , "https://nouveau-europresse-com.ezproxy.univ-catholille.fr/*"
     , "https://nouveau-europresse-com.ezproxy.upf.pf/*"
