@@ -77,43 +77,51 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
     
     if (isTargetHost && isTargetPath) {
       return new Promise((resolve) => {
-        chrome.storage.local.get(["ophirofox_settings"], function(data) {
-          let referer = null;
-          if (data.ophirofox_settings) {
-            try {
-              const settings = typeof data.ophirofox_settings === 'string' 
-                ? JSON.parse(data.ophirofox_settings) 
-                : data.ophirofox_settings;
-
-              const partner_name = settings.partner_name;
-              const manifest = chrome.runtime.getManifest();
-              const partners = manifest.browser_specific_settings.ophirofox_metadata.partners;
-              const partner = partners.find(p => p.name === partner_name);
-              
-              if (partner && partner.AUTH_URL) {
-                const authUrl = new URL(partner.AUTH_URL);
-                referer = `${authUrl.protocol}//${authUrl.hostname}`;
+        chrome.storage.local.get(
+          ["ophirofox_request_type", "ophirofox_readPDF_request", "ophirofox_settings"], 
+          function(data) {
+            const hasRequestType = data.ophirofox_request_type !== undefined;
+            const hasReadPDFRequest = data.ophirofox_readPDF_request !== undefined;
+            const hasConsumable = hasRequestType || hasReadPDFRequest;
+            if (hasConsumable) {
+              let referer = null;
+              if (data.ophirofox_settings) {
+                try {
+                  const settings = typeof data.ophirofox_settings === 'string' 
+                    ? JSON.parse(data.ophirofox_settings) 
+                    : data.ophirofox_settings;
+                  const partner_name = settings.partner_name;
+                  const manifest = chrome.runtime.getManifest();
+                  const partners = manifest.browser_specific_settings.ophirofox_metadata.partners;
+                  const partner = partners.find(p => p.name === partner_name);
+                  
+                  if (partner && partner.AUTH_URL) {
+                    const authUrl = new URL(partner.AUTH_URL);
+                    referer = `${authUrl.protocol}//${authUrl.hostname}`;
+                  }
+                } catch (err) {
+                  console.error("Erreur lors de la détermination du referer:", err);
+                }
               }
-            } catch (err) {
-              console.error("Erreur lors de la détermination du referer:", err);
-            }
-          }
-          
-          // Si un referer est déterminé, modifions l'en-tête
-          if (referer) {
-            // Chercher l'en-tête Referer existant ou en ajouter un nouveau
-            let refererHeader = details.requestHeaders.find(header => header.name.toLowerCase() === "referer");
               
-            if (refererHeader) {
-              refererHeader.value = referer;
+              // Si un referer est déterminé, modifions l'en-têt
+              if (referer) {
+                // Chercher l'en-tête Referer existant ou en ajouter un nouveau
+                let refererHeader = details.requestHeaders.find(header => header.name.toLowerCase() === "referer");
+                  
+                if (refererHeader) {
+                  refererHeader.value = referer;
+                } else {
+                  details.requestHeaders.push({ name: "Referer", value: referer });
+                }
+                console.log(`Referer modifié pour ${details.url}: ${referer}`);
+              }
             } else {
-              details.requestHeaders.push({ name: "Referer", value: referer });
+              console.log("Aucun consommable trouvé, referer non modifié");
             }
-
-            console.log(`Referer modifié pour ${details.url}: ${referer}`);
+            resolve({ requestHeaders: details.requestHeaders });
           }
-          resolve({ requestHeaders: details.requestHeaders });
-        });
+        );
       });
     }
     return { requestHeaders: details.requestHeaders };
