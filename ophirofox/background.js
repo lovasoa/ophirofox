@@ -1,21 +1,48 @@
+// Variables globales
+let ophirofoxSettings;
+let ophirofoxReadRequest = null;
+let ophirofoxRequestType = null;
+
+// Configuration des scripts de contenu
 const europresse_content_script = {
   css: ["/content_scripts/europresse_article.css"],
   js: ["/content_scripts/europresse_article.js", "/content_scripts/europresse_search.js"]
 };
 
-chrome.runtime.onInstalled.addListener(({ reason }) => {
-  if (reason === "install") {
-    chrome.runtime.openOptionsPage();
-  }
-});
+// ======== FONCTIONS DE GESTION DES PARAMÈTRES ========
 
+/**
+ * Charge les paramètres depuis le stockage local
+ */
+function loadSettings() {
+  chrome.storage.local.get(["ophirofox_settings"], function (data) {
+    if (data.ophirofox_settings) {
+      try {
+        ophirofoxSettings = typeof data.ophirofox_settings === "string"
+          ? JSON.parse(data.ophirofox_settings)
+          : data.ophirofox_settings;
+        console.log("Settings chargés :", ophirofoxSettings);
+      } catch (err) {
+        console.error("Erreur lors du chargement des settings :", err);
+      }
+    }
+  });
+}
+
+// ======== FONCTIONS D'INJECTION DE SCRIPTS ========
+
+/**
+ * Fonction exécutée lors de la navigation
+ * @param {Object} param0 - Objet contenant l'ID de l'onglet
+ */
 function webNavigationListener({ tabId }) {
   europresse_content_script.js.forEach(file => chrome.tabs.executeScript(tabId, { file }));
   europresse_content_script.css.forEach(file => chrome.tabs.insertCSS(tabId, { file }));
 }
 
 /**
- * @param {string[]} europresse_origins 
+ * Injecte les scripts Europresse en utilisant l'API webNavigation
+ * @param {string[]} europresse_origins - Origines Europresse
  */
 async function injectEuropressUsingWebNavigation(europresse_origins) {
   const url = europresse_origins.map(origin => ({ hostEquals: new URL(origin).hostname }));
@@ -25,15 +52,8 @@ async function injectEuropressUsingWebNavigation(europresse_origins) {
 }
 
 /**
- * @param {string[]} matches 
+ * Désenregistre les scripts de contenu existants
  */
-async function injectEuropressUsingScripting(matches) {
-  const content_script = { ...europresse_content_script, matches, id: "europresse" };
-  await unregisterContentScripts();
-  await registerContentScripts(content_script);
-  console.log("Injected Europress using scripting", matches);
-}
-
 async function unregisterContentScripts() {
   try {
     await new Promise(acc => chrome.scripting.unregisterContentScripts({ ids: ["europresse"] }, acc));
@@ -43,6 +63,10 @@ async function unregisterContentScripts() {
   }
 }
 
+/**
+ * Enregistre les nouveaux scripts de contenu
+ * @param {Object} content_script - Configuration du script de contenu
+ */
 async function registerContentScripts(content_script) {
   try {
     await new Promise(acc => chrome.scripting.registerContentScripts([content_script], acc));
@@ -55,6 +79,20 @@ async function registerContentScripts(content_script) {
   }
 }
 
+/**
+ * Injecte les scripts Europresse en utilisant l'API scripting
+ * @param {string[]} matches - Patterns URL correspondants
+ */
+async function injectEuropressUsingScripting(matches) {
+  const content_script = { ...europresse_content_script, matches, id: "europresse" };
+  await unregisterContentScripts();
+  await registerContentScripts(content_script);
+  console.log("Injected Europress using scripting", matches);
+}
+
+/**
+ * Fonction principale pour injecter les scripts Europresse
+ */
 async function injectEuropress() {
   chrome.permissions.getAll(({ origins, permissions }) => {
     const europresse_origins = origins.filter(origin => /europresse|eureka/.test(origin));
@@ -69,69 +107,108 @@ async function injectEuropress() {
   });
 }
 
-chrome.webRequest.onBeforeSendHeaders.addListener(
-  function(details) {
-    const url = new URL(details.url);
-    const isTargetHost = url.hostname.includes("europresse.com") || url.hostname.includes("eureka.cc");
-    const isTargetPath = url.pathname.startsWith("/access/httpref/default.aspx");
-    
-    if (isTargetHost && isTargetPath) {
-      return new Promise((resolve) => {
-        chrome.storage.local.get(
-          ["ophirofox_request_type", "ophirofox_readPDF_request", "ophirofox_settings"], 
-          function(data) {
-            const hasRequestType = data.ophirofox_request_type !== undefined;
-            const hasReadPDFRequest = data.ophirofox_readPDF_request !== undefined;
-            const hasConsumable = hasRequestType || hasReadPDFRequest;
-            if (hasConsumable) {
-              let referer = null;
-              if (data.ophirofox_settings) {
-                try {
-                  const settings = typeof data.ophirofox_settings === 'string' 
-                    ? JSON.parse(data.ophirofox_settings) 
-                    : data.ophirofox_settings;
-                  const partner_name = settings.partner_name;
-                  const manifest = chrome.runtime.getManifest();
-                  const partners = manifest.browser_specific_settings.ophirofox_metadata.partners;
-                  const partner = partners.find(p => p.name === partner_name);
-                  
-                  if (partner && partner.AUTH_URL) {
-                    const authUrl = new URL(partner.AUTH_URL);
-                    referer = `${authUrl.protocol}//${authUrl.hostname}`;
-                  }
-                } catch (err) {
-                  console.error("Erreur lors de la détermination du referer:", err);
-                }
-              }
-              
-              // Si un referer est déterminé, modifions l'en-têt
-              if (referer) {
-                // Chercher l'en-tête Referer existant ou en ajouter un nouveau
-                let refererHeader = details.requestHeaders.find(header => header.name.toLowerCase() === "referer");
-                  
-                if (refererHeader) {
-                  refererHeader.value = referer;
-                } else {
-                  details.requestHeaders.push({ name: "Referer", value: referer });
-                }
-                console.log(`Referer modifié pour ${details.url}: ${referer}`);
-              }
-            } else {
-              console.log("Aucun consommable trouvé, referer non modifié");
-            }
-            resolve({ requestHeaders: details.requestHeaders });
-          }
-        );
-      });
-    }
-    return { requestHeaders: details.requestHeaders };
-  },
-  { urls: ["*://*.europresse.com/*", "*://*.eureka.cc/*"] },
-  ["blocking", "requestHeaders"]
-);
+// ======== ÉCOUTEURS D'ÉVÉNEMENTS ========
 
-// update injection on permission change
+chrome.runtime.onInstalled.addListener(({ reason }) => {
+  if (reason === "install") {
+    chrome.runtime.openOptionsPage();
+  }
+  loadSettings();
+});
+
+chrome.runtime.onStartup.addListener(loadSettings);
 chrome.permissions.onAdded.addListener(injectEuropress);
 chrome.permissions.onRemoved.addListener(injectEuropress);
-chrome.storage.onChanged.addListener(injectEuropress);
+
+chrome.storage.onChanged.addListener((changes, area) => {
+  if (area === "local" && changes.ophirofox_settings) {
+    loadSettings();
+  }
+  injectEuropress();
+});
+
+
+chrome.storage.onChanged.addListener((changes, area) => {
+  if (area === "local") {
+    if (changes.ophirofox_request_type) {
+      ophirofoxRequestType = changes.ophirofox_request_type.newValue || null;
+      // console.log("Ophirofox RequestType mis à jour :", ophirofoxRequestType);
+    }
+    if (changes.ophirofox_read_request) {
+      ophirofoxReadRequest = changes.ophirofox_read_request.newValue || null;
+      // console.log("Ophirofox ReadRequest mis à jour :", ophirofoxReadRequest);
+    }
+  }
+});
+
+function loadRequestData() {
+  chrome.storage.local.get(["ophirofox_request_type", "ophirofox_read_request"], function(data) {
+    ophirofoxRequestType = data.ophirofox_request_type || null;
+    ophirofoxReadRequest = data.ophirofox_read_request || null;
+    console.log("Valeurs initiales chargées:", { ophirofoxRequestType, ophirofoxReadRequest });
+  });
+}
+loadRequestData();
+
+// Interception des requêtes HTTP
+const listener = function (details) {
+  const url = new URL(details.url);
+  const isTargetHost = url.hostname.includes("europresse.com") || url.hostname.includes("eureka.cc");
+  const isTargetPath = url.pathname.startsWith("/access/httpref/default.aspx");
+  
+  if ((!ophirofoxRequestType && !ophirofoxReadRequest) || !ophirofoxSettings) {
+    return { requestHeaders: details.requestHeaders };
+  }
+  
+  if (isTargetHost && isTargetPath) {
+    try {
+      const manifest = chrome.runtime.getManifest();
+      const partners = manifest.browser_specific_settings.ophirofox_metadata.partners;
+      const partner = partners.find(p => p.name === ophirofoxSettings.partner_name);
+      
+      if (partner && partner.AUTH_URL) {
+        const authUrl = new URL(partner.AUTH_URL);
+        const referer = `${authUrl.protocol}//${authUrl.hostname}`;
+        // Supprime l'en-tête Referer existant
+        details.requestHeaders = details.requestHeaders.filter(h => h.name.toLowerCase() !== "referer");
+        // Ajoute un nouvel en-tête Referer
+        details.requestHeaders.push({ name: "Referer", value: referer });
+        console.log(`Referer modifié pour ${details.url}: ${referer}`);
+      }
+    } catch (err) {
+      console.error("Erreur lors de la modification du referer:", err);
+    }
+  }
+  
+  return { requestHeaders: details.requestHeaders };
+};
+
+function getBrowserType() {
+  if (typeof browser !== "undefined") {
+    return "firefox";
+  } else if (typeof chrome !== "undefined") {
+    return "chrome";
+  } else {
+    return "unknown";
+  }
+}
+
+console.log("L'extension tourne sur :", getBrowserType());
+
+const browserType = getBrowserType();
+const urls = ["*://*.europresse.com/*", "*://*.eureka.cc/*"];
+const options = ["blocking", "requestHeaders"];
+
+// Ajouter extraHeaders uniquement pour Chrome
+if (browserType === 'chrome') {
+  options.push("extraHeaders");
+}
+
+chrome.webRequest.onBeforeSendHeaders.addListener(
+  listener,{ urls: urls }, options
+);
+
+// ======== INITIALISATION ========
+
+// Exécution initiale
 injectEuropress();
