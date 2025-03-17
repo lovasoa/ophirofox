@@ -24,8 +24,10 @@ jobs:
           YEAR=$(date +%y)
           MONTH=$(date +%m)
           DAY=$(date +%d)
-          BUILD=$(date +%H%M)
-          echo OPHIROFOX_VERSION="${VERSION_BASE}.${YEAR}${MONTH}${DAY}.${BUILD}" >> $GITHUB_ENV
+          TIME=$(date +%H%M)
+          OPHIROFOX_VERSION="${VERSION_BASE}.${YEAR}${MONTH}${DAY}.${TIME}"
+          echo "OPHIROFOX_VERSION=${OPHIROFOX_VERSION}" >> $GITHUB_ENV
+          echo "Generated version: ${OPHIROFOX_VERSION}"
       - run: jq ".version |= \"$OPHIROFOX_VERSION\"" < manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
       - run: web-ext lint --self-hosted --warnings-as-errors
       - run: web-ext build
