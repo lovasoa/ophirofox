@@ -15,6 +15,7 @@ function getOphirofoxConfigByName(search_name) {
 
 const DEFAULT_SETTINGS = {
   partner_name: "Pas d'intermédiaire",
+  open_links_new_tab: false,
 };
 
 let current_settings = DEFAULT_SETTINGS;
@@ -74,51 +75,47 @@ const ophirofox_config = getOphirofoxConfig();
  * @returns {Promise<HTMLAnchorElement>}
  */
 async function ophirofoxEuropresseLink(keywords, { publishedTime } = {}) {
-  // Keywords is the article name
   keywords = keywords ? keywords.trim() : document.querySelector("h1").textContent;
 
-  // Trying generically to determine published time with meta tags (Open Graph values)
-  // Heuristics would suggest that it's normally UTC in the media world. 
-  publishedTime = publishedTime || document.querySelector( "meta[property='article:published_time'], meta[property='og:article:published_time'], meta[property='date:published_time']")
-  ?.getAttribute("content") || '';
+  publishedTime = publishedTime || document.querySelector("meta[property='article:published_time'], meta[property='og:article:published_time'], meta[property='date:published_time']")
+    ?.getAttribute("content") || '';
   let publishedTimeInstance = new Date(publishedTime);
 
   if (!isNaN(publishedTimeInstance)) {
-    // JavaScript, what a pleasure.
     publishedTime = publishedTimeInstance.toISOString().slice(0, 10);
   } else {
-    publishedTime = ''
+    publishedTime = '';
   }
 
-  // Creating HTML anchor element
   const a = document.createElement("a");
   a.textContent = "Lire sur Europresse";
   a.className = "ophirofox-europresse";
-  
+
   const setKeywords = () => new Promise(accept => {
     Promise.all([
-      // set request type (read, or readPDF)
       chrome.storage.local.set({
-        "ophirofox_request_type":
-        {
-          'type': 'read'
-        }
+        "ophirofox_request_type": { 'type': 'read' }
       }),
       chrome.storage.local.set({
-        "ophirofox_read_request":
-        {
+        "ophirofox_read_request": {
           'search_terms': keywords,
           'published_time': publishedTime
         }
       }),
     ]).then(() => accept());
   });
+
   a.onmousedown = setKeywords;
   a.onclick = async function (evt) {
     evt.preventDefault();
-    const [{ AUTH_URL }] = await Promise.all([ophirofox_config, setKeywords()]);
-    window.location = AUTH_URL
-  }
+    const [{ AUTH_URL }, settings] = await Promise.all([ophirofox_config, getSettings()]);
+    if (settings.open_links_new_tab) {
+      window.open(AUTH_URL, "_blank");
+    } else {
+      window.location = AUTH_URL;
+    }
+  };
+
   ophirofox_config.then(({ AUTH_URL }) => { a.href = AUTH_URL });
   return a;
 }
@@ -130,35 +127,35 @@ async function ophirofoxEuropresseLink(keywords, { publishedTime } = {}) {
  * @returns {Promise<HTMLAnchorElement>}
  */
 async function ophirofoxEuropressePDFLink(media_id, publishedTime) {
-  // Creating HTML anchor element
   const a = document.createElement("a");
   a.textContent = "Lire sur Europresse";
   a.className = "ophirofox-europresse";
-  
+
   const setKeywords = () => new Promise(accept => {
     Promise.all([
-      // set request type (read, or readPDF)
       chrome.storage.local.set({
-        "ophirofox_request_type":
-        {
-          'type': 'readPDF'
-        }
+        "ophirofox_request_type": { 'type': 'readPDF' }
       }),
       chrome.storage.local.set({
-        "ophirofox_readPDF_request":
-        {
+        "ophirofox_readPDF_request": {
           'media_id': media_id,
           'published_time': publishedTime
         }
       }),
     ]).then(() => accept());
   });
+
   a.onmousedown = setKeywords;
   a.onclick = async function (evt) {
     evt.preventDefault();
-    const [{ AUTH_URL }] = await Promise.all([ophirofox_config, setKeywords()]);
-    window.location = AUTH_URL
-  }
+    const [{ AUTH_URL }, settings] = await Promise.all([ophirofox_config, getSettings()]);
+    if (settings.open_links_new_tab) {
+      window.open(AUTH_URL, "_blank");
+    } else {
+      window.location = AUTH_URL;
+    }
+  };
+
   ophirofox_config.then(({ AUTH_URL }) => { a.href = AUTH_URL });
   return a;
 }

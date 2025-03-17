@@ -139,18 +139,28 @@ async function onLoad() {
         path === "/Pdf"
     )) return;
 
-    /* Fix une issue avec le proxy BNF qui redirige vers /Pdf */
-    if (path === '/Pdf' && await hasConsumable()) {
+    if (!await hasConsumable()) {
+        console.log("(Ophirofox) No consumable found.");
+        return;
+    }
+
+    // Fix une issue avec le proxy BNF qui redirige vers /Pdf
+    if (path === '/Pdf') {
         window.location.pathname = '/Search/Reading';
         return;
     }
 
-    const { type } = await consumeRequestType();
-    console.log("request_type", type);
-    if (type == "readPDF") {
-        await loadReadPDF();
+    const request = await consumeRequestType();
+    if (request && request.type) {
+        const { type } = request;
+        console.log("request_type", type);
+        if (type === "readPDF") {
+            await loadReadPDF();
+        } else {
+            await loadRead();
+        }
     } else {
-        await loadRead();
+        console.error("consumeRequestType() returned undefined or an object without a 'type' property.");
     }
 }
 
