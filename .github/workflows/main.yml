@@ -24,7 +24,7 @@ jobs:
           YEAR=$(date +%y)
           MONTH=$(date +%m)
           DAY=$(date +%d)
-          TIME=$(date +%H%M)
+          TIME=$(date +%-H%M)
           OPHIROFOX_VERSION="${VERSION_BASE}.${YEAR}${MONTH}${DAY}.${TIME}"
           echo "OPHIROFOX_VERSION=${OPHIROFOX_VERSION}" >> $GITHUB_ENV
           echo "Generated version: ${OPHIROFOX_VERSION}"
