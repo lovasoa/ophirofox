@@ -212,3 +212,93 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
 
 // Exécution initiale
 injectEuropress();
+
+// Keep track of the europresse data for each tab
+let tabEuropresseData = {};
+
+// Listen for messages from content script
+chrome.runtime.onMessage.addListener((message, sender) => {
+    if (!sender.tab) return false;
+    const tabId = sender.tab.id;
+    
+    if (message.premiumContent === true) {
+        // Show the page action for this tab
+        chrome.pageAction.show(tabId);
+    } else if (message.premiumContent === false) {
+        // Hide the page action for this tab
+        chrome.pageAction.hide(tabId);
+    }
+    
+    if (message.europresseData) {
+        // Store the data for this tab
+        tabEuropresseData[tabId] = message.europresseData;
+    }
+    
+    return false;
+});
+
+// Handle page action clicks
+chrome.pageAction.onClicked.addListener(async (tab) => {
+    const tabId = tab.id;
+    const data = tabEuropresseData[tabId];
+    
+    if (data) {
+        try {
+            // First, set the keywords (equivalent to onmousedown)
+            await Promise.all([
+                chrome.storage.local.set({
+                    "ophirofox_request_type": { 'type': 'read' }
+                }),
+                chrome.storage.local.set({
+                    "ophirofox_read_request": {
+                        'search_terms': data.keywords,
+                        'published_time': data.publishedTime
+                    }
+                })
+            ]);
+            
+            // Then get the AUTH_URL from ophirofox_config
+            // Since we can't access ophirofox_config directly, we need to 
+            // execute a content script to get it
+            chrome.tabs.executeScript(tabId, {
+                code: `
+                    (async function() {
+                        try {
+                            const { AUTH_URL } = await ophirofox_config;
+                            const settings = await new Promise(resolve => {
+                                chrome.storage.local.get(['settings'], result => {
+                                    resolve(result.settings || {});
+                                });
+                            });
+                            
+                            return { AUTH_URL, settings };
+                        } catch (error) {
+                            return { error: error.message };
+                        }
+                    })();
+                `
+            }, (results) => {
+                if (!results || !results[0] || results[0].error) {
+                    console.error("Error getting AUTH_URL:", results?.[0]?.error || "unknown error");
+                    return;
+                }
+                
+                const { AUTH_URL, settings } = results[0];
+                
+                // Handle navigation based on settings (equivalent to onclick)
+                if (settings.open_links_new_tab) {
+                    chrome.tabs.create({url: AUTH_URL});
+                } else {
+                    chrome.tabs.update(tabId, {url: AUTH_URL});
+                }
+            });
+        } catch (error) {
+            console.error("Error in page action handler:", error);
+        }
+    }
+});
+
+// Clean up when tabs are closed
+chrome.tabs.onRemoved.addListener((tabId) => {
+    delete tabEuropresseData[tabId];
+});
