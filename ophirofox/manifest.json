@@ -20,7 +20,7 @@
       "48": "icons/48.png",
       "128": "icons/128.png"
     },
-    "default_title": "Accès via Europresse"
+    "default_title": "Lire l'article via Europresse"
   },
   "permissions": [
     "activeTab",
@@ -165,8 +165,7 @@
     },
     {
       "matches": [
-        "https://www.lefigaro.fr/*",
-        "https://leparticulier.lefigaro.fr/*"
+        "https://*.lefigaro.fr/*"
       ],
       "js": [
         "content_scripts/config.js",

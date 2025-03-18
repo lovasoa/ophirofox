@@ -1,13 +1,31 @@
-// Variables globales
+// ======== VARIABLES GLOBALES ========
 let ophirofoxSettings;
 let ophirofoxReadRequest = null;
 let ophirofoxRequestType = null;
+let tabEuropresseData = {};
+let premiumUrls = new Map();
 
 // Configuration des scripts de contenu
 const europresse_content_script = {
   css: ["/content_scripts/europresse_article.css"],
   js: ["/content_scripts/europresse_article.js", "/content_scripts/europresse_search.js"]
 };
+
+// ======== FONCTIONS UTILITAIRES ========
+
+/**
+ * Détermine le type de navigateur utilisé
+ * @returns {string} - Type de navigateur ('firefox', 'chrome', ou 'unknown')
+ */
+function getBrowserType() {
+  if (typeof browser !== "undefined") {
+    return "firefox";
+  } else if (typeof chrome !== "undefined") {
+    return "chrome";
+  } else {
+    return "unknown";
+  }
+}
 
 // ======== FONCTIONS DE GESTION DES PARAMÈTRES ========
 
@@ -26,6 +44,40 @@ function loadSettings() {
         console.error("Erreur lors du chargement des settings :", err);
       }
     }
+  });
+}
+
+/**
+ * Charge les données de requête depuis le stockage local
+ */
+function loadRequestData() {
+  chrome.storage.local.get(["ophirofox_request_type", "ophirofox_read_request"], function(data) {
+    ophirofoxRequestType = data.ophirofox_request_type || null;
+    ophirofoxReadRequest = data.ophirofox_read_request || null;
+    console.log("Valeurs initiales chargées:", { ophirofoxRequestType, ophirofoxReadRequest });
+  });
+}
+
+/**
+ * Récupère les paramètres actuels
+ * @returns {Promise<Object>} - Promesse résolue avec les paramètres
+ */
+function getSettings() {
+  return new Promise(resolve => {
+    chrome.storage.local.get(["ophirofox_settings"], result => {
+      if (result.ophirofox_settings) {
+        try {
+          resolve(typeof result.ophirofox_settings === "string" 
+            ? JSON.parse(result.ophirofox_settings) 
+            : result.ophirofox_settings);
+        } catch (err) {
+          console.error("Erreur lors du parsing des settings:", err);
+          resolve({});
+        }
+      } else {
+        resolve({});
+      }
+    });
   });
 }
 
@@ -107,50 +159,40 @@ async function injectEuropress() {
   });
 }
 
-// ======== ÉCOUTEURS D'ÉVÉNEMENTS ========
+// ======== FONCTIONS DE GESTION DE PAGE ACTION ========
 
-chrome.runtime.onInstalled.addListener(({ reason }) => {
-  if (reason === "install") {
-    chrome.runtime.openOptionsPage();
-  }
-  loadSettings();
-});
-
-chrome.runtime.onStartup.addListener(loadSettings);
-chrome.permissions.onAdded.addListener(injectEuropress);
-chrome.permissions.onRemoved.addListener(injectEuropress);
-
-chrome.storage.onChanged.addListener((changes, area) => {
-  if (area === "local" && changes.ophirofox_settings) {
-    loadSettings();
-  }
-  injectEuropress();
-});
-
-
-chrome.storage.onChanged.addListener((changes, area) => {
-  if (area === "local") {
-    if (changes.ophirofox_request_type) {
-      ophirofoxRequestType = changes.ophirofox_request_type.newValue || null;
-      // console.log("Ophirofox RequestType mis à jour :", ophirofoxRequestType);
-    }
-    if (changes.ophirofox_read_request) {
-      ophirofoxReadRequest = changes.ophirofox_read_request.newValue || null;
-      // console.log("Ophirofox ReadRequest mis à jour :", ophirofoxReadRequest);
-    }
-  }
-});
-
-function loadRequestData() {
-  chrome.storage.local.get(["ophirofox_request_type", "ophirofox_read_request"], function(data) {
-    ophirofoxRequestType = data.ophirofox_request_type || null;
-    ophirofoxReadRequest = data.ophirofox_read_request || null;
-    console.log("Valeurs initiales chargées:", { ophirofoxRequestType, ophirofoxReadRequest });
+/**
+ * Met à jour la visibilité de l'icône dans la barre de recherche pour tous les onglets
+ * @param {boolean} show - Indique si l'icône doit être affichée
+ */
+function updatePageActionVisibility(show) {
+  chrome.tabs.query({}, (tabs) => {
+    tabs.forEach((tab) => {
+      if (show) {
+        chrome.pageAction.show(tab.id);
+      } else {
+        chrome.pageAction.hide(tab.id);
+      }
+    });
   });
 }
-loadRequestData();
 
-// Interception des requêtes HTTP
+/**
+ * Initialise la visibilité de l'icône dans la barre de recherche selon les paramètres
+ */
+function initializePageAction() {
+  getSettings().then((settings) => {
+    updatePageActionVisibility(settings.show_page_action !== false);
+  });
+}
+
+// ======== INTERCEPTEUR DE REQUÊTES HTTP ========
+
+/**
+ * Écouteur pour modifier les en-têtes des requêtes HTTP
+ * @param {Object} details - Détails de la requête
+ * @returns {Object} - En-têtes modifiés
+ */
 const listener = function (details) {
   const url = new URL(details.url);
   const isTargetHost = url.hostname.includes("europresse.com") || url.hostname.includes("eureka.cc");
@@ -183,15 +225,129 @@ const listener = function (details) {
   return { requestHeaders: details.requestHeaders };
 };
 
-function getBrowserType() {
-  if (typeof browser !== "undefined") {
-    return "firefox";
-  } else if (typeof chrome !== "undefined") {
-    return "chrome";
-  } else {
-    return "unknown";
+// ======== ÉCOUTEURS D'ÉVÉNEMENTS ========
+
+// Événements du cycle de vie de l'extension
+chrome.runtime.onInstalled.addListener(({ reason }) => {
+  if (reason === "install") {
+    chrome.runtime.openOptionsPage();
   }
-}
+  loadSettings();
+});
+
+chrome.runtime.onStartup.addListener(loadSettings);
+
+// Événements de permissions
+chrome.permissions.onAdded.addListener(injectEuropress);
+chrome.permissions.onRemoved.addListener(injectEuropress);
+
+// Événements de stockage
+chrome.storage.onChanged.addListener((changes, area) => {
+  if (area === "local") {
+    if (changes.ophirofox_settings) {
+      loadSettings();
+    }
+    if (changes.ophirofox_request_type) {
+      ophirofoxRequestType = changes.ophirofox_request_type.newValue || null;
+    }
+    if (changes.ophirofox_read_request) {
+      ophirofoxReadRequest = changes.ophirofox_read_request.newValue || null;
+    }
+  }
+  injectEuropress();
+});
+
+// Événements de messages runtime
+chrome.runtime.onMessage.addListener((message, sender) => {
+  if (message.action === "updatePageAction") {
+    updatePageActionVisibility(message.show);
+    return false;
+  }
+  
+  if (!sender.tab) return false;
+  const tabId = sender.tab.id;
+  const url = sender.tab.url;
+  
+  if (message.premiumContent === true) {
+    // Stocker l'URL comme premium
+    premiumUrls.set(url, true);
+    chrome.pageAction.show(tabId);
+  } else if (message.premiumContent === false) {
+    premiumUrls.delete(url);
+    chrome.pageAction.hide(tabId);
+  }
+  
+  if (message.europresseData) {
+    // Store the data for this tab
+    tabEuropresseData[tabId] = message.europresseData;
+  }
+  
+  return false;
+});
+
+// Événements d'onglets
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+  if (changeInfo.url || changeInfo.status === 'complete') {
+    const url = tab.url;
+    if (premiumUrls.has(url)) {
+      chrome.pageAction.show(tabId);
+    }
+  }
+});
+
+chrome.tabs.onRemoved.addListener((tabId) => {
+  delete tabEuropresseData[tabId];
+});
+
+// Événement de clic sur l'icône dans la barre de recherche
+chrome.pageAction.onClicked.addListener(async (tab) => {
+  const tabId = tab.id;
+  const data = tabEuropresseData[tabId];
+  
+  if (data) {
+    try {
+      // First, set the keywords (equivalent to onmousedown)
+      await Promise.all([
+        chrome.storage.local.set({
+          "ophirofox_request_type": { 'type': 'read' }
+        }),
+        chrome.storage.local.set({
+          "ophirofox_read_request": {
+            'search_terms': data.keywords,
+            'published_time': data.publishedTime
+          }
+        })
+      ]);
+      
+      // Récupérer les paramètres de l'utilisateur
+      const settings = await getSettings();
+      
+      // Récupérer la configuration du manifeste
+      const manifest = chrome.runtime.getManifest();
+      const partners = manifest.browser_specific_settings.ophirofox_metadata.partners;
+      
+      // Trouver le partenaire correspondant
+      const partnerName = settings.partner_name || "Pas d'intermédiaire";
+      const partner = partners.find(p => p.name === partnerName) || partners[0];
+      
+      // Utiliser l'AUTH_URL du partenaire
+      if (partner && partner.AUTH_URL) {
+        // Respecter le paramètre open_links_new_tab
+        if (settings.open_links_new_tab) {
+          chrome.tabs.create({ url: partner.AUTH_URL });
+        } else {
+          chrome.tabs.update(tabId, { url: partner.AUTH_URL });
+        }
+      } else {
+        console.error("Aucune AUTH_URL trouvée pour le partenaire:", partnerName);
+      }
+    } catch (error) {
+      console.error("Erreur dans le gestionnaire d'action de page:", error);
+    }
+  }
+});
+
+// ======== CONFIGURATION DE L'INTERCEPTEUR DE REQUÊTES ========
 
 console.log("L'extension tourne sur :", getBrowserType());
 
@@ -205,100 +361,11 @@ if (browserType === 'chrome') {
 }
 
 chrome.webRequest.onBeforeSendHeaders.addListener(
-  listener,{ urls: urls }, options
+  listener, { urls: urls }, options
 );
 
 // ======== INITIALISATION ========
 
-// Exécution initiale
+loadRequestData();
 injectEuropress();
-
-// Keep track of the europresse data for each tab
-let tabEuropresseData = {};
-
-// Listen for messages from content script
-chrome.runtime.onMessage.addListener((message, sender) => {
-    if (!sender.tab) return false;
-    const tabId = sender.tab.id;
-    
-    if (message.premiumContent === true) {
-        // Show the page action for this tab
-        chrome.pageAction.show(tabId);
-    } else if (message.premiumContent === false) {
-        // Hide the page action for this tab
-        chrome.pageAction.hide(tabId);
-    }
-    
-    if (message.europresseData) {
-        // Store the data for this tab
-        tabEuropresseData[tabId] = message.europresseData;
-    }
-    
-    return false;
-});
-
-// Handle page action clicks
-chrome.pageAction.onClicked.addListener(async (tab) => {
-    const tabId = tab.id;
-    const data = tabEuropresseData[tabId];
-    
-    if (data) {
-        try {
-            // First, set the keywords (equivalent to onmousedown)
-            await Promise.all([
-                chrome.storage.local.set({
-                    "ophirofox_request_type": { 'type': 'read' }
-                }),
-                chrome.storage.local.set({
-                    "ophirofox_read_request": {
-                        'search_terms': data.keywords,
-                        'published_time': data.publishedTime
-                    }
-                })
-            ]);
-            
-            // Then get the AUTH_URL from ophirofox_config
-            // Since we can't access ophirofox_config directly, we need to 
-            // execute a content script to get it
-            chrome.tabs.executeScript(tabId, {
-                code: `
-                    (async function() {
-                        try {
-                            const { AUTH_URL } = await ophirofox_config;
-                            const settings = await new Promise(resolve => {
-                                chrome.storage.local.get(['settings'], result => {
-                                    resolve(result.settings || {});
-                                });
-                            });
-                            
-                            return { AUTH_URL, settings };
-                        } catch (error) {
-                            return { error: error.message };
-                        }
-                    })();
-                `
-            }, (results) => {
-                if (!results || !results[0] || results[0].error) {
-                    console.error("Error getting AUTH_URL:", results?.[0]?.error || "unknown error");
-                    return;
-                }
-                
-                const { AUTH_URL, settings } = results[0];
-                
-                // Handle navigation based on settings (equivalent to onclick)
-                if (settings.open_links_new_tab) {
-                    chrome.tabs.create({url: AUTH_URL});
-                } else {
-                    chrome.tabs.update(tabId, {url: AUTH_URL});
-                }
-            });
-        } catch (error) {
-            console.error("Error in page action handler:", error);
-        }
-    }
-});
-
-// Clean up when tabs are closed
-chrome.tabs.onRemoved.addListener((tabId) => {
-    delete tabEuropresseData[tabId];
-});
+initializePageAction();
