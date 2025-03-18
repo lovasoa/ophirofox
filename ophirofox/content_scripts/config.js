@@ -69,22 +69,40 @@ async function getOphirofoxConfig() {
 const ophirofox_config = getOphirofoxConfig();
 
 /**
- * Crée un lien vers Europresse avec les keywords donnés
- * @param {string} keywords - input for Europress search engine
- * @param {string} publishedTime - article publication date (i.e. 2024-08-27T18:18:55.663Z or 2024-08-27)
+ * Crée un lien vers Europresse avec les keywords donnés et gère la logique d'affichage de l'icône
+ * @param {string} [keywords] - input optionnel pour Europress search engine
+ * @param {Object} [options] - options additionnelles
+ * @param {string} [options.publishedTime] - date de publication de l'article (i.e. 2024-08-27T18:18:55.663Z ou 2024-08-27)
+ * @param {boolean} [options.checkPremium=true] - si true, vérifie et envoie l'état premium au background
  * @returns {Promise<HTMLAnchorElement>}
  */
-async function ophirofoxEuropresseLink(keywords, { publishedTime } = {}) {
-  keywords = keywords ? keywords.trim() : document.querySelector("h1").textContent;
+async function ophirofoxEuropresseLink(keywords, options = {}) {
+  const { publishedTime: inputPublishedTime, checkPremium = true } = options;
+  
+  // Récupération des keywords si non fournis
+  keywords = keywords ? keywords.trim() : document.querySelector("h1")?.textContent?.trim() || "";
 
-  publishedTime = publishedTime || document.querySelector("meta[property='article:published_time'], meta[property='og:article:published_time'], meta[property='date:published_time']")
+  // Récupération de la date de publication
+  let publishedTime = inputPublishedTime || document.querySelector("meta[property='article:published_time'], meta[property='og:article:published_time'], meta[property='date:published_time']")
     ?.getAttribute("content") || '';
+  
   let publishedTimeInstance = new Date(publishedTime);
 
   if (!isNaN(publishedTimeInstance)) {
     publishedTime = publishedTimeInstance.toISOString().slice(0, 10);
   } else {
     publishedTime = '';
+  }
+  
+  // Envoyer les données au background script si nécessaire
+  if (checkPremium && keywords) {
+    chrome.runtime.sendMessage({
+      premiumContent: true,
+      europresseData: {
+        keywords: keywords,
+        publishedTime: publishedTime
+      }
+    });
   }
 
   const a = document.createElement("a");

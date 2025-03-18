@@ -1,3 +1,7 @@
 .ophirofox-europresse {
     margin-left: 10px;
 }
+
+.appconsent_noscroll {
+    overflow: unset !important;
+  }
