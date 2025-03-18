@@ -80,21 +80,6 @@ search.oninput = () => {
 // Modifie le texte affichée pour la case à cocher en fonction du navigateur
 // selon le navigateur, car c'est implémenté différemment dans Firefox et Chrome.
 document.addEventListener("DOMContentLoaded", function () {
-  const label = document.querySelector('label[for="show_page_action"]');
-  const browserType = getBrowserType();
-  console.log("TYPE : " + browserType);
-  if (label) {
-    let message;
-    if (browserType == "firefox") {
-      message = "Afficher un icône dans la barre d'adresse quand un article premium est détecté";
-    } else {
-      message = "Cliquer sur l'icône dans la barre d'adresse ouvre l'article premium dans Europresse";
-    }
-    label.innerHTML = `<input type="checkbox" id="show_page_action"> ${message}`;
-  }
-});
-
-window.onload = function () {
   const label = document.querySelector('label[id="show_page_action_label"]');
   const browserType = getBrowserType();
   if (label) {
@@ -104,9 +89,13 @@ window.onload = function () {
     } else {
       message = "Cliquer sur l'icône de l'extension ouvre l'article premium sur Europresse";
     }
-    label.innerHTML = `<input type="checkbox" id="show_page_action"> ${message}`;
+
+    const checkbox = document.getElementById("show_page_action");
+    if (checkbox) {
+      label.insertBefore(document.createTextNode(`${message} `), checkbox.nextSibling);
+    }    
   }
-};
+});
 
 function getBrowserType() {
   if (typeof browser !== "undefined") {

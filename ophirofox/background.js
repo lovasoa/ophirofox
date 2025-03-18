@@ -258,7 +258,7 @@ chrome.storage.onChanged.addListener((changes, area) => {
 });
 
 // Événements de messages runtime
-chrome.runtime.onMessage.addListener((message, sender) => {
+chrome.runtime.onMessage.addListener(async (message, sender) => {
   if (message.action === "updatePageAction") {
     updatePageActionVisibility(message.show);
     return false;
@@ -267,30 +267,40 @@ chrome.runtime.onMessage.addListener((message, sender) => {
   if (!sender.tab) return false;
   const tabId = sender.tab.id;
   const url = sender.tab.url;
+
+  const settings = await getSettings();
   
   if (message.premiumContent === true) {
-    // Stocker l'URL comme premium
     premiumUrls.set(url, true);
-    chrome.pageAction.show(tabId);
+    if (settings?.show_page_action !== false) {
+      chrome.pageAction.show(tabId);
+    }
   } else if (message.premiumContent === false) {
     premiumUrls.delete(url);
     chrome.pageAction.hide(tabId);
   }
   
   if (message.europresseData) {
-    // Store the data for this tab
     tabEuropresseData[tabId] = message.europresseData;
   }
-  
+
   return false;
 });
 
 // Événements d'onglets
-chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
   if (changeInfo.url || changeInfo.status === 'complete') {
-    const url = tab.url;
-    if (premiumUrls.has(url)) {
-      chrome.pageAction.show(tabId);
+    const settings = await getSettings();
+    // console.log("Settings retrieved:", settings);
+
+    if (settings?.show_page_action !== false) {
+      const url = tab.url;
+      // console.log("Premium URL check:", url, premiumUrls);
+      if (premiumUrls.has(url)) {
+        chrome.pageAction.show(tabId);
+      }
+    } else {
+      chrome.pageAction.hide(tabId);
     }
   }
 });

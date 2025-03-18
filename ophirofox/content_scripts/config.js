@@ -79,11 +79,6 @@ const ophirofox_config = getOphirofoxConfig();
 async function ophirofoxEuropresseLink(keywords, options = {}) {
   const { publishedTime: inputPublishedTime, checkPremium = true } = options;
   
-  // Si checkPremium est activé, on informe le background script du contenu premium
-  if (checkPremium) {
-    chrome.runtime.sendMessage({ premiumContent: true });
-  }
-  
   // Récupération des keywords si non fournis
   keywords = keywords ? keywords.trim() : document.querySelector("h1")?.textContent?.trim() || "";
 
@@ -102,6 +97,7 @@ async function ophirofoxEuropresseLink(keywords, options = {}) {
   // Envoyer les données au background script si nécessaire
   if (checkPremium && keywords) {
     chrome.runtime.sendMessage({
+      premiumContent: true,
       europresseData: {
         keywords: keywords,
         publishedTime: publishedTime
