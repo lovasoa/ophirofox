@@ -166,14 +166,26 @@ const listener = function (details) {
       const partners = manifest.browser_specific_settings.ophirofox_metadata.partners;
       const partner = partners.find(p => p.name === ophirofoxSettings.partner_name);
       
-      if (partner && partner.AUTH_URL) {
-        const authUrl = new URL(partner.AUTH_URL);
-        const referer = `${authUrl.protocol}//${authUrl.hostname}`;
-        // Supprime l'en-tête Referer existant
-        details.requestHeaders = details.requestHeaders.filter(h => h.name.toLowerCase() !== "referer");
-        // Ajoute un nouvel en-tête Referer
-        details.requestHeaders.push({ name: "Referer", value: referer });
-        console.log(`Referer modifié pour ${details.url}: ${referer}`);
+      if (partner) {
+        let referer;
+        
+        // Utiliser HTTP_REFERER s'il existe
+        if (partner.HTTP_REFERER) {
+          referer = partner.HTTP_REFERER;
+        } 
+        // Sinon utiliser AUTH_URL
+        else if (partner.AUTH_URL) {
+          const authUrl = new URL(partner.AUTH_URL);
+          referer = `${authUrl.protocol}//${authUrl.hostname}`;
+        }
+        
+        if (referer) {
+          // Supprime l'en-tête Referer existant
+          details.requestHeaders = details.requestHeaders.filter(h => h.name.toLowerCase() !== "referer");
+          // Ajoute un nouvel en-tête Referer
+          details.requestHeaders.push({ name: "Referer", value: referer });
+          console.log(`Referer modifié pour ${details.url}: ${referer}`);
+        }
       }
     } catch (err) {
       console.error("Erreur lors de la modification du referer:", err);
