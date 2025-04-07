@@ -3,7 +3,7 @@ async function createLink() {
 }
 
 async function onLoad() {
-    const statusElem = document.querySelector(".tag-subscriber");
+    const statusElem = document.querySelector(".article-premium");
     if (!statusElem) return;
     statusElem.appendChild(await createLink());
 }
