@@ -117,6 +117,7 @@
     , "https://nouveau-europresse-com.iepnomade-2.grenet.fr/*"
     , "https://nouveau-europresse-com.bsg-ezproxy.univ-paris3.fr/*"	  
     , "https://nouveau-europresse-com.eu1.proxy.openathens.net/*"
+    , "https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_1"  
   ],
   "background": {
     "scripts": [
@@ -792,6 +793,10 @@
         {
           "name": "École normale supérieure de Paris (ENS ULM)",
           "AUTH_URL": "https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1"
+        },
+	      {
+          "name": "École polytechnique",
+          "AUTH_URL": "https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_1"
         },
         {
           "name": "Conservatoire national des arts et métiers",
