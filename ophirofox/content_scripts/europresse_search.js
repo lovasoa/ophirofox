@@ -140,6 +140,22 @@ async function onLoad() {
     )) return;
 
     if (!await hasConsumable()) {
+        if (path.startsWith("/Search/Result")) {
+            /*if (numberOfResul.localeCompare('0')) {
+             *       keyword_field.value = 'TEXT=' + keywords;
+        }*/
+            //const auto_open_link = await getAutoOpenOption();
+            const auto_open_link = await getAutoOpenOption();
+            console.log("(ophirofox_auto_open_link :" + auto_open_link);
+            if (auto_open_link) {
+                const numberOfResul = document.querySelector('.resultOperations-count').textContent;
+                console.log("numberOfResul="+ numberOfResul.toString());
+                if (numberOfResul === '1') {
+                    console.log("Un seul lien trouvé.");
+                    readWhenOnlyOneResult();
+                }
+            }
+        }
         console.log("(Ophirofox) No consumable found.");
         return;
     }
@@ -170,6 +186,36 @@ function ophirofoxRealoadOnExpired() {
         // session expirée
         window.history.back();
     }
+}
+
+function readWhenOnlyOneResult(){
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            const linkElement = document.querySelector('a.docList-links');
+            observer.disconnect(); // Stop observing once the element is found
+            console.log("linkElement", linkElement);
+            linkElement.click();
+        });
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+}
+
+const DEFAULT_SETTINGS = {
+    auto_open_link: false
+};
+const OPHIROFOX_SETTINGS_KEY = "ophirofox_settings";
+
+async function getAutoOpenOption() {
+    const key = OPHIROFOX_SETTINGS_KEY;
+    return new Promise((accept) => {
+        chrome.storage.local.get([key], function (result) {
+            if (result.hasOwnProperty(key)) {
+                current_settings = JSON.parse(result[key]);
+                accept(current_settings.auto_open_link);
+            }
+            else accept(DEFAULT_SETTINGS.auto_open_link);
+        });
+    });
 }
 
 onLoad();
