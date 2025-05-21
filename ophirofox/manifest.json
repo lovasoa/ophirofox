@@ -726,6 +726,30 @@
       "css":[
         "content_scripts/acteurspublics.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.sciencesetavenir.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/sciencesetavenir.js"
+      ],
+      "css":[
+        "content_scripts/sciencesetavenir.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.larecherche.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/larecherche.js"
+      ],
+      "css":[
+        "content_scripts/larecherche.css"
+      ]
     }
   ],
   "browser_specific_settings": {
