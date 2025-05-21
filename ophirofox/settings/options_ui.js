@@ -3,6 +3,7 @@ const template = document.getElementById("partner_template");
 const search = document.getElementById("partner_search");
 const missing_permissions_btn = document.getElementById("missing_permissions");
 const openLinksCheckbox = document.getElementById("open_links_new_tab");
+const autoOpenLinkCheckbox = document.getElementById("auto_open_link");
 
 let settings = {};
 
@@ -41,11 +42,17 @@ getSettings().then((retrievedSettings) => {
   ophirofox_config_list.forEach(p => add_partner(p.name));
   reCheckPermissions(settings.partner_name);
   openLinksCheckbox.checked = settings.open_links_new_tab || false;
+  autoOpenLinkCheckbox.checked = settings.auto_open_link || false;
 });
 
 // Gestion des modifications de la case à cocher
 openLinksCheckbox.onchange = () => {
   settings.open_links_new_tab = openLinksCheckbox.checked;
+  setSettings(settings);
+};
+
+autoOpenLinkCheckbox.onchange = () => {
+  settings.auto_open_link = autoOpenLinkCheckbox.checked;
   setSettings(settings);
 };
 
