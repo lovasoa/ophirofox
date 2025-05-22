@@ -140,16 +140,16 @@ async function onLoad() {
     )) return;
 
     if (!await hasConsumable()) {
+        console.log("(Ophirofox) No consumable found.");
         if (path.startsWith("/Search/Result")) {
             const auto_open_link = await getAutoOpenOption();
             if (auto_open_link) {
                 const numberOfResul = document.querySelector('.resultOperations-count').textContent;
                 if (numberOfResul === '1') {
-                    readWhenOnlyOneResult();
+                    await readWhenOnlyOneResult();
                 }
             }
         }
-        console.log("(Ophirofox) No consumable found.");
         return;
     }
 
@@ -181,16 +181,14 @@ function ophirofoxRealoadOnExpired() {
     }
 }
 
-function readWhenOnlyOneResult(){
-    const observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-            const linkElement = document.querySelector('a.docList-links');
-            observer.disconnect(); // Stop observing once the element is found
-            console.log("linkElement", linkElement);
-            linkElement.click();
-        });
+async function readWhenOnlyOneResult() {
+    const observer = new MutationObserver(async () => {
+        const linkElement = await document.querySelector('a.docList-links');
+        console.log("linkElement", linkElement);
+        observer.disconnect(); // Stop observing once the element is found
+        linkElement.click();
     });
-    observer.observe(document.body, { childList: true, subtree: true });
+    observer.observe(document.body, {childList: true, subtree: true});
 }
 
 const DEFAULT_SETTINGS = {
