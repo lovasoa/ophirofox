@@ -750,6 +750,30 @@
       "css":[
         "content_scripts/larecherche.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.larepubliquedespyrenees.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/larepubliquedespyrenees.js"
+      ],
+      "css":[
+        "content_scripts/larepubliquedespyrenees.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.journaldunet.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/journaldunet.js"
+      ],
+      "css":[
+        "content_scripts/journaldunet.css"
+      ]
     }
   ],
   "browser_specific_settings": {
