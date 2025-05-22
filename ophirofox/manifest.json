@@ -750,6 +750,18 @@
       "css":[
         "content_scripts/larecherche.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.larepubliquedespyrenees.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/larepubliquedespyrenees.js"
+      ],
+      "css":[
+        "content_scripts/larepubliquedespyrenees.css"
+      ]
     }
   ],
   "browser_specific_settings": {
