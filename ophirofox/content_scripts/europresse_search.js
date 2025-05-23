@@ -181,14 +181,31 @@ function ophirofoxRealoadOnExpired() {
     }
 }
 
-async function readWhenOnlyOneResult() {
+async function waitForElement(selector, callback, attempts = 0, maxAttempts = 10) {
+    const element = document.querySelector(selector);
+    if (element) {
+        callback(element);
+        return true; // Indique que l'élément a été trouvé
+    } else if (attempts < maxAttempts) {
+        await new Promise(resolve => setTimeout(resolve, 500)); // Attendre 0.5 seconde avant de réessayer
+        return waitForElement(selector, callback, attempts + 1, maxAttempts);
+    } else {
+        console.error('Element not found after maximum attempts');
+        return false; // Indique que l'élément n'a pas été trouvé
+    }
+}
+
+function readWhenOnlyOneResult() {
     const observer = new MutationObserver(async () => {
-        const linkElement = await document.querySelector('a.docList-links');
-        console.log("linkElement", linkElement);
-        observer.disconnect(); // Stop observing once the element is found
-        linkElement.click();
+        const found = await waitForElement('a.docList-links', (linkElement) => {
+            console.log("linkElement", linkElement);
+            linkElement.click();
+        });
+        if (found) {
+            observer.disconnect(); // Arrêter l'observation une fois l'élément trouvé et cliqué
+        }
     });
-    observer.observe(document.body, {childList: true, subtree: true});
+    observer.observe(document.body, { childList: true, subtree: true });
 }
 
 const DEFAULT_SETTINGS = {
