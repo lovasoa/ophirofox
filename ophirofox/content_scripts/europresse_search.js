@@ -142,12 +142,18 @@ async function onLoad() {
     if (!await hasConsumable()) {
         console.log("(Ophirofox) No consumable found.");
         if (path.startsWith("/Search/Result")) {
-            const auto_open_link = await getAutoOpenOption();
-            if (auto_open_link) {
-                const numberOfResul = document.querySelector('.resultOperations-count').textContent;
-                if (numberOfResul === '1') {
+            const numberOfResul = document.querySelector('.resultOperations-count').textContent;
+            if (numberOfResul === '1') {
+                const auto_open_link = await getAutoOpenOption();
+                if (auto_open_link) {
+
                     await readWhenOnlyOneResult();
                 }
+            } else if (numberOfResul === '0') {
+                const query = document.querySelector('#Keywords');
+                query.value = query.value.replace('TIT_HEAD=', 'TEXT=');
+                const butonSearch = document.querySelector('#btnSearch');
+                butonSearch.click();
             }
         }
         return;
