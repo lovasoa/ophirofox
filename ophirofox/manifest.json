@@ -787,6 +787,19 @@
         "content_scripts/science-et-vie.css"
       ]
     }
+  ,
+    {
+      "matches": [
+        "https://investir.lesechos.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/investir-lesechos.js"
+      ],
+      "css":[
+        "content_scripts/investir-lesechos.css"
+      ]
+    }
   ],
   "browser_specific_settings": {
     "gecko": {
