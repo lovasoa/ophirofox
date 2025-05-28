@@ -141,6 +141,15 @@ async function onLoad() {
 
     if (!await hasConsumable()) {
         console.log("(Ophirofox) No consumable found.");
+        if (path.startsWith("/Search/Result")) {
+            const auto_open_link = await getAutoOpenOption();
+            if (auto_open_link) {
+                const numberOfResul = document.querySelector('.resultOperations-count').textContent;
+                if (numberOfResul === '1') {
+                    await readWhenOnlyOneResult();
+                }
+            }
+        }
         return;
     }
 
@@ -170,6 +179,51 @@ function ophirofoxRealoadOnExpired() {
         // session expirée
         window.history.back();
     }
+}
+
+async function waitForElement(selector, callback, attempts = 0, maxAttempts = 10) {
+    const element = document.querySelector(selector);
+    if (element) {
+        callback(element);
+        return true; // Indique que l'élément a été trouvé
+    } else if (attempts < maxAttempts) {
+        await new Promise(resolve => setTimeout(resolve, 500)); // Attendre 0.5 seconde avant de réessayer
+        return waitForElement(selector, callback, attempts + 1, maxAttempts);
+    } else {
+        console.error('Element not found after maximum attempts');
+        return false; // Indique que l'élément n'a pas été trouvé
+    }
+}
+
+function readWhenOnlyOneResult() {
+    const observer = new MutationObserver(async () => {
+        const found = await waitForElement('a.docList-links', (linkElement) => {
+            console.log("linkElement", linkElement);
+            linkElement.click();
+        });
+        if (found) {
+            observer.disconnect(); // Arrêter l'observation une fois l'élément trouvé et cliqué
+        }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+}
+
+const DEFAULT_SETTINGS = {
+    auto_open_link: false
+};
+const OPHIROFOX_SETTINGS_KEY = "ophirofox_settings";
+
+async function getAutoOpenOption() {
+    const key = OPHIROFOX_SETTINGS_KEY;
+    return new Promise((accept) => {
+        chrome.storage.local.get([key], function (result) {
+            if (result.hasOwnProperty(key)) {
+                current_settings = JSON.parse(result[key]);
+                accept(current_settings.auto_open_link);
+            }
+            else accept(DEFAULT_SETTINGS.auto_open_link);
+        });
+    });
 }
 
 onLoad();
