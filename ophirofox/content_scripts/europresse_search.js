@@ -143,7 +143,6 @@ async function onLoad() {
         console.log("(Ophirofox) No consumable found.");
         if (path.startsWith("/Search/Result")) {
             const numberOfResul = document.querySelector('.resultOperations-count').textContent;
-            console.log("numberOfResul", numberOfResul);
             if (numberOfResul === '1') {
                 const auto_open_link = await getAutoOpenOption();
                 if (auto_open_link) {
