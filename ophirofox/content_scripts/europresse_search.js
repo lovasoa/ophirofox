@@ -152,9 +152,11 @@ async function onLoad() {
             } else if (numberOfResul === '0') {
                 //Quand aucun résultat n'est trouvé, on relance la recheche en remplacant la balise TIT_HEAD= par TEXT=
                 const query = document.querySelector('#Keywords');
-                query.value = query.value.replace('TIT_HEAD=', 'TEXT=');
-                const butonSearch = document.querySelector('#btnSearch');
-                butonSearch.click();
+                if (query.value.startsWith('TIT_HEAD=')) {
+                    query.value = query.value.replace('TIT_HEAD=', 'TEXT=');
+                    const butonSearch = document.querySelector('#btnSearch');
+                    butonSearch.click();
+                }
             }
         }
         return;
