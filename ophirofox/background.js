@@ -226,7 +226,7 @@ function createEuropresseSearchMenu() {
   browser.contextMenus.create(
       {
         id: "EuropresseSearchMenu",
-        title: "Rechercher sur Europresse",
+        title: "Rechercher sur Europresse %s",
         contexts: ["selection"],
       },
       onCreated,
@@ -241,7 +241,7 @@ function onCreated() {
   }
 }
 
-browser.contextMenus.onClicked.addListener( async (info, tab) => {
+browser.contextMenus.onClicked.addListener( async (info) => {
   switch (info.menuItemId) {
     case "EuropresseSearchMenu":
       console.log("EuropresseSearchMenu",info.selectionText);
