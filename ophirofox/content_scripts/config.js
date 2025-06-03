@@ -16,6 +16,8 @@ function getOphirofoxConfigByName(search_name) {
 const DEFAULT_SETTINGS = {
   partner_name: "Pas d'intermédiaire",
   open_links_new_tab: false,
+  auto_open_link: false,
+  add_search_menu: false,
 };
 
 let current_settings = DEFAULT_SETTINGS;

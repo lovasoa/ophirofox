@@ -139,6 +139,16 @@ async function onLoad() {
         path === "/Pdf"
     )) return;
 
+    const search_request =  await chrome.storage.local.get("EuropresseSearchMenu_request");
+    console.log("EuropresseSearchMenu_request", search_request);
+    if (search_request.EuropresseSearchMenu_request) {
+        await chrome.storage.local.remove("EuropresseSearchMenu_request");
+        const searchFrom = await document.querySelector('#Keywords');
+        searchFrom.value = 'TIT_HEAD=' +search_request.EuropresseSearchMenu_request;
+        const butonSearch = document.querySelector('#btnSearch');
+        butonSearch.click();
+        return;
+    }
     if (!await hasConsumable()) {
         console.log("(Ophirofox) No consumable found.");
         if (path.startsWith("/Search/Result")) {
