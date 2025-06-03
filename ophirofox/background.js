@@ -225,7 +225,7 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
 
 //======== Code pour l'ajout du menu de recherche contextuel sur une sélection de texte ========
 function createEuropresseSearchMenu() {
-  browser.contextMenus.create(
+  chrome.contextMenus.create(
       {
         id: "EuropresseSearchMenu",
         title: "Rechercher: %s",
@@ -234,7 +234,7 @@ function createEuropresseSearchMenu() {
       onCreated,
   );
 
-  browser.contextMenus.onClicked.addListener( async (info) => {
+  chrome.contextMenus.onClicked.addListener( async (info) => {
     switch (info.menuItemId) {
       case "EuropresseSearchMenu":
         console.log("EuropresseSearchMenu",info.selectionText);
@@ -243,7 +243,7 @@ function createEuropresseSearchMenu() {
         const manifest = chrome.runtime.getManifest();
         const partners = manifest.browser_specific_settings.ophirofox_metadata.partners;
         const partner = partners.find(p => p.name === ophirofoxSettings.partner_name);
-        browser.tabs.create({
+        chrome.tabs.create({
           url: partner.AUTH_URL
         });
         break;
@@ -251,8 +251,8 @@ function createEuropresseSearchMenu() {
   });
 
   function onCreated() {
-    if (browser.runtime.lastError) {
-      console.log(`Error: ${browser.runtime.lastError}`);
+    if (chrome.runtime.lastError) {
+      console.log(`Error: ${chrome.runtime.lastError}`);
     } else {
       console.log("EuropresseSearchMenu created successfully");
     }
