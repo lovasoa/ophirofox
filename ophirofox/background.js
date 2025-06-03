@@ -226,7 +226,7 @@ function createEuropresseSearchMenu() {
   browser.contextMenus.create(
       {
         id: "EuropresseSearchMenu",
-        title: "Rechercher sur Europresse %s",
+        title: "Rechercher: %s",
         contexts: ["selection"],
       },
       onCreated,
