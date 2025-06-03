@@ -222,6 +222,8 @@ if (browserType === 'chrome') {
 chrome.webRequest.onBeforeSendHeaders.addListener(
   listener,{ urls: urls }, options
 );
+
+//======== Code pour l'ajout du menu de recherche contextuel sur une sélection de texte ========
 function createEuropresseSearchMenu() {
   browser.contextMenus.create(
       {
@@ -244,12 +246,10 @@ function createEuropresseSearchMenu() {
         browser.tabs.create({
           url: partner.AUTH_URL
         });
-
         break;
-
-        // …
     }
   });
+
   function onCreated() {
     if (browser.runtime.lastError) {
       console.log(`Error: ${browser.runtime.lastError}`);
