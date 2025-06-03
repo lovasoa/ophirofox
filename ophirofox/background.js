@@ -231,35 +231,33 @@ function createEuropresseSearchMenu() {
       },
       onCreated,
   );
-}
 
-function onCreated() {
-  if (browser.runtime.lastError) {
-    console.log(`Error: ${browser.runtime.lastError}`);
-  } else {
-    console.log("EuropresseSearchMenu created successfully");
+  browser.contextMenus.onClicked.addListener( async (info) => {
+    switch (info.menuItemId) {
+      case "EuropresseSearchMenu":
+        console.log("EuropresseSearchMenu",info.selectionText);
+        const search_request = info.selectionText;
+        await chrome.storage.local.set({"EuropresseSearchMenu_request": search_request});
+        const manifest = chrome.runtime.getManifest();
+        const partners = manifest.browser_specific_settings.ophirofox_metadata.partners;
+        const partner = partners.find(p => p.name === ophirofoxSettings.partner_name);
+        browser.tabs.create({
+          url: partner.AUTH_URL
+        });
+
+        break;
+
+        // …
+    }
+  });
+  function onCreated() {
+    if (browser.runtime.lastError) {
+      console.log(`Error: ${browser.runtime.lastError}`);
+    } else {
+      console.log("EuropresseSearchMenu created successfully");
+    }
   }
 }
-
-browser.contextMenus.onClicked.addListener( async (info) => {
-  switch (info.menuItemId) {
-    case "EuropresseSearchMenu":
-      console.log("EuropresseSearchMenu",info.selectionText);
-      const search_request = info.selectionText;
-      await chrome.storage.local.set({"EuropresseSearchMenu_request": search_request});
-      const manifest = chrome.runtime.getManifest();
-      const partners = manifest.browser_specific_settings.ophirofox_metadata.partners;
-      const partner = partners.find(p => p.name === ophirofoxSettings.partner_name);
-      browser.tabs.create({
-        url: partner.AUTH_URL
-      });
-
-      break;
-
-      // …
-  }
-});
-
 
 // ======== INITIALISATION ========
 
