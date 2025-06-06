@@ -2,6 +2,7 @@
 let ophirofoxSettings;
 let ophirofoxReadRequest = null;
 let ophirofoxRequestType = null;
+let isMenuCreated = false;
 
 // Configuration des scripts de contenu
 const europresse_content_script = {
@@ -21,7 +22,8 @@ function loadSettings() {
         ophirofoxSettings = typeof data.ophirofox_settings === "string"
           ? JSON.parse(data.ophirofox_settings)
           : data.ophirofox_settings;
-        if (ophirofoxSettings.add_search_menu) {
+        if (ophirofoxSettings.add_search_menu && !isMenuCreated) {
+          console.log(`createEuropresseSearchMenu`);
           createEuropresseSearchMenu();
         }
         console.log("Settings chargés :", ophirofoxSettings);
@@ -234,10 +236,10 @@ function createEuropresseSearchMenu() {
       onCreated,
   );
 
-  chrome.contextMenus.onClicked.addListener( async (info) => {
+  chrome.contextMenus.onClicked.addListener( async (info,tab) => {
     switch (info.menuItemId) {
       case "EuropresseSearchMenu":
-        console.log("EuropresseSearchMenu",info.selectionText);
+        console.log("EuropresseSearchMenu",tab);
         const search_request = info.selectionText;
         await chrome.storage.local.set({"EuropresseSearchMenu_request": search_request});
         const manifest = chrome.runtime.getManifest();
@@ -255,6 +257,7 @@ function createEuropresseSearchMenu() {
       console.log(`Error: ${chrome.runtime.lastError}`);
     } else {
       console.log("EuropresseSearchMenu created successfully");
+      isMenuCreated = true;
     }
   }
 }
