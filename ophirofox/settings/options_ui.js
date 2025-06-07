@@ -4,6 +4,7 @@ const search = document.getElementById("partner_search");
 const missing_permissions_btn = document.getElementById("missing_permissions");
 const openLinksCheckbox = document.getElementById("open_links_new_tab");
 const autoOpenLinkCheckbox = document.getElementById("auto_open_link");
+const addSearchMenuCheckbox = document.getElementById("add_search_menu");
 
 let settings = {};
 
@@ -43,6 +44,7 @@ getSettings().then((retrievedSettings) => {
   reCheckPermissions(settings.partner_name);
   openLinksCheckbox.checked = settings.open_links_new_tab || false;
   autoOpenLinkCheckbox.checked = settings.auto_open_link || false;
+  addSearchMenuCheckbox.checked = settings.add_search_menu || false;
 });
 
 // Gestion des modifications de la case à cocher
@@ -53,6 +55,11 @@ openLinksCheckbox.onchange = () => {
 
 autoOpenLinkCheckbox.onchange = () => {
   settings.auto_open_link = autoOpenLinkCheckbox.checked;
+  setSettings(settings);
+};
+
+addSearchMenuCheckbox.onchange = () => {
+  settings.add_search_menu = addSearchMenuCheckbox.checked;
   setSettings(settings);
 };
 
