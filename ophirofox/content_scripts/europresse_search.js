@@ -140,15 +140,16 @@ async function onLoad() {
     )) return;
 
     // On vérifie si la requête provient du menu rechercher
-    const search_request =  await chrome.storage.local.get("EuropresseSearchMenu_request");
-    if (search_request.EuropresseSearchMenu_request) {
-        await chrome.storage.local.remove("EuropresseSearchMenu_request");
-        const searchFrom = await document.querySelector('#Keywords');
-        searchFrom.value = 'TIT_HEAD=' +search_request.EuropresseSearchMenu_request;
-        const butonSearch = document.querySelector('#btnSearch');
-        butonSearch.click();
-        return;
-    }
+    chrome.storage.local.get(["EuropresseSearchMenu_request"],async function (search_request) {
+        if (search_request.hasOwnProperty("EuropresseSearchMenu_request")) {
+            await chrome.storage.local.remove("EuropresseSearchMenu_request");
+            const searchFrom = await document.querySelector('#Keywords');
+            searchFrom.value = 'TIT_HEAD=' +search_request.EuropresseSearchMenu_request;
+            const butonSearch = document.querySelector('#btnSearch');
+            butonSearch.click();
+        }
+    });
+
 
     if (!await hasConsumable()) {
         console.log("(Ophirofox) No consumable found.");
