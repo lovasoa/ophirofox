@@ -11,8 +11,16 @@ const isPremium = () => {
     return false;
 };
 
+const isFreeOnAccountCreation = () => {
+    const element = document.querySelector('div[class*="registerwall-wrapper"]');
+    if (element) {
+        return true;
+    }
+    return false;
+};
+
 async function onLoad() {
-    if (!isPremium()) return;
+    if (!isPremium() && !isFreeOnAccountCreation()) return;
     document.querySelector("h1").after(await ophirofoxEuropresseLink(extractKeywords()));
 }
 
