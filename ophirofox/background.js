@@ -2,6 +2,7 @@
 let ophirofoxSettings;
 let ophirofoxReadRequest = null;
 let ophirofoxRequestType = null;
+let isMenuCreated = false;
 
 // Configuration des scripts de contenu
 const europresse_content_script = {
@@ -21,6 +22,15 @@ function loadSettings() {
         ophirofoxSettings = typeof data.ophirofox_settings === "string"
           ? JSON.parse(data.ophirofox_settings)
           : data.ophirofox_settings;
+        if (ophirofoxSettings.add_search_menu && !isMenuCreated) {
+          console.log(`createEuropresseSearchMenu`);
+          createEuropresseSearchMenu();
+        } else if (!ophirofoxSettings.add_search_menu && isMenuCreated) {
+          chrome.contextMenus.remove(
+                "EuropresseSearchMenu"
+          );
+          isMenuCreated = false;
+        }
         console.log("Settings chargés :", ophirofoxSettings);
       } catch (err) {
         console.error("Erreur lors du chargement des settings :", err);
@@ -219,6 +229,43 @@ if (browserType === 'chrome') {
 chrome.webRequest.onBeforeSendHeaders.addListener(
   listener,{ urls: urls }, options
 );
+
+//======== Code pour l'ajout du menu de recherche contextuel sur une sélection de texte ========
+function createEuropresseSearchMenu() {
+  chrome.contextMenus.create(
+      {
+        id: "EuropresseSearchMenu",
+        title: "Rechercher: %s",
+        contexts: ["selection"],
+      },
+      onCreated,
+  );
+
+  chrome.contextMenus.onClicked.addListener( async (info,tab) => {
+    switch (info.menuItemId) {
+      case "EuropresseSearchMenu":
+        console.log("EuropresseSearchMenu",tab);
+        const search_request = info.selectionText;
+        await chrome.storage.local.set({"EuropresseSearchMenu_request": search_request});
+        const manifest = chrome.runtime.getManifest();
+        const partners = manifest.browser_specific_settings.ophirofox_metadata.partners;
+        const partner = partners.find(p => p.name === ophirofoxSettings.partner_name);
+        chrome.tabs.create({
+          url: partner.AUTH_URL
+        });
+        break;
+    }
+  });
+
+  function onCreated() {
+    if (chrome.runtime.lastError) {
+      console.log(`Error: ${chrome.runtime.lastError}`);
+    } else {
+      console.log("EuropresseSearchMenu created successfully");
+      isMenuCreated = true;
+    }
+  }
+}
 
 // ======== INITIALISATION ========
 

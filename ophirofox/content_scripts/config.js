@@ -16,6 +16,8 @@ function getOphirofoxConfigByName(search_name) {
 const DEFAULT_SETTINGS = {
   partner_name: "Pas d'intermédiaire",
   open_links_new_tab: false,
+  auto_open_link: false,
+  add_search_menu: false,
 };
 
 let current_settings = DEFAULT_SETTINGS;
@@ -52,7 +54,6 @@ async function setSettings(settings) {
 }
 
 async function getOphirofoxConfig() {
-  const url = new URL(window.location);
   try {
     const { partner_name } = await getSettings();
     const name_match = getOphirofoxConfigByName(partner_name);
@@ -239,6 +240,22 @@ function ophirofoxCheckPermissions(partner_name) {
  * @throws {Error} if the permissions are not granted
  **/
 async function ophirofoxAskPermissions(partner_name) {
+
+  // remove other partner permission
+  chrome.permissions.getAll(async all => {
+        chrome.permissions.remove({
+          permissions: [],
+          origins: all.origins
+        }, function (removed) {
+          if (removed) {
+            console.log("Permission is removed");
+          } else {
+            console.log("Permission is not removed");
+          }
+        });
+      }
+  );
+
   const perm_request = makePermissionsRequest(partner_name);
   const granted = await new Promise(a => chrome.permissions.request(perm_request, a)) ||
     // the permissions may have been granted before, so if we have them now anyway, we're good
@@ -270,3 +287,17 @@ async function requiredAdditionalPermissions() {
 }
 
 requiredAdditionalPermissions();
+
+// ======== Si le navigateur fonctionne sous Android l'on ne montre pas l'option menu recherche ========
+async function onLoad(){
+  if (isNotAndroid()) {
+    let addSearchMenu = document.getElementById("add_search_label");
+    addSearchMenu.style.display = "block";
+  }
+}
+
+function isNotAndroid() {
+  return !/Android/.test(navigator.userAgent);
+}
+
+onLoad().catch(console.error);
