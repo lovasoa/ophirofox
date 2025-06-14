@@ -15,7 +15,7 @@ async function createLink(publishedTime) {
 }
 
 function findPremiumBanner() {
-  const anchor = document.querySelector('div.TypologyArticle__BlockPremium-sc-1vro4tp-2');
+  const anchor = document.querySelector('div.TypologyArticle__BlockPremium-sc-1vro4tp-2 , div.jahSgQ');
   if (!anchor) {
     return;
   }
