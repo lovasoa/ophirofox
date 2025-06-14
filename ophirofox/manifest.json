@@ -16,7 +16,9 @@
     "storage",
     "scripting",
     "webRequest",
-    "webRequestBlocking"
+    "webRequestBlocking",
+    "https://nouveau.europresse.com/*",
+    "https://eureka.cc/*"
   ],
   "optional_permissions": [
       "webNavigation"
