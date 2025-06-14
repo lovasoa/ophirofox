@@ -25,6 +25,11 @@ function loadSettings() {
         if (ophirofoxSettings.add_search_menu && !isMenuCreated) {
           console.log(`createEuropresseSearchMenu`);
           createEuropresseSearchMenu();
+        } else if (!ophirofoxSettings.add_search_menu && isMenuCreated) {
+          chrome.contextMenus.remove(
+                "EuropresseSearchMenu"
+          );
+          isMenuCreated = false;
         }
         console.log("Settings chargés :", ophirofoxSettings);
       } catch (err) {
