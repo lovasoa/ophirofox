@@ -241,22 +241,6 @@ function ophirofoxCheckPermissions(partner_name) {
  * @throws {Error} if the permissions are not granted
  **/
 async function ophirofoxAskPermissions(partner_name) {
-
-  // remove other partner permission
-  chrome.permissions.getAll(async all => {
-        chrome.permissions.remove({
-          permissions: [],
-          origins: all.origins
-        }, function (removed) {
-          if (removed) {
-            console.log("Permission is removed");
-          } else {
-            console.log("Permission is not removed");
-          }
-        });
-      }
-  );
-
   const perm_request = makePermissionsRequest(partner_name);
   const granted = await new Promise(a => chrome.permissions.request(perm_request, a)) ||
     // the permissions may have been granted before, so if we have them now anyway, we're good
