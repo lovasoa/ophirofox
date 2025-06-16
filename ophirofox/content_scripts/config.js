@@ -54,6 +54,7 @@ async function setSettings(settings) {
 }
 
 async function getOphirofoxConfig() {
+  const url = new URL(window.location);
   try {
     const { partner_name } = await getSettings();
     const name_match = getOphirofoxConfigByName(partner_name);
