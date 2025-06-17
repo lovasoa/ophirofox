@@ -15,7 +15,7 @@ const europresse_content_script = {
 /**
  * Charge les paramètres depuis le stockage local
  */
-function loadSettings(callback) {
+function loadSettings() {
   chrome.storage.local.get(["ophirofox_settings"], function (data) {
     if (data.ophirofox_settings) {
       try {
@@ -231,7 +231,7 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
 );
 
 //======== Code pour l'ajout du menu de recherche contextuel sur une sélection de texte ========
-function createEuropresseSearchMenu(callback) {
+function createEuropresseSearchMenu() {
   searchMenu = chrome.contextMenus.create(
       {
         id: "EuropresseSearchMenu",
