@@ -257,7 +257,17 @@ async function onSearchMenuClickHandler(info, tab) {
     case "EuropresseSearchMenu":
       console.log("EuropresseSearchMenu", tab);
       const search_request = info.selectionText;
-      await chrome.storage.local.set({"EuropresseSearchMenu_request": search_request});
+      Promise.all([
+        chrome.storage.local.set({
+          "ophirofox_request_type": { 'type': 'read' }
+        }),
+        chrome.storage.local.set({
+          "ophirofox_read_request": {
+            'search_terms': search_request,
+            'published_time': ''
+          }
+        }),
+      ]).then(() => accept());
       const manifest = chrome.runtime.getManifest();
       const partners = manifest.browser_specific_settings.ophirofox_metadata.partners;
       const partner = partners.find(p => p.name === ophirofoxSettings.partner_name);
