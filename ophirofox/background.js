@@ -2,7 +2,7 @@
 let ophirofoxSettings;
 let ophirofoxReadRequest = null;
 let ophirofoxRequestType = null;
-let isMenuCreated = false;
+let searchMenu = null;
 
 // Configuration des scripts de contenu
 const europresse_content_script = {
@@ -15,21 +15,21 @@ const europresse_content_script = {
 /**
  * Charge les paramètres depuis le stockage local
  */
-function loadSettings() {
+function loadSettings(callback) {
   chrome.storage.local.get(["ophirofox_settings"], function (data) {
     if (data.ophirofox_settings) {
       try {
         ophirofoxSettings = typeof data.ophirofox_settings === "string"
           ? JSON.parse(data.ophirofox_settings)
           : data.ophirofox_settings;
-        if (ophirofoxSettings.add_search_menu && !isMenuCreated) {
+        if (ophirofoxSettings.add_search_menu && searchMenu === null) {
           console.log(`createEuropresseSearchMenu`);
           createEuropresseSearchMenu();
-        } else if (!ophirofoxSettings.add_search_menu && isMenuCreated) {
-          chrome.contextMenus.remove(
-                "EuropresseSearchMenu"
-          );
-          isMenuCreated = false;
+        } else if (!ophirofoxSettings.add_search_menu && searchMenu !== null) {
+          chrome.contextMenus.onClicked.removeListener(onSearchMenuClickHandler);
+          chrome.contextMenus.remove(searchMenu);
+          searchMenu = null;
+          console.log(`removeEuropresseSearchMenu`);
         }
         console.log("Settings chargés :", ophirofoxSettings);
       } catch (err) {
@@ -231,8 +231,8 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
 );
 
 //======== Code pour l'ajout du menu de recherche contextuel sur une sélection de texte ========
-function createEuropresseSearchMenu() {
-  chrome.contextMenus.create(
+function createEuropresseSearchMenu(callback) {
+  searchMenu = chrome.contextMenus.create(
       {
         id: "EuropresseSearchMenu",
         title: "Rechercher: %s",
@@ -241,29 +241,30 @@ function createEuropresseSearchMenu() {
       onCreated,
   );
 
-  chrome.contextMenus.onClicked.addListener( async (info,tab) => {
-    switch (info.menuItemId) {
-      case "EuropresseSearchMenu":
-        console.log("EuropresseSearchMenu",tab);
-        const search_request = info.selectionText;
-        await chrome.storage.local.set({"EuropresseSearchMenu_request": search_request});
-        const manifest = chrome.runtime.getManifest();
-        const partners = manifest.browser_specific_settings.ophirofox_metadata.partners;
-        const partner = partners.find(p => p.name === ophirofoxSettings.partner_name);
-        chrome.tabs.create({
-          url: partner.AUTH_URL
-        });
-        break;
-    }
-  });
+  chrome.contextMenus.onClicked.addListener(onSearchMenuClickHandler);
 
   function onCreated() {
     if (chrome.runtime.lastError) {
       console.log(`Error: ${chrome.runtime.lastError}`);
     } else {
       console.log("EuropresseSearchMenu created successfully");
-      isMenuCreated = true;
     }
+  }
+}
+
+async function onSearchMenuClickHandler(info, tab) {
+  switch (info.menuItemId) {
+    case "EuropresseSearchMenu":
+      console.log("EuropresseSearchMenu", tab);
+      const search_request = info.selectionText;
+      await chrome.storage.local.set({"EuropresseSearchMenu_request": search_request});
+      const manifest = chrome.runtime.getManifest();
+      const partners = manifest.browser_specific_settings.ophirofox_metadata.partners;
+      const partner = partners.find(p => p.name === ophirofoxSettings.partner_name);
+      chrome.tabs.create({
+        url: partner.AUTH_URL
+      });
+      break;
   }
 }
 
