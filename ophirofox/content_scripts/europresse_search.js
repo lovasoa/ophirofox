@@ -125,7 +125,8 @@ async function loadReadPDF(){
 }
 
 async function onLoad() {
-    ophirofoxRealoadOnExpired();
+    await getSettings();
+    await ophirofoxRealoadOnExpired();
     const path = window.location.pathname;
 
     if (!(
@@ -144,9 +145,7 @@ async function onLoad() {
         if (path.startsWith("/Search/Result")) {
             const numberOfResul = document.querySelector('.resultOperations-count').textContent;
             if (numberOfResul === '1') {
-                const auto_open_link = await getAutoOpenOption();
-                if (auto_open_link) {
-
+                if (current_settings.auto_open_link) {
                     await readWhenOnlyOneResult();
                 }
             } else if (numberOfResul === '0') {
@@ -182,11 +181,11 @@ async function onLoad() {
     }
 }
 
-function ophirofoxRealoadOnExpired() {
+async function ophirofoxRealoadOnExpired() {
     const params = new URLSearchParams(window.location.search)
-    if (params.get("ErrorCode") == "4000112") {
-        // session expirée
-        window.history.back();
+    if (params.get("ErrorCode") === "4000112") {
+        // session expiréele
+        window.location = current_settings.partner_AUTH_URL;
     }
 }
 
@@ -218,19 +217,29 @@ function readWhenOnlyOneResult() {
 }
 
 const DEFAULT_SETTINGS = {
-    auto_open_link: false
+    partner_name: "Pas d'intermédiaire",
+    partner_AUTH_URL: "https://nouveau.europresse.com/Login",
+    open_links_new_tab: false,
+    auto_open_link: false,
+    add_search_menu: false,
 };
+
+let current_settings = DEFAULT_SETTINGS;
+
 const OPHIROFOX_SETTINGS_KEY = "ophirofox_settings";
 
-async function getAutoOpenOption() {
+/**
+ * @returns {Promise<typeof DEFAULT_SETTINGS>}
+ */
+async function getSettings() {
     const key = OPHIROFOX_SETTINGS_KEY;
     return new Promise((accept) => {
         chrome.storage.local.get([key], function (result) {
             if (result.hasOwnProperty(key)) {
                 current_settings = JSON.parse(result[key]);
-                accept(current_settings.auto_open_link);
+                accept(current_settings);
             }
-            else accept(DEFAULT_SETTINGS.auto_open_link);
+            else accept(DEFAULT_SETTINGS);
         });
     });
 }

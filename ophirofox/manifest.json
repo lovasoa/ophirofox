@@ -12,6 +12,7 @@
     "page": "settings/options_ui.html"
   },
   "permissions": [
+    "contextMenus",
     "storage",
     "scripting",
     "webRequest",
