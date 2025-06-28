@@ -69,6 +69,7 @@ Voici la liste triée par ordre alphabétique :
   - [Gazet van Antwerpen (Belgique - néerlandophone)](https://www.gva.be/)
   - [Het Laatste Nieuws (Belgique - néerlandophone)](https://www.hln.be/)
   - [Het Nieuwsblad (Belgique - néerlandophone)](https://www.nieuwsblad.be/)
+  - [Jeune Afrique](https://www.jeuneafrique.com/)
   - [Knack (Belgique - néerlandophone)](https://www.knack.be/)
   - [L'Avenir (Belgique)](https://www.lavenir.net/)
   - [L'Orient-Le Jour (Liban)](https://www.lorientlejour.com/)
