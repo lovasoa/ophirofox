@@ -800,6 +800,18 @@
       "css":[
         "content_scripts/investir-lesechos.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.jeuneafrique.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/jeuneAfrique.js"
+      ],
+      "css": [
+        "content_scripts/jeuneAfrique.css"
+      ]
     }
   ],
   "browser_specific_settings": {
