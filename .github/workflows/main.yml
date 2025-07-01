@@ -3,7 +3,7 @@ on:
   push: 
     branches: master
     paths: [ "ophirofox/**", ".github/workflows/main.yml" ]
-
+  workflow_dispatch:  # Permet de lancer manuellement
 defaults:
   run:
     working-directory: ./ophirofox
