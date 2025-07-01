@@ -1,6 +1,27 @@
 name: Test webextension build
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # Permet de lancer manuellement
+    inputs:
+      test_year:
+        description: 'Année à simuler (ex: 2031, laisser vide pour date actuelle)'
+        required: false
+        type: string
+      test_month:
+        description: 'Mois à simuler (1-12, laisser vide pour date actuelle)'
+        required: false
+        type: string
+      test_day:
+        description: 'Jour à simuler (1-31, laisser vide pour date actuelle)'
+        required: false
+        type: string
+      test_hour:
+        description: 'Heure à simuler (0-23, laisser vide pour date actuelle)'
+        required: false
+        type: string
+      test_minute:
+        description: 'Minute à simuler (0-59, laisser vide pour date actuelle)'
+        required: false
+        type: string
 defaults:
   run:
     working-directory: ./ophirofox
@@ -16,19 +37,60 @@ jobs:
       - run: npm install --global web-ext
       - id: version
         run: |
-          YEAR=$(date +%y)  # Deux derniers chiffres de l'année (25 pour 2025)
-          YEAR_MAJOR=$((YEAR / 10))  # Premier chiffre des deux derniers (2 pour 25)
-          YEAR_MINOR=$((YEAR % 10))  # Dernier chiffre (5 pour 25)
+          # Utiliser les inputs ou les valeurs actuelles
+          if [ -n "${{ github.event.inputs.test_year }}" ]; then
+            FULL_YEAR="${{ github.event.inputs.test_year }}"
+            YEAR=$(printf "%02d" $((FULL_YEAR % 100)))
+          else
+            FULL_YEAR=$(date +%Y)
+            YEAR=$(date +%y)
+          fi
+          
+          if [ -n "${{ github.event.inputs.test_month }}" ]; then
+            MONTH=$(printf "%d" "${{ github.event.inputs.test_month }}")
+          else
+            MONTH=$(date +%-m)
+          fi
+          
+          if [ -n "${{ github.event.inputs.test_day }}" ]; then
+            DAY=$(printf "%d" "${{ github.event.inputs.test_day }}")
+          else
+            DAY=$(date +%-d)
+          fi
+          
+          if [ -n "${{ github.event.inputs.test_hour }}" ]; then
+            HOUR=$(printf "%d" "${{ github.event.inputs.test_hour }}")
+          else
+            HOUR=$(date +%-H)
+          fi
+          
+          if [ -n "${{ github.event.inputs.test_minute }}" ]; then
+            MINUTE=$(printf "%d" "${{ github.event.inputs.test_minute }}")
+          else
+            MINUTE=$(date +%-M)
+          fi
+          
+          # Calcul de la version
+          YEAR_MAJOR=$((YEAR / 10))
+          YEAR_MINOR=$((YEAR % 10))
           VERSION_BASE="${YEAR_MAJOR}.${YEAR_MINOR}"
-          MONTH=$(date +%-m)
-          DAY=$(date +%-d)
-          HOUR=$(date +%-H)
-          MINUTE=$(date +%-M)
+          
           # Format compatible Chrome: X.Y.MMDD.HHMM
           OPHIROFOX_VERSION="${VERSION_BASE}.${MONTH}${DAY}.${HOUR}${MINUTE}"
           echo "OPHIROFOX_VERSION=${OPHIROFOX_VERSION}" >> $GITHUB_ENV
-          echo "Generated version: ${OPHIROFOX_VERSION}"
-          echo "Year: $YEAR -> Version base: $VERSION_BASE"
+          
+          # Debug info
+          echo "=== VERSION CALCULATION DEBUG ==="
+          echo "Full Year: $FULL_YEAR"
+          echo "Year (2 digits): $YEAR"
+          echo "Year Major: $YEAR_MAJOR"
+          echo "Year Minor: $YEAR_MINOR"
+          echo "Month: $MONTH"
+          echo "Day: $DAY"
+          echo "Hour: $HOUR"
+          echo "Minute: $MINUTE"
+          echo "Final version: $OPHIROFOX_VERSION"
+          echo "================================"
       - name: Update manifest version
         run: jq ".version |= \"$OPHIROFOX_VERSION\"" < manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
       - name: Display updated manifest version
