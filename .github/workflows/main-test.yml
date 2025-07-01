@@ -1,0 +1,57 @@
+name: Test webextension build
+on:
+  workflow_dispatch:
+defaults:
+  run:
+    working-directory: ./ophirofox
+jobs:
+  test-build:
+    name: Test build extension
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install --global web-ext
+      - id: version
+        run: |
+          YEAR=$(date +%y)  # Deux derniers chiffres de l'année (25 pour 2025)
+          YEAR_MAJOR=$((YEAR / 10))  # Premier chiffre des deux derniers (2 pour 25)
+          YEAR_MINOR=$((YEAR % 10))  # Dernier chiffre (5 pour 25)
+          VERSION_BASE="${YEAR_MAJOR}.${YEAR_MINOR}"
+          MONTH=$(date +%-m)
+          DAY=$(date +%-d)
+          HOUR=$(date +%-H)
+          MINUTE=$(date +%-M)
+          # Format compatible Chrome: X.Y.MMDD.HHMM
+          OPHIROFOX_VERSION="${VERSION_BASE}.${MONTH}${DAY}.${HOUR}${MINUTE}"
+          echo "OPHIROFOX_VERSION=${OPHIROFOX_VERSION}" >> $GITHUB_ENV
+          echo "Generated version: ${OPHIROFOX_VERSION}"
+          echo "Year: $YEAR -> Version base: $VERSION_BASE"
+      - name: Update manifest version
+        run: jq ".version |= \"$OPHIROFOX_VERSION\"" < manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
+      - name: Display updated manifest version
+        run: echo "Manifest version:" && jq -r ".version" manifest.json
+      - name: Lint extension
+        run: web-ext lint --self-hosted --warnings-as-errors
+      - name: Build extension
+        run: web-ext build
+      - name: List artifacts
+        run: ls -lah ./web-ext-artifacts
+      - name: Copy artifacts to upload
+        run: |
+          mkdir -p ../artifacts
+          cp $PWD/web-ext-artifacts/*.zip ../artifacts/ophirofox-${{ env.OPHIROFOX_VERSION }}.zip
+      - name: Create mobile version
+        run: |
+          jq '.permissions += .optional_permissions | .optional_permissions = []' manifest.json > manifest.mobile.json
+          mv manifest.mobile.json manifest.json
+          web-ext build --overwrite-dest
+          cp $PWD/web-ext-artifacts/*.zip ../artifacts/ophirofox-mobile-${{ env.OPHIROFOX_VERSION }}.zip
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ophirofox-${{ env.OPHIROFOX_VERSION }}
+          path: artifacts/
+          retention-days: 30
