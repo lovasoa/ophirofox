@@ -20,14 +20,19 @@ jobs:
       - run: npm install --global web-ext
       - id: version
         run: |
-          VERSION_BASE=$(jq -r ".version" < manifest.json)
-          YEAR=$(date +%y)
-          MONTH=$(date +%m)
-          DAY=$(date +%d)
-          TIME=$(date +%-H%M)
-          OPHIROFOX_VERSION="${VERSION_BASE}.${YEAR}${MONTH}${DAY}.${TIME}"
+          YEAR=$(date +%y)  # Deux derniers chiffres de l'année (25 pour 2025)
+          YEAR_MAJOR=$((YEAR / 10))  # Premier chiffre des deux derniers (2 pour 25)
+          YEAR_MINOR=$((YEAR % 10))  # Dernier chiffre (5 pour 25)
+          VERSION_BASE="${YEAR_MAJOR}.${YEAR_MINOR}"
+          MONTH=$(date +%-m)
+          DAY=$(date +%-d)
+          HOUR=$(date +%-H)
+          MINUTE=$(date +%-M)
+          # Format compatible Chrome: X.Y.MMDD.HHMM
+          OPHIROFOX_VERSION="${VERSION_BASE}.${MONTH}${DAY}.${HOUR}${MINUTE}"
           echo "OPHIROFOX_VERSION=${OPHIROFOX_VERSION}" >> $GITHUB_ENV
           echo "Generated version: ${OPHIROFOX_VERSION}"
+          echo "Year: $YEAR -> Version base: $VERSION_BASE"
       - run: jq ".version |= \"$OPHIROFOX_VERSION\"" < manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
       - run: web-ext lint --self-hosted --warnings-as-errors
       - run: web-ext build
