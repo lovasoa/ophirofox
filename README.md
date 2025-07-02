@@ -96,7 +96,7 @@ Vous pouvez proposer d'autres sites Web de médias en ouvrant une [demande ici-m
 
 ## Chrome, Edge et similaires sur ordinateur
 
-Ophirofox est [présent sur le Chrome Web Store](https://chrome.google.com/webstore/detail/ophirofox/mmmjkgckgcpankonbgbianpnfenbhodf), mais Google prend parfois du temps à approuver une nouvelle version de l'extension — la dernière version sur le Google Web Store date du 14 mai 2024. 
+Ophirofox est [présent sur le Chrome Web Store](https://chrome.google.com/webstore/detail/ophirofox/mmmjkgckgcpankonbgbianpnfenbhodf), mais Google prend parfois du temps à approuver une nouvelle version de l'extension.
 
 Les instructions suivantes peuvent êtres suivies pour installer la dernière version sans passer par Google :
  - [Téléchargez le code source de l'extension](https://github.com/lovasoa/ophirofox/archive/master.zip) 
