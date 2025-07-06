@@ -812,6 +812,18 @@
       "css": [
         "content_scripts/jeuneAfrique.css"
       ]
+    },
+        {
+      "matches": [
+        "https://www.leberry.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/leberry.js"
+      ],
+      "css": [
+        "content_scripts/leberry.css"
+      ]
     }
   ],
   "browser_specific_settings": {
