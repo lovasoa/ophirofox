@@ -75,6 +75,7 @@ Voici la liste triée par ordre alphabétique :
   - [L'Orient-Le Jour (Liban)](https://www.lorientlejour.com/)
   - [La DH (Belgique)](https://www.dhnet.be/)
   - [La Libre Belgique](https://www.lalibre.be/)
+  - [Le Berry Républicain](https://www.leberry.fr/)
   - [Le Soir (Belgique)](https://www.lesoir.be)
   - [Le Temps (Suisse)](https://www.letemps.ch/)
   - [Le Vif (Belgique)](https://www.levif.be/)
