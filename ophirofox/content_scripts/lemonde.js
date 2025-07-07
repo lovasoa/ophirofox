@@ -21,14 +21,14 @@ async function createLink() {
 }
 
 async function onLoad() {
-    const statusElem = document.querySelector(".article__status");
+    const statusElem = document.querySelector(".ds-article-status__text");
     if (statusElem) {
         statusElem.appendChild(await createLink());
     }
-    const paywallElem = document.querySelector(".paywall-04__cta");
+    const paywallElem = document.querySelector(".lmd-paywall__cta");
     if (paywallElem) {
         const link = await createLink();
-        link.className = "lmd-btn lmd-btn--l lmd-btn--premium paywall-04__cta";
+        link.className = "lmd-btn lmd-btn--l lmd-btn--premium lmd-paywall__cta";
         paywallElem.parentNode.insertBefore(link, paywallElem);
     }
 }
