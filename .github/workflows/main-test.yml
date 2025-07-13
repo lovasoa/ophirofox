@@ -71,6 +71,7 @@ jobs:
           fi
           
           # Calcul de la version
+          YEAR=$((YEAR + 1)) # Ajout +1 à l'année courante.
           YEAR_MAJOR=$((YEAR / 10))
           YEAR_MINOR=$((YEAR % 10))
           VERSION_BASE="${YEAR_MAJOR}.${YEAR_MINOR}"
