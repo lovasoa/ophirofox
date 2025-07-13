@@ -1,4 +1,3 @@
-
 /**
  * This script retrieves information about the latest releases of the extension on GitHub
  * and updates the extension manifest to provide firefox update information.
@@ -51,6 +50,20 @@ const path = require('path');
 const BASE = path.dirname(__filename);
 
 /**
+ * Check if a version uses the old date-based format (obsolete)
+ * @param {string} version - The version string to check
+ * @returns {boolean} True if the version uses the old format
+ */
+function isObsoleteVersionFormat(version) {
+    const parts = version.split('.');
+    if (parts.length < 3) return false;
+    
+    const thirdPart = parts[2];
+    // Si le 3ème élément a 6 chiffres ou plus, c'est probablement l'ancien format de date
+    return thirdPart.length >= 6;
+}
+
+/**
  * Get the extension manifest.
  * @returns {Manifest} The extension manifest object.
  */
@@ -89,6 +102,13 @@ async function getGithubReleases() {
  */
 function versionDetails(release) {
     const version = release.tag_name.slice(1);
+    
+    // Filtrer les versions avec l'ancien format obsolète
+    if (isObsoleteVersionFormat(version)) {
+        console.warn(`Skipping obsolete version format: ${version}`);
+        return undefined;
+    }
+    
     const xpi_asset = release.assets.find(asset => asset.name.endsWith('.xpi'));
     const changelog_asset = release.assets.find(asset => asset.name === 'changelog.txt');
     return xpi_asset && {
@@ -120,7 +140,7 @@ async function updateManifest() {
                     ...releases
                         .filter(release => !release.draft)
                         .map(versionDetails)
-                        .filter(Boolean),
+                        .filter(Boolean), // Ceci filtrera aussi les versions obsolètes qui retournent undefined
                 ]
             },
         },
