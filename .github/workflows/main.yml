@@ -21,6 +21,7 @@ jobs:
       - id: version
         run: |
           YEAR=$(date +%y)  # Deux derniers chiffres de l'année (25 pour 2025)
+          YEAR=$((YEAR + 1)) # Ajout +1 à l'année courante.
           YEAR_MAJOR=$((YEAR / 10))  # Premier chiffre des deux derniers (2 pour 25)
           YEAR_MINOR=$((YEAR % 10))  # Dernier chiffre (5 pour 25)
           VERSION_BASE="${YEAR_MAJOR}.${YEAR_MINOR}"
