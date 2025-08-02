@@ -316,7 +316,8 @@
     {
       "matches": [
         "https://www.mediapart.fr/*",
-        "https://www-mediapart-fr.bnf.idm.oclc.org/*"
+        "https://www-mediapart-fr.bnf.idm.oclc.org/*",
+        "https://www-mediapart-fr.acces-distant.bnu.fr/*"
       ],
       "js": [
         "content_scripts/config.js",
