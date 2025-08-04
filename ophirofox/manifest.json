@@ -316,7 +316,8 @@
     {
       "matches": [
         "https://www.mediapart.fr/*",
-        "https://www-mediapart-fr.bnf.idm.oclc.org/*"
+        "https://www-mediapart-fr.bnf.idm.oclc.org/*",
+        "https://www-mediapart-fr.acces-distant.bnu.fr/*"
       ],
       "js": [
         "content_scripts/config.js",
@@ -851,7 +852,8 @@
         },
         {
           "name": "Bibliotheque nationale et universitaire de Strasbourg",
-          "AUTH_URL": "https://acces-distant.bnu.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=bnus"
+          "AUTH_URL": "https://acces-distant.bnu.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=bnus",
+          "AUTH_URL_MEDIAPART": "www-mediapart-fr.acces-distant.bnu.fr"
         },
         {
           "name": "Bibliotheque municipale de Lyon",

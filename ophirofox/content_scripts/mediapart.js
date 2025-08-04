@@ -1,10 +1,11 @@
 /**
- * @description create link <a> to BNF mirror
+ * @description create link <a> to a mirror
  * @param {string} AUTH_URL_MEDIAPART
+ * @param {string} name
  */
-async function createLink(AUTH_URL_MEDIAPART) {
+async function createLink(AUTH_URL_MEDIAPART, name) {
   const span = document.createElement("span");
-  span.textContent = "Lire avec BNF";
+  span.textContent = "Lire avec " + name;
 
   const a = document.createElement("a");
   a.href = new URL(window.location);
@@ -54,13 +55,13 @@ async function handleMediapart(config) {
   if (!reserve) return;
 
   for (const balise of reserve) {
-    balise.appendChild(await createLink(config.AUTH_URL_MEDIAPART));
+    balise.appendChild(await createLink(config.AUTH_URL_MEDIAPART, config.name));
   }
 }
 
 /**@description check for users with mediapart access. If yes, create link button */
 async function onLoad() {
-  const config = await configurationsSpecifiques(["BNF"]);
+  const config = await configurationsSpecifiques(["BNF" , "Bibliotheque nationale et universitaire de Strasbourg"]);
   if (!config) return;
   const currentPage = new URL(window.location);
   if (currentPage.host == config.AUTH_URL_MEDIAPART) {
