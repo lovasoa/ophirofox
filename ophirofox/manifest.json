@@ -155,8 +155,7 @@
     },
     {
       "matches": [
-        "https://www.lefigaro.fr/*",
-        "https://leparticulier.lefigaro.fr/*"
+        "https://*.lefigaro.fr/*"
       ],
       "js": [
         "content_scripts/config.js",
