@@ -43,7 +43,6 @@ function findPremiumBanner() {
  * @description if not properly logged on the mirror website, fetch the login page
  */
 async function handleMediapartMirror(config) {
-  console.log('ophirofox handlemirror')
   const navBar = document.querySelector("ul.nav__actions");
   const spans = navBar.querySelectorAll("span");
 
@@ -52,28 +51,21 @@ async function handleMediapartMirror(config) {
   );
 
   let articlePath ='';
-  await chrome.storage.sync.get(['ophirofox_mediapart_article']).then((result) => {
-  console.log('ophirofox storage',result.ophirofox_mediapart_article)
-  articlePath = result.ophirofox_mediapart_article
-});
+  if (config.name == 'BNF') {
+    await chrome.storage.sync.get(['ophirofox_mediapart_article']).then((result) => {
+    articlePath = result.ophirofox_mediapart_article
+    })
+  }
   let currentPage = new URL(window.location)
-
-  console.log('ophirofox notConnected: '+ isNotConnected)
   if (isNotConnected) {
-
-    if (config.name == 'BNF') {
-      console.log('ophirofox toujours pas connecté BNF')
-    }else{
       //account name not found. fetch login page
       const LOGIN_PAGE = new URL(
         "licence",
         "http://" + config.AUTH_URL_MEDIAPART
       );
-      fetch('https://www-mediapart-fr.bnf.idm.oclc.org/licence',{mode:'no-cors'}).then(() => window.location.reload());
-    }
+      fetch(LOGIN_PAGE).then(() => window.location.reload());
   }else if(config.name == 'BNF' && currentPage.pathname != articlePath){
-    console.log('ophirofox window currentPage :',currentPage.origin)
-    console.log('ophirofox articleURL path :',articlePath)
+    //redirect to mirror article and check if not already here
     window.location.pathname = articlePath
   }
 }
@@ -86,9 +78,7 @@ async function handleMediapart(config) {
     chrome.storage.sync.set({
           "ophirofox_mediapart_article": new URL(window.location).pathname
         })
-        chrome.storage.sync.get(['ophirofox_mediapart_article'], function(result) {
-        console.log('ophirofox chrome.storage article: ' +result.ophirofox_mediapart_article );
-      });
+        chrome.storage.sync.get(['ophirofox_mediapart_article'], function(result) {});
   } 
 
   for (const balise of reserve) {
@@ -102,16 +92,12 @@ async function handleMediapart(config) {
 
 /**@description check for users with mediapart access. If yes, create link button */
 async function onLoad() {
-  console.log('ophirofox ON LOAD ophi')
   const config = await configurationsSpecifiques(["BNF" , "Bibliotheque nationale et universitaire de Strasbourg"]);
   if (!config) return;
-  console.log('ophirofox CONFIG specifique found',config)
   const currentPage = new URL(window.location);
   if (currentPage.host == config.AUTH_URL_MEDIAPART) {
-    console.log('ophirofox handle mirror')
     handleMediapartMirror(config);
   } else {
-     console.log('ophirofox handle normal')
     handleMediapart(config);
   }
 }
