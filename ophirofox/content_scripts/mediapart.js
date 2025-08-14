@@ -78,7 +78,6 @@ async function handleMediapart(config) {
     chrome.storage.sync.set({
           "ophirofox_mediapart_article": new URL(window.location).pathname
         })
-        chrome.storage.sync.get(['ophirofox_mediapart_article'], function(result) {});
   } 
 
   for (const balise of reserve) {
