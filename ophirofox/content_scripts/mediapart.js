@@ -43,18 +43,21 @@ async function handleMediapartMirror(config) {
     (elem) => elem.textContent == "Se connecter"
   );
 
-  let articlePath ='';
+  let articlePath;
   await chrome.storage.sync.get(['ophirofox_mediapart_article']).then((result) => {
   articlePath = result.ophirofox_mediapart_article
   })
 
   let currentPage = new URL(window.location)
+  let isRedirectArticle = articlePath && currentPage.pathname != articlePath
   if (isNotConnected) {
       console.error("ophirofox login failed")
       return
-  }else if(currentPage.pathname != articlePath){
+  }else if(isRedirectArticle){
     //redirect to mirror article
     window.location.pathname = articlePath
+    //clear storage to enable futur navigation on the mirror
+    chrome.storage.sync.remove(["ophirofox_mediapart_article"])
   }
 }
 
