@@ -8,17 +8,10 @@ async function createLink(AUTH_URL_MEDIAPART, name) {
   span.textContent = "Lire avec " + name;
 
   const a = document.createElement("a");
-  a.href = new URL(window.location);
-  a.host = AUTH_URL_MEDIAPART;
-  a.appendChild(span);
-  return a;
-}
-
-async function createLinkBNF(AUTH_URL_MEDIAPART, name) {
-  const span = document.createElement("span");
-  span.textContent = "Lire avec " + name;
-  const a = document.createElement("a");
-  a.href = new URL(AUTH_URL_MEDIAPART);
+  a.href = new URL(
+        "licence",
+        "https://" + AUTH_URL_MEDIAPART
+      );
   a.appendChild(span);
   return a;
 }
@@ -51,21 +44,16 @@ async function handleMediapartMirror(config) {
   );
 
   let articlePath ='';
-  if (config.name == 'BNF') {
-    await chrome.storage.sync.get(['ophirofox_mediapart_article']).then((result) => {
-    articlePath = result.ophirofox_mediapart_article
-    })
-  }
+  await chrome.storage.sync.get(['ophirofox_mediapart_article']).then((result) => {
+  articlePath = result.ophirofox_mediapart_article
+  })
+
   let currentPage = new URL(window.location)
   if (isNotConnected) {
-      //account name not found. fetch login page
-      const LOGIN_PAGE = new URL(
-        "licence",
-        "http://" + config.AUTH_URL_MEDIAPART
-      );
-      fetch(LOGIN_PAGE).then(() => window.location.reload());
-  }else if(config.name == 'BNF' && currentPage.pathname != articlePath){
-    //redirect to mirror article and check if not already here
+      console.error("ophirofox login failed")
+      return
+  }else if(currentPage.pathname != articlePath){
+    //redirect to mirror article
     window.location.pathname = articlePath
   }
 }
@@ -73,19 +61,12 @@ async function handleMediapartMirror(config) {
 async function handleMediapart(config) {
   const reserve = findPremiumBanner();
   if (!reserve) return;
-
-  if (config.name == 'BNF') {
-    chrome.storage.sync.set({
-          "ophirofox_mediapart_article": new URL(window.location).pathname
-        })
-  } 
+  chrome.storage.sync.set({
+        "ophirofox_mediapart_article": new URL(window.location).pathname
+      })
 
   for (const balise of reserve) {
-    if(config.name == 'BNF'){
-      balise.appendChild(await createLinkBNF('https://www-mediapart-fr.bnf.idm.oclc.org/licence', config.name));
-    }else{
-      balise.appendChild(await createLink(config.AUTH_URL_MEDIAPART, config.name));
-    }
+    balise.appendChild(await createLink(config.AUTH_URL_MEDIAPART, config.name));
   }
 }
 
