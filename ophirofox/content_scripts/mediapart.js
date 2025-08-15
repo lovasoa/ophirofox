@@ -8,8 +8,10 @@ async function createLink(AUTH_URL_MEDIAPART, name) {
   span.textContent = "Lire avec " + name;
 
   const a = document.createElement("a");
-  a.href = new URL(window.location);
-  a.host = AUTH_URL_MEDIAPART;
+  a.href = new URL(
+        "licence",
+        "https://" + AUTH_URL_MEDIAPART
+      );
   a.appendChild(span);
   return a;
 }
@@ -33,26 +35,35 @@ function findPremiumBanner() {
 /**
  * @description if not properly logged on the mirror website, fetch the login page
  */
-function handleMediapartMirror(config) {
+async function handleMediapartMirror(config) {
   const navBar = document.querySelector("ul.nav__actions");
   const spans = navBar.querySelectorAll("span");
 
   let isNotConnected = Array.from(spans).find(
     (elem) => elem.textContent == "Se connecter"
   );
+
+  let articlePath ='';
+  await chrome.storage.sync.get(['ophirofox_mediapart_article']).then((result) => {
+  articlePath = result.ophirofox_mediapart_article
+  })
+
+  let currentPage = new URL(window.location)
   if (isNotConnected) {
-    //account name not found. fetch login page
-    const LOGIN_PAGE = new URL(
-      "licence",
-      "https://" + config.AUTH_URL_MEDIAPART
-    );
-    fetch(LOGIN_PAGE).then(() => window.location.reload());
+      console.error("ophirofox login failed")
+      return
+  }else if(currentPage.pathname != articlePath){
+    //redirect to mirror article
+    window.location.pathname = articlePath
   }
 }
 
 async function handleMediapart(config) {
   const reserve = findPremiumBanner();
   if (!reserve) return;
+  chrome.storage.sync.set({
+        "ophirofox_mediapart_article": new URL(window.location).pathname
+      })
 
   for (const balise of reserve) {
     balise.appendChild(await createLink(config.AUTH_URL_MEDIAPART, config.name));
