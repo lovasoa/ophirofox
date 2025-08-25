@@ -1119,8 +1119,8 @@
           "AUTH_URL": "https://ezproxy.unilim.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031697T_1"
         },
         {
-          "name": "Université du Littoral Côte d'Opale (UCLO)",
-          "AUTH_URL": "http://ezproxy.univ-littoral.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=dunkerqueT_1"
+          "name": "Université du Littoral Côte d'Opale (ULCO)",
+          "AUTH_URL": "https://ezproxy.univ-littoral.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=dunkerqueT_1"
         },
         {
           "name": "Université de Lorraine",
