@@ -177,7 +177,7 @@ async function ophirofoxEuropressePDFLink(media_id, publishedTime) {
  */
 function permissionForPartner({ AUTH_URL }) {
   const auth_url_host = new URL(AUTH_URL).hostname.split('.');
-  const all_permissions = [...manifest.permissions, ...manifest.optional_permissions];
+  const all_permissions = [...manifest.permissions, ...manifest.optional_host_permissions];
   let { permission, match_length } = all_permissions.reduce((best, permission) => {
     let permission_host = "";
     try {
