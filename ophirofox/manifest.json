@@ -119,7 +119,8 @@
     , "https://nouveau-europresse-com.bsg-ezproxy.univ-paris3.fr/*"	  
     , "https://nouveau-europresse-com.eu1.proxy.openathens.net/*"
     , "https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_1"
-	, "http://nouveau.europresse.com.docelec.enssib.fr/access/ip/default.aspx?un=ENSSIBT_1"
+    , "http://nouveau.europresse.com.docelec.enssib.fr/access/ip/default.aspx?un=ENSSIBT_1"
+    , "https://nouveau-europresse-com.ujm.idm.oclc.org/*"
   ],
   "background": {
     "scripts": [
@@ -1093,7 +1094,7 @@
         },
         {
           "name": "Université Jean Monnet Saint-Étienne",
-          "AUTH_URL": "https://nouveau.europresse.com/access/ip/default.aspx?un=MONNETT_1"
+          "AUTH_URL": "https://ujm.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MONNETT_1"
         },
         {
           "name": "Université Jean Moulin Lyon 3",
