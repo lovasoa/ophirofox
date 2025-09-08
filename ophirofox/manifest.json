@@ -121,6 +121,7 @@
     , "https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_1"
     , "http://nouveau.europresse.com.docelec.enssib.fr/access/ip/default.aspx?un=ENSSIBT_1"
     , "https://nouveau-europresse-com.ujm.idm.oclc.org/*"
+	, "https://nouveau-europresse-com.em-lyon.idm.oclc.org/"
   ],
   "background": {
     "scripts": [
@@ -910,6 +911,10 @@
         {
           "name": "Conservatoire national des arts et métiers",
           "AUTH_URL": "https://proxybib-pp.cnam.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CNAM"
+		},
+        {
+          "name": "EM Lyon",
+          "AUTH_URL": "https://em-lyon.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=EMLYONT_1"
         },
         {
           "name": "ENSAM",
