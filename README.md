@@ -82,6 +82,7 @@ Voici la liste triée par ordre alphabétique :
   - [PressReader (nécessite un abonnement BNF)](https://www.pressreader.com/fr)
   - [Sudinfo (Belgique)](https://www.sudinfo.be/)
   - [Trends-Tendances (Belgique)](https://trends.levif.be/)
+  - [The Economist (Royaume-Uni)](https://www.economist.com/)
 
 Vous pouvez proposer d'autres sites Web de médias en ouvrant une [demande ici-même](https://github.com/lovasoa/ophirofox/issues).
 

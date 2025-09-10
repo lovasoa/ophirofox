@@ -816,7 +816,7 @@
         "content_scripts/jeuneAfrique.css"
       ]
     },
-        {
+    {
       "matches": [
         "https://www.leberry.fr/*"
       ],
@@ -826,6 +826,18 @@
       ],
       "css": [
         "content_scripts/leberry.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.economist.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/theEconomist.js"
+      ],
+      "css": [
+        "content_scripts/theEconomist.css"
       ]
     }
   ],
