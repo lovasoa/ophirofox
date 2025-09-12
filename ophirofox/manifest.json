@@ -26,7 +26,7 @@
     , "https://nouveau-europresse-com.ezproxy.univ-catholille.fr/*"
     , "https://nouveau-europresse-com.ezproxy.upf.pf/*"
     , "https://nouveau-eureka-cc.res.banq.qc.ca/*"
-    , "https://nouveau-europresse-com.budistant.univ-nantes.fr/*"
+    , "https://nouveau-europresse-com.bunantes.idm.oclc.org/*"
     , "https://nouveau-europresse-com.proxy.rubens.ens.fr/*"
     , "https://nouveau-europresse-com.rp1.ensam.eu/*"
     , "https://nouveau-europresse-com.ezproxy.universite-paris-saclay.fr/*"
@@ -1158,8 +1158,8 @@
           "AUTH_URL": "https://login.ezpum.scdi-montpellier.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=MontpellierT_1"
         },
         {
-          "name": "Université de Nantes",
-          "AUTH_URL": "https://budistant.univ-nantes.fr/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=NANTEST_1"
+          "name": "Nantes Université",
+          "AUTH_URL": "https://bunantes.idm.oclc.org/login?url=http://nouveau.europresse.com/access/ip/default.aspx?un=NANTEST_1"
         },
         {
           "name": "Université de Nîmes",
