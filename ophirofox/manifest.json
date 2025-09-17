@@ -121,7 +121,8 @@
     , "https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_1"
     , "http://nouveau.europresse.com.docelec.enssib.fr/access/ip/default.aspx?un=ENSSIBT_1"
     , "https://nouveau-europresse-com.ujm.idm.oclc.org/*"
-	, "https://nouveau-europresse-com.em-lyon.idm.oclc.org/"
+    , "https://nouveau-europresse-com.em-lyon.idm.oclc.org/"
+    , "https://nouveau.europresse.com/access/ip/default.aspx?un=CENTRALENANTEST_1"
   ],
   "background": {
     "scripts": [
@@ -884,7 +885,7 @@
           "name": "Bibliothèque Publique d'Information (BPI)",
           "AUTH_URL": "https://bpi.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=pompi"
         },
-	{
+        {
           "name": "Bibliothèque Sainte-Geneviève (BSG)",
           "AUTH_URL": "http://bsg-ezproxy.univ-paris3.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=pantheonT_1"
         },      
@@ -900,7 +901,11 @@
           "name": "École Centrale de Lyon (ECL)",
           "AUTH_URL": "https://ec-lyon.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=LYONT_7"
         },
-	{
+        {
+          "name": "École Centrale de Nantes",
+          "AUTH_URL": "https://nouveau.europresse.com/access/ip/default.aspx?un=CENTRALENANTEST_1"
+        },
+        {
           "name": "École Centrale d'Electronique (ECE)",
           "AUTH_URL": "https://go.openathens.net/redirector/omneseducation.com?url=https%3A%2F%2Fnouveau.europresse.com%2Faccess%2Fip%2Fdefault.aspx%3Fun%3DU032932T_1"
         },
@@ -912,18 +917,18 @@
           "name": "École normale supérieure de Paris (ENS ULM)",
           "AUTH_URL": "https://proxy.rubens.ens.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=PSLT_1"
         },
-		{
+        {
           "name": "École nationale supérieure des sciences de l'information et des bibliothèques (ENSSIB)",
           "AUTH_URL": "http://nouveau.europresse.com.docelec.enssib.fr/access/ip/default.aspx?un=ENSSIBT_1"
         },
-	      {
+        {
           "name": "École polytechnique",
           "AUTH_URL": "https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_1"
         },
         {
           "name": "Conservatoire national des arts et métiers",
           "AUTH_URL": "https://proxybib-pp.cnam.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CNAM"
-		},
+        },
         {
           "name": "EM Lyon",
           "AUTH_URL": "https://em-lyon.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=EMLYONT_1"
@@ -1285,39 +1290,39 @@
           "name": "Institut National Universitaire Champollion",
           "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_2"
         },
-	    	{
+        {
           "name": "Institut national des sciences appliquées de Toulouse",
           "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_3"
         },
-    		{
+        {
           "name": "Ecole nationale de l'aviation civile",
           "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_4"
         },
-	    	{
+        {
           "name": "Université Toulouse Jean Jaurès",
           "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_5"
         },
-	    	{
+        {
           "name": "Université de Toulouse",
           "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_6"
         },
-	    	{
+        {
           "name": "Institut national polytechnique de Toulouse",
           "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_7"
         },
-	    	{
+        {
           "name": "Institut supérieur de l'aéronautique et de l'espace",
           "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_8"
         },
-	    	{
+        {
           "name": "Ecole des mines d'Albi-Carmaux",
           "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_9"
         },
-	    	{
+        {
           "name": "Service Interétablissements de Coopération Documentaire",
           "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_13"
         },
-    		{
+        {
           "name": "Ecole nationale supérieure d'architecture de Toulouse",
           "AUTH_URL": "https://gorgone.univ-toulouse.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=CAPITOLET_14"
         },
