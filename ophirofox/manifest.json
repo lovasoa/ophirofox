@@ -1096,7 +1096,7 @@
         },
         {
           "name": "Université de Franche-Comté",
-          "AUTH_URL": "http://scd1.univ-fcomte.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=FCOMTET_1"
+          "AUTH_URL": "http://scd1.univ-fcomte.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=FCOMTET_1" 
         },
         {
           "name": "Université Grenoble-Alpes",
