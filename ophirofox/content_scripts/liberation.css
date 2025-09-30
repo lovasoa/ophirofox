@@ -1,14 +1,14 @@
 .ophirofox-europresse {
-    display: inline-block;
     font-size: 0.875rem;
-    line-height: 1.125rem;
-    margin-bottom: 1rem;
-    margin-left: 0px;
-    padding: 5px 10px;
-    background-color: #eeb54e;
+    padding: 5px 10px; 
+    background-color: rgb(250, 235, 29);
     color: #000;
-    border-radius: 2px;
+    border-radius: 4px;
     text-decoration: none;
+    display: block;
+    margin-top: -2rem; /* negative margin to pull it up next to h1 */
+    margin-left: auto; /* pushes to right if there's space */
+    width: fit-content;
 }
 
 .ophirofox-europresse:hover {
