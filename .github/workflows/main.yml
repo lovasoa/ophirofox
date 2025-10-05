@@ -19,8 +19,14 @@ jobs:
       - run: npm install --global web-ext
       - id: version
         run: |
+          ACTUAL_YEAR=$(date +%Y)
           YEAR=$(date +%y) # Deux derniers chiffres de l'année (25 pour 2025)
-          YEAR=$((YEAR + 1)) # Ajout +1 à l'année courante.
+          
+          # Ajout +1 à l'année courante seulement pour 2025
+          if [ "$ACTUAL_YEAR" -eq 2025 ]; then
+            YEAR=$((YEAR + 1))
+          fi
+          
           YEAR_MAJOR=$((YEAR / 10)) # Premier chiffre des deux derniers (2 pour 25)
           YEAR_MINOR=$((YEAR % 10)) # Dernier chiffre (5 pour 25)
           VERSION_BASE="${YEAR_MAJOR}.${YEAR_MINOR}"
@@ -28,11 +34,19 @@ jobs:
           DAY=$(date +%-d)
           HOUR=$(date +%-H)
           MINUTE=$(date +%-M)
+          
+          # For 2026 only: add 10000 to MMDD to ensure it's above all 2025 releases
+          if [ "$ACTUAL_YEAR" -eq 2026 ]; then
+            MMDD=$((MONTH * 100 + DAY + 10000))
+          else
+            MMDD=$((MONTH * 100 + DAY))
+          fi
+          
           # Format compatible Chrome: X.Y.MMDD.HHMM
-          OPHIROFOX_VERSION="${VERSION_BASE}.${MONTH}${DAY}.${HOUR}${MINUTE}"
+          OPHIROFOX_VERSION="${VERSION_BASE}.${MMDD}.${HOUR}${MINUTE}"
           echo "OPHIROFOX_VERSION=${OPHIROFOX_VERSION}" >> $GITHUB_ENV
           echo "Generated version: ${OPHIROFOX_VERSION}"
-          echo "Year: $YEAR -> Version base: $VERSION_BASE"
+          echo "Year: $ACTUAL_YEAR -> YEAR: $YEAR -> Version base: $VERSION_BASE, MMDD: $MMDD"
       - run: jq ".version |= \"$OPHIROFOX_VERSION\"" < manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
       - run: web-ext lint --self-hosted --warnings-as-errors
       - run: web-ext build
