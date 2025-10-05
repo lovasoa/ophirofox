@@ -125,3 +125,15 @@ jobs:
           git push origin current --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create or update 'current' release with full details
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: current
+          name: Current Build (v${{ env.OPHIROFOX_VERSION }})${{ env.IS_PRERELEASE == 'true' && ' - Unsigned' || ' - Signed' }}
+          draft: false
+          prerelease: false
+          body_path: /tmp/changelog.txt
+          files: |
+            ophirofox.xpi
+            ophirofox.mobile.zip
+            /tmp/update_manifest.json
