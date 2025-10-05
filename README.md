@@ -90,7 +90,7 @@ Vous pouvez proposer d'autres sites Web de médias en ouvrant une [demande ici-m
 
 ## Firefox sur ordinateur
 
-1. Téléchargez directement la dernière version d'Ophirofox [ici](https://github.com/lovasoa/ophirofox/releases/latest/download/ophirofox.xpi) où bien depuis les *releases* disponibles [ici](https://github.com/lovasoa/ophirofox/releases/latest) 
+1. Téléchargez directement la dernière version d'Ophirofox signée par Mozilla [ici](https://github.com/lovasoa/ophirofox/releases/latest/download/ophirofox.xpi). La dernière version (signée où non), est toujours disponible [ici](https://github.com/lovasoa/ophirofox/releases/tag/current).
 2. Deux options en fonction de la version de Firefox :
 - Pour les versions récentes : cliquez simplement sur `ophirofox.xpi` et autorisez l'installation du module complémentaire 
 - Pour les versions plus anciennes : enregistrez le fichier `ophirofox.xpi` en réalisant un clic droit, puis ouvrez le gestionnaire des extensions depuis le menu de Firefox. Ensuite, ouvrez les paramètres (représentés par une roue dentée), sélectionnez « Installer un module depuis un fichier », puis choisissez le fichier `ophirofox.xpi` que vous avez téléchargé précédemment 
