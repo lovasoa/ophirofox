@@ -131,7 +131,7 @@ jobs:
           tag_name: current
           name: Current Build (v${{ env.OPHIROFOX_VERSION }})${{ env.IS_PRERELEASE == 'true' && ' - Unsigned' || ' - Signed' }}
           draft: false
-          prerelease: false
+          prerelease: true
           body_path: /tmp/changelog.txt
           files: |
             ophirofox.xpi
