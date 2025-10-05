@@ -1,13 +1,12 @@
 name: Sign webextension
 on:
-  push: 
+  push:
     branches: master
     paths: [ "ophirofox/**", ".github/workflows/main.yml" ]
-  workflow_dispatch:  # Permet de lancer manuellement
+  workflow_dispatch: # Permet de lancer manuellement
 defaults:
   run:
     working-directory: ./ophirofox
-
 jobs:
   publish-to-amo:
     name: Build and publish the extension
@@ -20,10 +19,10 @@ jobs:
       - run: npm install --global web-ext
       - id: version
         run: |
-          YEAR=$(date +%y)  # Deux derniers chiffres de l'année (25 pour 2025)
+          YEAR=$(date +%y) # Deux derniers chiffres de l'année (25 pour 2025)
           YEAR=$((YEAR + 1)) # Ajout +1 à l'année courante.
-          YEAR_MAJOR=$((YEAR / 10))  # Premier chiffre des deux derniers (2 pour 25)
-          YEAR_MINOR=$((YEAR % 10))  # Dernier chiffre (5 pour 25)
+          YEAR_MAJOR=$((YEAR / 10)) # Premier chiffre des deux derniers (2 pour 25)
+          YEAR_MINOR=$((YEAR % 10)) # Dernier chiffre (5 pour 25)
           VERSION_BASE="${YEAR_MAJOR}.${YEAR_MINOR}"
           MONTH=$(date +%-m)
           DAY=$(date +%-d)
@@ -37,12 +36,22 @@ jobs:
       - run: jq ".version |= \"$OPHIROFOX_VERSION\"" < manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
       - run: web-ext lint --self-hosted --warnings-as-errors
       - run: web-ext build
-      - run: web-ext sign --channel=unlisted
+      - name: Sign extension
+        id: sign
+        run: web-ext sign --channel=unlisted
+        continue-on-error: true
         env:
           WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
           WEB_EXT_API_SECRET: ${{ secrets.AMO_JWT_SECRET }}
       - run: ls -lah ./web-ext-artifacts
-      - run: cp $PWD/web-ext-artifacts/*xpi ../ophirofox.xpi
+      - name: Copy signed XPI if available
+        run: |
+          if ls ./web-ext-artifacts/*xpi 1> /dev/null 2>&1; then
+            cp $PWD/web-ext-artifacts/*xpi ../ophirofox.xpi
+          else
+            echo "No signed XPI found, using unsigned build"
+            cp $PWD/web-ext-artifacts/*zip ../ophirofox.xpi
+          fi
       - name: Create the mobile version (with all permissions asked on installation and no optional permissions)
         run: |
           jq '.permissions += .optional_permissions | .optional_permissions = []' manifest.json > manifest.mobile.json
@@ -52,7 +61,13 @@ jobs:
       - run: node ../update-manifest.js | tee /tmp/update_manifest.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: git log -1 --pretty=%B | tee /tmp/changelog.txt
+      - name: Prepare release notes
+        run: |
+          git log -1 --pretty=%B > /tmp/changelog.txt
+          if [ "${{ steps.sign.outcome }}" != "success" ]; then
+            echo "" >> /tmp/changelog.txt
+            echo "⚠️ **Note:** This release is not signed by Mozilla due to a signing service timeout." >> /tmp/changelog.txt
+          fi
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
@@ -60,8 +75,8 @@ jobs:
           name: Release ${{ env.OPHIROFOX_VERSION }}
           draft: false
           prerelease: false
+          body_path: /tmp/changelog.txt
           files: |
             ophirofox.xpi
             ophirofox.mobile.zip
             /tmp/update_manifest.json
-            /tmp/changelog.txt
