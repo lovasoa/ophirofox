@@ -1,12 +1,15 @@
 name: Sign webextension
+
 on:
   push:
     branches: master
     paths: [ "ophirofox/**", ".github/workflows/main.yml" ]
   workflow_dispatch: # Permet de lancer manuellement
+
 defaults:
   run:
     working-directory: ./ophirofox
+
 jobs:
   publish-to-amo:
     name: Build and publish the extension
@@ -75,6 +78,25 @@ jobs:
       - run: node ../update-manifest.js | tee /tmp/update_manifest.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Determine release tag and prerelease status
+        run: |
+          if [ "${{ steps.sign.outcome }}" == "success" ]; then
+            echo "RELEASE_TAG=v${{ env.OPHIROFOX_VERSION }}" >> $GITHUB_ENV
+            echo "IS_PRERELEASE=false" >> $GITHUB_ENV
+          else
+            echo "RELEASE_TAG=v${{ env.OPHIROFOX_VERSION }}-unsigned" >> $GITHUB_ENV
+            echo "IS_PRERELEASE=true" >> $GITHUB_ENV
+          fi
+      - name: Delete old unsigned prereleases (if this release is signed)
+        if: steps.sign.outcome == 'success'
+        run: |
+          gh release list --limit 100 | grep 'Pre-release' | grep 'unsigned' | while read -r line; do
+            tag=$(echo "$line" | awk '{print $1}')
+            echo "Deleting unsigned prerelease: $tag"
+            gh release delete "$tag" --yes || true
+          done
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Prepare release notes
         run: |
           git log -1 --pretty=%B > /tmp/changelog.txt
@@ -85,12 +107,21 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: v${{ env.OPHIROFOX_VERSION }}
-          name: Release ${{ env.OPHIROFOX_VERSION }}
+          tag_name: ${{ env.RELEASE_TAG }}
+          name: Release ${{ env.OPHIROFOX_VERSION }}${{ env.IS_PRERELEASE == 'true' && ' (unsigned)' || '' }}
           draft: false
-          prerelease: false
+          prerelease: ${{ env.IS_PRERELEASE }}
           body_path: /tmp/changelog.txt
           files: |
             ophirofox.xpi
             ophirofox.mobile.zip
             /tmp/update_manifest.json
+      - name: Update 'current' tag to always point to newest release (signed or unsigned)
+        run: |
+          cd ..
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git tag -f current
+          git push origin current --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
