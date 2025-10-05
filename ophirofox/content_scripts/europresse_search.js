@@ -48,8 +48,7 @@ async function loadRead(){
     const path = window.location.pathname;
     const { search_terms, published_time } = await consumeReadRequest();
     if (!search_terms) return;
-    const stopwords = new Set(['d', 'l', 'et', 'sans', 'or']);
-
+    const stopwords = new Set(['d', 'l', 'et', 'sans', 'or', 'par']);
     /*
         L = { Lu , Ll , Lt , Lm , Lo }
         M = { Mn , Mc , Me }
