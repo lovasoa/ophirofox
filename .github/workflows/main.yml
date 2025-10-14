@@ -44,12 +44,15 @@ jobs:
           else
             MMDD=$((MONTH * 100 + DAY))
           fi
+
+          # Format HHMM as integer to remove leading zeros
+          HHMM=$((HOUR * 100 + MINUTE))
           
           # Format compatible Chrome: X.Y.MMDD.HHMM
-          OPHIROFOX_VERSION="${VERSION_BASE}.${MMDD}.${HOUR}${MINUTE}"
+          OPHIROFOX_VERSION="${VERSION_BASE}.${MMDD}.${HHMM}"
           echo "OPHIROFOX_VERSION=${OPHIROFOX_VERSION}" >> $GITHUB_ENV
           echo "Generated version: ${OPHIROFOX_VERSION}"
-          echo "Year: $ACTUAL_YEAR -> YEAR: $YEAR -> Version base: $VERSION_BASE, MMDD: $MMDD"
+          echo "Year: $ACTUAL_YEAR -> YEAR: $YEAR -> Version base: $VERSION_BASE, MMDD: $MMDD, HHMM: $HHMM"
       - run: jq ".version |= \"$OPHIROFOX_VERSION\"" < manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
       - run: web-ext lint --self-hosted --warnings-as-errors
       - run: web-ext build
