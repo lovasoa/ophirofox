@@ -20,6 +20,7 @@
  * @property {string} tag_name - The tag name of the release.
  * @property {string} html_url - The HTML URL of the release on GitHub.
  * @property {boolean} draft - Indicates if the release is a draft.
+ * @property {boolean} prerelease - Indicates if the release is a pre-release.
  * @property {ReleaseAsset[]} assets - An array of release assets.
  */
 
@@ -138,7 +139,7 @@ async function updateManifest() {
                         update_info_url: "https://github.com/lovasoa/ophirofox/releases/latest/download/changelog.txt",
                     },
                     ...releases
-                        .filter(release => !release.draft)
+                        .filter(release => !release.draft && !release.prerelease)
                         .map(versionDetails)
                         .filter(Boolean), // Ceci filtrera aussi les versions obsolètes qui retournent undefined
                 ]
