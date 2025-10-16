@@ -56,6 +56,12 @@ jobs:
       - run: jq ".version |= \"$OPHIROFOX_VERSION\"" < manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
       - run: web-ext lint --self-hosted --warnings-as-errors
       - run: web-ext build
+      - name: Submit to AMO (listed, no wait)
+        run: web-ext sign --channel=listed --timeout=1000
+        continue-on-error: true
+        env:
+          WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
+          WEB_EXT_API_SECRET: ${{ secrets.AMO_JWT_SECRET }}
       - name: Sign extension
         id: sign
         run: web-ext sign --channel=unlisted
