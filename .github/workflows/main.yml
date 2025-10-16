@@ -62,7 +62,7 @@ jobs:
           jq 'del(.browser_specific_settings.gecko.update_url)' manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
           echo "AMO-compatible manifest created (without update_url)"
       - name: Submit to AMO (listed, no wait)
-        run: web-ext sign --channel=listed --timeout=60000
+        run: web-ext sign --channel=listed --timeout=15000
         continue-on-error: true
         env:
           WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
@@ -79,7 +79,7 @@ jobs:
         run: web-ext build --overwrite-dest
       - name: Sign extension
         id: sign
-        run: web-ext sign --channel=unlisted --timeout=60000
+        run: web-ext sign --channel=unlisted --timeout=15000
         continue-on-error: true
         env:
           WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
