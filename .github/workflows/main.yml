@@ -88,10 +88,11 @@ jobs:
       - name: Copy signed XPI if available
         run: |
           if ls ./web-ext-artifacts/*xpi 1> /dev/null 2>&1; then
-            cp $PWD/web-ext-artifacts/*xpi ../ophirofox.xpi
+            cp ./web-ext-artifacts/*xpi ../ophirofox.xpi
           else
             echo "No signed XPI found, using unsigned build"
-            cp $PWD/web-ext-artifacts/*zip ../ophirofox.xpi
+            # Get the most recent zip file
+            cp $(ls -t ./web-ext-artifacts/*.zip | head -1) ../ophirofox.xpi
           fi
       - name: Create the mobile version (with all permissions asked on installation and no optional permissions)
         run: |
