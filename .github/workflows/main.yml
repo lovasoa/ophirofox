@@ -57,7 +57,7 @@ jobs:
       - run: web-ext lint --self-hosted --warnings-as-errors
       - run: web-ext build
       - name: Submit to AMO (listed, no wait)
-        run: web-ext sign --channel=listed --timeout=1000
+        run: web-ext sign --channel=listed --timeout=120000
         continue-on-error: true
         env:
           WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
