@@ -56,12 +56,21 @@ jobs:
       - run: jq ".version |= \"$OPHIROFOX_VERSION\"" < manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
       - run: web-ext lint --self-hosted --warnings-as-errors
       - run: web-ext build
+      - name: Backup original manifest and create AMO-compatible version
+        run: |
+          cp manifest.json manifest.json.backup
+          jq 'del(.browser_specific_settings.gecko.update_url)' manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
+          echo "AMO-compatible manifest created (without update_url)"
       - name: Submit to AMO (listed, no wait)
         run: web-ext sign --channel=listed --timeout=120000
         continue-on-error: true
         env:
           WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
           WEB_EXT_API_SECRET: ${{ secrets.AMO_JWT_SECRET }}
+      - name: Restore original manifest with update_url
+        run: |
+          mv manifest.json.backup manifest.json
+          echo "Original manifest restored (with update_url)"
       - name: Sign extension
         id: sign
         run: web-ext sign --channel=unlisted
