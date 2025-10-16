@@ -62,7 +62,7 @@ jobs:
           jq 'del(.browser_specific_settings.gecko.update_url)' manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
           echo "AMO-compatible manifest created (without update_url)"
       - name: Submit to AMO (listed, no wait)
-        run: web-ext sign --channel=listed --timeout=120000
+        run: web-ext sign --channel=listed --timeout=60000
         continue-on-error: true
         env:
           WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
@@ -75,9 +75,11 @@ jobs:
           jq ".version |= \"$SELFHOSTED_VERSION\"" manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
           echo "SELFHOSTED_VERSION=$SELFHOSTED_VERSION" >> $GITHUB_ENV
           echo "Self-hosted version: $SELFHOSTED_VERSION (AMO version: $OPHIROFOX_VERSION)"
+      - name: Rebuild with new version
+        run: web-ext build --overwrite-dest
       - name: Sign extension
         id: sign
-        run: web-ext sign --channel=unlisted
+        run: web-ext sign --channel=unlisted --timeout=60000
         continue-on-error: true
         env:
           WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
@@ -103,10 +105,10 @@ jobs:
       - name: Determine release tag and prerelease status
         run: |
           if [ "${{ steps.sign.outcome }}" == "success" ]; then
-            echo "RELEASE_TAG=v${{ env.OPHIROFOX_VERSION }}" >> $GITHUB_ENV
+            echo "RELEASE_TAG=v${{ env.SELFHOSTED_VERSION }}" >> $GITHUB_ENV
             echo "IS_PRERELEASE=false" >> $GITHUB_ENV
           else
-            echo "RELEASE_TAG=v${{ env.OPHIROFOX_VERSION }}-unsigned" >> $GITHUB_ENV
+            echo "RELEASE_TAG=v${{ env.SELFHOSTED_VERSION }}-unsigned" >> $GITHUB_ENV
             echo "IS_PRERELEASE=true" >> $GITHUB_ENV
           fi
       - name: Delete old unsigned prereleases (if this release is signed)
@@ -130,7 +132,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ env.RELEASE_TAG }}
-          name: Release ${{ env.OPHIROFOX_VERSION }}${{ env.IS_PRERELEASE == 'true' && ' (unsigned)' || '' }}
+          name: Release ${{ env.SELFHOSTED_VERSION }}${{ env.IS_PRERELEASE == 'true' && ' (unsigned)' || '' }}
           draft: false
           prerelease: ${{ env.IS_PRERELEASE }}
           body_path: /tmp/changelog.txt
@@ -151,7 +153,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: current
-          name: Current Build (v${{ env.OPHIROFOX_VERSION }})${{ env.IS_PRERELEASE == 'true' && ' - Unsigned' || ' - Signed' }}
+          name: Current Build (v${{ env.SELFHOSTED_VERSION }})${{ env.IS_PRERELEASE == 'true' && ' - Unsigned' || ' - Signed' }}
           draft: false
           prerelease: true
           body_path: /tmp/changelog.txt
