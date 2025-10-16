@@ -67,10 +67,14 @@ jobs:
         env:
           WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
           WEB_EXT_API_SECRET: ${{ secrets.AMO_JWT_SECRET }}
-      - name: Restore original manifest with update_url
+      - name: Restore original manifest and increment version for self-hosted
         run: |
           mv manifest.json.backup manifest.json
-          echo "Original manifest restored (with update_url)"
+          # Increment the last part of the version (HHMM) by 1 for self-hosted
+          SELFHOSTED_VERSION=$(echo "$OPHIROFOX_VERSION" | awk -F. '{print $1"."$2"."$3"."$4+1}')
+          jq ".version |= \"$SELFHOSTED_VERSION\"" manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
+          echo "SELFHOSTED_VERSION=$SELFHOSTED_VERSION" >> $GITHUB_ENV
+          echo "Self-hosted version: $SELFHOSTED_VERSION (AMO version: $OPHIROFOX_VERSION)"
       - name: Sign extension
         id: sign
         run: web-ext sign --channel=unlisted
