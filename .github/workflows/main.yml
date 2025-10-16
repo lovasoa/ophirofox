@@ -99,7 +99,7 @@ jobs:
           jq '.permissions += .optional_permissions | .optional_permissions = []' manifest.json > manifest.mobile.json
           mv manifest.mobile.json manifest.json
           web-ext build --overwrite-dest
-          cp $PWD/web-ext-artifacts/*zip ../ophirofox.mobile.zip
+          cp $(ls -t ./web-ext-artifacts/*.zip | head -1) ../ophirofox.mobile.zip
       - run: node ../update-manifest.js | tee /tmp/update_manifest.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
