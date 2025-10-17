@@ -1,6 +1,6 @@
 # ophirofox ![icône Ophirofox](https://raw.githubusercontent.com/lovasoa/ophirofox/master/ophirofox/icons/48.png)
 
-## ⚠️ L'extension est maintenant officiellement disponible sur le Store Firefox, merci de re-télécharger l'extension depuis celui-ci ! Lien : https://addons.mozilla.org/fr/firefox/addon/ophirofox/
+## ⚠️ L'extension est officiellement disponible depuis <a href="https://addons.mozilla.org/fr/firefox/addon/ophirofox/">addons.mozilla.org</a>. Re-télécharger l'extension depuis celui-ci pour bénéficier des mises à jour.
 
 Une extension pour navigateurs qui permet de lire la plupart des titres de presse, comme les articles du **Monde**, du **Figaro**, de **Libération** et du **Monde Diplomatique** avec son compte **Europresse**.
 
