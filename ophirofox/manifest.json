@@ -1388,7 +1388,12 @@
           "name": "Médiathèques d'Antony (92)",
           "HTTP_REFERER": "https://mediatheque.ville-antony.fr/",
           "AUTH_URL": "https://nouveau.europresse.com/access/httpref/default.aspx?un=antonyU_2"
-        }
+        },
+        {
+          "name": "Médiathèques C.F Ramuz Evian",
+          "HTTP_REFERER": "https://www.mediathequeramuz.net/",
+          "AUTH_URL": "https://nouveau.europresse.com/access/httpref/default.aspx?un=PringyU_2"
+        } 
       ]
     }
   }
