@@ -124,6 +124,7 @@
     , "https://nouveau-europresse-com.em-lyon.idm.oclc.org/"
     , "https://nouveau.europresse.com/access/ip/default.aspx?un=CENTRALENANTEST_1"
     , "https://nouveau-europresse-com.ehesp.idm.oclc.org/*"
+    , "https://nouveau.europresse.com/access/ip/default.aspx?un=lausanneAT_1"
   ],
   "background": {
     "scripts": [
@@ -1383,6 +1384,11 @@
           "name": "Blibliothèques du Val d'Oise / RéVOdoc",
           "HTTP_REFERER": "https://revodoc.valdoise.fr/",
           "AUTH_URL": "https://nouveau.europresse.com/access/httpref/default.aspx?un=VALDOISEU_2"
+        },
+        {
+          "name": "Eduvaud",
+          "HTTP_REFERER": "https://eduvaud.ch/",
+          "AUTH_URL": "https://nouveau.europresse.com/access/ip/default.aspx?un=lausanneAT_1"
         },
         {
           "name": "Médiathèques d'Antony (92)",
