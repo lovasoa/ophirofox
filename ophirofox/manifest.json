@@ -22,6 +22,7 @@
   ],
   "optional_permissions": [
       "webNavigation"
+    , "https://2160010m-cas.esidoc.fr/*"
     , "https://nouveau-europresse-com.essec.idm.oclc.org/*"
     , "https://nouveau-europresse-com.ezproxy.univ-catholille.fr/*"
     , "https://nouveau-europresse-com.ezproxy.upf.pf/*"
@@ -897,6 +898,10 @@
         {
           "name": "CY Cergy Paris Université",
           "AUTH_URL": "https://bibdocs.u-cergy.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U031547T_1"
+        },
+        {
+            "name": "E-SIDOC LFS (Lycée Français de Shanghai)",
+            "AUTH_URL": "https://2160010m-cas.esidoc.fr/cas/login?service=http%3a%2f%2fnouveau.europresse.com%2fLogin%2fEsidoc%3fsso_id%3d2160010M"
         },
         {
           "name": "École Centrale de Lyon (ECL)",
