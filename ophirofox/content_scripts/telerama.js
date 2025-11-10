@@ -13,31 +13,47 @@ function addDays(date, days) {
   return result;
 }
 
+function extractKeywords() {
+    return document.querySelector("h1").textContent;
+}
+
+async function createLink() {
+    return await ophirofoxEuropresseLink(extractKeywords());
+}
+
 async function onLoad() {
-  // Get articles
-  const articles = document.querySelectorAll('#liste-magazine-telerama article');
-  
-  for (const article of articles) {
-    const linkElement = article.querySelector('a.popin-link');
-    const tagName = linkElement.getAttribute('data-tagname');
-    const datePattern = /clic_magazine_(\d{4}-\d{2}-\d{2})/;
-    const match = tagName.match(datePattern);
-    const articleDate = new Date(match[1]);
-    // Check if the date object is valid
-    if (isNaN(articleDate.getTime())) {
-      console.error(`Invalid date: ${year}-${month + 1}-${day}`);
-      return;
+  // Check if we're on the kiosque page
+  if (window.location.href.endsWith('kiosque/telerama')) {
+    // Get articles
+    const articles = document.querySelectorAll('#liste-magazine-telerama article');
+
+    for (const article of articles) {
+      const linkElement = article.querySelector('a.popin-link');
+      const tagName = linkElement.getAttribute('data-tagname');
+      const datePattern = /clic_magazine_(\d{4}-\d{2}-\d{2})/;
+      const match = tagName.match(datePattern);
+      const articleDate = new Date(match[1]);
+      // Check if the date object is valid
+      if (isNaN(articleDate.getTime())) {
+        console.error(`Invalid date: ${year}-${month + 1}-${day}`);
+        return;
+      }
+      // Calculate the new date + 3 days
+      const newDate = addDays(articleDate, 3);
+      const formattedDate = formatDate(newDate);
+
+      // Generate the link
+      const a = await ophirofoxEuropressePDFLink("TA_P", formattedDate);
+      a.classList.add("btn", "btn--premium");
+
+      // Inject the link into the article
+      article.appendChild(a);
     }
-    // Calculate the new date + 3 days
-    const newDate = addDays(articleDate, 3);
-    const formattedDate = formatDate(newDate);
-    
-    // Generate the link
-    const a = await ophirofoxEuropressePDFLink("TA_P",formattedDate);
-    a.classList.add("btn", "btn--premium");
-    
-    // Inject the link into the article
-    article.appendChild(a);
+ 
+  }
+  else {
+    const msg_abo = document.querySelector(".article__subscriber-container");
+    msg_abo.after(await createLink());
   }
 }
 
