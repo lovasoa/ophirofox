@@ -390,6 +390,18 @@
     },
     {
       "matches": [
+        "https://lettreaudiovisuel.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/lettreaudiovisuel.js"
+      ],
+      "css": [
+        "content_scripts/lettreaudiovisuel.css"
+      ]
+    },
+    {
+      "matches": [
         "https://www.lexpress.fr/*"
       ],
       "js": [
