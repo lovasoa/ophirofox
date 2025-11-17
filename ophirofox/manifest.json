@@ -843,6 +843,18 @@
       "css": [
         "content_scripts/theEconomist.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.lanouvellerepublique.fr/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/lanouvellerepublique.js"
+      ],
+      "css": [
+        "content_scripts/lanouvellerepublique.css"
+      ]
     }
   ],
   "browser_specific_settings": {
