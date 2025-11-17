@@ -207,11 +207,14 @@
     },
     {
       "matches": [
-        "https://www.telerama.fr/kiosque/telerama"
+        "https://www.telerama.fr/*"
       ],
       "js": [
         "content_scripts/config.js",
         "content_scripts/telerama.js"
+      ],
+      "css": [
+        "content_scripts/telerama.css"
       ]
     },
     {
