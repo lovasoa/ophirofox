@@ -124,6 +124,7 @@
     , "https://nouveau-europresse-com.em-lyon.idm.oclc.org/"
     , "https://nouveau.europresse.com/access/ip/default.aspx?un=CENTRALENANTEST_1"
     , "https://nouveau-europresse-com.ehesp.idm.oclc.org/*"
+    , "hhttps://nouveau-eureka-cc.ezproxy.biblioottawalibrary.ca/*"
   ],
   "background": {
     "scripts": [
@@ -887,6 +888,10 @@
           "AUTH_URL": "https://bpi.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=pompi"
         },
         {
+          "name": "Bibliothèque publique d'Ottawa",
+          "AUTH_URL": "https://ezproxy.biblioottawalibrary.ca/login?qurl=https://nouveau.eureka.cc/access/ip/default.aspx?un=opladminU_1"
+        },
+        {
           "name": "Bibliothèque Sainte-Geneviève (BSG)",
           "AUTH_URL": "http://bsg-ezproxy.univ-paris3.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=pantheonT_1"
         },      
@@ -1380,7 +1385,7 @@
           "AUTH_URL": "https://login.openathens.net/saml/2/sso/entpe.fr/o/81387240/c/proxy.openathens.net?SAMLRequest=jZJRb9owFIX%2FiuX3xI6JSWIRKlY0DanbUEn7sDfjXIqlYGe%2BTlf%2B%2FQIMqZW6qu%2F3nnN0vjO7eTl05BkCWu9qmqWcEnDGt9Y91fSh%2BZqUlGDUrtWdd1BT5%2BnNfIb60PVqMcS9u4ffA2AkC0QIcVS59Q6HA4QNhGdr4OH%2Brqb7GHtUjHX%2Bybq0D%2F7lmPoenI57cJg6iOwkyQTTBhloI4q2hERAO0lyucuTkhd5wrdSm2mb7yZaUrIcXe2ocA7%2B1uB9aUTPwMUe0l1gnpXZpCxEzplh7wWiZLWs6dZk00Ia3mY7k8tWVkIK3kJlSs7LTFbjFeIAK3fqKNZUcCETPkl43nCh5FTJKhVV8YuSdfDRG999se5S7hCc8hotKqcPgCoatVl8v1Mi5Wp7OUL1rWnWyfrnpqHk8QpJnCCN2ByqM4ePpfp%2FvvRCTZ3zhlf%2FH7%2FrK1Y6v3b8f3xjuzYeP8Vvxl6luQ7qx2i%2FWq59Z82RLLrO%2F7kNoOM4u4yy%2BeXl7ezmfwE%3D&RelayState=https%3A%2F%2Fnouveau-europresse-com.proxy.openathens.net%2Faccess%2Fip%2Fdefault.aspx%3Fun%3DENTPET_1"
         },
         {
-          "name": "Blibliothèques du Val d'Oise / RéVOdoc",
+          "name": "Bibliothèques du Val d'Oise / RéVOdoc",
           "HTTP_REFERER": "https://revodoc.valdoise.fr/",
           "AUTH_URL": "https://nouveau.europresse.com/access/httpref/default.aspx?un=VALDOISEU_2"
         },
