@@ -127,6 +127,7 @@
     , "https://nouveau-europresse-com.ehesp.idm.oclc.org/*"
     , "https://nouveau.europresse.com/access/ip/default.aspx?un=lausanneAT_1"
     , "https://nouveau-eureka-cc.ezproxy.biblioottawalibrary.ca/*"
+    , "https://nouveau-europresse-com.ville-geneve.idm.oclc.org/*"
   ],
   "background": {
     "scripts": [
@@ -1434,7 +1435,11 @@
           "name": "Médiathèques d'Antony (92)",
           "HTTP_REFERER": "https://mediatheque.ville-antony.fr/",
           "AUTH_URL": "https://nouveau.europresse.com/access/httpref/default.aspx?un=antonyU_2"
-        }
+        },
+        {
+          "name": "Bibliothèque Ville de Genève",
+          "AUTH_URL": "https://ville-geneve.idm.oclc.org/login?&url=https://nouveau.europresse.com/access/ip/default.aspx?un=U033084T_1"
+        }        
       ]
     }
   }
