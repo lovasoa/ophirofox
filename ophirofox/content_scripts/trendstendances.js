@@ -7,7 +7,7 @@ let buttonAdded = false;
 
 async function addEuropresseButton() {
     if(!buttonAdded) {
-        const elt = document.querySelector('.datawall-wrapper .login');
+        const elt = document.querySelector('.c-paywall__inner form button');
         if (elt) {
             const a = await ophirofoxEuropresseLink(extractKeywords());
             elt.after(a);
