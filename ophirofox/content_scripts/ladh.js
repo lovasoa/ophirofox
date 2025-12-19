@@ -1,5 +1,5 @@
 function extractKeywords() {
-    return document.querySelector("h1").textContent;
+    return document.querySelector(".ap-Title span:last-child").textContent;
 }
 
 async function createLink() {
@@ -8,11 +8,9 @@ async function createLink() {
 }
 
 async function onLoad() {
-    const statusElem = document.getElementsByClassName("ap-PaidPicto");
-    if (statusElem.length == 0) return;
-    statusElem[0].after(await createLink());
+    const statusElem = document.querySelector("body:not(.HOMEPAGE-Page) .ap-PaidPicto");
+    if (statusElem === null) return;
+    statusElem.after(await createLink());
 }
 
 onLoad().catch(console.error);
-
-//OK
