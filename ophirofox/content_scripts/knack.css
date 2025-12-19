@@ -1,6 +1,7 @@
 .ophirofox-europresse {
-    display: inline-block;
-    margin-top: 1rem;
+    display: block;
+    width: 9vw;
+    margin: 1rem auto;
     padding: 0.5rem 1.5rem;
     border-radius: 0.3rem;
     background-color: #ffc700;
@@ -8,4 +9,5 @@
     font-family: "Aeonik","Publica Slab","Helvetica","Arial",sans-serif;
     font-size: 1.5rem;
     text-decoration: none;
+    text-align: center;
 }
