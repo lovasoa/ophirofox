@@ -1,5 +1,5 @@
 function extractKeywords() {
-    return document.querySelector("h1").textContent;
+    return document.querySelector("header h1").textContent;
 }
 
 async function createLink() {
@@ -7,15 +7,8 @@ async function createLink() {
     return a;
 }
 
-function findPremiumBanner() {
-    const title = document.querySelector("h1");
-    if (!title) return null;
-    const elems = title.parentElement.querySelectorAll("span");
-    return [...elems].find(d => d.classList.contains("r-article--payant"));
-}
-
 async function onLoad() {
-    const premiumBanner = findPremiumBanner();
+    const premiumBanner = document.querySelector('.r-article--payant');
     if (!premiumBanner) return;
     premiumBanner.after(await createLink());
 }
