@@ -1434,6 +1434,11 @@
           "name": "Médiathèques d'Antony (92)",
           "HTTP_REFERER": "https://mediatheque.ville-antony.fr/",
           "AUTH_URL": "https://nouveau.europresse.com/access/httpref/default.aspx?un=antonyU_2"
+        },
+        {
+          "name": "Médiathèques de Rennes Métropole",
+          "HTTP_REFERER": "https://www.lesmediatheques-rennesmetropole.fr/",
+          "AUTH_URL": "https://nouveau.europresse.com/access/httpref/default.aspx?un=CARMU_2"
         }
       ]
     }
