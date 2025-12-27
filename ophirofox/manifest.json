@@ -127,6 +127,9 @@
     , "https://nouveau-eureka-cc.ezproxy.biblioottawalibrary.ca/*"
   ],
   "background": {
+    "scripts": [
+      "background.js"
+    ],
     "service_worker": "background.js",
     "type": "module"
   },
