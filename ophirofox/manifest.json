@@ -124,7 +124,6 @@
     , "https://nouveau-europresse-com.ujm.idm.oclc.org/*"
     , "https://nouveau-europresse-com.em-lyon.idm.oclc.org/"
     , "https://nouveau.europresse.com/access/ip/default.aspx?un=CENTRALENANTEST_1"
-    , "https://nouveau-europresse-com.ehesp.idm.oclc.org/*"
     , "https://nouveau.europresse.com/access/ip/default.aspx?un=lausanneAT_1"
     , "https://nouveau-eureka-cc.ezproxy.biblioottawalibrary.ca/*"
   ],
@@ -950,11 +949,6 @@
         {
           "name": "École Centrale d'Electronique (ECE)",
           "AUTH_URL": "https://go.openathens.net/redirector/omneseducation.com?url=https%3A%2F%2Fnouveau.europresse.com%2Faccess%2Fip%2Fdefault.aspx%3Fun%3DU032932T_1"
-        },
-        {
-          "name": "École des Hautes Études en Santé Publique (EHESP)",
-          "HTTP_REFERER": "https://www.ehesp.fr/",
-          "AUTH_URL": "https://login.ehesp.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U032196T_1"
         },
         {
           "name": "École normale supérieure de Lyon (ENS Lyon)",
