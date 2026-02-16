@@ -48,43 +48,45 @@ jobs:
           # Format HHMM as integer to remove leading zeros
           HHMM=$((HOUR * 100 + MINUTE))
           
-          # Format compatible Chrome: X.Y.MMDD.HHMM
-          OPHIROFOX_VERSION="${VERSION_BASE}.${MMDD}.${HHMM}"
-          echo "OPHIROFOX_VERSION=${OPHIROFOX_VERSION}" >> $GITHUB_ENV
-          echo "Generated version: ${OPHIROFOX_VERSION}"
+          # Version unlisted (self-hosted) : .HHMM pair
+          HHMM_EVEN=$((HHMM - (HHMM % 2)))
+          UNLISTED_VERSION="${VERSION_BASE}.${MMDD}.${HHMM_EVEN}"
+          
+          # Version listed (AMO) : .HHMM impair
+          HHMM_ODD=$((HHMM_EVEN + 1))
+          LISTED_VERSION="${VERSION_BASE}.${MMDD}.${HHMM_ODD}"
+          
+          echo "UNLISTED_VERSION=${UNLISTED_VERSION}" >> $GITHUB_ENV
+          echo "LISTED_VERSION=${LISTED_VERSION}" >> $GITHUB_ENV
+          echo "Generated versions - Unlisted: ${UNLISTED_VERSION}, Listed: ${LISTED_VERSION}"
           echo "Year: $ACTUAL_YEAR -> YEAR: $YEAR -> Version base: $VERSION_BASE, MMDD: $MMDD, HHMM: $HHMM"
-      - run: jq ".version |= \"$OPHIROFOX_VERSION\"" < manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
+      
       - run: web-ext lint --self-hosted --warnings-as-errors
-      - run: web-ext build
-      - name: Backup original manifest and create AMO-compatible version
+      
+      - name: Build and sign unlisted version (self-hosted)
+        id: sign_unlisted
         run: |
-          cp manifest.json manifest.json.backup
-          jq 'del(.browser_specific_settings.gecko.update_url)' manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
+          jq ".version |= \"$UNLISTED_VERSION\"" manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
+          web-ext build
+          web-ext sign --channel=unlisted --timeout=15000
+        continue-on-error: true
+        env:
+          WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
+          WEB_EXT_API_SECRET: ${{ secrets.AMO_JWT_SECRET }}
+      
+      - name: Build and submit listed version (AMO, no wait)
+        run: |
+          jq ".version |= \"$LISTED_VERSION\" | del(.browser_specific_settings.gecko.update_url)" manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
           echo "AMO-compatible manifest created (without update_url)"
-      - name: Submit to AMO (listed, no wait)
-        run: web-ext sign --channel=listed --timeout=15000
+          web-ext build --overwrite-dest
+          web-ext sign --channel=listed --timeout=15000
         continue-on-error: true
         env:
           WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
           WEB_EXT_API_SECRET: ${{ secrets.AMO_JWT_SECRET }}
-      - name: Restore original manifest and increment version for self-hosted
-        run: |
-          mv manifest.json.backup manifest.json
-          # Increment the last part of the version (HHMM) by 1 for self-hosted
-          SELFHOSTED_VERSION=$(echo "$OPHIROFOX_VERSION" | awk -F. '{print $1"."$2"."$3"."$4+1}')
-          jq ".version |= \"$SELFHOSTED_VERSION\"" manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
-          echo "SELFHOSTED_VERSION=$SELFHOSTED_VERSION" >> $GITHUB_ENV
-          echo "Self-hosted version: $SELFHOSTED_VERSION (AMO version: $OPHIROFOX_VERSION)"
-      - name: Rebuild with new version
-        run: web-ext build --overwrite-dest
-      - name: Sign extension
-        id: sign
-        run: web-ext sign --channel=unlisted --timeout=15000
-        continue-on-error: true
-        env:
-          WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
-          WEB_EXT_API_SECRET: ${{ secrets.AMO_JWT_SECRET }}
+      
       - run: ls -lah ./web-ext-artifacts
+      
       - name: Copy signed XPI if available
         run: |
           if ls ./web-ext-artifacts/*xpi 1> /dev/null 2>&1; then
@@ -94,26 +96,32 @@ jobs:
             # Get the most recent zip file
             cp $(ls -t ./web-ext-artifacts/*.zip | head -1) ../ophirofox.xpi
           fi
+      
       - name: Create the mobile version (with all permissions asked on installation and no optional permissions)
         run: |
+          # Restore unlisted version for mobile build
+          jq ".version |= \"$UNLISTED_VERSION\"" manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
           jq '.permissions += .optional_permissions | .optional_permissions = []' manifest.json > manifest.mobile.json
           mv manifest.mobile.json manifest.json
           web-ext build --overwrite-dest
           cp $(ls -t ./web-ext-artifacts/*.zip | head -1) ../ophirofox.mobile.zip
+      
       - run: node ../update-manifest.js | tee /tmp/update_manifest.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
       - name: Determine release tag and prerelease status
         run: |
-          if [ "${{ steps.sign.outcome }}" == "success" ]; then
-            echo "RELEASE_TAG=v${{ env.SELFHOSTED_VERSION }}" >> $GITHUB_ENV
+          if [ "${{ steps.sign_unlisted.outcome }}" == "success" ]; then
+            echo "RELEASE_TAG=v${{ env.UNLISTED_VERSION }}" >> $GITHUB_ENV
             echo "IS_PRERELEASE=false" >> $GITHUB_ENV
           else
-            echo "RELEASE_TAG=v${{ env.SELFHOSTED_VERSION }}-unsigned" >> $GITHUB_ENV
+            echo "RELEASE_TAG=v${{ env.UNLISTED_VERSION }}-unsigned" >> $GITHUB_ENV
             echo "IS_PRERELEASE=true" >> $GITHUB_ENV
           fi
+      
       - name: Delete old unsigned prereleases (if this release is signed)
-        if: steps.sign.outcome == 'success'
+        if: steps.sign_unlisted.outcome == 'success'
         run: |
           gh release list --limit 100 | grep 'Pre-release' | grep 'unsigned' | grep -v 'current' | while read -r line; do
             tag=$(echo "$line" | awk '{print $1}')
@@ -122,18 +130,20 @@ jobs:
           done
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
       - name: Prepare release notes
         run: |
           git log -1 --pretty=%B > /tmp/changelog.txt
-          if [ "${{ steps.sign.outcome }}" != "success" ]; then
+          if [ "${{ steps.sign_unlisted.outcome }}" != "success" ]; then
             echo "" >> /tmp/changelog.txt
             echo "⚠️ **Note:** This release is not signed by Mozilla due to a signing service timeout." >> /tmp/changelog.txt
           fi
+      
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ env.RELEASE_TAG }}
-          name: Release ${{ env.SELFHOSTED_VERSION }}${{ env.IS_PRERELEASE == 'true' && ' (unsigned)' || '' }}
+          name: Release ${{ env.UNLISTED_VERSION }}${{ env.IS_PRERELEASE == 'true' && ' (unsigned)' || '' }}
           draft: false
           prerelease: ${{ env.IS_PRERELEASE }}
           body_path: /tmp/changelog.txt
@@ -141,6 +151,7 @@ jobs:
             ophirofox.xpi
             ophirofox.mobile.zip
             /tmp/update_manifest.json
+      
       - name: Update 'current' tag to always point to newest release (signed or unsigned)
         run: |
           cd ..
@@ -150,11 +161,12 @@ jobs:
           git push origin current --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
       - name: Create or update 'current' release with full details
         uses: softprops/action-gh-release@v1
         with:
           tag_name: current
-          name: Current Build (v${{ env.SELFHOSTED_VERSION }})${{ env.IS_PRERELEASE == 'true' && ' - Unsigned' || ' - Signed' }}
+          name: Current Build (v${{ env.UNLISTED_VERSION }})${{ env.IS_PRERELEASE == 'true' && ' - Unsigned' || ' - Signed' }}
           draft: false
           prerelease: true
           body_path: /tmp/changelog.txt
