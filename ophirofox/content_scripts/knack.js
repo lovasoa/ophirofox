@@ -1,5 +1,5 @@
 function extractKeywords() {
-    const titleElem = document.querySelector("h1").childNodes[0];
+    const titleElem = document.querySelector(".c-paywall__header-title");
     return titleElem && titleElem.textContent;
 }
 
@@ -7,7 +7,7 @@ let buttonAdded = false;
 
 async function addEuropresseButton() {
     if(!buttonAdded) {
-        const elt = document.querySelector('.datawall-wrapper .register');
+        const elt = document.querySelector('.c-paywall__inner form button');
         if (elt) {
             const a = await ophirofoxEuropresseLink(extractKeywords());
             elt.after(a);
