@@ -1439,7 +1439,12 @@
         {
           "name": "Bibliothèque Ville de Genève",
           "AUTH_URL": "https://ville-geneve.idm.oclc.org/login?&url=https://nouveau.europresse.com/access/ip/default.aspx?un=U033084T_1"
-        }        
+        },
+        {
+          "name": "Médiathèques de Rennes Métropole",
+          "HTTP_REFERER": "https://www.lesmediatheques-rennesmetropole.fr/",
+          "AUTH_URL": "https://nouveau.europresse.com/access/httpref/default.aspx?un=CARMU_2"
+        }
       ]
     }
   }
