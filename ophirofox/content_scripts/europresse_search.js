@@ -46,8 +46,17 @@ async function hasConsumable() {
 
 async function loadRead(){
     const path = window.location.pathname;
-    const { search_terms, published_time } = await consumeReadRequest();
+    const { search_terms, published_time, origin_url } = await consumeReadRequest();
     if (!search_terms) return;
+    
+    // Ajouter origin_url dans le <head> si présent
+    if (origin_url) {
+        const meta = document.createElement('meta');
+        meta.name = 'ophirofox-origin-url';
+        meta.content = origin_url;
+        document.head.appendChild(meta);
+    }
+    
     const stopwords = new Set(['d', 'l', 'et', 'sans', 'or', 'par']);
     /*
         L = { Lu , Ll , Lt , Lm , Lo }
