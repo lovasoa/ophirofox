@@ -100,8 +100,13 @@ async function ophirofoxEuropresseLink(keywords, { publishedTime } = {}) {
       chrome.storage.local.set({
         "ophirofox_read_request": {
           'search_terms': keywords,
-          'published_time': publishedTime,
-          'origin_url': window.location.href
+          'published_time': publishedTime
+        }
+      }),
+      chrome.storage.local.set({
+        "ophirofox_origin_tracking": {
+          'origin_url': window.location.href,
+          'timestamp': Date.now()
         }
       }),
     ]).then(() => accept());
@@ -139,8 +144,13 @@ async function ophirofoxEuropressePDFLink(media_id, publishedTime) {
       chrome.storage.local.set({
         "ophirofox_readPDF_request": {
           'media_id': media_id,
-          'published_time': publishedTime,
-          'origin_url': window.location.href
+          'published_time': publishedTime
+        }
+      }),
+      chrome.storage.local.set({
+        "ophirofox_origin_tracking": {
+          'origin_url': window.location.href,
+          'timestamp': Date.now()
         }
       }),
     ]).then(() => accept());
@@ -158,7 +168,6 @@ async function ophirofoxEuropressePDFLink(media_id, publishedTime) {
   ophirofox_config.then(({ AUTH_URL }) => { a.href = AUTH_URL });
   return a;
 }
-
 
 /**
  * Finds the permission that matches the AUTH_URL of the given partner

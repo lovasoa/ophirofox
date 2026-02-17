@@ -46,16 +46,8 @@ async function hasConsumable() {
 
 async function loadRead(){
     const path = window.location.pathname;
-    const { search_terms, published_time, origin_url } = await consumeReadRequest();
+    const { search_terms, published_time } = await consumeReadRequest();
     if (!search_terms) return;
-    
-    // Ajouter origin_url dans le <head> si présent
-    if (origin_url) {
-        const meta = document.createElement('meta');
-        meta.name = 'ophirofox-origin-url';
-        meta.content = origin_url;
-        document.head.appendChild(meta);
-    }
     
     const stopwords = new Set(['d', 'l', 'et', 'sans', 'or', 'par']);
     /*
@@ -148,6 +140,27 @@ async function onLoad() {
         path === "/Pdf"
     )) return;
 
+    // Vérifier si on a un origin_url récent dans le tracking (non-consumé)
+    const originTracking = await new Promise(resolve => {
+        chrome.storage.local.get("ophirofox_origin_tracking", (r) => resolve(r.ophirofox_origin_tracking));
+    });
+    
+    if (originTracking && originTracking.origin_url && originTracking.timestamp) {
+        const age = Date.now() - originTracking.timestamp;
+        const TTL = 60 * 1000; // 60 secondes
+        
+        if (age < TTL) {
+            // Timestamp encore valide, injecter origin_url dans le <head>
+            const meta = document.createElement('meta');
+            meta.name = 'ophirofox-origin-url';
+            meta.content = originTracking.origin_url;
+            document.head.appendChild(meta);
+        } else {
+            // Expiré, nettoyer
+            chrome.storage.local.remove("ophirofox_origin_tracking");
+        }
+    }
+
     if (!await hasConsumable()) {
         console.log("(Ophirofox) No consumable found.");
         if (path.startsWith("/Search/Result")) {
@@ -157,7 +170,6 @@ async function onLoad() {
                     await readWhenOnlyOneResult();
                 }
             } else if (numberOfResul === '0') {
-                //Quand aucun résultat n'est trouvé, on relance la recheche en remplacant la balise TIT_HEAD= par TEXT=
                 const query = document.querySelector('#Keywords');
                 if (query.value.startsWith('TIT_HEAD=')) {
                     query.value = query.value.replace('TIT_HEAD=', 'TEXT=');
@@ -169,7 +181,6 @@ async function onLoad() {
         return;
     }
 
-    // Fix une issue avec le proxy BNF qui redirige vers /Pdf
     if (path === '/Pdf') {
         window.location.pathname = '/Search/Reading';
         return;
@@ -188,7 +199,6 @@ async function onLoad() {
         console.error("consumeRequestType() returned undefined or an object without a 'type' property.");
     }
 }
-
 async function ophirofoxRealoadOnExpired() {
     const params = new URLSearchParams(window.location.search)
     if (params.get("ErrorCode") === "4000112") {
