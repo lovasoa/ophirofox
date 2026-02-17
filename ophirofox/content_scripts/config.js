@@ -81,21 +81,17 @@ const ophirofox_config = getOphirofoxConfig();
  */
 async function ophirofoxEuropresseLink(keywords, { publishedTime } = {}) {
   keywords = keywords ? keywords.trim() : document.querySelector("h1").textContent;
-
   publishedTime = publishedTime || document.querySelector("meta[property='article:published_time'], meta[property='og:article:published_time'], meta[property='date:published_time']")
     ?.getAttribute("content") || '';
   let publishedTimeInstance = new Date(publishedTime);
-
   if (!isNaN(publishedTimeInstance)) {
     publishedTime = publishedTimeInstance.toISOString().slice(0, 10);
   } else {
     publishedTime = '';
   }
-
   const a = document.createElement("a");
   a.textContent = "Lire sur Europresse";
   a.className = "ophirofox-europresse";
-
   const setKeywords = () => new Promise(accept => {
     Promise.all([
       chrome.storage.local.set({
@@ -107,9 +103,14 @@ async function ophirofoxEuropresseLink(keywords, { publishedTime } = {}) {
           'published_time': publishedTime
         }
       }),
+      chrome.storage.local.set({
+        "ophirofox_origin_tracking": {
+          'origin_url': window.location.href,
+          'timestamp': Date.now()
+        }
+      }),
     ]).then(() => accept());
   });
-
   a.onmousedown = setKeywords;
   a.onclick = async function (evt) {
     evt.preventDefault();
@@ -120,10 +121,10 @@ async function ophirofoxEuropresseLink(keywords, { publishedTime } = {}) {
       window.location = AUTH_URL;
     }
   };
-
   ophirofox_config.then(({ AUTH_URL }) => { a.href = AUTH_URL });
   return a;
 }
+
 
 /**
  * Crée un lien vers Europresse pour la consultation de PDF, avec l'id du media, et la date de parution
@@ -135,7 +136,6 @@ async function ophirofoxEuropressePDFLink(media_id, publishedTime) {
   const a = document.createElement("a");
   a.textContent = "Lire sur Europresse";
   a.className = "ophirofox-europresse";
-
   const setKeywords = () => new Promise(accept => {
     Promise.all([
       chrome.storage.local.set({
@@ -147,9 +147,14 @@ async function ophirofoxEuropressePDFLink(media_id, publishedTime) {
           'published_time': publishedTime
         }
       }),
+      chrome.storage.local.set({
+        "ophirofox_origin_tracking": {
+          'origin_url': window.location.href,
+          'timestamp': Date.now()
+        }
+      }),
     ]).then(() => accept());
   });
-
   a.onmousedown = setKeywords;
   a.onclick = async function (evt) {
     evt.preventDefault();
@@ -160,7 +165,6 @@ async function ophirofoxEuropressePDFLink(media_id, publishedTime) {
       window.location = AUTH_URL;
     }
   };
-
   ophirofox_config.then(({ AUTH_URL }) => { a.href = AUTH_URL });
   return a;
 }
