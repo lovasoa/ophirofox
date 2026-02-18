@@ -1,7 +1,7 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Ophirofox",
-  "version": "2.5",
+  "version": "3.0",
   "description": "Lire les articles du monde, du figaro, et d'autres journaux grâce à sa connexion europresse",
   "icons": {
     "48": "icons/48.png",
@@ -9,20 +9,21 @@
   },
   "homepage_url": "https://ophirofox.ophir.dev/",
   "options_ui": {
-    "page": "settings/options_ui.html"
+    "page": "settings/options_ui.html",
+    "open_in_tab": true
   },
   "permissions": [
     "contextMenus",
     "storage",
     "scripting",
-    "webRequest",
-    "webRequestBlocking",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
     "https://nouveau.europresse.com/*",
     "https://eureka.cc/*"
   ],
-  "optional_permissions": [
-      "webNavigation"
-    , "https://2160010m-cas.esidoc.fr/*"
+  "optional_host_permissions": [
+    "https://2160010m-cas.esidoc.fr/*"
     , "https://nouveau-europresse-com.essec.idm.oclc.org/*"
     , "https://nouveau-europresse-com.ezproxy.univ-catholille.fr/*"
     , "https://nouveau-europresse-com.ezproxy.upf.pf/*"
@@ -119,13 +120,10 @@
     , "https://nouveau-europresse-com.iepnomade-2.grenet.fr/*"
     , "https://nouveau-europresse-com.bsg-ezproxy.univ-paris3.fr/*"	  
     , "https://nouveau-europresse-com.eu1.proxy.openathens.net/*"
-    , "https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_1"
     , "http://nouveau.europresse.com.docelec.enssib.fr/access/ip/default.aspx?un=ENSSIBT_1"
     , "https://nouveau-europresse-com.ujm.idm.oclc.org/*"
     , "https://nouveau-europresse-com.em-lyon.idm.oclc.org/"
-    , "https://nouveau.europresse.com/access/ip/default.aspx?un=CENTRALENANTEST_1"
     , "https://nouveau-europresse-com.ehesp.idm.oclc.org/*"
-    , "https://nouveau.europresse.com/access/ip/default.aspx?un=lausanneAT_1"
     , "https://nouveau-eureka-cc.ezproxy.biblioottawalibrary.ca/*"
     , "https://nouveau-europresse-com.ville-geneve.idm.oclc.org/*"
   ],
@@ -133,7 +131,7 @@
     "scripts": [
       "background.js"
     ],
-    "persistent": true,
+    "service_worker": "background.js",
     "type": "module"
   },
   "content_scripts": [
