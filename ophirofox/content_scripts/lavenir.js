@@ -1,5 +1,5 @@
 function extractKeywords() {
-    return document.querySelector(".ap-Title span:last-child").textContent;
+    return document.querySelector(".ap-Title > span:last-of-type").textContent;
 }
 
 async function createLink() {
@@ -14,3 +14,4 @@ async function onLoad() {
 }
 
 onLoad().catch(console.error);
+
