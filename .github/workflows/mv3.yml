@@ -1,4 +1,4 @@
-name: Build MV3 (Chrome)
+name: Build MV3
 
 on:
   workflow_dispatch:
