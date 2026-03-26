@@ -3,6 +3,8 @@ let ophirofoxSettings;
 let ophirofoxReadRequest = null;
 let ophirofoxRequestType = null;
 let searchMenu = null;
+let injectEuropressInProgress = false;
+let injectEuropressPending = false;
 
 // Configuration des scripts de contenu
 const europresse_content_script = {
@@ -97,7 +99,16 @@ async function registerContentScripts(content_script) {
  */
 async function injectEuropressUsingScripting(matches) {
   const content_script = { ...europresse_content_script, matches, id: "europresse" };
-  await unregisterContentScripts();
+  
+  try {
+    const existing = await chrome.scripting.getRegisteredContentScripts({ ids: ["europresse"] });
+    if (existing.length > 0) {
+      await unregisterContentScripts();
+    }
+  } catch (err) {
+    console.log("Nothing to unregister:", err);
+  }
+
   await registerContentScripts(content_script);
   console.log("Injected Europress using scripting", matches);
 }
@@ -106,17 +117,35 @@ async function injectEuropressUsingScripting(matches) {
  * Fonction principale pour injecter les scripts Europresse
  */
 async function injectEuropress() {
-  chrome.permissions.getAll(({ origins, permissions }) => {
-    const europresse_origins = origins.filter(origin => /europresse|eureka/.test(origin));
-    if (permissions.includes("scripting") && europresse_origins.length > 0) {
-      injectEuropressUsingScripting(europresse_origins);
-    } else if (permissions.includes("webNavigation") && europresse_origins.length > 0) {
-      injectEuropressUsingWebNavigation(europresse_origins);
-    } else {
-      console.log("No permission to inject Europress at the moment, opening options page");
-      chrome.runtime.openOptionsPage();
+  if (injectEuropressInProgress) {
+    injectEuropressPending = true;
+    return;
+  }
+  injectEuropressInProgress = true;
+  try {
+    await new Promise(resolve => {
+      chrome.permissions.getAll(({ origins, permissions }) => {
+        const europresse_origins = origins.filter(origin => /europresse|eureka/.test(origin));
+        if (permissions.includes("scripting") && europresse_origins.length > 0) {
+          injectEuropressUsingScripting(europresse_origins).then(resolve);
+        } else if (permissions.includes("webNavigation") && europresse_origins.length > 0) {
+          injectEuropressUsingWebNavigation(europresse_origins).then(resolve);
+        } else {
+          console.log("No permission to inject Europress at the moment, opening options page");
+          chrome.runtime.openOptionsPage();
+          resolve();
+        }
+      });
+    });
+  } catch (err) {
+    console.error("Erreur lors de l'injection Europress:", err);
+  } finally {
+    injectEuropressInProgress = false;
+    if (injectEuropressPending) {
+      injectEuropressPending = false;
+      injectEuropress();
     }
-  });
+  }
 }
 
 // ======== ÉCOUTEURS D'ÉVÉNEMENTS ========
@@ -133,15 +162,11 @@ chrome.permissions.onAdded.addListener(injectEuropress);
 chrome.permissions.onRemoved.addListener(injectEuropress);
 
 chrome.storage.onChanged.addListener((changes, area) => {
-  if (area === "local" && changes.ophirofox_settings) {
-    loadSettings();
-  }
-  injectEuropress();
-});
-
-
-chrome.storage.onChanged.addListener((changes, area) => {
   if (area === "local") {
+    if (changes.ophirofox_settings) {
+      loadSettings();
+      injectEuropress();
+    }
     if (changes.ophirofox_request_type) {
       ophirofoxRequestType = changes.ophirofox_request_type.newValue || null;
       // console.log("Ophirofox RequestType mis à jour :", ophirofoxRequestType);
