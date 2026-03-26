@@ -1,0 +1,71 @@
+name: Build MV3 (Chrome)
+
+on:
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: ./ophirofox
+
+jobs:
+  build-mv3:
+    name: Build MV3 extension
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: mv3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - run: npm install --global web-ext
+
+      - name: Generate version
+        id: version
+        run: |
+          ACTUAL_YEAR=$(date +%Y)
+          YEAR=$(date +%y)
+          
+          if [ "$ACTUAL_YEAR" -eq 2025 ]; then
+            YEAR=$((YEAR + 1))
+          fi
+          
+          YEAR_MAJOR=$((YEAR / 10))
+          YEAR_MINOR=$((YEAR % 10))
+          VERSION_BASE="${YEAR_MAJOR}.${YEAR_MINOR}"
+          MONTH=$(date +%-m)
+          DAY=$(date +%-d)
+          HOUR=$(date +%-H)
+          MINUTE=$(date +%-M)
+          
+          if [ "$ACTUAL_YEAR" -eq 2026 ]; then
+            MMDD=$((MONTH * 100 + DAY + 10000))
+          else
+            MMDD=$((MONTH * 100 + DAY))
+          fi
+
+          HHMM=$((HOUR * 100 + MINUTE))
+          HHMM_EVEN=$((HHMM - (HHMM % 2)))
+          
+          # MV3 uses the unlisted (even) variant, no need for the listed/odd one
+          VERSION="${VERSION_BASE}.${MMDD}.${HHMM_EVEN}"
+          
+          echo "VERSION=${VERSION}" >> $GITHUB_ENV
+          echo "Generated version: ${VERSION}"
+
+      - name: Build
+        run: |
+          jq ".version |= \"$VERSION\" | del(.browser_specific_settings.gecko.update_url) | del(.background.scripts)" manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
+          web-ext lint --warnings-as-errors
+          web-ext build
+
+      - name: Create pre-release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: mv3-${{ env.VERSION }}
+          name: MV3 Build ${{ env.VERSION }}
+          draft: false
+          prerelease: true
+          files: ophirofox/web-ext-artifacts/*.zip
