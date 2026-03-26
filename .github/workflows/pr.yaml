@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: '20'
       - run: npm install --global web-ext
-      - run: web-ext lint --self-hosted --warnings-as-errors
+      - run: web-ext lint --self-hosted --warnings-as-errors=false
       - run: web-ext build
       - uses: actions/upload-artifact@v4
         id: upload

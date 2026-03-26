@@ -1,8 +1,9 @@
-// Variables globales
-let ophirofoxSettings;
+// Variables globales pour le Service Worker
+let ophirofoxSettings = null;
 let ophirofoxReadRequest = null;
 let ophirofoxRequestType = null;
 let searchMenu = null;
+let declarativeRulesInitialized = false;
 
 // Configuration des scripts de contenu
 const europresse_content_script = {
@@ -15,41 +16,164 @@ const europresse_content_script = {
 /**
  * Charge les paramètres depuis le stockage local
  */
-function loadSettings() {
-  chrome.storage.local.get(["ophirofox_settings"], function (data) {
+async function loadSettings() {
+  try {
+    const data = await chrome.storage.local.get(["ophirofox_settings"]);
     if (data.ophirofox_settings) {
-      try {
-        ophirofoxSettings = typeof data.ophirofox_settings === "string"
-          ? JSON.parse(data.ophirofox_settings)
-          : data.ophirofox_settings;
-        if (!/Android/.test(navigator.userAgent)) {
-          if (ophirofoxSettings.add_search_menu && searchMenu === null) {
-            console.log(`createEuropresseSearchMenu`);
-            createEuropresseSearchMenu();
-          } else if (!ophirofoxSettings.add_search_menu && searchMenu !== null) {
-            chrome.contextMenus.onClicked.removeListener(onSearchMenuClickHandler);
-            chrome.contextMenus.remove(searchMenu);
-            searchMenu = null;
-            console.log(`removeEuropresseSearchMenu`);
-          }
+      ophirofoxSettings = typeof data.ophirofox_settings === "string"
+        ? JSON.parse(data.ophirofox_settings)
+        : data.ophirofox_settings;
+      
+      if (!/Android/.test(navigator.userAgent)) {
+        if (ophirofoxSettings.add_search_menu && searchMenu === null) {
+          console.log(`createEuropresseSearchMenu`);
+          await createEuropresseSearchMenu();
+        } else if (!ophirofoxSettings.add_search_menu && searchMenu !== null) {
+          await removeEuropresseSearchMenu();
         }
-        console.log("Settings chargés :", ophirofoxSettings);
+      }
+      console.log("Settings chargés :", ophirofoxSettings);
+    }
+  } catch (err) {
+    console.error("Erreur lors du chargement des settings :", err);
+  }
+}
+
+/**
+ * Charge les données de requête depuis le stockage
+ */
+async function loadRequestData() {
+  try {
+    const data = await chrome.storage.local.get(["ophirofox_request_type", "ophirofox_read_request"]);
+    ophirofoxRequestType = data.ophirofox_request_type || null;
+    ophirofoxReadRequest = data.ophirofox_read_request || null;
+    console.log("Valeurs initiales chargées:", { ophirofoxRequestType, ophirofoxReadRequest });
+  } catch (err) {
+    console.error("Erreur lors du chargement des données de requête:", err);
+  }
+}
+
+// ======== GESTION DES RÈGLES DECLARATIVENETREQUEST ========
+
+/**
+ * Génère les règles statiques pour declarativeNetRequest basées sur les partenaires
+ */
+async function generateDeclarativeRules() {
+  try {
+    const manifest = chrome.runtime.getManifest();
+    const partners = manifest.browser_specific_settings?.ophirofox_metadata?.partners || [];
+    
+    // Filtrer les partenaires qui ont une AUTH_URL avec httpref
+    const httprefPartners = partners.filter(partner => 
+      partner.AUTH_URL && partner.AUTH_URL.includes('/access/httpref/default.aspx')
+    );
+    
+    console.log(`Partenaires avec httpref trouvés: ${httprefPartners.length}`);
+    
+    const rules = [];
+    let ruleId = 1;
+    
+    for (const partner of httprefPartners) {
+      try {
+        let referer;
+        
+        // Utiliser HTTP_REFERER s'il existe
+        if (partner.HTTP_REFERER) {
+          referer = partner.HTTP_REFERER;
+        } 
+        // Sinon utiliser AUTH_URL
+        else if (partner.AUTH_URL) {
+          const authUrl = new URL(partner.AUTH_URL);
+          referer = `${authUrl.protocol}//${authUrl.hostname}`;
+        }
+        
+        if (referer) {
+          rules.push({
+            id: ruleId++,
+            condition: {
+              urlFilter: "*://nouveau.europresse.com/access/httpref/default.aspx*",
+              initiatorDomains: [new URL(referer).hostname]
+            },
+            action: {
+              type: "modifyHeaders",
+              requestHeaders: [
+                {
+                  header: "referer",
+                  operation: "set",
+                  value: referer
+                }
+              ]
+            }
+          });
+          
+          // Ajouter une règle pour eureka.cc aussi
+          rules.push({
+            id: ruleId++,
+            condition: {
+              urlFilter: "*://eureka.cc/access/httpref/default.aspx*",
+              initiatorDomains: [new URL(referer).hostname]
+            },
+            action: {
+              type: "modifyHeaders",
+              requestHeaders: [
+                {
+                  header: "referer",
+                  operation: "set",
+                  value: referer
+                }
+              ]
+            }
+          });
+          
+          console.log(`Règle créée pour ${partner.name}: ${referer}`);
+        }
       } catch (err) {
-        console.error("Erreur lors du chargement des settings :", err);
+        console.error(`Erreur lors de la création de la règle pour ${partner.name}:`, err);
       }
     }
-  });
+    
+    if (rules.length > 0) {
+      // Supprimer toutes les règles existantes et ajouter les nouvelles
+      const existingRules = await chrome.declarativeNetRequest.getDynamicRules();
+      const existingRuleIds = existingRules.map(rule => rule.id);
+      
+      await chrome.declarativeNetRequest.updateDynamicRules({
+        removeRuleIds: existingRuleIds,
+        addRules: rules
+      });
+      
+      console.log(`${rules.length} règles declarativeNetRequest installées`);
+    }
+    
+    declarativeRulesInitialized = true;
+  } catch (err) {
+    console.error("Erreur lors de la génération des règles declarativeNetRequest:", err);
+  }
 }
 
 // ======== FONCTIONS D'INJECTION DE SCRIPTS ========
 
 /**
- * Fonction exécutée lors de la navigation
+ * Fonction exécutée lors de la navigation (fallback pour webNavigation)
  * @param {Object} param0 - Objet contenant l'ID de l'onglet
  */
-function webNavigationListener({ tabId }) {
-  europresse_content_script.js.forEach(file => chrome.tabs.executeScript(tabId, { file }));
-  europresse_content_script.css.forEach(file => chrome.tabs.insertCSS(tabId, { file }));
+async function webNavigationListener({ tabId }) {
+  try {
+    for (const file of europresse_content_script.js) {
+      await chrome.scripting.executeScript({
+        target: { tabId },
+        files: [file]
+      });
+    }
+    for (const file of europresse_content_script.css) {
+      await chrome.scripting.insertCSS({
+        target: { tabId },
+        files: [file]
+      });
+    }
+  } catch (err) {
+    console.error("Erreur lors de l'injection via webNavigation:", err);
+  }
 }
 
 /**
@@ -68,7 +192,7 @@ async function injectEuropressUsingWebNavigation(europresse_origins) {
  */
 async function unregisterContentScripts() {
   try {
-    await new Promise(acc => chrome.scripting.unregisterContentScripts({ ids: ["europresse"] }, acc));
+    await chrome.scripting.unregisterContentScripts({ ids: ["europresse"] });
     console.log("Unregistered old content script");
   } catch (err) {
     console.log("No old content script unregistered", err);
@@ -81,13 +205,12 @@ async function unregisterContentScripts() {
  */
 async function registerContentScripts(content_script) {
   try {
-    await new Promise(acc => chrome.scripting.registerContentScripts([content_script], acc));
+    await chrome.scripting.registerContentScripts([content_script]);
     console.log("Registered new content script");
   } catch (err) {
-    // Old versions of firefox do not suppport persistent content scripts
-    // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/scripting/RegisteredContentScript
+    // Fallback pour les anciennes versions de Firefox
     content_script.persistAcrossSessions = false;
-    await new Promise(acc => chrome.scripting.registerContentScripts([content_script], acc));
+    await chrome.scripting.registerContentScripts([content_script]);
   }
 }
 
@@ -106,107 +229,157 @@ async function injectEuropressUsingScripting(matches) {
  * Fonction principale pour injecter les scripts Europresse
  */
 async function injectEuropress() {
-  chrome.permissions.getAll(({ origins, permissions }) => {
+  try {
+    const permissions = await chrome.permissions.getAll();
+    const { origins } = permissions;
     const europresse_origins = origins.filter(origin => /europresse|eureka/.test(origin));
-    if (permissions.includes("scripting") && europresse_origins.length > 0) {
-      injectEuropressUsingScripting(europresse_origins);
-    } else if (permissions.includes("webNavigation") && europresse_origins.length > 0) {
-      injectEuropressUsingWebNavigation(europresse_origins);
+    
+    if (permissions.permissions.includes("scripting") && europresse_origins.length > 0) {
+      await injectEuropressUsingScripting(europresse_origins);
+    } else if (permissions.permissions.includes("webNavigation") && europresse_origins.length > 0) {
+      await injectEuropressUsingWebNavigation(europresse_origins);
     } else {
       console.log("No permission to inject Europress at the moment, opening options page");
       chrome.runtime.openOptionsPage();
     }
-  });
+    
+    // Initialiser les règles declarativeNetRequest si pas encore fait
+    if (!declarativeRulesInitialized) {
+      await generateDeclarativeRules();
+    }
+  } catch (err) {
+    console.error("Erreur lors de l'injection Europress:", err);
+  }
+}
+
+// ======== GESTION DU MENU CONTEXTUEL ========
+
+/**
+ * Crée le menu de recherche contextuel
+ */
+async function createEuropresseSearchMenu() {
+  try {
+    searchMenu = await chrome.contextMenus.create({
+      id: "EuropresseSearchMenu",
+      title: "Rechercher: %s",
+      contexts: ["selection"],
+    });
+    console.log("EuropresseSearchMenu created successfully");
+  } catch (err) {
+    console.error(`Error creating context menu: ${err}`);
+  }
+}
+
+/**
+ * Supprime le menu de recherche contextuel
+ */
+async function removeEuropresseSearchMenu() {
+  try {
+    if (searchMenu) {
+      await chrome.contextMenus.remove(searchMenu);
+      searchMenu = null;
+      console.log(`removeEuropresseSearchMenu`);
+    }
+  } catch (err) {
+    console.error("Erreur lors de la suppression du menu:", err);
+  }
+}
+
+/**
+ * Gestionnaire de clic sur le menu contextuel
+ */
+async function onSearchMenuClickHandler(info, tab) {
+  try {
+    if (info.menuItemId === "EuropresseSearchMenu") {
+      console.log("EuropresseSearchMenu", tab);
+      const search_request = info.selectionText;
+      
+      await Promise.all([
+        chrome.storage.local.set({
+          "ophirofox_request_type": { 'type': 'SearchMenu' }
+        }),
+        chrome.storage.local.set({
+          "ophirofox_read_request": {
+            'search_terms': search_request,
+            'published_time': ''
+          }
+        }),
+      ]);
+      
+      // Recharger les settings si nécessaire
+      if (!ophirofoxSettings) {
+        await loadSettings();
+      }
+      
+      if (ophirofoxSettings && ophirofoxSettings.partner_name) {
+        const manifest = chrome.runtime.getManifest();
+        const partners = manifest.browser_specific_settings?.ophirofox_metadata?.partners || [];
+        const partner = partners.find(p => p.name === ophirofoxSettings.partner_name);
+        
+        if (partner && partner.AUTH_URL) {
+          await chrome.tabs.create({ url: partner.AUTH_URL });
+        }
+      }
+    }
+  } catch (err) {
+    console.error("Erreur dans onSearchMenuClickHandler:", err);
+  }
 }
 
 // ======== ÉCOUTEURS D'ÉVÉNEMENTS ========
 
-chrome.runtime.onInstalled.addListener(({ reason }) => {
-  if (reason === "install") {
-    chrome.runtime.openOptionsPage();
+// Installation et démarrage
+chrome.runtime.onInstalled.addListener(async ({ reason }) => {
+  try {
+    if (reason === "install") {
+      chrome.runtime.openOptionsPage();
+    }
+    await loadSettings();
+    await loadRequestData();
+    await injectEuropress();
+  } catch (err) {
+    console.error("Erreur lors de l'installation:", err);
   }
-  loadSettings();
 });
 
-chrome.runtime.onStartup.addListener(loadSettings);
+chrome.runtime.onStartup.addListener(async () => {
+  try {
+    await loadSettings();
+    await loadRequestData();
+    await injectEuropress();
+  } catch (err) {
+    console.error("Erreur lors du démarrage:", err);
+  }
+});
+
+// Gestion des permissions
 chrome.permissions.onAdded.addListener(injectEuropress);
 chrome.permissions.onRemoved.addListener(injectEuropress);
 
-chrome.storage.onChanged.addListener((changes, area) => {
-  if (area === "local" && changes.ophirofox_settings) {
-    loadSettings();
-  }
-  injectEuropress();
-});
-
-
-chrome.storage.onChanged.addListener((changes, area) => {
-  if (area === "local") {
-    if (changes.ophirofox_request_type) {
-      ophirofoxRequestType = changes.ophirofox_request_type.newValue || null;
-      // console.log("Ophirofox RequestType mis à jour :", ophirofoxRequestType);
-    }
-    if (changes.ophirofox_read_request) {
-      ophirofoxReadRequest = changes.ophirofox_read_request.newValue || null;
-      // console.log("Ophirofox ReadRequest mis à jour :", ophirofoxReadRequest);
-    }
-  }
-});
-
-function loadRequestData() {
-  chrome.storage.local.get(["ophirofox_request_type", "ophirofox_read_request"], function(data) {
-    ophirofoxRequestType = data.ophirofox_request_type || null;
-    ophirofoxReadRequest = data.ophirofox_read_request || null;
-    console.log("Valeurs initiales chargées:", { ophirofoxRequestType, ophirofoxReadRequest });
-  });
-}
-loadRequestData();
-
-// Interception des requêtes HTTP
-const listener = function (details) {
-  const url = new URL(details.url);
-  const isTargetHost = url.hostname.includes("europresse.com") || url.hostname.includes("eureka.cc");
-  const isTargetPath = url.pathname.startsWith("/access/httpref/default.aspx");
-  
-  if ((!ophirofoxRequestType && !ophirofoxReadRequest) || !ophirofoxSettings) {
-    return { requestHeaders: details.requestHeaders };
-  }
-  
-  if (isTargetHost && isTargetPath) {
-    try {
-      const manifest = chrome.runtime.getManifest();
-      const partners = manifest.browser_specific_settings.ophirofox_metadata.partners;
-      const partner = partners.find(p => p.name === ophirofoxSettings.partner_name);
-      
-      if (partner) {
-        let referer;
-        
-        // Utiliser HTTP_REFERER s'il existe
-        if (partner.HTTP_REFERER) {
-          referer = partner.HTTP_REFERER;
-        } 
-        // Sinon utiliser AUTH_URL
-        else if (partner.AUTH_URL) {
-          const authUrl = new URL(partner.AUTH_URL);
-          referer = `${authUrl.protocol}//${authUrl.hostname}`;
-        }
-        
-        if (referer) {
-          // Supprime l'en-tête Referer existant
-          details.requestHeaders = details.requestHeaders.filter(h => h.name.toLowerCase() !== "referer");
-          // Ajoute un nouvel en-tête Referer
-          details.requestHeaders.push({ name: "Referer", value: referer });
-          console.log(`Referer modifié pour ${details.url}: ${referer}`);
-        }
+// Gestion des changements de stockage
+chrome.storage.onChanged.addListener(async (changes, area) => {
+  try {
+    if (area === "local") {
+      if (changes.ophirofox_settings) {
+        await loadSettings();
+        await injectEuropress();
       }
-    } catch (err) {
-      console.error("Erreur lors de la modification du referer:", err);
+      if (changes.ophirofox_request_type) {
+        ophirofoxRequestType = changes.ophirofox_request_type.newValue || null;
+      }
+      if (changes.ophirofox_read_request) {
+        ophirofoxReadRequest = changes.ophirofox_read_request.newValue || null;
+      }
     }
+  } catch (err) {
+    console.error("Erreur lors du traitement des changements de stockage:", err);
   }
-  
-  return { requestHeaders: details.requestHeaders };
-};
+});
 
+// Gestion des clics sur le menu contextuel
+chrome.contextMenus.onClicked.addListener(onSearchMenuClickHandler);
+
+// Détecter le type de navigateur
 function getBrowserType() {
   if (typeof browser !== "undefined") {
     return "firefox";
@@ -219,70 +392,15 @@ function getBrowserType() {
 
 console.log("L'extension tourne sur :", getBrowserType());
 
-const browserType = getBrowserType();
-const urls = ["*://*.europresse.com/*", "*://*.eureka.cc/*"];
-const options = ["blocking", "requestHeaders"];
+// ======== INITIALISATION AU DÉMARRAGE DU SERVICE WORKER ========
 
-// Ajouter extraHeaders uniquement pour Chrome
-if (browserType === 'chrome') {
-  options.push("extraHeaders");
-}
-
-chrome.webRequest.onBeforeSendHeaders.addListener(
-  listener,{ urls: urls }, options
-);
-
-//======== Code pour l'ajout du menu de recherche contextuel sur une sélection de texte ========
-function createEuropresseSearchMenu() {
-  searchMenu = chrome.contextMenus.create(
-      {
-        id: "EuropresseSearchMenu",
-        title: "Rechercher: %s",
-        contexts: ["selection"],
-      },
-      onCreated,
-  );
-
-  chrome.contextMenus.onClicked.addListener(onSearchMenuClickHandler);
-
-  function onCreated() {
-    if (chrome.runtime.lastError) {
-      console.log(`Error: ${chrome.runtime.lastError}`);
-    } else {
-      console.log("EuropresseSearchMenu created successfully");
-    }
+// Initialisation immédiate lors du démarrage du service worker
+(async function initializeServiceWorker() {
+  try {
+    await loadSettings();
+    await loadRequestData();
+    await injectEuropress();
+  } catch (err) {
+    console.error("Erreur lors de l'initialisation du service worker:", err);
   }
-}
-
-async function onSearchMenuClickHandler(info, tab) {
-  switch (info.menuItemId) {
-    case "EuropresseSearchMenu":
-      console.log("EuropresseSearchMenu", tab);
-      const search_request = info.selectionText;
-      Promise.all([
-        chrome.storage.local.set({
-          "ophirofox_request_type": { 'type': 'SearchMenu' }
-        }),
-        chrome.storage.local.set({
-          "ophirofox_read_request": {
-            'search_terms': search_request,
-            'published_time': ''
-          }
-        }),
-      ]).then(() => accept());
-      function accept() {
-        const manifest = chrome.runtime.getManifest();
-        const partners = manifest.browser_specific_settings.ophirofox_metadata.partners;
-        const partner = partners.find(p => p.name === ophirofoxSettings.partner_name);
-        chrome.tabs.create({
-          url: partner.AUTH_URL
-        });
-      }
-      break;
-  }
-}
-
-// ======== INITIALISATION ========
-
-// Exécution initiale
-injectEuropress();
+})();
