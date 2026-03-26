@@ -237,7 +237,15 @@ async function injectEuropressUsingScripting(matches) {
 /**
  * Fonction principale pour injecter les scripts Europresse
  */
+let injectEuropressInProgress = false;
+let injectEuropressPending = false;
+
 async function injectEuropress() {
+  if (injectEuropressInProgress) {
+    injectEuropressPending = true;
+    return;
+  }
+  injectEuropressInProgress = true;
   try {
     const permissions = await chrome.permissions.getAll();
     const { origins } = permissions;
@@ -252,12 +260,17 @@ async function injectEuropress() {
       chrome.runtime.openOptionsPage();
     }
     
-    // Initialiser les règles declarativeNetRequest si pas encore fait
     if (!declarativeRulesInitialized) {
       await generateDeclarativeRules();
     }
   } catch (err) {
     console.error("Erreur lors de l'injection Europress:", err);
+  } finally {
+    injectEuropressInProgress = false;
+    if (injectEuropressPending) {
+      injectEuropressPending = false;
+      injectEuropress();
+    }
   }
 }
 
