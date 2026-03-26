@@ -220,7 +220,16 @@ async function registerContentScripts(content_script) {
  */
 async function injectEuropressUsingScripting(matches) {
   const content_script = { ...europresse_content_script, matches, id: "europresse" };
-  await unregisterContentScripts();
+  
+  try {
+    const existing = await chrome.scripting.getRegisteredContentScripts({ ids: ["europresse"] });
+    if (existing.length > 0) {
+      await unregisterContentScripts();
+    }
+  } catch (err) {
+    console.log("Nothing to unregister:", err);
+  }
+
   await registerContentScripts(content_script);
   console.log("Injected Europress using scripting", matches);
 }
