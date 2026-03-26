@@ -57,8 +57,9 @@ jobs:
 
       - name: Build
         run: |
-          jq ".version |= \"$VERSION\" | del(.browser_specific_settings.gecko.update_url) | del(.background.scripts)" manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
-          web-ext lint --self-hosted
+          jq ".version |= \"$VERSION\" | del(.browser_specific_settings.gecko.update_url)" manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
+          web-ext lint --self-hosted --warnings-as-errors
+          jq "del(.background.scripts)" manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
           web-ext build
           
       - name: Create pre-release
