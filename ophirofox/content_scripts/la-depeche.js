@@ -4,12 +4,8 @@ async function createLink() {
     return a;
 }
 
-
 function findPremiumBanner() {
-    const title = document.querySelector(".article-full__media.article__media--premium.ratio-target");
-    if (!title) return null;
-    const elems = title.parentElement.querySelectorAll("span");
-    return [...elems].find(d => d.classList.contains("article--premium__label"))
+	return !!document.querySelector(".article__media--premium");
 }
 
 async function onLoad() {
