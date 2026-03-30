@@ -94,33 +94,28 @@ Vous pouvez proposer d'autres sites Web de médias en ouvrant une [demande ici-m
 
 ## Firefox sur ordinateur
 
-1. Téléchargez Ophirofox sur [addons.mozilla.org](https://addons.mozilla.org/fr/firefox/addon/ophirofox/) (AMO). La dernière version (signée où non), est toujours disponible via Github, [ici](https://github.com/lovasoa/ophirofox/releases/tag/current).
-2. Deux options en fonction de la version de Firefox :
-- Pour les versions récentes : cliquez simplement sur `ophirofox.xpi` et autorisez l'installation du module complémentaire 
-- Pour les versions plus anciennes : enregistrez le fichier `ophirofox.xpi` en réalisant un clic droit, puis ouvrez le gestionnaire des extensions depuis le menu de Firefox. Ensuite, ouvrez les paramètres (représentés par une roue dentée), sélectionnez « Installer un module depuis un fichier », puis choisissez le fichier `ophirofox.xpi` que vous avez téléchargé précédemment 
-4. Une fois installée, allez dans les paramètres du module et choisissez le nom de votre établissement.
+• Téléchargez Ophirofox sur [addons.mozilla.org](https://addons.mozilla.org/fr/firefox/addon/ophirofox/) (AMO).
+
+---
+
+La dernière version (non signée), est toujours disponible via Github, [ici](https://github.com/lovasoa/ophirofox/releases/tag/current).
 
 ## Chrome, Edge et similaires sur ordinateur
 
-Ophirofox est [présent sur le Chrome Web Store](https://chrome.google.com/webstore/detail/ophirofox/mmmjkgckgcpankonbgbianpnfenbhodf), mais Google prend parfois du temps à approuver une nouvelle version de l'extension.
+• Télécharger Ophirofox sur le [Chrome Web Store](https://chrome.google.com/webstore/detail/ophirofox/mmmjkgckgcpankonbgbianpnfenbhodf).
 
-Les instructions suivantes peuvent êtres suivies pour installer la dernière version sans passer par Google :
- - [Téléchargez le code source de l'extension](https://github.com/lovasoa/ophirofox/archive/master.zip) 
- - Décompressez-le 
- - Ouvrez l'adresse `chrome://extensions/` 
- - Activez le « *developer mode* » 
- - Et cliquez sur « *load unpacked* » 
- - Puis choisissez le dossier *ophirofox* à l'intérieur du code téléchargé.
- - Ne déplacez jamais ce dossier de l'endroit où il est, sinon l'extension ne pourra plus être chargée.
+---
 
-Les flags permettants de forcer les extensions MV2 ont été retirés de Google Chrome, il vous faudra lancer Google Chrome avec les arguments `--disable-features=ExtensionManifestV2Unsupported,ExtensionManifestV2Disabled` pour pouvoir charger l'extension.
+Les instructions suivantes peuvent êtres suivies pour installer la dernière version sans passer par le Google Web Store  :
+ - [Téléchargez le code source de l'extension depuis la branche 'mv3'](https://github.com/lovasoa/ophirofox/archive/mv3.zip)
+ - Décompresser le fichier zip
+ - Ouvrir l'adresse `chrome://extensions/`, où bien `Menu (•••)` > `Paramètres` > `Extensions`
+ - Activer le « *Mode développeur* » / « *developer mode* » 
+ - Cliquer sur « *Charger l'extension non empaquetée* / *load unpacked* »
+ - Puis choisir le dossier « *ophirofox-mv3* » à l'intérieur du code téléchargé.
+ - **Ne pas déplacer ce dossier** de l'endroit où il est, sinon l'extension ne pourra plus être chargée.
 
-Exemple pour macOS : `open -a "Google Chrome" --args --disable-features=ExtensionManifestV2Unsupported,ExtensionManifestV2Disabled`
-
-~~_Si l'extension **refuse de se charger**, il est possible qu'il vous faut autoriser les extensions Manifest V2 à se charger._  
-_Naviguez vers ce lien dans votre barre de recherche `chrome://flags/#allow-legacy-mv2-extensions`, puis activer le drapeau._~~
-
-<img width="624" alt="image" src="https://user-images.githubusercontent.com/552629/94343918-dbff7100-001b-11eb-86e4-df66e15bc6f6.png">
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/d8f1c11c-d6b3-4001-a236-24fff87b022a" />
 
 ## Android avec Firefox
 
