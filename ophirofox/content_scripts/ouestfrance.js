@@ -11,7 +11,7 @@ async function createLink() {
 
 
 function findPremiumBanner() {
-    const title = document.querySelector(".su-premium-info");
+    const title = document.querySelector(".su-premium.payant");
     if (!title) return null;
     const elems = title.parentElement.querySelectorAll("span");
     return [...elems].find(d => d.textContent.includes("Article premium"))
