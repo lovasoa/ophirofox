@@ -2,6 +2,9 @@ name: Build MV3
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - mv3
 
 defaults:
   run:
