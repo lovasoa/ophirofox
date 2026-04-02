@@ -872,6 +872,18 @@
       "css": [
         "content_scripts/lanouvellerepublique.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.lagazettedescommunes.com/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/lagazettedescommunes.js"
+      ],
+      "css": [
+        "content_scripts/lagazettedescommunes.css"
+      ]
     }
   ],
   "browser_specific_settings": {
