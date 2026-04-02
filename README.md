@@ -34,6 +34,7 @@ Les nouveau médias supportés sont mis à jour automatiquement avec l'extension
 Voici la liste triée par ordre alphabétique :
 - [Arret Sur Image (nécessite un abonnement BNF)](https://www.arretsurimages.net/)
 - [La Croix](https://www.la-croix.com)
+- [La Gazette des communes](https://www.lagazettedescommunes.com)
 - [L'Express](https://www.lexpress.fr/)
 - [L'Humanité](https://www.humanite.fr)
 - [L'Obs](https://www.nouvelobs.com/)
@@ -48,7 +49,7 @@ Voici la liste triée par ordre alphabétique :
 - [Mediapart (nécessite un abonnement BNF)](https://www.mediapart.fr/)
 - [Télérama (Magazine en PDF)](https://www.telerama.fr/kiosque/telerama)
 - [L'Usine Nouvelle](https://www.usinenouvelle.com/)
-  
+
 ### Presse régionale
   - [Corse Matin](https://www.corsematin.com/)
   - [L'Est républicain](https://www.estrepublicain.fr/)
