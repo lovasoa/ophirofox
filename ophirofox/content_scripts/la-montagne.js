@@ -1,25 +1,16 @@
 function extractKeywords() {
-    return document.querySelector("h1").textContent;
+    return document.querySelector("h1")?.textContent;
 }
 
-async function createLink() {
-    const span = document.createElement("span");
-    span.textContent = "Lire sur Europresse";
-    span.className = "premium-message ophirofox-europresse";
-
+async function injectButton() {
+    if (document.querySelector('.ophirofox-europresse')) return;
+    const reserved = document.querySelector(".typo-p2-paragraph p");
+    if (!reserved || reserved.textContent.trim() !== "Article réservé aux abonnés") return;
     const a = await ophirofoxEuropresseLink(extractKeywords());
-    a.classList.add("btn", "btn--premium");
-    a.innerHTML = "";
-    a.appendChild(span);
-
-    return a;
+    a.classList.add("ophirofox-europresse", "btn", "relative", "btn-outline", "btn-primary", "btn-sm", "typo-caption-important", "self-start", "px-4", "py-1");
+    reserved.closest(".typo-p2-paragraph").after(a);
 }
 
-async function onLoad() {
-    const reserve = document.querySelector(".premium-message");
-    if (!reserve) return;
-
-    reserve.parentElement.appendChild(await createLink());
-}
-
-onLoad().catch(console.error);
+const observer = new MutationObserver(() => injectButton().catch(console.error));
+observer.observe(document.body, { childList: true, subtree: true });
+injectButton().catch(console.error); 

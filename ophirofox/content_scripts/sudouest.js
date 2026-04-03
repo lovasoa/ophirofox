@@ -17,7 +17,7 @@ function findPremiumBanner() {
 }
 
 async function onLoad() {
-    const head = document.querySelector(".article-premium-header");
+    const head = document.querySelector(".badge-premium");
     if (!head) return;
     head.appendChild(await createLink());
 }
