@@ -5,7 +5,7 @@ async function createLink() {
 }
 
 function findPremiumBanner() {
-    const title = document.querySelector('div.header-subscriber');
+    const title = document.querySelector('.tag-premium');
     if (!title) return null;
     return title;
 }
