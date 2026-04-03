@@ -5,10 +5,10 @@ async function createLink() {
 }
 
 async function onLoad() {
-    const reserve = document.querySelector("main .single__categories .u-icon-32");
+    const reserve = document.querySelector("#poool-paywall");
     if (!reserve) return;
 
-    const auteurElem = document.querySelector(".single__content__text__published");
+    const auteurElem = document.querySelector(".single__author");
     if (!auteurElem) return;
 
     auteurElem.appendChild(await createLink());
