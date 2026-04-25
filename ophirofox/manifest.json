@@ -72,7 +72,7 @@
     , "https://nouveau-europresse-com.docelec-u-paris2.idm.oclc.org/*"
     , "https://nouveau-europresse-com.esc-clermont.idm.oclc.org/*"
     , "https://nouveau-europresse-com.acces-distant.bnu.fr/*"
-    , "https://nouveau-europresse-com.bu-services.univ-antilles.fr/*"
+    , "https://go.openathens.net/redirector/univ-antilles.fr?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ANTILLEST_1*"
     , "https://nouveau-europresse-com.proxybib-pp.cnam.fr/*"
     , "https://nouveau-europresse-com.srvext.uco.fr/*"
     , "https://nouveau-europresse-com.urca.idm.oclc.org/*"
