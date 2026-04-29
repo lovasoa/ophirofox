@@ -894,7 +894,7 @@
         "required": ["none"]
       }
     },
-    "gecko_android": {}
+    "gecko_android": {},
     "ophirofox_metadata": {
       "partners": [
         {
