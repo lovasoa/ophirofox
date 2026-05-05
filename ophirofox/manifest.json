@@ -1049,7 +1049,7 @@
         },
         {
           "name": "Kedge Business School",
-          "AUTH_URL": "https://nouveau-europresse-com.kedge.idm.oclc.org"
+          "AUTH_URL": "https://kedge.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=KEDGET_1"
         },
         {
           "name": "Le Mans Université",
