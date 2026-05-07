@@ -126,6 +126,7 @@
     , "https://nouveau-europresse-com.ehesp.idm.oclc.org/*"
     , "https://nouveau-eureka-cc.ezproxy.biblioottawalibrary.ca/*"
     , "https://nouveau-europresse-com.ville-geneve.idm.oclc.org/*"
+    , "https://nouveau-europresse-com.kedge.idm.oclc.org/*"
   ],
   "background": {
     "scripts": [
@@ -1042,6 +1043,10 @@
         {
           "name" : "La Rochelle Université",
           "AUTH_URL" : "https://gutenberg.univ-lr.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=ROCHELLET_1"
+        },
+        {
+          "name": "Kedge Business School",
+          "AUTH_URL": "https://kedge.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=KEDGET_1"
         },
         {
           "name": "Le Mans Université",
