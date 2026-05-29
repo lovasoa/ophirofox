@@ -122,6 +122,8 @@ Les instructions suivantes peuvent êtres suivies pour installer la dernière ve
 
 Télécharger l'extension depuis le store : [addons.mozilla.org](https://addons.mozilla.org/fr/firefox/addon/ophirofox/) (AMO - Addons Mozilla Org).
 
+<img width="360" alt="Capture d'écran Firefox AMO Sur Android" src="https://github.com/user-attachments/assets/3c25b2cd-14f9-484e-9432-2c07f26906b4" />
+
 --- 
 
 _Ancienne documentation (obsolète)_  
