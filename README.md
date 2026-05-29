@@ -95,7 +95,7 @@ Vous pouvez proposer d'autres sites Web de médias en ouvrant une [demande ici-m
 
 ## Firefox sur ordinateur
 
-• Téléchargez Ophirofox sur [addons.mozilla.org](https://addons.mozilla.org/fr/firefox/addon/ophirofox/) (AMO).
+• Téléchargez Ophirofox sur [addons.mozilla.org](https://addons.mozilla.org/fr/firefox/addon/ophirofox/) (AMO - Addons Mozilla Org).
 
 ---
 
@@ -119,6 +119,12 @@ Les instructions suivantes peuvent êtres suivies pour installer la dernière ve
 <img height="400" alt="image" src="https://github.com/user-attachments/assets/d8f1c11c-d6b3-4001-a236-24fff87b022a" />
 
 ## Android avec Firefox
+
+Télécharger l'extension depuis le store : [addons.mozilla.org](https://addons.mozilla.org/fr/firefox/addon/ophirofox/) (AMO - Addons Mozilla Org).
+
+--- 
+
+_Ancienne documentation (obsolète)_  
 
 Depuis la version 122 de Firefox publiée le 23 janvier 2024, il est maintenant possible d'installer une extension non publiée sur le Web Store de Mozilla en activant les paramètres avancés sur Android. Les étapes à suivre sont :
 - Téléchargez le fichier `ophirofox.xpi` depuis les *releases* [ici](https://github.com/lovasoa/ophirofox/releases/latest) ,
