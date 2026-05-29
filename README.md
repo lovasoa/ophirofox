@@ -46,7 +46,7 @@ Voici la liste triée par ordre alphabétique :
 - [Le Point](https://www.lepoint.fr)
 - [Libération](https://www.liberation.fr/)
 - [Les Échos](https://www.lesechos.fr)
-- [Mediapart (nécessite un abonnement BNF)](https://www.mediapart.fr/)
+- [Mediapart (nécessite un abonnement BNF où accès BNU Strasbourg)](https://www.mediapart.fr/)
 - [Télérama (Magazine en PDF)](https://www.telerama.fr/kiosque/telerama)
 - [L'Usine Nouvelle](https://www.usinenouvelle.com/)
 
