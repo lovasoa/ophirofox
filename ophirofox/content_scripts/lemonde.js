@@ -3,7 +3,7 @@ function extractKeywords() {
 }
 
 function extractKeywordsFromTitle() {
-    const titleElem = document.querySelector("h1.article__title");
+    const titleElem = document.querySelector("h1");
     return titleElem && titleElem.textContent;
 }
 
