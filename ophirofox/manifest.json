@@ -696,7 +696,8 @@
     },
     {
       "matches": [
-        "https://www.arretsurimages.net/*"
+        "https://www.arretsurimages.net/*",
+        "https://www-arretsurimages-net.bnf.idm.oclc.org/*"
       ],
       "js": [
         "content_scripts/config.js",
