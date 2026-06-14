@@ -33,6 +33,14 @@ function findPremiumBanner() {
     return [...elems].filter(d => textToFind.some(text => d.textContent.includes(text)));
 }
 
+/** @return {boolean} true si le bouton BNF est déjà dans le DOM */
+function bnfLinkAlreadyPresent() {
+    return !!document.querySelector("a.ophirofox-europresse");
+}
+
+/** Dernier observer DOM créé par handleArretSurImages — déconnecté à chaque nouvelle navigation SPA */
+let _asiObserver = null;
+
 async function handleArretSurImagesMirror() {
     const checkAndRedirect = async () => {
         const currentPage = new URL(window.location);
@@ -102,18 +110,58 @@ async function handleArretSurImagesMirror() {
 
 async function handleArretSurImages(config) {
     console.log("[ophirofox][asi] checking for premium banner");
-    const reserve = findPremiumBanner();
-    if (!reserve?.length) {
-        console.log("[ophirofox][asi] no premium banner found, aborting");
-        return;
+
+    // Déconnecter l'ancien observer d'une navigation SPA précédente
+    if (_asiObserver) { _asiObserver.disconnect(); _asiObserver = null; }
+
+    function tryInject() {
+        if (bnfLinkAlreadyPresent()) return true;
+
+        const reserve = findPremiumBanner();
+        if (!reserve?.length) return false;
+
+        console.log("[ophirofox][asi] premium banner found, injecting link");
+        chrome.storage.sync.set({
+            "ophirofox_arretsurimages_article": new URL(window.location).pathname
+        });
+        for (const balise of reserve) {
+            balise.parentElement.appendChild(createLink());
+        }
+        return true;
     }
-    console.log("[ophirofox][asi] premium banner found, setting storage and injecting link");
-    chrome.storage.sync.set({
-        "ophirofox_arretsurimages_article": new URL(window.location).pathname
+
+    // Tentative immédiate
+    if (tryInject()) return;
+
+    // Sinon, observe le DOM jusqu'à ce que l'article soit rendu
+    const observer = new MutationObserver(() => {
+        if (tryInject()) { observer.disconnect(); _asiObserver = null; }
     });
-    for (const balise of reserve) {
-        balise.parentElement.appendChild(createLink());
+    _asiObserver = observer;
+    observer.observe(document.body, { childList: true, subtree: true });
+}
+
+/**
+ * Ré-exécute handleArretSurImages à chaque navigation SPA.
+ */
+function watchForSpaNavigation(config) {
+    const run = () => handleArretSurImages(config).catch(console.error);
+
+    // Hook pushState / replaceState
+    for (const method of ["pushState", "replaceState"]) {
+        const orig = history[method].bind(history);
+        history[method] = (...args) => { orig(...args); run(); };
     }
+    window.addEventListener("popstate", run);
+
+    // Polling URL pour les SPA qui ne passent pas par history API
+    let lastPathname = window.location.pathname;
+    setInterval(() => {
+        if (window.location.pathname !== lastPathname) {
+            lastPathname = window.location.pathname;
+            run();
+        }
+    }, 500);
 }
 
 /**@description check for BNF users. If yes, create link button */
@@ -132,6 +180,7 @@ async function onLoad() {
     } else {
         console.log("[ophirofox][asi] on original site, running handleArretSurImages");
         setTimeout(() => handleArretSurImages(config).catch(console.error), 1000);
+        watchForSpaNavigation(config);
     }
 }
 
