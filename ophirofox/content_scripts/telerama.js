@@ -21,6 +21,36 @@ async function createLink() {
     return await ophirofoxEuropresseLink(extractKeywords());
 }
 
+/**
+ * Insère le lien Europresse après .article__subscriber-container et
+ * surveille les remplacements DOM (la section est re-rendue par le site).
+ * L'observateur cible le parent de la section, pas document.body,
+ * pour minimiser les callbacks inutiles.
+ */
+async function ensureLinkAfterSubscriberContainer() {
+    const container = document.querySelector(".article__subscriber-container");
+    if (!container) return;
+
+    const link = await createLink();
+
+    function insertLink() {
+        const liveContainer = document.querySelector(".article__subscriber-container");
+        if (!liveContainer) return;
+        if (liveContainer.nextElementSibling === link) return;
+        liveContainer.after(link);
+    }
+
+    insertLink();
+
+    // On observe le grand-parent : la section (publication__card) est
+    // remplacée, mais son parent, lui, reste stable.
+    const root = container.parentElement?.parentElement;
+    if (!root) return;
+
+    const observer = new MutationObserver(() => insertLink());
+    observer.observe(root, { childList: true, subtree: true });
+}
+
 async function onLoad() {
   // Check if we're on the kiosque page
   if (window.location.href.endsWith('kiosque/telerama')) {
@@ -52,8 +82,7 @@ async function onLoad() {
  
   }
   else {
-    const msg_abo = document.querySelector(".article__subscriber-container");
-    msg_abo.after(await createLink());
+    await ensureLinkAfterSubscriberContainer();
   }
 }
 
