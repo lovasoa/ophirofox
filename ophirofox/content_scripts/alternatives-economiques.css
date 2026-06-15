@@ -1,0 +1,12 @@
+.ophirofox-europresse {
+    background-color: #ffd700;
+    border: 1px #cc9900 solid;
+    padding: calc(0.25em - 1px) 0.5em !important;
+    color: #000;
+    font-family: "Barlow Condensed", "Open Sans Condensed", sans-serif;
+    font-weight: 700 !important;
+    font-style: normal !important;
+    text-decoration: none !important;
+    display: inline-block;
+    margin: 0.5em 0;
+}
