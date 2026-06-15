@@ -35,6 +35,7 @@ Les nouveau médias supportés sont mis à jour automatiquement avec l'extension
 
 ### Presse nationale
 Voici la liste triée par ordre alphabétique :
+- [Alternatives Economiques (nécessite un abonnement BNF)](https://www.alternatives-economiques.fr)
 - [Arret Sur Image (nécessite un abonnement BNF)](https://www.arretsurimages.net/)
 - [La Croix](https://www.la-croix.com)
 - [La Gazette des communes](https://www.lagazettedescommunes.com)
