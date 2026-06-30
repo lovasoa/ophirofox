@@ -897,6 +897,18 @@
       "css": [
         "content_scripts/lanouvellerepublique.css"
       ]
+    },
+    {
+      "matches": [
+        "https://www.24heures.ch/*"
+      ],
+      "js": [
+        "content_scripts/config.js",
+        "content_scripts/24heures.js"
+      ],
+      "css": [
+        "content_scripts/24heures.css"
+      ]
     }
   ],
   "browser_specific_settings": {
