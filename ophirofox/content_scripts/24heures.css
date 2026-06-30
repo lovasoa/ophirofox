@@ -1,0 +1,12 @@
+.ophirofox-europresse {
+    display: inline-block;
+    margin-right: .5rem;
+    padding: .2rem .6rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: var(--font-libre-franklin);
+    line-height: 1.6rem;
+    letter-spacing: .025rem;
+    background: #ffe404;
+    color: black;
+}
