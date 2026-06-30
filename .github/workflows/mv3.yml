@@ -2,9 +2,6 @@ name: Build MV3
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - mv3
   pull_request:
     types: [closed]
     branches:
