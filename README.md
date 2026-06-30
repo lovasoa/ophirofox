@@ -81,6 +81,7 @@ Voici la liste triée par ordre alphabétique :
   - [Le Berry Républicain](https://www.leberry.fr/)
   - [Le Soir (Belgique)](https://www.lesoir.be)
   - [Le Temps (Suisse)](https://www.letemps.ch/)
+  - [24 heures (Suisse)](https://www.24heures.ch/)
   - [Le Vif (Belgique)](https://www.levif.be/)
   - [PressReader (nécessite un abonnement BNF)](https://www.pressreader.com/fr)
   - [Sudinfo (Belgique)](https://www.sudinfo.be/)
