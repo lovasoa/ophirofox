@@ -1228,8 +1228,8 @@
           "AUTH_URL": "https://elgebar.univ-reunion.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=BUREUNIONT_1"
         },
         {
-          "name": "Université de Liège",
-          "AUTH_URL": "https://nouveau.europresse.com/access/ip/default.aspx?un=U031558T_1"
+          "name": "Université de Liège (ULiège)",
+          "AUTH_URL": "https://go.openathens.net/redirector/uliege.be?url=https%3A%2F%2Fnouveau.europresse.com%2Faccess%2Fip%2Fdefault.aspx%3Fun%3DU031558T_1"
         },
         {
           "name": "Université Libre de Bruxelles",
