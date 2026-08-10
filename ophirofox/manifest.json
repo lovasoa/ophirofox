@@ -118,7 +118,8 @@
     , "https://nouveau-europresse-com.eztest.biblio.univ-evry.fr/*"
     , "https://nouveau-europresse-com.ezproxy.uclouvain.be/*"
     , "https://nouveau-europresse-com.iepnomade-2.grenet.fr/*"
-    , "https://nouveau-europresse-com.bsg-ezproxy.univ-paris3.fr/*"	  
+    , "https://nouveau-europresse-com.bsg-ezproxy.univ-paris3.fr/*"
+    , "https://nouveau-europresse-com.bsi-cite-sciences.idm.oclc.org/*"
     , "https://nouveau-europresse-com.eu1.proxy.openathens.net/*"
     , "http://nouveau.europresse.com.docelec.enssib.fr/access/ip/default.aspx?un=ENSSIBT_1"
     , "https://nouveau-europresse-com.ujm.idm.oclc.org/*"
@@ -969,6 +970,10 @@
         {
           "name": "Centrale Lyon",
           "AUTH_URL": "https://ec-lyon.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=LYONT_7"
+        },
+        {
+          "name": "Cité des Sciences",
+          "AUTH_URL": "https://bsi-cite-sciences.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U033451U_1"
         },
         {
           "name": "CY Cergy Paris Université",
