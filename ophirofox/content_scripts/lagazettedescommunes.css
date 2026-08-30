@@ -1,3 +1,4 @@
 .ophirofox-europresse {
-    line-height: 50px;
+    line-height: inherit;
+    text-decoration: underline;
 }
