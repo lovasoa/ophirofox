@@ -21,8 +21,9 @@ async function createLink(AUTH_URL_MEDIAPART, name) {
  * @return {HTMLElement} DOM Premium Banner and head of the article
  */
 function findPremiumBanner() {
-  const article = document.querySelector(".news__body__center__container");
-  if (!article) return null;
+  // Les articles au format « immersif » n'ont pas ce conteneur : le texte du message suffit
+  // à le distinguer
+  const article = document.querySelector(".news__body__center__container") || document;
   const elems = article.querySelectorAll(".paywall-message");
   //labels not the same for mobile or PC display
   const textToFind = ["réservée aux abonné·es", "réservé aux abonné·es"];
@@ -63,7 +64,7 @@ async function handleMediapartMirror(config) {
 
 async function handleMediapart(config) {
   const reserve = findPremiumBanner();
-  if (!reserve) return;
+  if (!reserve || reserve.length === 0) return;
   chrome.storage.sync.set({
         "ophirofox_mediapart_article": new URL(window.location).pathname
       })
