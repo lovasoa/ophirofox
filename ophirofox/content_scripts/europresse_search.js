@@ -44,6 +44,20 @@ async function hasConsumable() {
     });
 }
 
+/**
+ * Mots du titre d'origine, gardés dans l'URL quand le site a changé le titre de l'article
+ * (…/des-victimes-seront-recues-par-le-pape_6783475_3232.html). Les identifiants et les
+ * dates contiennent des chiffres, et les mots courts ou élidés (« leglise ») gênent la recherche.
+ * @returns {string} vide si l'URL n'a pas assez de mots
+ */
+function ophirofoxUrlKeywords(url) {
+    const slug = (url || "").split(/[?#]/)[0].split("/").filter(Boolean).pop() || "";
+    const words = slug.replace(/\.html?$/, "").split(/[-_]/)
+        .filter(word => word.length > 3 && !/\d/.test(word) && !/^[ld][aeiouy]/.test(word))
+        .slice(0, 5);
+    return words.length >= 3 ? words.join(" ") : "";
+}
+
 async function loadRead(){
     const path = window.location.pathname;
     const { search_terms, published_time } = await consumeReadRequest();
@@ -172,7 +186,11 @@ async function onLoad() {
             } else if (numberOfResul === '0') {
                 const query = document.querySelector('#Keywords');
                 if (query.value.startsWith('TIT_HEAD=')) {
-                    query.value = query.value.replace('TIT_HEAD=', 'TEXT=');
+                    // Le titre a pu changer depuis la publication : on essaie les mots de l'URL,
+                    // puis le texte intégral
+                    const url_query = 'TIT_HEAD=' + ophirofoxUrlKeywords(originTracking?.origin_url);
+                    query.value = url_query !== 'TIT_HEAD=' && query.value !== url_query ?
+                        url_query : query.value.replace('TIT_HEAD=', 'TEXT=');
                     const butonSearch = document.querySelector('#btnSearch');
                     butonSearch.click();
                 }
