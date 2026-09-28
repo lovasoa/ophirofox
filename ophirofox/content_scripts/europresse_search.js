@@ -47,14 +47,17 @@ async function hasConsumable() {
 /**
  * Mots du titre d'origine, gardés dans l'URL quand le site a changé le titre de l'article
  * (…/des-victimes-seront-recues-par-le-pape_6783475_3232.html). Les identifiants et les
- * dates contiennent des chiffres, et les mots courts ou élidés (« leglise ») gênent la recherche.
+ * dates contiennent des chiffres, et les mots courts gênent la recherche. Un mot qui commence
+ * par l ou d suivi d'une voyelle peut être un article élidé collé au mot (« leglise ») ou un
+ * mot entier (« lison ») : on cherche les deux formes, (leglise OU eglise).
  * @returns {string} vide si l'URL n'a pas assez de mots
  */
 function ophirofoxUrlKeywords(url) {
     const slug = (url || "").split(/[?#]/)[0].split("/").filter(Boolean).pop() || "";
     const words = slug.replace(/\.html?$/, "").split(/[-_]/)
-        .filter(word => word.length > 3 && !/\d/.test(word) && !/^[ld][aeiouy]/.test(word))
-        .slice(0, 5);
+        .filter(word => word.length > 3 && !/\d/.test(word))
+        .slice(0, 5)
+        .map(word => /^[ld][aeiouy]/.test(word) ? `(${word} OU ${word.slice(1)})` : word);
     return words.length >= 3 ? words.join(" ") : "";
 }
 
