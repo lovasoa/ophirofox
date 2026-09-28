@@ -3,7 +3,7 @@ function injectButton() {
     if (!banner) return;
     if (banner.querySelector('.ophirofox-europresse')) return;
     const premiumBanner = [...banner.querySelectorAll('p')]
-        .find(p => p.textContent === 'Ce contenu est réservé aux abonnés');
+        .find(p => p.textContent.trim().startsWith('Ce contenu est réservé aux abonnés'));
     if (!premiumBanner) return;
     ophirofoxEuropresseLink(document.querySelector('h1')?.textContent)
         .then(a => premiumBanner.after(a));
