@@ -128,6 +128,7 @@
     , "https://nouveau-eureka-cc.ezproxy.biblioottawalibrary.ca/*"
     , "https://nouveau-europresse-com.ville-geneve.idm.oclc.org/*"
     , "https://nouveau-europresse-com.kedge.idm.oclc.org/*"
+    , "https://nouveau-europresse-com.ezproxybsb.ad.univ-paris3.fr/"
   ],
   "background": {
     "scripts": [
@@ -962,6 +963,10 @@
         {
           "name": "Bibliothèque publique d'Ottawa",
           "AUTH_URL": "https://ezproxy.biblioottawalibrary.ca/login?qurl=https://nouveau.eureka.cc/access/ip/default.aspx?un=opladminU_1"
+        },
+        { 
+          "name": "Bibliothèque Sainte-Barbe", 
+          "AUTH_URL": "https://ezproxybsb.ad.univ-paris3.fr/login?=&url=http://nouveau.europresse.com/access/ip/default.aspx?un=pantheonT_1"
         },
         {
           "name": "Bibliothèque Sainte-Geneviève (BSG)",
