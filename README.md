@@ -1,7 +1,5 @@
 # ophirofox ![icône Ophirofox](https://raw.githubusercontent.com/lovasoa/ophirofox/master/ophirofox/icons/48.png)
 
-### ⚠️ L'extension est à nouveau disponible pour <a href="https://chromewebstore.google.com/detail/ophirofox/mmmjkgckgcpankonbgbianpnfenbhodf">Google Chrome</a>.
-### ⚠️ L'extension est officiellement disponible sur Firefox + Firefox Android 📱 depuis le <a href="https://addons.mozilla.org/fr/firefox/addon/ophirofox/">store officiel (addons.mozilla.org)</a>.
 
 Une extension pour navigateurs qui permet de lire la plupart des titres de presse, comme les articles du **Monde**, du **Figaro**, de **Libération** et du **Monde Diplomatique** avec son compte **Europresse**.
 
@@ -9,6 +7,11 @@ Une extension pour navigateurs qui permet de lire la plupart des titres de press
     <a href="https://addons.mozilla.org/fr/firefox/addon/ophirofox/"><img src="https://github.com/user-attachments/assets/eae883da-2669-4469-a61d-6a532a986f3b" hspace="20"></a>
     <a href="https://chromewebstore.google.com/detail/ophirofox/mmmjkgckgcpankonbgbianpnfenbhodf"><img src="https://github.com/user-attachments/assets/8c3ab829-e8bd-4db3-8bd0-f0820ea21375" hspace="20"></a>
 </p>
+
+#### Télécharger pour <a href="https://chromewebstore.google.com/detail/ophirofox/mmmjkgckgcpankonbgbianpnfenbhodf">Google Chrome</a>.
+#### Télécharger pour Firefox / Firefox Android 📱 depuis le <a href="https://addons.mozilla.org/fr/firefox/addon/ophirofox/">store officiel (addons.mozilla.org)</a>.
+
+---
 
 Comme illustré ci-dessous, l'extension ajoute un bouton **Lire sur Europresse** sur les articles réservés aux abonnés des journaux compatibles.
 
