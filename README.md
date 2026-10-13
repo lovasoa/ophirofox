@@ -101,17 +101,17 @@ Vous pouvez proposer d'autres sites Web de médias en ouvrant une [demande ici-m
 
 • Téléchargez Ophirofox sur [addons.mozilla.org](https://addons.mozilla.org/fr/firefox/addon/ophirofox/) (AMO - Addons Mozilla Org).
 
----
-
-La dernière version (non signée), est toujours disponible via Github, [ici](https://github.com/lovasoa/ophirofox/releases/tag/current).
+La dernière version (signée où non par Mozilla), est dans tous les cas toujours disponible via Github via le tag `current`, [ici](https://github.com/lovasoa/ophirofox/releases/tag/current).
 
 ## Chrome, Edge et similaires sur ordinateur
 
 • Télécharger Ophirofox sur le [Chrome Web Store](https://chrome.google.com/webstore/detail/ophirofox/mmmjkgckgcpankonbgbianpnfenbhodf).
 
+<details>
+  <summary><i>Déplier pour voir les instructions d'installation sans passer par le Google Web Store</i></summary>
+
 ---
 
-Les instructions suivantes peuvent êtres suivies pour installer la dernière version sans passer par le Google Web Store  :
  - [Téléchargez le code source de l'extension depuis la branche 'mv3'](https://github.com/lovasoa/ophirofox/archive/mv3.zip)
  - Décompresser le fichier zip
  - Ouvrir l'adresse `chrome://extensions/`, où bien `Menu (•••)` > `Paramètres` > `Extensions`
@@ -120,7 +120,8 @@ Les instructions suivantes peuvent êtres suivies pour installer la dernière ve
  - Puis choisir le dossier « *ophirofox-mv3* » à l'intérieur du code téléchargé.
  - **Ne pas déplacer ce dossier** de l'endroit où il est, sinon l'extension ne pourra plus être chargée.
 
-<img height="400" alt="image" src="https://github.com/user-attachments/assets/d8f1c11c-d6b3-4001-a236-24fff87b022a" />
+<img  alt="image" src="https://github.com/user-attachments/assets/d8f1c11c-d6b3-4001-a236-24fff87b022a" />
+</details>
 
 ## Android avec Firefox
 
@@ -128,10 +129,10 @@ Télécharger l'extension depuis le store : [addons.mozilla.org](https://addons.
 
 <img width="360" alt="Capture d'écran Firefox AMO Sur Android" src="https://github.com/user-attachments/assets/3c25b2cd-14f9-484e-9432-2c07f26906b4" />
 
---- 
-
-_Ancienne documentation (obsolète)_  
-
+<details>
+  <summary><i>Déplier pour voir l'ancienne documentation d'installation sur Android (obsolète)</i></summary>
+   
+---
 Depuis la version 122 de Firefox publiée le 23 janvier 2024, il est maintenant possible d'installer une extension non publiée sur le Web Store de Mozilla en activant les paramètres avancés sur Android. Les étapes à suivre sont :
 - Téléchargez le fichier `ophirofox.xpi` depuis les *releases* [ici](https://github.com/lovasoa/ophirofox/releases/latest) ,
 - Allez dans Paramètres de Firefox, direction « À propos de Firefox » 
@@ -141,7 +142,9 @@ Depuis la version 122 de Firefox publiée le 23 janvier 2024, il est maintenant 
 
 À terme, Firefox devrait proposer une manière plus simple d'installer manuellement des extensions.
 
-## Userscript pour des besoins spécifiques
+</details>
+
+## Userscript (iOS, Safari)
 
 Un projet annexe récupère la dernière version publiée de l'extension sur ce dépôt et la concatène en un seul *userscript*. Ce script est un fichier qui peut être installé par l'intermédiaire d'autres extensions, comme Violentmonkey, Greasemonkey ou Tampermonkey.  
 Ceci est une alternative pour faire tourner le code sur les plateformes où Ophirofox n'est pas disponible, par exemple sur Safari pour iOS et macOS. 
