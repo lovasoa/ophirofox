@@ -68,7 +68,7 @@ jobs:
         run: |
           jq ".version |= \"$UNLISTED_VERSION\"" manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
           web-ext build
-          web-ext sign --channel=unlisted --timeout=15000
+          web-ext sign --channel=unlisted --timeout=90000
         continue-on-error: true
         env:
           WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
@@ -79,7 +79,7 @@ jobs:
           jq ".version |= \"$LISTED_VERSION\" | del(.browser_specific_settings.gecko.update_url)" manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
           echo "AMO-compatible manifest created (without update_url)"
           web-ext build --overwrite-dest
-          web-ext sign --channel=listed --timeout=15000
+          web-ext sign --channel=listed --approval-timeout=0
         continue-on-error: true
         env:
           WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
