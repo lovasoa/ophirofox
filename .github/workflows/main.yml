@@ -68,7 +68,7 @@ jobs:
         run: |
           jq ".version |= \"$UNLISTED_VERSION\"" manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
           web-ext build
-          web-ext sign --channel=unlisted --timeout=90000
+          web-ext sign --channel=unlisted --timeout=300000
         continue-on-error: true
         env:
           WEB_EXT_API_KEY: ${{ secrets.AMO_JWT_ISSUER }}
