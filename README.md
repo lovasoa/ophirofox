@@ -35,6 +35,7 @@ d'être redirigé automatiquement vers une page de recherche Europresse qui cont
 - [Comment ajouter un nouveau partenaire Europresse](#comment-ajouter-un-nouveau-partenaire-europresse)
 - [Comment l'extension fonctionne](#comment-lextension-fonctionne)
 - [Licence](#licence)
+
 ## Partenaires Europresse supportés
 
 L'extension supporte la majorité des portails universitaires, mais aussi d'autres partenaires d'Europresse.
