@@ -20,6 +20,21 @@ d'être redirigé automatiquement vers une page de recherche Europresse qui cont
 
 ![Capture d'écran animée de démonstration de l'extension](screencast.gif)
 
+## Sommaire
+
+- [Partenaires Europresse supportés](#partenaires-europresse-supportés)
+- [Sites supportés](#sites-supportés)
+  - [Presse nationale](#presse-nationale)
+  - [Presse régionale](#presse-régionale)
+  - [Presse étrangère](#presse-étrangère)
+- [Instructions d'installation](#instructions-dinstallation)
+  - [Chrome, Edge, Brave et similaires sur ordinateur](#chrome-edge-brave-opera-vivaldi-et-similaires-sur-ordinateur)
+  - [Firefox sur ordinateur](#firefox-sur-ordinateur)
+  - [Android avec Firefox](#android-avec-firefox)
+  - [Userscript (iOS, Safari)](#userscript-ios-safari)
+- [Comment ajouter un nouveau partenaire Europresse](#comment-ajouter-un-nouveau-partenaire-europresse)
+- [Comment l'extension fonctionne](#comment-lextension-fonctionne)
+- [Licence](#licence)
 ## Partenaires Europresse supportés
 
 L'extension supporte la majorité des portails universitaires, mais aussi d'autres partenaires d'Europresse.
@@ -97,18 +112,20 @@ Vous pouvez proposer d'autres sites Web de médias en ouvrant une [demande ici-m
 
 # Instructions d'installation
 
-## Firefox sur ordinateur
-
-• Téléchargez Ophirofox sur [addons.mozilla.org](https://addons.mozilla.org/fr/firefox/addon/ophirofox/) (AMO - Addons Mozilla Org).
-
-La dernière version (signée où non par Mozilla), est dans tous les cas toujours disponible via Github via le tag `current`, [ici](https://github.com/lovasoa/ophirofox/releases/tag/current).
-
-## Chrome, Edge et similaires sur ordinateur
+## Chrome, Edge, Brave, Opera, Vivaldi et similaires sur ordinateur
 
 • Télécharger Ophirofox sur le [Chrome Web Store](https://chrome.google.com/webstore/detail/ophirofox/mmmjkgckgcpankonbgbianpnfenbhodf).
+• Une fois installée, bien penser à sélectionner votre partenaire Europresse dans les paramètres de l'extension.
 
 <details>
   <summary><i>Déplier pour voir les instructions d'installation sans passer par le Google Web Store</i></summary>
+
+## Firefox sur ordinateur
+
+• Téléchargez Ophirofox sur [addons.mozilla.org](https://addons.mozilla.org/fr/firefox/addon/ophirofox/) (AMO - Addons Mozilla Org).
+• Une fois installée, bien penser à sélectionner votre partenaire Europresse dans les paramètres de l'extension.
+
+La dernière version (signée où non par Mozilla), est dans tous les cas toujours disponible via Github via le tag `current`, [ici](https://github.com/lovasoa/ophirofox/releases/tag/current).
 
 ---
 
@@ -125,7 +142,8 @@ La dernière version (signée où non par Mozilla), est dans tous les cas toujou
 
 ## Android avec Firefox
 
-Télécharger l'extension depuis le store : [addons.mozilla.org](https://addons.mozilla.org/fr/firefox/addon/ophirofox/) (AMO - Addons Mozilla Org).
+• Télécharger l'extension depuis le store : [addons.mozilla.org](https://addons.mozilla.org/fr/firefox/addon/ophirofox/) (AMO - Addons Mozilla Org).
+Une fois installée, bien penser à sélectionner votre partenaire Europresse dans les paramètres de l'extension.
 
 <img width="360" alt="Capture d'écran Firefox AMO Sur Android" src="https://github.com/user-attachments/assets/3c25b2cd-14f9-484e-9432-2c07f26906b4" />
 
@@ -146,7 +164,7 @@ Depuis la version 122 de Firefox publiée le 23 janvier 2024, il est maintenant 
 
 ## Userscript (iOS, Safari)
 
-Un projet annexe récupère la dernière version publiée de l'extension sur ce dépôt et la concatène en un seul *userscript*. Ce script est un fichier qui peut être installé par l'intermédiaire d'autres extensions, comme Violentmonkey, Greasemonkey ou Tampermonkey.  
+Un projet annexe récupère la dernière version publiée de l'extension sur ce dépôt et la concatène en un seul *userscript*. Ce script est un fichier qui peut être installé par l'intermédiaire d'autres extensions, comme `Violentmonkey`, `Greasemonkey`, `Tampermonkey` où encore l'extension `Userscript` gratuite sur iOS et macOS.  
 Ceci est une alternative pour faire tourner le code sur les plateformes où Ophirofox n'est pas disponible, par exemple sur Safari pour iOS et macOS. 
 
 Le projet annexe *ophirofox-userscript* [se trouve ici](https://github.com/Write/ophirofox-userscript).
