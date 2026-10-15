@@ -10,7 +10,7 @@ Une extension pour navigateurs qui permet de lire la plupart des titres de press
 
 #### Télécharger pour <a href="https://chromewebstore.google.com/detail/ophirofox/mmmjkgckgcpankonbgbianpnfenbhodf">Google Chrome</a>.
 #### Télécharger pour Firefox / Firefox Android 📱 depuis le <a href="https://addons.mozilla.org/fr/firefox/addon/ophirofox/">store officiel (addons.mozilla.org)</a>.
-
+#### Pour iOS et Safari, il faudra passer par un <a href='#userscript-ios-safari'>userscript</a>.
 ---
 
 Comme illustré ci-dessous, l'extension ajoute un bouton **Lire sur Europresse** sur les articles réservés aux abonnés des journaux compatibles.
