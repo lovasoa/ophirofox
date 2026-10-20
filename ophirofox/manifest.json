@@ -131,6 +131,8 @@
     , "https://nouveau-europresse-com.ville-geneve.idm.oclc.org/*"
     , "https://nouveau-europresse-com.kedge.idm.oclc.org/*"
     , "https://nouveau-europresse-com.ezproxybsb.ad.univ-paris3.fr/"
+    , "https://nouveau-europresse-com.univ-smb.fr/"
+    , "https://www.univ-smb.fr/bu/ressources-en-ligne/europresse/"
   ],
   "background": {
     "scripts": [
