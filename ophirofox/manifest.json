@@ -127,7 +127,6 @@
     , "https://nouveau.europresse.com/access/ip/default.aspx?un=CENTRALENANTEST_1"
     , "https://nouveau-europresse-com.ehesp.idm.oclc.org/*"
     , "https://nouveau.europresse.com/access/ip/default.aspx?un=lausanneAT_1"
-    , "https://nouveau.europresse.com/access/ip/default.aspx?un=FRIBOURGT_1"
     , "https://nouveau-eureka-cc.ezproxy.biblioottawalibrary.ca/*"
     , "https://nouveau-europresse-com.ville-geneve.idm.oclc.org/*"
     , "https://nouveau-europresse-com.kedge.idm.oclc.org/*"
@@ -1213,10 +1212,6 @@
         {
           "name": "Université de Franche-Comté",
           "AUTH_URL": "http://scd1.univ-fcomte.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=FCOMTET_1"
-        },
-        {
-          "name": "Université de Fribourg",
-          "AUTH_URL": "https://nouveau.europresse.com/access/ip/default.aspx?un=FRIBOURGT_1"
         },
         {
           "name": "Université Grenoble-Alpes",
