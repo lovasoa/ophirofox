@@ -1214,6 +1214,10 @@
           "AUTH_URL": "http://scd1.univ-fcomte.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=FCOMTET_1"
         },
         {
+          "name": "Université de Fribourg",
+          "AUTH_URL": "https://webapps.unifr.ch/guides/res/92"
+        },
+        {
           "name": "Université Grenoble-Alpes",
           "AUTH_URL": "https://sid2nomade-2.grenet.fr/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=grenobleT_1"
         },
