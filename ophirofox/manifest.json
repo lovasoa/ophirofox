@@ -1000,6 +1000,10 @@
           "AUTH_URL": "https://ec-lyon.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=LYONT_7"
         },
         {
+          "name": "École Centrale Méditerranée",
+          "AUTH_URL": "https://externe.centrale-med.fr/europress.html"
+        },
+        {
           "name": "École Centrale de Nantes",
           "AUTH_URL": "https://nouveau.europresse.com/access/ip/default.aspx?un=CENTRALENANTEST_1"
         },
