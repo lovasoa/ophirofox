@@ -1,31 +1,26 @@
-function extractKeywords() {
-    return extractKeywordsFromTitle();
-}
-
-function extractArticleNumber(){
-    let url = window.location.pathname;
-    let parameters = url.split('/');
-    return parameters[parameters.length - 1];
-}
-
 function extractKeywordsFromTitle() {
-    const titleElem = document.getElementsByClassName("crayon article-titre-" + extractArticleNumber() + " h1")[0].textContent;
-    return titleElem;
+    return document.querySelector("h1.article-titre, h1").textContent;
 }
 
 async function createLink() {
-    const a = await ophirofoxEuropresseLink(extractKeywords());
-    a.classList.add("btn", "btn--premium");
+    const a = await ophirofoxEuropresseLink(extractKeywordsFromTitle());
+    a.classList.add("bouton");
     return a;
 }
 
 async function onLoad() {
-    const payArticle = document.querySelector('.promo_dispo_article');
-    if (!payArticle) return;
+    // Les articles réservés aux abonnés n'affichent qu'un aperçu, enveloppé
+    // dans des blocs `paywall2-*` (paywall2-apercu, paywall2-bloc…).
+    if (!document.querySelector('[class*="paywall2"]')) return;
 
-    const actionElem = document.querySelector(".actions-article");
+    // Barre d'outils de l'article (Écouter / Classer / Imprimer / Offrir).
+    const actionElem = document.querySelector(".infos-actions");
     if (!actionElem) return;
-    actionElem.appendChild(await createLink());
+
+    const action = document.createElement("span");
+    action.className = "sansmarge info-action";
+    action.appendChild(await createLink());
+    actionElem.appendChild(action);
 }
 
 onLoad().catch(console.error);
