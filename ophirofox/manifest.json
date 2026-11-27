@@ -106,6 +106,7 @@
     , "https://nouveau-europresse-com.univ-eiffel.idm.oclc.org/*"
     , "https://nouveau-europresse-com.ezproxy.unilim.fr/*"
     , "https://nouveau-europresse-com.ezproxy.uphf.fr/*"
+    , "https://nouveau-europresse-com.neoma-bs.idm.oclc.org/*"
     , "https://nouveau-europresse-com.rennes-sb.idm.oclc.org/*"
     , "https://nouveau-europresse-com.hub.tbs-education.fr/*"
     , "https://nouveau-europresse-com.ezproxy.univ-perp.fr/*"
@@ -1127,6 +1128,10 @@
         {
           "name": "Médiathèque de Télécom SudParis & Institut Mines-Télécom Business School",
           "AUTH_URL": "http://mediaproxy.imtbs-tsp.eu/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U033137T_8"
+        },
+        {
+          "name": "NEOMA Business School",
+          "AUTH_URL": "https://neoma-bs.idm.oclc.org/login?url=https://nouveau.europresse.com/access/ip/default.aspx?un=U033490T_1"
         },
         {
           "name": "Rennes School of Business",
